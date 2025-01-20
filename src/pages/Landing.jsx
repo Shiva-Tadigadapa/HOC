@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png"; // For section 2
 import worldsmall from "../assets/worldsmall.png";
+import Home from "./Home";
 
 const Landing = () => {
   const [isSection2, setIsSection2] = useState(false);
+  const [isFixed, setIsFixed] = useState(true);
 
-  // Scroll Event to toggle section themes
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsSection2(scrollPosition > window.innerHeight * 0.2); // Toggle at halfway point
+      const windowHeight = window.innerHeight;
+
+      setIsSection2(scrollPosition > windowHeight * 0.2); // Toggle theme at 20% height
+      setIsFixed(scrollPosition < windowHeight); // Navbar stays fixed only in the first section
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -20,14 +24,15 @@ const Landing = () => {
 
   return (
     <>
+      {/* Navbar */}
       <div
         className={`${
-          isSection2 ? "bg-white text-[#0000FF]" : "bg-[#0000FF] text-[#F4ECE0]"
-        } relative transition-all duration-700`}
-        style={{ minHeight: "100vh" }}
+          isFixed ? "fixed" : "absolute"
+        } w-full z-50 top-0 left-0 ${
+          isSection2 ? "bg-white text-black" : "bg-[#0000FF] text-[#F4ECE0]"
+        } transition-all duration-700`}
       >
-        {/* Navbar */}
-        <div className="flex py-6 px-4 md:px-10 justify-between items-start">
+        <div className="flex py-6 jost px-4 md:px-10 justify-between items-start">
           <img
             src={isSection2 ? logo2 : logo}
             className="w-[80px] md:w-[110px] transition-all duration-700"
@@ -38,7 +43,7 @@ const Landing = () => {
             <h1>ETHOS</h1>
             <h1>CAREERS</h1>
           </div>
-          <div className="bg-white py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold text-[#0000FF] flex items-center">
+          <div className="bg-[#F0F0F0] py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold text-[#0000FF] flex items-center">
             <h1 className="mr-6 md:mr-9 text-center">CONTACT</h1>
             <img
               className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute right-0"
@@ -47,7 +52,15 @@ const Landing = () => {
             />
           </div>
         </div>
+      </div>
 
+      {/* Section 1 */}
+      <div
+        className={`${
+          isSection2 ? "bg-white text-[#0000FF]" : "bg-[#0000FF] text-[#F4ECE0]"
+        } relative transition-all duration-700`}
+        style={{ minHeight: "100vh" }}
+      >
         {/* Centered Text */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -71,18 +84,9 @@ const Landing = () => {
         </div>
       </div>
 
-      <SecondSection />
+      {/* Section 2 */}
+      <Home />
     </>
-  );
-};
-
-const SecondSection = () => {
-  return (
-    <div className="h-screen bg-white text-[#0000FF] flex items-center justify-center">
-      <h1 className="text-[91px]  leading-[97px]  font-[1000] alinsa">
-        We build narrative environments for brands
-      </h1>
-    </div>
   );
 };
 
