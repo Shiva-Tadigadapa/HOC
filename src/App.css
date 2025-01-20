@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+#root {
+  max-width: 1580px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'alinsa';
+  src: url('./assets/alinsa.otf') format('truetype');
+}
+@font-face {
+  font-family: 'salo';
+  src: url('./assets/salo3.otf') format('truetype');
+}
+
+.alinsa {
+  font-family: 'alinsa';
+}
+.salo {
+  font-family: 'salo';
+}
+
+
+
+.jost {
+  font-family: 'Jost', sans-serif;
+}
+
+/* @keyframes infiniteSlider {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-infinite-slider {
+  display: flex;
+  animation: infiniteSlider 20s linear infinite;
+} */
