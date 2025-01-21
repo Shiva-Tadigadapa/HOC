@@ -131,6 +131,7 @@ const Ethos = () => {
           </motion.div>
         </div>
         <FounderSection />
+        <Play/>
         <FAQ />
         <Footer />
       </div>
@@ -143,18 +144,59 @@ export default Ethos;
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import founder from "../assets/founder.png";
+import gridethos from "../assets/gridethos.png";
+import tictac from "../assets/tictac.svg";
+import playground from "../assets/playground.png";
+
+
+const Play = () => {
+  return (
+    <>
+       <div className="min-h-screen bg-black text-white  relative">
+      {/* Grid overlay background */}
+      <div
+        className="absolute  inset-0 opacity-100"
+        style={{
+          backgroundImage: `url(${gridethos})`,
+          backgroundSize: "cover",
+          // objectFit: "cover",
+        }}
+      />
+
+      {/* Main content container */}
+      <div className="relative    flex flex-col justify-between">
+        
+        <div>
+          <div className="flex justify-between items-center  px-20 py-10">
+            <div className="max-w-xl">
+               <img src={tictac} className="w-full object-cover mb-8" alt="Haus Of Chaos" />
+            </div>
+
+            <div className="max-w-xl flex flex-col items-end">
+              <h1 className=" font-[1000] -ml-40 text-[100px] whitespace-nowrap alinsa">PLAY GROUND</h1>
+              <img src={playground} className="  w-[90%]" alt="Haus Of Chaos" />
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    </>
+  )
+}
 
 const FounderSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Trigger animation once when in view
 
   return (
-    <div className="my-40">
+    <div className="mt-40 ">
       <div
         ref={ref}
-        className=" bg-[#0000FF] p-8 relative overflow-hidden flex items-center justify-between w-full"
+        className=" bg-[#0000FF]   p-8 relative overflow-hidden flex items-center justify-between w-full"
       >
-        <div className="px-14 flex flex-col items-start justify-center mt-40 text-left">
+        <div className="px-14 pb-60 flex flex-col items-start justify-center mt-40 text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -217,7 +259,7 @@ const FounderSection = () => {
                 <img
                   src={founder}
                   alt="Founder"
-                  className="w-full block max-w-xl ml-auto rounded-lg"
+                  className="w-full absolute block max-w-xl ml-auto rounded-lg"
                 />
               </div>
             </motion.div>
@@ -232,7 +274,7 @@ const Footer = () => {
   return (
     <>
       <div className=" ">
-        <img src={befooter} className="  " alt="" />
+        {/* <img src={befooter} className="  " alt="" /> */}
         <HausOfChaos />
       </div>
     </>
@@ -242,7 +284,7 @@ const Footer = () => {
 import grid from "../assets/lines.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-screen bg-[#0000FF] text-white relative">
+    <div className="min-h-[70vh] bg-[#0000FF] text-white relative">
       {/* Grid overlay background */}
       <div
         className="absolute inset-0 opacity-100"
@@ -501,7 +543,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen mt-60  bg-black ">
+    <div className="min-h-screen  mt-1  bg-black ">
       <div className=" justify-evenly flex  mx-auto py-32">
         <div className="mb-12  text-left ">
           <h2 className="text-[#2354CF] salo text-[90px] ">FAQS</h2>
