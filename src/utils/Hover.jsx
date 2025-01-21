@@ -57,7 +57,7 @@ const CursorHover = () => {
   
     return (
       <div className="pointer-events-none fixed inset-0 z-[9999]">
-        {/* {images.map((img) => (
+        {images.map((img) => (
           <motion.img
             key={img.id}
             src={img.src}
@@ -77,7 +77,7 @@ const CursorHover = () => {
             }}
             transition={{ duration: 1, ease: "easeOut" }}
           />
-        ))} */}
+        ))}
       </div>
     );
   };
