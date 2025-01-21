@@ -4,6 +4,7 @@ import "./App.css";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import CursorHover from "./utils/Hover";
+import Ethos from "./pages/Ethos";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <CursorHover />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/work" element={<Home />} />
+        <Route path="/Ethos" element={<Ethos />} />
       </Routes>
     </Router>
   );

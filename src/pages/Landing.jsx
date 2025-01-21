@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png"; // For section 2
 import worldsmall from "../assets/worldsmall.png";
 import Home from "./Home";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [isSection2, setIsSection2] = useState(false);
@@ -42,10 +43,16 @@ const Landing = () => {
             className="w-[80px] md:w-[110px] transition-all duration-700"
             alt="Logo"
           />
-          <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-10 items-center">
+          <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
+            <Link to={'./Services'} className=" hover:text-white/50">
             <h1>SERVICES</h1>
+            </Link>
+            <Link to={'./Ethos'}  className=" hover:text-white/50">
             <h1>ETHOS</h1>
+            </Link>
+            <Link to={'./Careers'}  className=" hover:text-white/50">
             <h1>CAREERS</h1>
+            </Link>
           </div>
           <motion.div
             className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
