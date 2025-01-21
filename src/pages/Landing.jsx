@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png"; // For section 2
 import worldsmall from "../assets/worldsmall.png";
@@ -9,6 +9,16 @@ import { Link } from "react-router-dom";
 const Landing = () => {
   const [isSection2, setIsSection2] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
+  const [currentText, setCurrentText] = useState(0);
+
+  const texts = [
+    "We Design to Disrupt",
+    "We are makers of disruption",
+    <>
+      We build narrative <br />
+      environments for brands
+    </>,
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +32,20 @@ const Landing = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentText((prev) => (prev + 1) % texts.length); // Cycle through texts
+    }, 3000); // Change text every 3 seconds
+    return () => clearInterval(interval);
+  }, [texts.length]);
+
   const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
+
   return (
     <>
       {/* Navbar */}
@@ -44,14 +63,14 @@ const Landing = () => {
             alt="Logo"
           />
           <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-            <Link to={'./Services'} className=" hover:text-white/50">
-            <h1>SERVICES</h1>
+            <Link to={"./Services"} className=" hover:text-white/50">
+              <h1>SERVICES</h1>
             </Link>
-            <Link to={'./Ethos'}  className=" hover:text-white/50">
-            <h1>ETHOS</h1>
+            <Link to={"./Ethos"} className=" hover:text-white/50">
+              <h1>ETHOS</h1>
             </Link>
-            <Link to={'./Careers'}  className=" hover:text-white/50">
-            <h1>CAREERS</h1>
+            <Link to={"./Careers"} className=" hover:text-white/50">
+              <h1>CAREERS</h1>
             </Link>
           </div>
           <motion.div
@@ -100,9 +119,18 @@ const Landing = () => {
           transition={{ duration: 1 }}
           className="absolute top-1/2 left-1/2 transform md:whitespace-nowrap -translate-x-1/2 -translate-y-1/2 px-4"
         >
-          <h1 className="text-[48px] alinsa md:text-[91px] font-[1000] text-center leading-tight md:leading-normal">
-            We Design to Disrupt
-          </h1>
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={currentText}
+              className="text-[48px] alinsa md:text-[91px] font-[1000] text-center leading-tight md:leading-normal"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8 }}
+            >
+              {texts[currentText]}
+            </motion.h1>
+          </AnimatePresence>
         </motion.div>
 
         {/* Footer */}
@@ -123,4 +151,3 @@ const Landing = () => {
 };
 
 export default Landing;
-  

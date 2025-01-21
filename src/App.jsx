@@ -5,6 +5,7 @@ import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import CursorHover from "./utils/Hover";
 import Ethos from "./pages/Ethos";
+import Careers from "./pages/Careers";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/Ethos" element={<Ethos />} />
+        {/* <Route path="/Careers" element={<Careers />} /> */}
       </Routes>
     </Router>
   );

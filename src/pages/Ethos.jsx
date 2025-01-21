@@ -50,13 +50,13 @@ const Ethos = () => {
               alt="Logo"
             />
             <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-              <Link to={"./Services"} className=" hover:text-white/50">
+              <Link to={"/Services"} className=" hover:text-white/50">
                 <h1>SERVICES</h1>
               </Link>
-              <Link to={"./Ethos"} className=" hover:text-white/50">
+              <Link to={"/Ethos"} className=" hover:text-white/50">
                 <h1>ETHOS</h1>
               </Link>
-              <Link to={"./Careers"} className=" hover:text-white/50">
+              <Link to={"/Careers"} className=" hover:text-white/50">
                 <h1>CAREERS</h1>
               </Link>
             </div>
@@ -137,6 +137,7 @@ const Ethos = () => {
       </div>
     </>
   );
+
 };
 
 export default Ethos;
