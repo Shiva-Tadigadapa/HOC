@@ -39,7 +39,7 @@ const Landing = () => {
             alt="Logo"
           />
           <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-10 items-center">
-            <h1>S</h1>
+            <h1>SERVICES</h1>
             <h1>ETHOS</h1>
             <h1>CAREERS</h1>
           </div>
