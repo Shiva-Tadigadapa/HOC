@@ -130,10 +130,10 @@ const Ethos = () => {
             <img src={tvpng} className="w-full" alt="Swrill" />
           </motion.div>
         </div>
-        {/* <FounderSection /> */}
-        {/* <Play/> */}
-        {/* <FAQ /> */}
-        {/* <Footer /> */}
+        <FounderSection />
+         <Play/> 
+         <FAQ />
+        <Footer /> 
       </div>
     </>
   );
