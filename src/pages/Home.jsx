@@ -123,7 +123,7 @@ const SecondSection = () => {
             beliefs in experimental communication and experience design.
           </h1>
         </div>
-        <Partner />
+        { /*  <Partner />*/}
       </div>
     </>
   );
