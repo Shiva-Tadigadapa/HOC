@@ -5,6 +5,7 @@ import logo1 from "../assets/logo.png";
 import swrillpng from "../assets/swrill2.png";
 import worldsmall from "../assets/worldsmall.png";
 import labsvg from "../assets/labsvg.svg";
+import noswitch from "../assets/noswitch.svg";
 
 const Home = () => {
   return (
@@ -113,7 +114,7 @@ const SecondSection = () => {
             </h2>
           </div>
           <div>
-            <img src={labsvg} className="w-full" alt="Lab" />
+            <img src={noswitch} className="w-full" alt="Lab" />
           </div>
           <h1 className=" px-20 text-2xl text-white text-center jost">
             Born from our ethos, the Chaos Lab serves as a testing ground for
