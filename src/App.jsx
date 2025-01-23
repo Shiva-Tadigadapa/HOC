@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       {/* Global CursorHover component */}
-      <CursorHover />
+      { /*  <CursorHover />*/}
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/Ethos" element={<Ethos />} />
