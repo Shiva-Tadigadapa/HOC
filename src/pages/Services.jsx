@@ -57,7 +57,7 @@ const Swrillmaker = ({ scrollYProgress, targetRef }) => {
   const width = useTransform(
     scrollYProgress,
     [startProgress, 1],
-    [position.targetWidth, 400] // Start big, end small
+    [position.targetWidth, 300] // Start big, end small
   );
   const height = useTransform(
     scrollYProgress,
@@ -80,7 +80,7 @@ const Swrillmaker = ({ scrollYProgress, targetRef }) => {
       {/* Apply rotation directly to the image */}
       <motion.img
         src={swrillpng}
-        className="w-full ml-40  -mt-10 !z-[150]"
+        className="w-full ml-40  mt-10 !z-[150]"
         alt="Swrill"
         animate={{ rotate: 360 }}
         transition={{
