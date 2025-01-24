@@ -5,8 +5,9 @@ import logo1 from "../assets/logo.png";
 import swrillpng from "../assets/swrill2.png";
 import worldsmall from "../assets/worldsmall.png";
 import labsvg from "../assets/labsvg.svg";
-import noswitch from "../assets/noswitch.svg";
 
+import  { useEffect, useRef } from "react";
+import noswitch from "../assets/noswitch.svg";
 const Home = () => {
   return (
     <>
@@ -98,37 +99,127 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;  
+import two from "../assets/plugwhiteb.png";
+import three from "../assets/plugwhitebleft.png";
+import linelab from "../assets/linelab.png"; 
+ 
+import { useInView } from "framer-motion";  
+
+  
+ 
 
 const SecondSection = () => {
+  const sectionRef = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  // Update scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY); // Capture the scroll position
+    };
+
+    window.addEventListener("scroll", handleScroll); // Listen for scroll events
+    return () => window.removeEventListener("scroll", handleScroll); // Cleanup event listener
+  }, []);
+
+  // Scroll-based animation logic
+  const moveImageOne = (scrollY) => {
+    return scrollY * 0.08; // Modify factor to control movement speed (slower movement)
+  };
+
+  const moveImageTwo = (scrollY) => {
+    return scrollY * -0.08; // Modify factor to control movement speed (slower movement)
+  };
+
   return (
-    <>
-      <div className="  overflow-hidden  py-20">
-        <div className=" bg-black  py-20 flex flex-col gap-10">
-          <div>
-            <h1 className=" text-[#F4ECE0] text-[110px] leading-[97px] text-center salo">
-              Experience Lab
-            </h1>
-            <h2 className=" text-white text-[30px] text-center jost">
-              Spaces speak and spaces narrate
-            </h2>
-          </div>
-          <div>
-            <img src={noswitch} className="w-full" alt="Lab" />
-          </div>
-          <h1 className=" px-20 text-2xl text-white text-center jost">
-            Born from our ethos, the Chaos Lab serves as a testing ground for
-            the diverse narrative environments we experiment with and explore.
-            Based in India, with plans for growth, we embrace a ‘test-and-learn’
-            mindset. Our aim is to decode and disrupt conventional norms and
-            beliefs in experimental communication and experience design.
+    <div ref={sectionRef} className="overflow-hidden py-20">
+      <div className="bg-black py-20 flex flex-col gap-10">
+        <div>
+          <h1 className="text-[#F4ECE0] text-[110px] leading-[97px] text-center salo">
+            Experience Lab
           </h1>
+          <h2 className="text-white text-[30px] text-center jost">
+            Spaces speak and spaces narrate
+          </h2>
         </div>
-        { /*  <Partner />*/}
+        <div className="relative flex justify-center items-center gap-10 h-[300px]">
+          {/* LineLab Image */}
+          <img
+            src={linelab}
+            className="w-[40%] left-[4rem] top-1/2 -mt-[1.2px] absolute"
+            alt="Lab"
+          />
+
+          {/* Three Image */}
+          {/* <motion.img
+            src={three}
+            className="w-[40%] z-[10] absolute left-[14rem]"
+            alt="Lab"
+            style={{
+              transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
+            }}
+            transition={{ duration: 0.4 }} // Animation duration
+          /> */}
+ <motion.img
+            src={three}
+            className="w-[10%]  z-[10] absolute left-[30%] "
+            alt="Lab"
+            style={{
+              transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
+            }}
+            transition={{ duration: 0.4 }} // Animation duration
+          />
+
+          <img src={noswitch} className="w-full" alt="Lab" />
+
+          {/* Two Image */}
+          <motion.img
+            src={two}
+            className="w-[14%]  z-[2] absolute right-1/4 !-mr-10"
+            alt="Lab"
+            style={{
+              transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
+            }}
+            transition={{ duration: 0.4 }} // Animation duration
+          />
+
+          {/* <motion.img
+            src={two}
+            className="w-1/2 z-[2] absolute right-20"
+            alt="Lab"
+            style={{
+              transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
+            }}
+            transition={{ duration: 0.4 }} // Animation duration
+          /> */}
+
+          <img
+            src={linelab}
+            className="w-[40%] z-[1] right-[1rem] top-1/2 -mt-[5.5px] absolute"
+            alt="Lab"
+          />
+        </div>
+        <h1 className="px-20 text-2xl text-white text-center jost">
+          Born from our ethos, the Chaos Lab serves as a testing ground for the
+          diverse narrative environments we experiment with and explore. Based
+          in India, with plans for growth, we embrace a ‘test-and-learn’
+          mindset. Our aim is to decode and disrupt conventional norms and
+          beliefs in experimental communication and experience design.
+        </h1>
       </div>
-    </>
+    </div>
   );
 };
+ 
+
+ 
+
+
+
+ 
+ 
+
 
 import slider1 from "../assets/slider1.png";
 import slider2 from "../assets/slider2.png";
@@ -329,55 +420,81 @@ const FAQ_DATA = [
   {
     id: "01",
     question:
-      "WIR HABEN UNS BEI AGENTUREN SCHON DIE FINGER VERBRANNT. WIESO IST HAUS OF CHAOS BESSER?",
+      "What services does your firm provide?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
+      "We specialize in creating immersive brand experiences, including experiential design, branding, communication strategy, and curated touchpoints for brands and companies.",
   },
   {
     id: "02",
-    question: "WIESO IST CORPORATE INFLUENCER MARKETING SO WIRKUNGSVOLL?",
+    question: "How do I begin working with your team?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
+      "The first step is to schedule a consultation. This allows us to understand your brand, goals, and target audience before crafting a bespoke solution for your needs.  ",
   },
   {
     id: "03",
     question:
-      "WIR HABEN KAUM/KEINE ZEIT FÜR CONTENT CREATION. WELCHE LÖSUNG GIBT ES IN DEM FALL?",
+      "What industries do you typically work with?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
+      "Our clients span industries such as luxury retail, hospitality, real estate, tech, and more. If your brand seeks to deliver an elevated, meaningful experience, we’d love to collaborate.  ",
   },
   {
     id: "04",
-    question: "UNSER MARKETINGBUDGET LÄSST KEINE GROSEN SPRÜNGE ZU. WAS TUN?",
+    question: "What does your process look like ?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
+      "Our process includes a discovery phase, research and strategy development, creative ideation, design execution, and final implementation. Every step is tailored to ensure the experience we create is aligned with your brand’s vision.  ",
   },
   {
     id: "05",
-    question: "WIE KÖNNEN WIR UNS DIE ZUSAMMENARBEIT MIT DIR VORSTELLEN?",
+    question: "Will I have input throughout the project?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
+      "Absolutely. We believe in collaboration and will keep you involved throughout the process to ensure the results resonate with your vision and goals.  ",
   },
   {
     id: "06",
-    question: "WELCHES INVEST KOMMT AUF UNS ZU?",
+    question: "Do you take on international clients ?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
+      "Yes, we work with clients globally and have extensive experience managing remote collaborations seamlessly.",
   },
   {
     id: "07",
     question:
-      "KATIE, WO BEKOMME ICH DEIN NEUES BUCH ZUM CORPORATE INFLUENCER MARKETING?",
+      "How is pricing determined?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
+      "Pricing is bespoke, tailored to the scope and complexity of the project. After our initial consultation, we’ll provide you with a detailed proposal and estimate.  ",
   },
   {
     id: "08",
-    question:
-      "WIR HABEN INTERNATIONALE KUNDSCHAFT. BEKOMME ICH AUCH ÜBERSETZUNGEN?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
+    question: "Do you offer retainers for ongoing collaboration?",
+    answer: "Yes, we provide retainer options for clients looking for continuous support in curating and evolving their brand experiences."
   },
+  {
+    id: "09",
+    question:
+      "What payment structures do you offer?",
+    answer:
+      "We typically require a deposit to initiate the project, with the balance divided across key milestones or paid upon completion. Payment plans can also be customized based on your preferences.",
+  },
+  {
+    id: "10",
+    question: "What will I receive upon project completion?",
+    answer:
+      "Depending on the project, you’ll receive a full suite of deliverables, including brand guidelines, digital and print-ready assets, and any experiential components created as part of the project.  ",
+  },
+  {
+    id: "11",
+    question: "Do you offer support after the project is complete?",
+    answer:
+      "Of course! We are happy to collaborate with your in-house team and align with any existing brand guidelines to create cohesive and impactful experiences. ", 
+  }
+  ,
+  {
+    id: "13",
+    question: "Do you provide event-based experiential design services?",
+    answer:
+      "Yes, we curate and design immersive experiences for events, launches, and activations that bring your brand to life.  ",
+  },
+    
+  
 ];
 
 const FAQItem = ({ item, isOpen, onToggle }) => {
