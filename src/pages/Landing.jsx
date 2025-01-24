@@ -5,6 +5,7 @@ import logo2 from "../assets/logo2.png"; // For section 2
 import worldsmall from "../assets/worldsmall.png";
 import Home from "./Home";
 import { Link } from "react-router-dom";
+import CursorHover from "../utils/Hover";
 
 const Landing = () => {
   const [isSection2, setIsSection2] = useState(false);
@@ -14,10 +15,10 @@ const Landing = () => {
   const texts = [
     "We Design to Disrupt",
     "We are makers of disruption",
-    <>
+    <div>
       We build narrative <br />
       environments for brands
-    </>,
+    </div>,
   ];
 
   useEffect(() => {
@@ -56,6 +57,7 @@ const Landing = () => {
           isSection2 ? "bg-white text-black" : "bg-[#0000FF] text-[#F4ECE0]"
         } transition-all duration-700`}
       >
+        {!isSection2 && <CursorHover />} {/* Render only in section 1 */}
         <div className="flex py-6 jost px-4 md:px-10 justify-between items-start">
           <img
             src={isSection2 ? logo2 : logo}
@@ -63,13 +65,13 @@ const Landing = () => {
             alt="Logo"
           />
           <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-            <Link to={"./Services"} className=" hover:text-white/50">
+            <Link to={"./Services"} className="hover:text-white/50">
               <h1>SERVICES</h1>
             </Link>
-            <Link to={"./Ethos"} className=" hover:text-white/50">
+            <Link to={"./Ethos"} className="hover:text-white/50">
               <h1>ETHOS</h1>
             </Link>
-            <Link to={"./Careers"} className=" hover:text-white/50">
+            <Link to={"./Careers"} className="hover:text-white/50">
               <h1>CAREERS</h1>
             </Link>
           </div>

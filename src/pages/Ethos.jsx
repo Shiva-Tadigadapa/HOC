@@ -131,13 +131,12 @@ const Ethos = () => {
           </motion.div>
         </div>
         <FounderSection />
-         <Play/> 
-         <FAQ />
-        <Footer /> 
+        <Play />
+        <FAQ />
+        <Footer />
       </div>
     </>
   );
-
 };
 
 export default Ethos;
@@ -149,43 +148,49 @@ import gridethos from "../assets/gridethos.png";
 import tictac from "../assets/tictac.svg";
 import playground from "../assets/playground.png";
 
-
 const Play = () => {
   return (
     <>
-       <div className="min-h-screen bg-black text-white  relative">
-      {/* Grid overlay background */}
-      <div
-        className="absolute  inset-0 opacity-100"
-        style={{
-          backgroundImage: `url(${gridethos})`,
-          backgroundSize: "cover",
-          // objectFit: "cover",
-        }}
-      />
+      <div className="min-h-screen bg-black text-white  relative">
+        {/* Grid overlay background */}
+        <div
+          className="absolute  inset-0 opacity-100"
+          style={{
+            backgroundImage: `url(${gridethos})`,
+            backgroundSize: "cover",
+            // objectFit: "cover",
+          }}
+        />
 
-      {/* Main content container */}
-      <div className="relative    flex flex-col justify-between">
-        
-        <div>
-          <div className="flex justify-between items-center  px-20 py-10">
-            <div className="max-w-xl">
-               <img src={tictac} className="w-full object-cover mb-8" alt="Haus Of Chaos" />
-            </div>
+        {/* Main content container */}
+        <div className="relative    flex flex-col justify-between">
+          <div>
+            <div className="flex justify-between items-center  px-20 py-10">
+              <div className="max-w-xl">
+                <img
+                  src={tictac}
+                  className="w-full object-cover mb-8"
+                  alt="Haus Of Chaos"
+                />
+              </div>
 
-            <div className="max-w-xl flex flex-col items-end">
-              <h1 className=" font-[1000] -ml-40 text-[100px] whitespace-nowrap alinsa">PLAY GROUND</h1>
-              <img src={playground} className="  w-[90%]" alt="Haus Of Chaos" />
+              <div className="max-w-xl flex flex-col items-end">
+                <h1 className=" font-[1000] -ml-40 text-[100px] whitespace-nowrap alinsa">
+                  PLAY GROUND
+                </h1>
+                <img
+                  src={playground}
+                  className="  w-[90%]"
+                  alt="Haus Of Chaos"
+                />
+              </div>
             </div>
           </div>
         </div>
-        
-        
       </div>
-    </div>
     </>
-  )
-}
+  );
+};
 
 const FounderSection = () => {
   const ref = useRef(null);

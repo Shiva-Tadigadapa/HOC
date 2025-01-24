@@ -6,7 +6,7 @@ import swrillpng from "../assets/swrill2.png";
 import worldsmall from "../assets/worldsmall.png";
 import labsvg from "../assets/labsvg.svg";
 
-import  { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import noswitch from "../assets/noswitch.svg";
 const Home = () => {
   return (
@@ -99,15 +99,12 @@ const Home = () => {
   );
 };
 
-export default Home;  
+export default Home;
 import two from "../assets/plugwhiteb.png";
 import three from "../assets/plugwhitebleft.png";
-import linelab from "../assets/linelab.png"; 
- 
-import { useInView } from "framer-motion";  
+import linelab from "../assets/linelab.png";
 
-  
- 
+import { useInView } from "framer-motion";
 
 const SecondSection = () => {
   const sectionRef = useRef(null);
@@ -161,7 +158,7 @@ const SecondSection = () => {
             }}
             transition={{ duration: 0.4 }} // Animation duration
           /> */}
- <motion.img
+          <motion.img
             src={three}
             className="w-[10%]  z-[10] absolute left-[30%] "
             alt="Lab"
@@ -211,15 +208,6 @@ const SecondSection = () => {
     </div>
   );
 };
- 
-
- 
-
-
-
- 
- 
-
 
 import slider1 from "../assets/slider1.png";
 import slider2 from "../assets/slider2.png";
@@ -419,8 +407,7 @@ const HausOfChaos = () => {
 const FAQ_DATA = [
   {
     id: "01",
-    question:
-      "What services does your firm provide?",
+    question: "What services does your firm provide?",
     answer:
       "We specialize in creating immersive brand experiences, including experiential design, branding, communication strategy, and curated touchpoints for brands and companies.",
   },
@@ -432,8 +419,7 @@ const FAQ_DATA = [
   },
   {
     id: "03",
-    question:
-      "What industries do you typically work with?",
+    question: "What industries do you typically work with?",
     answer:
       "Our clients span industries such as luxury retail, hospitality, real estate, tech, and more. If your brand seeks to deliver an elevated, meaningful experience, we’d love to collaborate.  ",
   },
@@ -457,20 +443,19 @@ const FAQ_DATA = [
   },
   {
     id: "07",
-    question:
-      "How is pricing determined?",
+    question: "How is pricing determined?",
     answer:
       "Pricing is bespoke, tailored to the scope and complexity of the project. After our initial consultation, we’ll provide you with a detailed proposal and estimate.  ",
   },
   {
     id: "08",
     question: "Do you offer retainers for ongoing collaboration?",
-    answer: "Yes, we provide retainer options for clients looking for continuous support in curating and evolving their brand experiences."
+    answer:
+      "Yes, we provide retainer options for clients looking for continuous support in curating and evolving their brand experiences.",
   },
   {
     id: "09",
-    question:
-      "What payment structures do you offer?",
+    question: "What payment structures do you offer?",
     answer:
       "We typically require a deposit to initiate the project, with the balance divided across key milestones or paid upon completion. Payment plans can also be customized based on your preferences.",
   },
@@ -484,17 +469,32 @@ const FAQ_DATA = [
     id: "11",
     question: "Do you offer support after the project is complete?",
     answer:
-      "Of course! We are happy to collaborate with your in-house team and align with any existing brand guidelines to create cohesive and impactful experiences. ", 
-  }
-  ,
+      "Of course! We are happy to collaborate with your in-house team and align with any existing brand guidelines to create cohesive and impactful experiences. ",
+  },
+  {
+    id: "12",
+    question: "Can you integrate with our existing team or brand guidelines?",
+    answer:
+      "Of course! We are happy to collaborate with your in-house team and align with any existing brand guidelines to create cohesive and impactful experiences.  ",
+  },
+  {
+    id: "12",
+    question: "Do you provide event-based experiential design services?",
+    answer:
+      "Yes, we curate and design immersive experiences for events, launches, and activations that bring your brand to life.  ",
+  },
   {
     id: "13",
     question: "Do you provide event-based experiential design services?",
     answer:
       "Yes, we curate and design immersive experiences for events, launches, and activations that bring your brand to life.  ",
   },
-    
-  
+  {
+    id: "14",
+    question: "How do you measure the success of a brand experience?",
+    answer:
+      "We define success based on your goals, which may include metrics such as increased engagement, strengthened client relationships, or elevated brand perception. We’ll work with you to establish benchmarks and assess outcomes.",
+  },
 ];
 
 const FAQItem = ({ item, isOpen, onToggle }) => {
