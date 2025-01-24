@@ -100,33 +100,58 @@ const Home = () => {
 };
 
 export default Home;
+// import  {   useState } from "react";
+// import { motion } from "framer-motion";
 import two from "../assets/plugwhiteb.png";
 import three from "../assets/plugwhitebleft.png";
 import linelab from "../assets/linelab.png";
 
-import { useInView } from "framer-motion";
-
 const SecondSection = () => {
   const sectionRef = useRef(null);
   const [scrollY, setScrollY] = useState(0);
+  const [sectionBounds, setSectionBounds] = useState({ top: 0, bottom: 0 });
 
-  // Update scroll position
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY); // Capture the scroll position
+      setScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll); // Listen for scroll events
-    return () => window.removeEventListener("scroll", handleScroll); // Cleanup event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll-based animation logic
+  // Update section bounds on resize or initial load
+  useEffect(() => {
+    const updateBounds = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const scrollTop = window.scrollY;
+        setSectionBounds({
+          top: rect.top + scrollTop,
+          bottom: rect.bottom + scrollTop,
+        });
+      }
+    };
+
+    updateBounds();
+    window.addEventListener("resize", updateBounds);
+
+    return () => window.removeEventListener("resize", updateBounds);
+  }, []);
+
+  // Limit movement based on scroll position
   const moveImageOne = (scrollY) => {
-    return scrollY * 0.08; // Modify factor to control movement speed (slower movement)
+    if (scrollY < sectionBounds.top) return 0; // Before section starts
+    if (scrollY > sectionBounds.bottom) return (sectionBounds.bottom - sectionBounds.top) * 0.07; // After section ends
+    return (scrollY - sectionBounds.top) * 0.18; // Inside section
   };
 
   const moveImageTwo = (scrollY) => {
-    return scrollY * -0.08; // Modify factor to control movement speed (slower movement)
+    if (scrollY < sectionBounds.top) return 0; // Before section starts
+    if (scrollY > sectionBounds.bottom) return (sectionBounds.bottom - sectionBounds.top) * -0.07; // After section ends
+    return (scrollY - sectionBounds.top) * -0.18; // Inside section
   };
 
   return (
@@ -149,23 +174,14 @@ const SecondSection = () => {
           />
 
           {/* Three Image */}
-          {/* <motion.img
-            src={three}
-            className="w-[40%] z-[10] absolute left-[14rem]"
-            alt="Lab"
-            style={{
-              transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
-            }}
-            transition={{ duration: 0.4 }} // Animation duration
-          /> */}
           <motion.img
             src={three}
-            className="w-[10%]  z-[10] absolute left-[30%] "
+            className="w-[10%] z-[10] absolute left-[35%]"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
             }}
-            transition={{ duration: 0.4 }} // Animation duration
+            transition={{ duration: 0.4 }}
           />
 
           <img src={noswitch} className="w-full" alt="Lab" />
@@ -173,23 +189,13 @@ const SecondSection = () => {
           {/* Two Image */}
           <motion.img
             src={two}
-            className="w-[14%]  z-[2] absolute right-1/4 !-mr-10"
+            className="w-[14%] z-[2] absolute right-[35%] !-mr-10"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
             }}
-            transition={{ duration: 0.4 }} // Animation duration
+            transition={{ duration: 0.4 }}
           />
-
-          {/* <motion.img
-            src={two}
-            className="w-1/2 z-[2] absolute right-20"
-            alt="Lab"
-            style={{
-              transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
-            }}
-            transition={{ duration: 0.4 }} // Animation duration
-          /> */}
 
           <img
             src={linelab}
@@ -207,7 +213,8 @@ const SecondSection = () => {
       </div>
     </div>
   );
-};
+}; 
+
 
 import slider1 from "../assets/slider1.png";
 import slider2 from "../assets/slider2.png";

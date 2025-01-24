@@ -8,14 +8,11 @@
 
   <path d="M566.3 177H398.187C343.571 177 299.297 177.141 299.297 177.316V177.684C299.297 177.859 255.022 178 200.406 178H12.515" stroke="#F4ECE0" stroke-width="3"/>
   <path d="M1460.99 172H1300.09C1247.82 172 1205.45 172.141 1205.45 172.316V172.684C1205.45 172.859 1163.07 173 1110.8 173H930.978" stroke="#C9C9C9" stroke-width="3"/>
-  <rect x="664.924" y="65.0671" width="60" height="121.579" transform="rotate(117.341 664.924 65.0671)" fill="url(#pattern0_2_251)"/>
-  <rect x="606.08" y="66.074" width="60" height="121.579" transform="rotate(97.1221 606.08 66.074)" fill="url(#pattern1_2_251)"/>
-  <rect x="552.643" y="200" width="60" height="121.579" transform="rotate(54.2277 552.643 200)" fill="url(#pattern2_2_251)"/>
-  <rect x="593.114" y="217.028" width="60" height="121.579" transform="rotate(35.824 593.114 217.028)" fill="url(#pattern3_2_251)"/>
-  <rect x="1070.08" y="202.074" width="60" height="121.579" transform="rotate(97.1221 1070.08 202.074)" fill="url(#pattern4_2_251)"/>
-  <rect x="1024.34" y="50" width="60" height="121.579" transform="rotate(50.1529 1024.34 50)" fill="url(#pattern5_2_251)"/>
-  <rect x="950.385" y="0.195801" width="60" height="121.579" transform="rotate(26.6815 950.385 0.195801)" fill="url(#pattern6_2_251)"/>
-  <rect x="1033.55" y="263.84" width="60" height="121.579" transform="rotate(117.341 1033.55 263.84)" fill="url(#pattern7_2_251)"/>
+
+  
+  
+
+
   <defs>
     <pattern id="pattern0_2_251" patternContentUnits="objectBoundingBox" width="1" height="1">
       <use xlink:href="#image0_2_251" transform="matrix(0.00101316 0 0 0.0005 -0.766447 0)"/>
