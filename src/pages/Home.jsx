@@ -102,8 +102,8 @@ const Home = () => {
 export default Home;
 // import  {   useState } from "react";
 // import { motion } from "framer-motion";
-import two from "../assets/plugwhiteb.png";
-import three from "../assets/plugwhitebleft.png";
+import two from "../assets/two.png";
+import three from "../assets/three.png";
 import linelab from "../assets/linelab.png";
 
 const SecondSection = () => {
@@ -145,13 +145,13 @@ const SecondSection = () => {
   const moveImageOne = (scrollY) => {
     if (scrollY < sectionBounds.top) return 0; // Before section starts
     if (scrollY > sectionBounds.bottom) return (sectionBounds.bottom - sectionBounds.top) * 0.07; // After section ends
-    return (scrollY - sectionBounds.top) * 0.18; // Inside section
+    return (scrollY - sectionBounds.top) * 0.14; // Inside section
   };
 
   const moveImageTwo = (scrollY) => {
     if (scrollY < sectionBounds.top) return 0; // Before section starts
     if (scrollY > sectionBounds.bottom) return (sectionBounds.bottom - sectionBounds.top) * -0.07; // After section ends
-    return (scrollY - sectionBounds.top) * -0.18; // Inside section
+    return (scrollY - sectionBounds.top) * -0.14; // Inside section
   };
 
   return (
@@ -176,7 +176,7 @@ const SecondSection = () => {
           {/* Three Image */}
           <motion.img
             src={three}
-            className="w-[10%] z-[10] absolute left-[35%]"
+            className="w-[40%] z-[10] absolute left-[20%]"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
@@ -189,7 +189,7 @@ const SecondSection = () => {
           {/* Two Image */}
           <motion.img
             src={two}
-            className="w-[14%] z-[2] absolute right-[35%] !-mr-10"
+            className="w-[50%] z-[2] absolute right-[20%] !-mr-10"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
