@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import CursorHover from "./utils/Hover";
 import Ethos from "./pages/Ethos";
 import Careers from "./pages/Careers";
+import Services from "./pages/Services";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/Ethos" element={<Ethos />} />
         <Route path="/Careers" element={<Careers />} />
+        <Route path="/Services" element={<Services />} />
       </Routes>
     </Router>
   );

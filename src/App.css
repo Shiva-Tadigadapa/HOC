@@ -47,10 +47,16 @@ html, body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 /* For modern browsers */
-html {
-  scrollbar-width: none; /* Firefox */
-}
-
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Edge, Safari */
+  width: 0.5em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow:   0 0 6px rgba(255, 255, 255, 0);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: slategrey;
+  border-radius: 26px;
+  outline: 1px solid slategrey;
 }

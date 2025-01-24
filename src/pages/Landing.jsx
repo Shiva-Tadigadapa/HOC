@@ -59,12 +59,14 @@ const Landing = () => {
       >
         {!isSection2 && <CursorHover />} {/* Render only in section 1 */}
         <div className="flex py-6 jost px-4 md:px-10 justify-between items-start">
-          <img
-            src={isSection2 ? logo2 : logo}
-            className="w-[80px] md:w-[110px] transition-all duration-700"
-            alt="Logo"
-          />
-          <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
+          <Link to={"/"}>
+            <img
+              src={isSection2 ? logo2 : logo}
+              className="w-[80px] md:w-[110px] transition-all duration-700"
+              alt="Logo"
+            />
+          </Link>
+          <div className="text-[14px] md:text-[19px] font-semibold hidden md:flex gap-4 md:gap-14 items-center">
             <Link to={"./Services"} className="hover:text-white/50">
               <h1>SERVICES</h1>
             </Link>
@@ -124,7 +126,7 @@ const Landing = () => {
           <AnimatePresence mode="wait">
             <motion.h1
               key={currentText}
-              className="text-[48px] alinsa md:text-[91px] font-[1000] text-center leading-tight md:leading-[1]"
+              className="text-[48px] px-10 alinsa md:text-[80px] font-[1000] text-center leading-tight md:leading-[1]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
