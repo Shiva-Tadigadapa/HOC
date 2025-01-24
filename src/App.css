@@ -42,3 +42,15 @@
   display: flex;
   animation: infiniteSlider 20s linear infinite;
 } */
+/* Remove horizontal scroll bar */
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+/* For modern browsers */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}

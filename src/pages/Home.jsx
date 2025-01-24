@@ -1,59 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo2.png";
 import logo1 from "../assets/logo.png";
 import swrillpng from "../assets/swrill2.png";
 import worldsmall from "../assets/worldsmall.png";
 import labsvg from "../assets/labsvg.svg";
+import ScrollToMoveImage from "./Services";
+import { useScroll } from "framer-motion";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import noswitch from "../assets/noswitch.svg";
+import Swrillmaker from "./Services";
 const Home = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+});
+
+
+  const swrillimageref = useRef(null);
   return (
     <>
-      <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
-        {/* Navbar */}
+    <div  ref={ref} className="h-[200vh] relative">
 
-        {/* Absolutely Centered Text */}
-        <div className="absolute  overflow-hidden transform -bottom-40 flex px-10">
+      <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
+  
+        <div className="absolute  transform -bottom-40 flex px-10">
           <div>
             <h1 className="text-[48px] salo md:text-[110px] text-[#0000FF] font-[400] text-left leading-tight md:leading-normal">
               WHO WE ARE
             </h1>
-            <h2 className="jost text-[40px] w-[90%] text-left leading-[40px]">
-              A seriously playful process-oriented experience design studio that
-              disrupts, questions, and creates narrative environments and
-              experiences for brands worldwide
+            <h2 className="jost text-[40px]  whitespace-nowrap w-[100%] text-left leading-[40px]">
+              A seriously playful process-oriented <br /> experience design studio that
+              disrupts, <br /> questions, and creates narrative <br /> environments and
+              experiences for brands <br /> worldwide
             </h2>
           </div>
 
-          {/* Adding smooth infinite rotation */}
-          <motion.div
-            className="w-[150%] z-[100] overflow-hidden transform translate-x-[-50px] md:translate-x-[60px]"
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 10, // Adjust rotation speed
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            <img src={swrillpng} className="w-full" alt="Swrill" />
-          </motion.div>
+          {swrillimageref.current && (
+    <Swrillmaker scrollYProgress={scrollYProgress} targetRef={swrillimageref} />
+)}
+
         </div>
       </div>
 
-      <div className="   overflow-hidden transform  mt-60 flex px-10">
+      <div className="     !z-[-1]    mt-60 flex px-10">
         {/* Adding smooth infinite rotation */}
         <motion.div
-          className="w-[100%] z-[100] overflow-hidden transform translate-x-[-50px] md:translate-x-[60px]"
-          // animate={{ rotate: 360 }}
-          // transition={{
-          //   duration: 10, // Adjust rotation speed
-          //   repeat: Infinity,
-          //   ease: "linear",
-          // }}
+          ref={swrillimageref}
+          className="w-[100%] !z-[150]  overflow-hidden transform translate-x-[-50px] md:translate-x-[-120px]"
         >
-          <img src={swrillpng} className="w-[80%]" alt="Swrill" />
+          {/* <img src={swrillpng} className="w-[80%]" alt="Swrill" /> */}
         </motion.div>
         <div className=" w-full whitespace-nowrap mr-20">
           <h1 className="text-[48px] salo md:text-[110px] text-[#0000FF] font-[400] text-right leading-tight md:leading-normal">
@@ -67,7 +65,7 @@ const Home = () => {
             everything together seamlessly.
           </h2>
         </div>
-        <div className=" text-[22px]  flex gap-4  text-[#2354CF]  leading-[32px]  tracking-widest top-40 whitespace-nowrap -right-20    absolute rotate-[90deg]">
+        <div className=" text-[22px]  flex gap-4  text-[#2354CF]  leading-[32px]  tracking-widest bottom-[20rem] whitespace-nowrap -right-20    absolute rotate-[90deg]">
           Scroll To Learn More
           <svg
             width="36"
@@ -91,9 +89,11 @@ const Home = () => {
           </svg>
         </div>
       </div>
+    </div>
+
       <SecondSection />
       <ThridSection />
-      <FAQ />
+      <FAQ /> 
       <Footer />
     </>
   );
