@@ -25,8 +25,10 @@ const Home = () => {
         <div className="bg-white jost relative md:min-h-screen">
           <div className="absolute  transform  md:top-auto -top-40 md:-bottom-40 flex px-4 md:px-10">
             <div>
-              <h1 className="text-3xl salo md:text-[110px] text-[#0000FF]
-               font-[400] text-left leading-tight md:leading-normal">
+              <h1
+                className="text-3xl salo md:text-[110px] text-[#0000FF]
+               font-[400] text-left leading-tight md:leading-normal"
+              >
                 WHO WE ARE
               </h1>
               <h2 className="jost text-xl md:text-[40px]  whitespace-nowrap w-[100%] text-left md:leading-[40px]">
@@ -58,9 +60,9 @@ const Home = () => {
               WHAT WE DO
             </h1>
             <h2 className="jost md:text-[40px]  w-[100%] text-right  text-xl md:leading-[40px]">
-              We dabble in graphic design, <br/>
+              We dabble in graphic design, <br />
                a smidge of branding and packaging,
-              <br  />
+              <br />
                and focus extensively on experience design to tie <br />
               everything together seamlessly.
             </h2>
@@ -112,7 +114,7 @@ const Home = () => {
       </div>
 
       <SecondSection />
-      <ThirdSection  />
+      <ThirdSection />
       <FAQ />
       <Footer />
     </>
@@ -282,7 +284,7 @@ const Partner = () => {
   );
 };
 
-import one from "../assets/1.webm"; 
+import one from "../assets/1.webm";
 import iosVideo from "../assets/2.mp4"; // Your video for iOS/Safari
 
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -294,24 +296,27 @@ const ThirdSection = () => {
   return (
     <div className="relative md:-mt-20">
       <video id="loader-video" autoPlay muted loop playsInline>
-        <source src={videoSource} type={isIOS || isSafari ? "video/mp4" : "video/webm"} />
+        <source
+          src={videoSource}
+          type={isIOS || isSafari ? "video/mp4" : "video/webm"}
+        />
       </video>
       <div className="absolute md:-bottom-16 jost text-center flex-col flex items-center justify-center w-full">
-        <h1 className="text-[#5B636D] md:whitespace-nowrap px-4 font-[500] md:w-[60%] text-sm md:text-[27px] text-center md:leading-[34px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          <br className="md:block hidden" />
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          <br className="md:block hidden" />
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          <br className="md:block hidden" /> aliquip ex ea commodo consequat.
+        <h1 className="text-[#5B636D]  px-4 font-[500] md:w-[70%] text-sm md:text-[27px] text-center md:leading-[34px]">
+          After years of searching for a graphic designer to create our logo and
+          brand identity, we realized it wasn’t just about a logo—it was about
+          crafting an experience that reflects what our company truly stands
+          for. Ria, the creative director of Haus of Chaos, not only
+          conceptualized the journey of how clients experience our brand but
+          also responded to all our needs with remarkable efficiency.
         </h1>
         <h2 className="text-[#2354CF] text-xs md:text-[20px] mt-5">
-          James Lloyd, BBC Science Focus
+          Rak’s Pallikkoodam, 21st century international school
         </h2>
       </div>
     </div>
   );
-}; 
+};
 
 import befooter from "../assets/befooter.png";
 
@@ -342,23 +347,22 @@ const HausOfChaos = () => {
       {/* Main content container */}
       <div className="relative    px-4 py-20 md:px-20 md:py-48 min-h-screen flex flex-col justify-between">
         {/* Logo and description section */}
-        <img src={logo1} className="w-1/2   md:hidden block  mb-8" alt="Haus Of Chaos" />
+        <img
+          src={logo1}
+          className="w-1/2   md:hidden block  mb-8"
+          alt="Haus Of Chaos"
+        />
 
         <div className=" flex">
           <div className="md:max-w-xl ">
-            <img src={logo1} className="md:w-40   md:block hidden  mb-8" alt="Haus Of Chaos" />
+            <img
+              src={logo1}
+              className="md:w-40   md:block hidden  mb-4"
+              alt="Haus Of Chaos"
+            />
 
             <p className="text-lg md:block hidden text-left mb-6">
-              Die Hauspost liefert dir Trends, Ideen +<br />
-              Facts aus der Wirbelwelt des Corporate
-              <br />
-              Influencer Marketing und Personal
-              <br />
-              Branding. Immer mit dem "Wieder was
-              <br />
-              gelernt"-Gefühl. Jeden Freitagnachmittag
-              <br />
-              zum Gönnenwollen.
+            Step into the chaos of creativity<br />Where bold ideas and designs collide<br />Stay ahead with innovative thoughts<br />Experience transformative journeys<br />Embrace the unexpected and <br />disrupt the norm
             </p>
           </div>
 
@@ -368,22 +372,21 @@ const HausOfChaos = () => {
               <div>
                 <input
                   type="text"
-                  placeholder="Dein Name*"
+                  placeholder="Full Name*"
                   className="w-full p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <div>
                 <input
                   type="email"
-                  placeholder="Deine E-Mail-Adresse*"
-                  className="w-full mt-10 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
+                  placeholder="Email Address*"
+                  className="w-full mt-6 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <p className="text-sm text-left opacity-80">
-                Ich verwende MailerLite für den Versand meines Newsletters. Mit
-                der Anmeldung bestätigst Du, dass Deine Daten an MailerLite
-                übermittelt werden. Wenn Du mehr über die Datenschutzpraktiken
-                von MailerLite erfahren möchtest, klick{" "}
+                Where ideas collide and stories unfold, Haus of Chaos transforms
+                narratives into immersive brand experiences. Explore innovation,
+                redefine design, and disrupt the ordinary with us.{" "}
                 <a href="#" className="underline">
                   hier
                 </a>
@@ -402,25 +405,27 @@ const HausOfChaos = () => {
         {/* Footer section */}
         <div className="relative  whitespace-normal md:pt-16 pt-6 md:pb-0 pb-20">
           <div className="flex md:justify-end gap-4 text-sm">
-            <a href="#" className="hover:underline">
+            <a href="mailto:explore@hausofchaos.co" className="hover:underline">
+              MAIL
+            </a>
+            <span>|</span>
+            <a href="https://www.linkedin.com/company/105575916/" className="hover:underline">
               LINKEDIN
             </a>
             <span>|</span>
-            <a href="#" className="hover:underline">
-              AMAZON
+            <a href="https://www.instagram.com/hausofchaos.co/" className="hover:underline">
+            INSTAGRAM
             </a>
             <span>|</span>
             <a href="#" className="hover:underline">
               SPOTIFY
             </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              MAIL
-            </a>
           </div>
         </div>
         <div className="   absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row  items-start md:gap-0 gap-3 md:justify-between w-full ">
-          <div className="text-sm md:block hidden">2025 © Haus Of chaos Ltd.</div>
+          <div className="text-sm md:block hidden">
+            2025 © Haus Of chaos Ltd.
+          </div>
           <div className="md:flex gap-4 text-sm  hidden">
             <a href="#" className="hover:underline">
               Impressum
@@ -430,12 +435,12 @@ const HausOfChaos = () => {
             </a>
           </div>
           <div className=" text-sm whitespace-nowrap text-left   md:hidden block ">
-          2025 © Haus Of chaos Ltd. <br />
-          Impressum | Datenschutz
+            2025 © Haus Of chaos Ltd. <br />
+            Impressum | Datenschutz
           </div>
           <div className=" text-sm md:text-base">
             Design by{" "}
-            <a href="#" className="hover:underline">
+            <a href="https://theinternetcompany.one/" className="hover:underline">
               TIC GLOBAL
             </a>
           </div>
@@ -549,7 +554,9 @@ const FAQItem = ({ item, isOpen, onToggle }) => {
           <span className="text-[#2354CF] font-bold mr-4 text-xl md:text-[32px]">
             {item.id}
           </span>
-          <span className="text-white text-xl md:text-2xl">{item.question}</span>
+          <span className="text-white text-xl md:text-2xl">
+            {item.question}
+          </span>
         </div>
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
@@ -635,7 +642,9 @@ const FAQ = () => {
     <div className="min-h-screen mt-60  bg-black ">
       <div className=" justify-evenly flex md:flex-row flex-col mx-auto py-32">
         <div className="mb-12  text-left  md:block flex justify-center items-center flex-col">
-          <h2 className="text-[#2354CF] salo  text-5xl md:leading-[120px] md:text-[90px]   ">FAQS</h2>
+          <h2 className="text-[#2354CF] salo  text-5xl md:leading-[120px] md:text-[90px]   ">
+            FAQS
+          </h2>
           <p className="text-[#F4ECE0] text-xs md:text-[15px] font-bold">
             HÄUFIG GESTELLTE FRAGEN
           </p>
