@@ -112,7 +112,7 @@ const Home = () => {
       </div>
 
       <SecondSection />
-      <ThridSection />
+      <ThirdSection  />
       <FAQ />
       <Footer />
     </>
@@ -282,29 +282,36 @@ const Partner = () => {
   );
 };
 
-import one from "../assets/1.webm";
-const ThridSection = () => {
+import one from "../assets/1.webm"; 
+import iosVideo from "../assets/1-VEED.mp4"; // Your video for iOS/Safari
+
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+const ThirdSection = () => {
+  const videoSource = isIOS || isSafari ? iosVideo : one;
+
   return (
-    <>
-      <div className=" relative md:-mt-20">
-        <video id="loader-video" autoPlay muted loop playsInline>
-          <source src={one} type="video/webm" />
-        </video>
-        <div className="  absolute md:-bottom-16 jost  text-center flex-col flex items-center justify-center w-full ">
-          <h1 className=" text-[#5B636D]  px-4 font-[500] md:w-1/2 text-sm md:text-[27px] text-center md:leading-[34px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </h1>
-          <h2 className="  text-[#2354CF] text-xs md:text-[20px] mt-2">
-            James Lloyd, BBC Science Focus
-          </h2>
-        </div>
+    <div className="relative md:-mt-20">
+      <video id="loader-video" autoPlay muted loop playsInline>
+        <source src={videoSource} type={isIOS || isSafari ? "video/mp4" : "video/webm"} />
+      </video>
+      <div className="absolute md:-bottom-16 jost text-center flex-col flex items-center justify-center w-full">
+        <h1 className="text-[#5B636D] md:whitespace-nowrap px-4 font-[500] md:w-[60%] text-sm md:text-[27px] text-center md:leading-[34px]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          <br className="md:block hidden" />
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          <br className="md:block hidden" />
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          <br className="md:block hidden" /> aliquip ex ea commodo consequat.
+        </h1>
+        <h2 className="text-[#2354CF] text-xs md:text-[20px] mt-5">
+          James Lloyd, BBC Science Focus
+        </h2>
       </div>
-    </>
+    </div>
   );
-};
+}; 
 
 import befooter from "../assets/befooter.png";
 
