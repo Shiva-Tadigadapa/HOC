@@ -283,7 +283,7 @@ const Partner = () => {
 };
 
 import one from "../assets/1.webm"; 
-import iosVideo from "../assets/1-VEED.mp4"; // Your video for iOS/Safari
+import iosVideo from "../assets/2.mp4"; // Your video for iOS/Safari
 
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
