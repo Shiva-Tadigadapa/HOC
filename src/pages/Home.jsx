@@ -180,14 +180,14 @@ const SecondSection = () => {
     <div ref={sectionRef} className="overflow-hidden py-20">
       <div className="bg-black py-20 flex flex-col gap-10">
         <div>
-          <h1 className="text-[#F4ECE0] text-[110px] leading-[97px] text-center salo">
+          <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center salo">
             Experience Lab
           </h1>
-          <h2 className="text-white text-[30px] text-center jost">
+          <h2 className="text-white md:text-[30px] text-xl text-center jost">
             Spaces speak and spaces narrate
           </h2>
         </div>
-        <div className="relative flex justify-center items-center gap-10 h-[300px]">
+        <div className="relative hidden md:flex justify-center items-center gap-10 h-[300px]">
           {/* LineLab Image */}
           <img
             src={linelab}
@@ -225,7 +225,7 @@ const SecondSection = () => {
             alt="Lab"
           />
         </div>
-        <h1 className="px-20 text-2xl text-white text-center jost">
+        <h1 className="md:px-20 px-4 md:text-2xl text-white text-center jost">
           Born from our ethos, the Chaos Lab serves as a testing ground for the
           diverse narrative environments we experiment with and explore. Based
           in India, with plans for growth, we embrace a ‘test-and-learn’
@@ -286,18 +286,18 @@ import one from "../assets/1.webm";
 const ThridSection = () => {
   return (
     <>
-      <div className=" relative -mt-20">
+      <div className=" relative md:-mt-20">
         <video id="loader-video" autoPlay muted loop playsInline>
           <source src={one} type="video/webm" />
         </video>
-        <div className="  absolute -bottom-10 jost  text-center flex-col flex items-center justify-center w-full ">
-          <h1 className=" text-[#5B636D]  font-[500] w-1/2 text-[27px] text-center leading-[34px]">
+        <div className="  absolute md:-bottom-16 jost  text-center flex-col flex items-center justify-center w-full ">
+          <h1 className=" text-[#5B636D]  px-4 font-[500] md:w-1/2 text-sm md:text-[27px] text-center md:leading-[34px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </h1>
-          <h2 className="  text-[#2354CF] text-[20px] mt-2">
+          <h2 className="  text-[#2354CF] text-xs md:text-[20px] mt-2">
             James Lloyd, BBC Science Focus
           </h2>
         </div>
@@ -325,7 +325,7 @@ const HausOfChaos = () => {
     <div className="min-h-screen bg-[#0000FF] text-white relative">
       {/* Grid overlay background */}
       <div
-        className="absolute inset-0 opacity-100"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage: `url(${grid})`,
           backgroundSize: "cover",
@@ -333,13 +333,15 @@ const HausOfChaos = () => {
       />
 
       {/* Main content container */}
-      <div className="relative    px-20 py-48 min-h-screen flex flex-col justify-between">
+      <div className="relative    px-4 py-20 md:px-20 md:py-48 min-h-screen flex flex-col justify-between">
         {/* Logo and description section */}
-        <div className=" flex">
-          <div className="max-w-xl ">
-            <img src={logo1} className="w-40 mb-8" alt="Haus Of Chaos" />
+        <img src={logo1} className="w-1/2   md:hidden block  mb-8" alt="Haus Of Chaos" />
 
-            <p className="text-lg text-left mb-6">
+        <div className=" flex">
+          <div className="md:max-w-xl ">
+            <img src={logo1} className="md:w-40   md:block hidden  mb-8" alt="Haus Of Chaos" />
+
+            <p className="text-lg md:block hidden text-left mb-6">
               Die Hauspost liefert dir Trends, Ideen +<br />
               Facts aus der Wirbelwelt des Corporate
               <br />
@@ -391,8 +393,8 @@ const HausOfChaos = () => {
         </div>
 
         {/* Footer section */}
-        <div className="relative pt-16">
-          <div className="flex justify-end gap-4 text-sm">
+        <div className="relative  whitespace-normal md:pt-16 pt-6 md:pb-0 pb-20">
+          <div className="flex md:justify-end gap-4 text-sm">
             <a href="#" className="hover:underline">
               LINKEDIN
             </a>
@@ -410,9 +412,9 @@ const HausOfChaos = () => {
             </a>
           </div>
         </div>
-        <div className="   absolute left-0 px-10 bottom-10 flex justify-between w-full ">
-          <div className="text-sm">2025 © Haus Of chaos Ltd.</div>
-          <div className="flex gap-4 text-sm">
+        <div className="   absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row  items-start md:gap-0 gap-3 md:justify-between w-full ">
+          <div className="text-sm md:block hidden">2025 © Haus Of chaos Ltd.</div>
+          <div className="md:flex gap-4 text-sm  hidden">
             <a href="#" className="hover:underline">
               Impressum
             </a>
@@ -420,7 +422,11 @@ const HausOfChaos = () => {
               Datenschutz
             </a>
           </div>
-          <div className="">
+          <div className=" text-sm whitespace-nowrap text-left   md:hidden block ">
+          2025 © Haus Of chaos Ltd. <br />
+          Impressum | Datenschutz
+          </div>
+          <div className=" text-sm md:text-base">
             Design by{" "}
             <a href="#" className="hover:underline">
               TIC GLOBAL
@@ -527,16 +533,16 @@ const FAQ_DATA = [
 
 const FAQItem = ({ item, isOpen, onToggle }) => {
   return (
-    <div className="border-b max-w-2xl border-blue-100/10">
+    <div className="border-b max-w-xl px-4 md:max-w-2xl border-blue-100/10">
       <button
         className="flex w-full items-center justify-between py-6 text-left"
         onClick={onToggle}
       >
         <div className="flex items-center">
-          <span className="text-[#2354CF] font-bold mr-4 text-[32px]">
+          <span className="text-[#2354CF] font-bold mr-4 text-xl md:text-[32px]">
             {item.id}
           </span>
-          <span className="text-white text-2xl">{item.question}</span>
+          <span className="text-white text-xl md:text-2xl">{item.question}</span>
         </div>
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
@@ -620,10 +626,10 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen mt-60  bg-black ">
-      <div className=" justify-evenly flex  mx-auto py-32">
-        <div className="mb-12  text-left ">
-          <h2 className="text-[#2354CF] salo text-[90px] ">FAQS</h2>
-          <p className="text-[#F4ECE0] text-[15px] font-bold">
+      <div className=" justify-evenly flex md:flex-row flex-col mx-auto py-32">
+        <div className="mb-12  text-left  md:block flex justify-center items-center flex-col">
+          <h2 className="text-[#2354CF] salo  text-5xl md:leading-[120px] md:text-[90px]   ">FAQS</h2>
+          <p className="text-[#F4ECE0] text-xs md:text-[15px] font-bold">
             HÄUFIG GESTELLTE FRAGEN
           </p>
         </div>
