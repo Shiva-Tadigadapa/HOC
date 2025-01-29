@@ -23,7 +23,7 @@ const Home = () => {
     <>
       <div ref={ref} className="md:h-[200vh] h-full relative">
         <div className="bg-white jost relative md:min-h-screen">
-          <div className="absolute  transform  md:top-auto -top-40 md:-bottom-40 flex px-4 md:px-10">
+          <div className="absolute  transform  md:top-80 -top-40 md:-bottom-40 flex px-4 md:px-10">
             <div>
               <h1
                 className="text-3xl salo md:text-[110px] text-[#0000FF]
@@ -55,7 +55,7 @@ const Home = () => {
           >
             {/* <img src={swrillpng} className="w-[80%]" alt="Swrill" /> */}
           </motion.div>
-          <div className=" w-full md:mt-0 mt-40 whitespace-nowrap md:mr-20">
+          <div className=" w-full md:-mt-12 mt-40 whitespace-nowrap md:mr-20">
             <h1 className="text-3xl salo md:text-[110px] text-[#0000FF] font-[400] text-right leading-tight md:leading-normal">
               WHAT WE DO
             </h1>
@@ -179,8 +179,8 @@ const SecondSection = () => {
   };
 
   return (
-    <div ref={sectionRef} className="overflow-hidden py-20">
-      <div className="bg-black py-20 flex flex-col gap-10">
+    <div ref={sectionRef} className="overflow-hidden py-40">
+      <div className="bg-black py-20 flex flex-col   gap-10">
         <div>
           <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center salo">
             Experience Lab

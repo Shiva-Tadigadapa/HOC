@@ -41,76 +41,134 @@ const Careers = () => {
             isFixed ? "fixed" : "absolute"
           } w-full z-[500] top-0 left-0 ${
             isSection2 ? "bg-white text-black" : "  text-[#000000]"
-          } transition-all duration-700`}
+          } transition-all py-2 duration-700`}
         >
           <div className="flex py-4 jost px-4 md:px-10 justify-between items-start">
-            <img
-              src={isSection2 ? logo2 : logo2}
-              className="w-[80px] md:w-[110px] transition-all duration-700"
-              alt="Logo"
-            />
+            <Link to={"/"}>
+              <img
+                src={isSection2 ? logo2 : logo2}
+                className="w-[80px] md:w-[110px] transition-all duration-700"
+                alt="Logo"
+              />
+            </Link>
             <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-              <Link to={"/Services"} className=" hover:text-white/50">
+              <Link to={"/Services"} className=" hover:text-black/50">
                 <h1>SERVICES</h1>
               </Link>
-              <Link to={"/Ethos"} className=" hover:text-white/50">
+              <Link to={"/Ethos"} className=" hover:text-black/50">
                 <h1>ETHOS</h1>
               </Link>
-              <Link to={"/Careers"} className=" hover:text-white/50">
+              <Link to={"/Careers"} className=" hover:text-black/50">
                 <h1>CAREERS</h1>
               </Link>
             </div>
-            <motion.div
-              className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
-                isToggled
-                  ? "bg-black text-white"
-                  : "bg-[#F0F0F0] text-[#0000FF]"
-              }`}
-              onClick={handleToggle}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-            >
-              <motion.h1
-                className={`mr-6 md:mr-9 text-center`}
-                animate={{
-                  x: isToggled ? "35px" : "0px",
-                  color: isToggled ? "#FFFFFF" : "#0000FF",
-                }}
-                transition={{ duration: 0.5 }}
+            <Link to={"/Contact"}>
+              <motion.div
+                className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
+                  isToggled
+                    ? "bg-black text-white"
+                    : "bg-[#F0F0F0] text-[#0000FF]"
+                }`}
+                onClick={handleToggle}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
               >
-                CONTACT
-              </motion.h1>
-              <motion.img
-                className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
-                src={worldsmall}
-                alt="World"
-                animate={{
-                  x: isToggled ? "-50%" : "150%",
-                  rotate: isToggled ? 360 : 0,
-                }}
-                transition={{ duration: 0.8 }}
-              />
-            </motion.div>
+                <motion.h1
+                  className={`mr-6 md:mr-9 text-center`}
+                  animate={{
+                    x: isToggled ? "35px" : "0px",
+                    color: isToggled ? "#FFFFFF" : "#0000FF",
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
+                  CONTACT
+                </motion.h1>
+                <motion.img
+                  className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
+                  src={worldsmall}
+                  alt="World"
+                  animate={{
+                    x: isToggled ? "-50%" : "150%",
+                    rotate: isToggled ? 360 : 0,
+                  }}
+                  transition={{ duration: 0.8 }}
+                />
+              </motion.div>
+            </Link>
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="    items-center  flex-col  -space-y-24 relative justify-center  h-screen   flex px-10">
-          <img
+        <div className="items-center flex-col -space-y-24 relative justify-center h-screen mt-20 flex px-10">
+          {/* Hand Image Animation */}
+          <motion.img
             src={hand}
-            className="w-[100px] md:w-[150px] absolute   z-[1]  left-1/4 ml-20 top-28"
-            alt="TV"
+            className="w-[100px] md:w-[150px] absolute z-[1] left-1/4 ml-20 top-28"
+            alt="Hand"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 120, damping: 10 }}
           />
-          <img
-            src={ufo}
-            className="w-[100px] md:w-[150px] absolute   z-[20]  right-1/4    top-1/2"
-            alt="TV"
-          />
-          <h1 className=" font-[1000] text-[260px]  alinsa text-[#0000FF]  z-[10]">
+
+          {/* UFO Image Animation */}
+          <motion.img
+  src={ufo}
+  className="w-[100px] md:w-[150px] absolute z-[20] top-1/2"
+  alt="UFO"
+  initial={{ x: 0, opacity: 0 }} // Start slightly off-screen right
+  animate={{ x: 300, opacity: 1 }} // Spring animation into position
+  transition={{ type: "spring", stiffness: 120, damping: 10 }}
+  onAnimationComplete={() => {
+    // After initial animation, start continuous movement
+    document.getElementById("ufo").animate(
+      [
+        { transform: "translateX(300px)" },
+        { transform: "translateX(500px)" },
+        { transform: "translateX(400px)" },
+        { transform: "translateX(300px)" }
+      ],
+      {
+        duration: 6000, // Total loop duration
+        iterations: Infinity, // Loop forever
+        easing: "linear"
+      }
+    );
+  }}
+  id="ufo"
+/>
+
+          {/* <motion.img
+  src={ufo}
+  className="w-[100px] md:w-[150px] absolute z-[20] top-1/2"
+  alt="UFO"
+  initial={{ x: -200, opacity: 0 }} // Start from the left
+  animate={{ x: [0, 300, -300, 0] }} // Moves right, then left, then back
+  transition={{ 
+    duration: 6, // Adjust speed as needed
+    repeat: Infinity, // Infinite loop
+    ease: "linear"
+  }}
+/> */}
+
+
+          {/* CAREERS Title Animation */}
+          <motion.h1
+            className="font-[1000] text-[260px] alinsa text-[#0000FF] z-[10]"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             CAREERS
-          </h1>
-          <p className=" jost  font-[500]  lowercase  text-[60px] z-[10]">
+          </motion.h1>
+
+          {/* Tagline Animation */}
+          <motion.p
+            className="jost font-[500] lowercase text-[60px] z-[10]"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             WANNA JOIN THE CHAOS ?
-          </p>
+          </motion.p>
         </div>
         <JobListings />
         <Footer />

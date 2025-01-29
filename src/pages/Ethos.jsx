@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence,useInView } from "framer-motion";
 import tvpng from "../assets/tv.png";
 import worldsmall from "../assets/worldsmall.png";
 import logo from "../assets/logo.png";
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import logo1 from "../assets/logo.png";
 import befooter from "../assets/befooter.png";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 
 const Ethos = () => {
   const [isSection2, setIsSection2] = useState(false);
@@ -41,25 +41,28 @@ const Ethos = () => {
             isFixed ? "fixed" : "absolute"
           } w-full z-[500] top-0 left-0 ${
             isSection2 ? "bg-white text-black" : "  text-[#000000]"
-          } transition-all duration-700`}
+          } transition-all  py-2 duration-700`}
         >
           <div className="flex py-4 jost px-4 md:px-10 justify-between items-start">
-            <img
-              src={isSection2 ? logo2 : logo2}
-              className="w-[80px] md:w-[110px] transition-all duration-700"
-              alt="Logo"
-            />
+            <Link to={"/"}>
+              <img
+                src={isSection2 ? logo2 : logo2}
+                className="w-[80px] md:w-[110px] transition-all duration-700"
+                alt="Logo"
+              />
+            </Link>
             <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-              <Link to={"/Services"} className=" hover:text-white/50">
+              <Link to={"/Services"} className=" hover:text-black/50">
                 <h1>SERVICES</h1>
               </Link>
-              <Link to={"/Ethos"} className=" hover:text-white/50">
+              <Link to={"/Ethos"} className=" hover:text-black/50">
                 <h1>ETHOS</h1>
               </Link>
-              <Link to={"/Careers"} className=" hover:text-white/50">
+              <Link to={"/Careers"} className=" hover:text-black/50">
                 <h1>CAREERS</h1>
               </Link>
             </div>
+            <Link to={"/Contact"}>
             <motion.div
               className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
                 isToggled
@@ -91,25 +94,30 @@ const Ethos = () => {
                 transition={{ duration: 0.8 }}
               />
             </motion.div>
+            </Link>
           </div>
         </div>
         {/* Absolutely Centered Text */}
         <div className="    items-end   h-full mt-20  bottom-0 flex px-10">
           <div className="  capitalize  w-[100%]">
             <h2 className="jost text-[26px] text-left leading-[40px]">
-              <span className=" text-[45px] salo text-[#0000FF]">
+              <span className=" text-[45px] salo  text-[#0000FF]">
                 {" "}
                 Haus Of Chaos{" "}
               </span>{" "}
-              is a process-oriented design firm that prioritizes innovative
-              forms of communication. Embracing the concept of
+              <span  className="   whitespace-nowrap">
+              is a process-oriented design firm that prioritizes <br /> innovative
+              forms of communication. Embracing the concept of <br />
               <span className=" text-[45px] salo text-[#0000FF]">
                 {" "}
                 Organized Chaos
               </span>
+              <span className=" whitespace-nowrap">
               —akin to chaos theory—our philosophy centers <br /> on challenging
               conventional{" "}
-              <span className=" text-[45px] salo text-[#0000FF]">
+              </span>
+              </span>
+              <span className="  text-[45px] salo text-[#0000FF]">
                 {" "}
                 Design{" "}
               </span>{" "}
@@ -139,59 +147,96 @@ const Ethos = () => {
   );
 };
 
-export default Ethos;
-
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import founder from "../assets/founder.png";
+export default Ethos; 
 import gridethos from "../assets/gridethos.png";
-import tictac from "../assets/tictac.svg";
 import playground from "../assets/playground.png";
+import tictacX from "../assets/tictacX.png";
+import tictacO from "../assets/tictacO.png";
 
 const Play = () => {
+  const [clicks, setClicks] = useState([]);
+  const [isXTurn, setIsXTurn] = useState(true); // Explicitly track turns
+  const isClicking = useRef(false); // Prevents fast consecutive clicks
+
+  const handleClick = (e) => {
+    if (isClicking.current) return; // Prevent rapid clicks
+    isClicking.current = true;
+
+    setTimeout(() => {
+      isClicking.current = false; // Re-enable clicks after a short delay
+    }, 300);
+
+    // Get container position relative to viewport
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const id = Date.now();
+    const newClick = {
+      id,
+      x,
+      y,
+      type: isXTurn ? "X" : "O", // Strict alternation
+    };
+
+    setClicks((prev) => [...prev, newClick]);
+    setIsXTurn((prev) => !prev); // Toggle turn
+
+    setTimeout(() => {
+      setClicks((prev) => prev.filter((click) => click.id !== id));
+    }, 2000);
+  };
+
   return (
-    <>
-      <div className="min-h-screen bg-black text-white  relative">
-        {/* Grid overlay background */}
-        <div
-          className="absolute  inset-0 opacity-100"
-          style={{
-            backgroundImage: `url(${gridethos})`,
-            backgroundSize: "cover",
-            // objectFit: "cover",
-          }}
-        />
+    <div
+      className="min-h-screen bg-black text-white relative overflow-hidden"
+      onClick={handleClick}
+    >
+      {/* Grid Overlay */}
+      <div
+        className="absolute inset-0 opacity-100"
+        style={{
+          backgroundImage: `url(${gridethos})`,
+          backgroundSize: "cover",
+        }}
+      />
 
-        {/* Main content container */}
-        <div className="relative    flex flex-col justify-between">
-          <div>
-            <div className="flex justify-between items-center  px-20 py-10">
-              <div className="max-w-xl">
-                <img
-                  src={tictac}
-                  className="w-full object-cover mb-8"
-                  alt="Haus Of Chaos"
-                />
-              </div>
+      {/* Main Content */}
+      <div className="relative flex flex-col justify-between">
+        <div className="flex justify-between items-center px-20 py-10">
+          <div className="max-w-xl"></div>
 
-              <div className="max-w-xl flex flex-col items-end">
-                <h1 className=" font-[1000] -ml-40 text-[100px] whitespace-nowrap alinsa">
-                  PLAY GROUND
-                </h1>
-                <img
-                  src={playground}
-                  className="  w-[90%]"
-                  alt="Haus Of Chaos"
-                />
-              </div>
-            </div>
+          <div className="max-w-xl flex flex-col items-end">
+            <h1 className="font-[1000] -ml-40 text-[100px] whitespace-nowrap">
+              PLAY GROUND
+            </h1>
+            <p className="text-3xl mb-2 font-bold text-white/60">
+              Click on the boxes to explore X's and O's
+            </p>
+            <img src={playground} className="w-[90%]" alt="Playground" />
           </div>
         </div>
       </div>
-    </>
+
+      {/* Clicked Symbols */}
+      {clicks.map(({ id, x, y, type }) => (
+        <motion.img
+          key={id}
+          src={type === "X" ? tictacX : tictacO}
+          alt={type}
+          className="absolute w-20 h-20"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+          transition={{ duration: 0.3 }}
+          style={{ top: y - 40, left: x - 40 }} // Centered positioning
+        />
+      ))}
+    </div>
   );
 };
 
+import founder from "../assets/RIA3.jpg";
 const FounderSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Trigger animation once when in view
@@ -265,7 +310,7 @@ const FounderSection = () => {
                 <img
                   src={founder}
                   alt="Founder"
-                  className="w-full absolute block max-w-xl ml-auto rounded-lg"
+                  className="w-full  border-[1rem] absolute block max-w-xl ml-auto rounded-lg"
                 />
               </div>
             </motion.div>

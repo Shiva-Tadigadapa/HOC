@@ -77,6 +77,8 @@ const Landing = () => {
               <h1>CAREERS</h1>
             </Link>
           </div>
+                      <Link to={"/Contact"} >
+                      
           <motion.div
             className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
               isToggled ? "bg-black text-white" : "bg-[#F0F0F0] text-[#0000FF]"
@@ -106,6 +108,8 @@ const Landing = () => {
               transition={{ duration: 0.8 }}
             />
           </motion.div>
+          </Link>
+
         </div>
       </div>
 
