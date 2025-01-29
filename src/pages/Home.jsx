@@ -318,7 +318,7 @@ const ThirdSection = () => {
   );
 };
 
-import befooter from "../assets/befooter.png";
+import befooter from "../assets/FounderBanner.jpg";
 
 const Footer = () => {
   return (
