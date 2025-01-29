@@ -136,14 +136,14 @@ const JobListings = () => {
   return (
     <div className="px-10 py-10">
       <div className="min-h-screen  flex  items-start justify-start  p-8">
-        <div className="  gap-2  flex flex-col   items-start justify-start">
+        <div className=" scale-90  gap-6  flex flex-col   items-start justify-start">
           <h1 className=" whitespace-nowrap  font-[600]  text-[50px]  jost  leading-[56px] text-left">
             Email &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span className=" -ml-[4px]">:</span>&nbsp;&nbsp;&nbsp;
             <a className="text-[#0000FF]" href="mailto:explore@hausofchaos.co">
               explore@hausofchaos.co
             </a>
           </h1>
-          <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
+          {/* <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
             Instagram &nbsp;: &nbsp;&nbsp;
             <a
               className="text-[#0000FF]"
@@ -160,7 +160,7 @@ const JobListings = () => {
             >
               Haus Of Chaos
             </a>
-          </h1>
+          </h1> */}
           <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
             Address&nbsp;&nbsp;&nbsp;&nbsp; <span className=" -ml-[10px]">:</span>
             <a
@@ -186,7 +186,7 @@ const JobListings = () => {
             JOIN CHAOS
           </button>
         </div>
-        <img src={heartkey} className=" w-1/2  -mt-40" alt="" />
+        {/* <img src={heartkey} className=" w-1/2  -mt-40" alt="" /> */}
       </div>
     </div>
   );
