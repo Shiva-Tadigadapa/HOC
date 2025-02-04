@@ -55,12 +55,16 @@ const Ethos = () => {
               <Link to={"/Services"} className=" hover:text-black/50">
                 <h1>SERVICES</h1>
               </Link>
+              <Link to={"/Experience"} className=" hover:text-black/50">
+                <h1>EXPERIENCE LAB</h1>
+              </Link>
               <Link to={"/Ethos"} className=" hover:text-black/50">
                 <h1>ETHOS</h1>
               </Link>
               <Link to={"/Careers"} className=" hover:text-black/50">
                 <h1>CAREERS</h1>
               </Link>
+
             </div>
             <Link to={"/Contact"}>
             <motion.div

@@ -55,6 +55,9 @@ const Contact = () => {
               <Link to={"/Services"} className=" hover:text-black/50">
                 <h1>SERVICES</h1>
               </Link>
+              <Link to={"/Experience"} className=" hover:text-black/50">
+                <h1>EXPERIENCE LAB</h1>
+              </Link>
               <Link to={"/Ethos"} className=" hover:text-black/50">
                 <h1>ETHOS</h1>
               </Link>
@@ -99,26 +102,31 @@ const Contact = () => {
         </div>
         {/* Absolutely Centered Text */}
         <div className="items-center flex-col -space-y-24 relative justify-center h-screen flex px-10">
-  {/* CONTACT Heading with Spring Animation */}
-  <motion.h1
-    className="font-[1000] text-[260px] alinsa text-[#060ebb] z-[10]"
-    initial={{ scale: 0.8, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ type: "spring", stiffness: 120, damping: 10 }}
-  >
-    CONTACT
-  </motion.h1>
+          {/* CONTACT Heading with Spring Animation */}
+          <motion.h1
+            className="font-[1000] text-[260px] alinsa text-[#060ebb] z-[10]"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 120, damping: 10 }}
+          >
+            CONTACT
+          </motion.h1>
 
-  {/* Tagline with Spring Animation */}
-  <motion.p
-    className="jost font-[500] lowercase text-[60px] z-[10]"
-    initial={{ y: 30, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ type: "spring", stiffness: 100, damping: 12, delay: 0.2 }}
-  >
-    WANNA JOIN THE CHAOS ?
-  </motion.p>
-</div>
+          {/* Tagline with Spring Animation */}
+          <motion.p
+            className="jost font-[500] lowercase text-[60px] z-[10]"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 12,
+              delay: 0.2,
+            }}
+          >
+            WANNA JOIN THE CHAOS ?
+          </motion.p>
+        </div>
         <JobListings />
         <Footer />
       </div>
@@ -138,7 +146,8 @@ const JobListings = () => {
       <div className="min-h-screen  flex  items-start justify-start  p-8">
         <div className=" scale-90  gap-6  flex flex-col   items-start justify-start">
           <h1 className=" whitespace-nowrap  font-[600]  text-[50px]  jost  leading-[56px] text-left">
-            Email &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span className=" -ml-[4px]">:</span>&nbsp;&nbsp;&nbsp;
+            Email &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <span className=" -ml-[4px]">:</span>&nbsp;&nbsp;&nbsp;
             <a className="text-[#060ebb]" href="mailto:explore@hausofchaos.co">
               explore@hausofchaos.co
             </a>
@@ -162,24 +171,25 @@ const JobListings = () => {
             </a>
           </h1> */}
           <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
-            Address&nbsp;&nbsp;&nbsp;&nbsp; <span className=" -ml-[10px]">:</span>
-            <a
-              className="text-[#060ebb] ml-12"
-              href="#"
-            >
-
+            Address&nbsp;&nbsp;&nbsp;&nbsp;{" "}
+            <span className=" -ml-[10px]">:</span>
+            <a className="text-[#060ebb] ml-12" href="#">
               4th Floor <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No 9, Seshadri Road,
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              No 9, Seshadri Road,
               <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Teynampet,
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Teynampet,
               <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Chennai - 86
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Chennai - 86
             </a>
           </h1>
           <h1 className=" whitespace-nowrap  font-[600]  text-[50px]  jost  leading-[56px] text-left">
-            Phone &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span className=" -ml-[20px]">:</span>&nbsp;&nbsp;&nbsp;
+            Phone &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <span className=" -ml-[20px]">:</span>&nbsp;&nbsp;&nbsp;
             <a className="text-[#060ebb]" href=" tel:+91 9600931366">
-            +91 9600931366
+              +91 9600931366
             </a>
           </h1>
           <button className=" text-[#2354CF]  border-[2px] border-[#000000]  rounded-full px-8 font-[700] py-2 mt-4">

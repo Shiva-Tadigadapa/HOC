@@ -55,6 +55,9 @@ const Careers = () => {
               <Link to={"/Services"} className=" hover:text-black/50">
                 <h1>SERVICES</h1>
               </Link>
+              <Link to={"/Experience"} className=" hover:text-black/50">
+                <h1>EXPERIENCE LAB</h1>
+              </Link>
               <Link to={"/Ethos"} className=" hover:text-black/50">
                 <h1>ETHOS</h1>
               </Link>
@@ -111,30 +114,32 @@ const Careers = () => {
 
           {/* UFO Image Animation */}
           <motion.img
-  src={ufo}
-  className="w-[100px] md:w-[150px] absolute z-[20] top-1/2"
-  alt="UFO"
-  initial={{ x: 0, opacity: 0 }} // Start slightly off-screen right
-  animate={{ x: 300, opacity: 1 }} // Spring animation into position
-  transition={{ type: "spring", stiffness: 120, damping: 10 }}
-  onAnimationComplete={() => {
-    // After initial animation, start continuous movement
-    document.getElementById("ufo").animate(
-      [
-        { transform: "translateX(300px)" },
-        { transform: "translateX(500px)" },
-        { transform: "translateX(400px)" },
-        { transform: "translateX(300px)" }
-      ],
-      {
-        duration: 6000, // Total loop duration
-        iterations: Infinity, // Loop forever
-        easing: "linear"
-      }
-    );
-  }}
-  id="ufo"
-/>
+            src={ufo}
+            className="w-[100px] md:w-[150px] absolute z-[20] top-1/2"
+            alt="UFO"
+            initial={{ x: 0, opacity: 0 }} // Start slightly off-screen right
+            animate={{ x: 300, opacity: 1 }} // Spring animation into position
+            transition={{ type: "spring", stiffness: 120, damping: 10 }}
+            onAnimationComplete={() => {
+              // After initial animation, start continuous movement
+              document
+                .getElementById("ufo")
+                .animate(
+                  [
+                    { transform: "translateX(300px)" },
+                    { transform: "translateX(500px)" },
+                    { transform: "translateX(400px)" },
+                    { transform: "translateX(300px)" },
+                  ],
+                  {
+                    duration: 6000, // Total loop duration
+                    iterations: Infinity, // Loop forever
+                    easing: "linear",
+                  }
+                );
+            }}
+            id="ufo"
+          />
 
           {/* <motion.img
   src={ufo}
@@ -148,7 +153,6 @@ const Careers = () => {
     ease: "linear"
   }}
 /> */}
-
 
           {/* CAREERS Title Animation */}
           <motion.h1

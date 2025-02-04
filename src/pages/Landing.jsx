@@ -69,6 +69,9 @@ const Landing = () => {
             <Link to={"./Services"} className="hover:text-white/50">
               <h1>SERVICES</h1>
             </Link>
+            <Link to={"./Experience"} className="hover:text-white/50 uppercase">
+              <h1>experience lab</h1>
+            </Link>
             <Link to={"./Ethos"} className="hover:text-white/50">
               <h1>ETHOS</h1>
             </Link>

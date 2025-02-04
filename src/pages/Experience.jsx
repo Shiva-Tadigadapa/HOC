@@ -8,10 +8,14 @@ import logo2 from "../assets/logo2.png";
 import befooter from "../assets/befooter.png";
 import hand from "../assets/hand.png";
 import ufo from "../assets/ufo.png";
-
+import two from "../assets/two.png";
+import three from "../assets/three.png";
+import linelab from "../assets/linelab.png";
 import { motion } from "framer-motion";
 import { div } from "framer-motion/client";
-const Contact = () => {
+
+import noswitch from "../assets/noswitch.svg";
+const Experience = () => {
   const [isSection2, setIsSection2] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
 
@@ -37,10 +41,9 @@ const Contact = () => {
       <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
         {/* Navbar */}
         <div
-          className={`${
-            // isFixed  w-full z-[500] top-0 left-0 ${
-            isSection2 ? "bg-white text-black" : "  text-[#000000]"
-          } transition-all  py-2 duration-700`}
+          className={`  absolute w-full z-[500] -top-14 left-0 ${
+            isSection2 ? " bg-white/20 backdrop-blur-xl text-black" : "  text-[#000000]"
+          } transition-all py-2 duration-700`}
         >
           <div className="flex py-4 jost px-4 md:px-10 justify-between items-start">
             <Link to={"/"}>
@@ -100,246 +103,217 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="   bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  h-[214vh] mt-20 rounded-3xl   flex px-10">
-          <MainServices />
+        <div className="items-center flex-col   mt-14 relative justify-center !h-screen  flex ">
+          <SecondSection />
         </div>
+        {/* <div className="items-center flex-col   -mt-20 relative justify-center !h-screen  flex "> */}
+          <Play />
+        {/* </div> */}
         <Footer />
       </div>
     </>
   );
 };
 
-export default Contact;
+export default Experience;
 
-import blackgrid from "../assets/blackgrid.png";
-import wiresm from "../assets/wiresm.png";
-import plugservicesleft from "../assets/plugservicesleft.png";
-import plugservicesright from "../assets/plugservicesright.png";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useInView } from "framer-motion";
 import { useRef } from "react";
-gsap.registerPlugin(ScrollTrigger);
-const MainServices = () => {
-  const plugRightRef = useRef(null);
 
-  const lineRef = useRef(null);
-  const stopsRef = useRef([]);
-  const textRefs = useRef([]);
+const SecondSection = () => {
+  const sectionRef = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+  const [sectionBounds, setSectionBounds] = useState({ top: 0, bottom: 0 });
+
   useEffect(() => {
-    // Right plug animation
-    gsap.fromTo(
-      plugRightRef.current,
-      {
-        x: 100, // Start off-screen to the right
-        // rotation: -15,
-        ease: "power4.out",
-      },
-      {
-        x: 0,
-        // rotation: 0,
-        scrollTrigger: {
-          trigger: ".alinsa", // Use the title container as trigger
-          start: "top center",
-          end: "bottom center",
-          scrub: 1,
-        },
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Update section bounds on resize or initial load
+  useEffect(() => {
+    const updateBounds = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const scrollTop = window.scrollY;
+        setSectionBounds({
+          top: rect.top + scrollTop,
+          bottom: rect.bottom + scrollTop,
+        });
       }
-    );
+    };
+
+    updateBounds();
+    window.addEventListener("resize", updateBounds);
+
+    return () => window.removeEventListener("resize", updateBounds);
   }, []);
-  useEffect(() => {
-    const GreenLine = lineRef.current;
-    const stops = stopsRef.current;
-    const texts = textRefs.current;
 
-    const length = GreenLine.getTotalLength();
+  // Limit movement based on scroll position
+  const moveImageOne = (scrollY) => {
+    if (scrollY < sectionBounds.top) return 0; // Before section starts
+    if (scrollY > sectionBounds.bottom)
+      return (sectionBounds.bottom - sectionBounds.top) * 0.07; // After section ends
+    return (scrollY - sectionBounds.top) * 0.14; // Inside section
+  };
 
-    gsap.set(GreenLine, {
-      strokeWidth: 4,
-      strokeDasharray: length,
-      strokeDashoffset: length, // Start with the full length hidden
-    });
-
-    gsap.set(stops, { autoAlpha: 1, scale: 0, transformOrigin: "center" });
-    gsap.set(texts, { color: "#676767" }); // Set initial text color to gray
-
-    gsap.to(GreenLine, {
-      strokeDashoffset: 0, // Animate to reveal the full path
-      ease: "none",
-      scrollTrigger: {
-        trigger: GreenLine,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    stops.forEach((stop, index) => {
-      gsap.to(stop, {
-        scale: 1,
-        duration: 0.5,
-        ease: "elastic.out(1, 0.5)",
-        scrollTrigger: {
-          trigger: stop,
-          start: "top 80%",
-          end: "top 50%",
-          scrub: true,
-          onEnter: () => {
-            gsap.to(`.label-text-${index} h1`, {
-              color: "#ff5733", // Color for h1
-              duration: 0.5,
-            });
-            gsap.to(`.label-text-${index} p`, {
-              color: "#33c1ff", // Different color for p
-              duration: 0.5,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(`.label-text-${index} h1`, {
-              color: "#676767", // Reset color for h1
-              duration: 0.5,
-            });
-            gsap.to(`.label-text-${index} p`, {
-              color: "#999999", // Reset color for p
-              duration: 0.5,
-            });
-          },
-        },
-      });
-    });
-  }, []);
+  const moveImageTwo = (scrollY) => {
+    if (scrollY < sectionBounds.top) return 0; // Before section starts
+    if (scrollY > sectionBounds.bottom)
+      return (sectionBounds.bottom - sectionBounds.top) * -0.07; // After section ends
+    return (scrollY - sectionBounds.top) * -0.14; // Inside section
+  };
 
   return (
-    <>
-      <div className="flex items-start overflow-x-visible  w-full justify-start h-full px-16 py-32">
-        {/* Background Grid */}
-        <div
-          className="absolute z-[-1]  inset-0 opacity-100"
-          style={{
-            backgroundImage: `url(${grid})`,
-            backgroundSize: "cover",
-            opacity: "0.1",
-          }}
-        />
-
-        {/* Title */}
-        <div className="flex flex-col -space-y-16 uppercase z-[100] text-[108px] font-[1000] text-[#060ebb] alinsa">
-          <div className="flex relative">
-            <h1 className="z-[100]">Our</h1>
-            <img
-              src={wiresm}
-              className="-ml-2 mt-9 w-[80px] h-[80px] object-cover"
-              alt=""
-            />
-            <img
-              src={plugservicesleft}
-              className="absolute w-1/3 right-16 -top-10 z-[100]"
-              alt=""
-            />
-            <img
-              ref={plugRightRef}
-              src={plugservicesright}
-              className="absolute w-1/2 scale-90 -right-[116px] mr-2.5 -mt-0.5 -top-12 z-[90]"
-              alt=""
-              style={{ transformOrigin: "right center" }}
-            />
-          </div>
-          <h1>Services</h1>
+    <div ref={sectionRef} className="overflow-hidden z-[300] ">
+      <div className="bg-black py-20 flex flex-col   gap-10">
+        <div>
+          <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center salo">
+            Experience Lab
+          </h1>
+          <h2 className="text-white md:text-[30px] text-xl text-center jost">
+            Spaces speak and spaces narrate
+          </h2>
         </div>
-
-        <svg
-          className="line absolute left-1/2 ml-20  overflow-visible   mt-8 transform -translate-x-1/2"
-          viewBox="0 0 600 4000"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Inactive Path (Gray) */}
-          <path
-            d="M0.200195 2.24512H268.2C287.056 2.24512 296.484 2.24512 302.342 8.10298C308.2 13.9608 308.2 23.3889 308.2 42.2451V1525.75"
-            stroke="#676767"
-            strokeWidth="4"
+        <div className="relative hidden md:flex justify-center items-center gap-10 h-[300px]">
+          {/* LineLab Image */}
+          <img
+            src={linelab}
+            className="w-[40%] left-[4rem] top-1/2 -mt-[1.2px] absolute"
+            alt="Lab"
           />
 
-          {/* Active Path (Blue) */}
-          <path
-            ref={lineRef}
-            d="M0.200195 2.24512H268.2C287.056 2.24512 296.484 2.24512 302.342 8.10298C308.2 13.9608 308.2 23.3889 308.2 42.2451V1525.75"
-            stroke="#060ebb"
-            strokeWidth="4"
+          {/* Three Image */}
+          <motion.img
+            src={three}
+            className="w-[40%] z-[10] absolute left-[21%]"
+            alt="Lab"
+            style={{
+              transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
+            }}
+            transition={{ duration: 0.4 }}
           />
-          {/* Stops and Texts */}
-          {[
-            {
-              cx: 300,
-              cy: 200,
-              label: "CGI + Motions Graphics",
-              dis: "We don't pull numbers out of thin air. We size up your project, giving you a clear cost and timeline.",
-            },
-            {
-              cx: 300,
-              cy: 600,
-              label: "Experiential Mapping",
-              dis: "Industry jargon? Not here. We get to the core of your industry and highlight what sets you apart.",
-            },
-            {
-              cx: 300,
-              cy: 1000,
-              label: "Physical Computing",
-              dis: "Clear numbers and deadlines. We value your time and wallet. Team and Resources: Handpicked talent, no seatfillers. We set a game plan that everyone can rally behind.",
-            },
-            {
-              cx: 300,
-              cy: 1400,
-              label: "Hybrid Communication Solutions",
-              dis: "Estimate costs and timeline with laser-like accuracy(within 15% by project's end)",
-            },
-          ].map((stop, i) => (
-            <g key={i} className=" !overflow-visible">
-              {/* Circle (Stop Point) */}
 
-              <circle
-                ref={(el) => (stopsRef.current[i] = el)}
-                cx={stop.cx + 8} // Move circle 10px to the right
-                cy={stop.cy - 75}
-                r="6"
-                fill="blue"
-                data-svg-origin="308 90"
-              ></circle>
-              {/* Label inside foreignObject */}
+          <img src={noswitch} className="w-full" alt="Lab" />
 
-              <foreignObject
-                x={stop.cx - 400}
-                y={stop.cy - 100}
-                width="400"
-                height="200"
-                className="foreign-label !z-[700] !overflow-visible"
-              >
-                <Label
-                  number={i + 1}
-                  className="text-white"
-                  title={stop.label}
-                  description={stop.dis}
-                  textRef={(el) => (textRefs.current[i] = el)}
-                />
-              </foreignObject>
-            </g>
-          ))}
-        </svg>
+          {/* Two Image */}
+          <motion.img
+            src={two}
+            className="w-[50%] z-[2] absolute right-[20%] !-mr-10"
+            alt="Lab"
+            style={{
+              transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
+            }}
+            transition={{ duration: 0.4 }}
+          />
+
+          <img
+            src={linelab}
+            className="w-[40%] z-[1] right-[1rem] top-1/2 -mt-[5.5px] absolute"
+            alt="Lab"
+          />
+        </div>
+        <h1 className="md:px-20 px-4 md:text-2xl text-white text-center jost">
+          Born from our ethos, the Chaos Lab serves as a testing ground for the
+          diverse narrative environments we experiment with and explore. Based
+          in India, with plans for growth, we embrace a ‘test-and-learn’
+          mindset. Our aim is to decode and disrupt conventional norms and
+          beliefs in experimental communication and experience design.
+        </h1>
       </div>
-    </>
+    </div>
   );
 };
-const Label = ({ number, title, description, textRef }) => {
+import gridethos from "../assets/gridethos.png";
+import playground from "../assets/playground.png";
+import tictacX from "../assets/tictacX.png";
+import tictacO from "../assets/tictacO.png";
+
+const Play = () => {
+  const [clicks, setClicks] = useState([]);
+  const [isXTurn, setIsXTurn] = useState(true); // Explicitly track turns
+  const isClicking = useRef(false); // Prevents fast consecutive clicks
+
+  const handleClick = (e) => {
+    if (isClicking.current) return; // Prevent rapid clicks
+    isClicking.current = true;
+
+    setTimeout(() => {
+      isClicking.current = false; // Re-enable clicks after a short delay
+    }, 300);
+
+    // Get container position relative to viewport
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const id = Date.now();
+    const newClick = {
+      id,
+      x,
+      y,
+      type: isXTurn ? "X" : "O", // Strict alternation
+    };
+
+    setClicks((prev) => [...prev, newClick]);
+    setIsXTurn((prev) => !prev); // Toggle turn
+
+    setTimeout(() => {
+      setClicks((prev) => prev.filter((click) => click.id !== id));
+    }, 2000);
+  };
+
   return (
     <div
-      class="flex  gap-4 items-start text-left  jost  ml-[28rem]   w-[40vw]  text-[#242424] px-4"
-      ref={textRef}
+      className="min-h-screen -mt-2 bg-black text-white relative overflow-hidden"
+      onClick={handleClick}
     >
-      <div class="font-[500] number-text text-3xl mb-2">0{number}</div>
+      {/* Grid Overlay */}
+      <div
+        className="absolute inset-0 opacity-100"
+        style={{
+          backgroundImage: `url(${gridethos})`,
+          backgroundSize: "cover",
+        }}
+      />
 
-      <div>
-        <h1 class="text-3xl uppercase font-[500] mb-2">{title}</h1>
-        <p class="text-lg w-[80%] font-[500] ">{description}</p>
+      {/* Main Content */}
+      <div className="relative flex flex-col justify-between">
+        <div className="flex justify-between items-center px-20 py-10">
+          <div className="max-w-xl"></div>
+
+          <div className="max-w-xl flex flex-col items-end">
+            <h1 className="font-[1000] -ml-40 text-[100px] whitespace-nowrap">
+              PLAY GROUND
+            </h1>
+            <p className="text-3xl mb-2 font-bold text-white/60">
+              Click on the boxes to explore X's and O's
+            </p>
+            <img src={playground} className="w-[90%]" alt="Playground" />
+          </div>
+        </div>
       </div>
+
+      {/* Clicked Symbols */}
+      {clicks.map(({ id, x, y, type }) => (
+        <motion.img
+          key={id}
+          src={type === "X" ? tictacX : tictacO}
+          alt={type}
+          className="absolute w-20 h-20"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+          transition={{ duration: 0.3 }}
+          style={{ top: y - 40, left: x - 40 }} // Centered positioning
+        />
+      ))}
     </div>
   );
 };

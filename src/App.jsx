@@ -8,6 +8,7 @@ import Ethos from "./pages/Ethos";
 import Careers from "./pages/Careers";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import Experience from "./pages/Experience";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Careers" element={<Careers />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Experience" element={<Experience />} />
       </Routes>
     </Router>
   );
