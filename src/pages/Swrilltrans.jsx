@@ -73,7 +73,7 @@ const Swrillmaker = ({ scrollYProgress, targetRef }) => {
 
   return (
     <motion.div
-      className="w-[250%] md:block hidden overflow-visible !z-[100]"
+      className="w-[250%]  md:block hidden overflow-visible !z-[100]"
       style={{ x, y, width, height, borderRadius }}
       ref={contentRef}
     >

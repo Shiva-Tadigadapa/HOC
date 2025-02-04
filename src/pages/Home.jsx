@@ -22,8 +22,8 @@ const Home = () => {
   return (
     <>
       <div ref={ref} className="md:h-[200vh] h-full relative">
-        <div className="bg-white jost relative md:min-h-screen">
-          <div className="absolute  transform  md:top-80 -top-40 md:-bottom-40 flex px-4 md:px-10">
+        <div className="bg-white jost -mt-[22rem] relative md:min-h-screen">
+          <div className="absolute  transform  md:top-[35rem] -top-40 md:-bottom-40 flex px-4 md:px-10">
             <div>
               <h1
                 className="text-3xl salo md:text-[110px] text-[#060ebb]

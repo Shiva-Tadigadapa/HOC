@@ -52,7 +52,7 @@ const Landing = () => {
       <div
         className={`${
           isFixed ? "fixed" : "absolute"
-        } w-full z-50 top-0 left-0 ${
+        } w-full !z-[800] top-0 left-0 ${
           isSection2 ? "bg-white text-black" : "bg-[#060ebb] text-[#F4ECE0]"
         } transition-all duration-700`}
       >
@@ -119,7 +119,7 @@ const Landing = () => {
       <div
         className={`${
           isSection2 ? "bg-white text-[#060ebb]" : "bg-[#060ebb] text-[#F4ECE0]"
-        } relative transition-all duration-700`}
+        } relative transition-all !z-[700]  duration-700`}
         style={{ minHeight: "100vh" }}
       >
         {/* Centered Text */}
