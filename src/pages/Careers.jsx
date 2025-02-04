@@ -67,7 +67,7 @@ const Careers = () => {
                 className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
                   isToggled
                     ? "bg-black text-white"
-                    : "bg-[#F0F0F0] text-[#0000FF]"
+                    : "bg-[#F0F0F0] text-[#060ebb]"
                 }`}
                 onClick={handleToggle}
                 initial={{ opacity: 1 }}
@@ -77,7 +77,7 @@ const Careers = () => {
                   className={`mr-6 md:mr-9 text-center`}
                   animate={{
                     x: isToggled ? "35px" : "0px",
-                    color: isToggled ? "#FFFFFF" : "#0000FF",
+                    color: isToggled ? "#FFFFFF" : "#060ebb",
                   }}
                   transition={{ duration: 0.5 }}
                 >
@@ -152,7 +152,7 @@ const Careers = () => {
 
           {/* CAREERS Title Animation */}
           <motion.h1
-            className="font-[1000] text-[260px] alinsa text-[#0000FF] z-[10]"
+            className="font-[1000] text-[260px] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -215,7 +215,7 @@ const JobListings = () => {
               transition={{ delay: 0.3 }}
               className="text-[50px] leading-[50px] font-bold jost mb-6"
             >
-              <span className="text-[#0000FF]">E-mail us</span> if you are a
+              <span className="text-[#060ebb]">E-mail us</span> if you are a
               creative open to learning, nurturing, growing, and fostering the
               ethos of the company, "order in chaos".
             </motion.h1>
@@ -224,7 +224,7 @@ const JobListings = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#0000FF] px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-blue-600"
+                className="bg-white text-[#060ebb] px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-blue-600"
               >
                 E-MAIL NOW
               </motion.button>
@@ -252,7 +252,7 @@ const JobListings = () => {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.2 * index }}
                 whileHover={{ x: 10 }}
-                className="border-b border-gray-800 py-4 cursor-pointer transition-colors duration-300 hover:text-[#0000FF]"
+                className="border-b border-gray-800 py-4 cursor-pointer transition-colors duration-300 hover:text-[#060ebb]"
               >
                 <h2 className="text-xl font-medium">{position}</h2>
               </motion.div>
@@ -278,7 +278,7 @@ const Footer = () => {
 import grid from "../assets/lines.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-[70vh] bg-[#0000FF] text-white relative">
+    <div className="min-h-[70vh] bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
         className="absolute inset-0 opacity-100"

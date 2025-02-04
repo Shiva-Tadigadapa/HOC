@@ -66,7 +66,7 @@ const Contact = () => {
                 className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
                   isToggled
                     ? "bg-black text-white"
-                    : "bg-[#F0F0F0] text-[#0000FF]"
+                    : "bg-[#F0F0F0] text-[#060ebb]"
                 }`}
                 onClick={handleToggle}
                 initial={{ opacity: 1 }}
@@ -76,7 +76,7 @@ const Contact = () => {
                   className={`mr-6 md:mr-9 text-center`}
                   animate={{
                     x: isToggled ? "35px" : "0px",
-                    color: isToggled ? "#FFFFFF" : "#0000FF",
+                    color: isToggled ? "#FFFFFF" : "#060ebb",
                   }}
                   transition={{ duration: 0.5 }}
                 >
@@ -97,7 +97,7 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="   bg-black  z-[1] mx-auto  items-center  flex-col  -space-y-24 relative justify-center  h-[200vh] mt-20 rounded-3xl   flex px-10">
+        <div className="   bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  h-[214vh] mt-20 rounded-3xl   flex px-10">
           <MainServices />
         </div>
         <Footer />
@@ -117,31 +117,50 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const MainServices = () => {
+  const plugRightRef = useRef(null);
+
   const lineRef = useRef(null);
   const stopsRef = useRef([]);
   const textRefs = useRef([]);
-
+  useEffect(() => {
+    // Right plug animation
+    gsap.fromTo(
+      plugRightRef.current,
+      {
+        x: 100, // Start off-screen to the right
+        // rotation: -15,
+        ease: "power4.out",
+      },
+      {
+        x: 0,
+        // rotation: 0,
+        scrollTrigger: {
+          trigger: ".alinsa", // Use the title container as trigger
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+        },
+      }
+    );
+  }, []);
   useEffect(() => {
     const GreenLine = lineRef.current;
     const stops = stopsRef.current;
     const texts = textRefs.current;
 
-    // Get the total length of the path
     const length = GreenLine.getTotalLength();
 
-    // Set initial styles for the active line
     gsap.set(GreenLine, {
-      strokeWidth: 1,
+      strokeWidth: 4,
       strokeDasharray: length,
-      strokeDashoffset: length,
+      strokeDashoffset: length, // Start with the full length hidden
     });
 
     gsap.set(stops, { autoAlpha: 1, scale: 0, transformOrigin: "center" });
-    gsap.set(texts, { fill: "#676767" }); // Set initial text color to gray
+    gsap.set(texts, { color: "#676767" }); // Set initial text color to gray
 
-    // Animate the active line based on scroll
     gsap.to(GreenLine, {
-      strokeDashoffset: 0,
+      strokeDashoffset: 0, // Animate to reveal the full path
       ease: "none",
       scrollTrigger: {
         trigger: GreenLine,
@@ -161,8 +180,10 @@ const MainServices = () => {
           start: "top 80%",
           end: "top 50%",
           scrub: true,
-          onEnter: () => gsap.to(texts[index], { fill: "blue", duration: 0.5 }), // Change text color to blue on enter
-          onLeaveBack: () => gsap.to(texts[index], { fill: "#676767", duration: 0.5 }), // Change back to gray on leave
+          onEnter: () =>
+            gsap.to(texts[index], { color: "blue", duration: 0.5 }), // Change text color to blue
+          onLeaveBack: () =>
+            gsap.to(texts[index], { color: "#676767", duration: 0.5 }), // Change back to gray
         },
       });
     });
@@ -170,19 +191,19 @@ const MainServices = () => {
 
   return (
     <>
-      <div className="flex items-start w-full justify-start h-full px-16 py-32">
+      <div className="flex items-start overflow-x-visible  w-full justify-start h-full px-16 py-32">
         {/* Background Grid */}
         <div
-          className="absolute z-[-1] inset-0 opacity-100"
+          className="absolute z-[-1]  inset-0 opacity-100"
           style={{
             backgroundImage: `url(${grid})`,
             backgroundSize: "cover",
-            opacity: "0.2",
+            opacity: "0.1",
           }}
         />
 
         {/* Title */}
-        <div className="flex flex-col -space-y-16 uppercase z-[100] text-[108px] font-[1000] text-[#0000FF] alinsa">
+        <div className="flex flex-col -space-y-16 uppercase z-[100] text-[108px] font-[1000] text-[#060ebb] alinsa">
           <div className="flex relative">
             <h1 className="z-[100]">Our</h1>
             <img
@@ -196,20 +217,19 @@ const MainServices = () => {
               alt=""
             />
             <img
+              ref={plugRightRef}
               src={plugservicesright}
-              className="absolute w-1/2 scale-90 -right-32 mr-2.5 -mt-0.5 -top-12 z-[90]"
+              className="absolute w-1/2 scale-90 -right-[116px] mr-2.5 -mt-0.5 -top-12 z-[90]"
               alt=""
+              style={{ transformOrigin: "right center" }}
             />
           </div>
           <h1>Services</h1>
         </div>
 
-        {/* SVG Path Animation */}
         <svg
-          className="line absolute left-1/2 transform -translate-x-1/2"
-          width="310"
-          height="1526"
-          viewBox="0 0 310 1526"
+          className="line absolute left-1/2 ml-20    mt-8 transform -translate-x-1/2"
+          viewBox="0 0 600 4000"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -217,44 +237,71 @@ const MainServices = () => {
           <path
             d="M0.200195 2.24512H268.2C287.056 2.24512 296.484 2.24512 302.342 8.10298C308.2 13.9608 308.2 23.3889 308.2 42.2451V1525.75"
             stroke="#676767"
-            strokeWidth="3"
+            strokeWidth="4"
           />
 
           {/* Active Path (Blue) */}
           <path
             ref={lineRef}
             d="M0.200195 2.24512H268.2C287.056 2.24512 296.484 2.24512 302.342 8.10298C308.2 13.9608 308.2 23.3889 308.2 42.2451V1525.75"
-            stroke="#2354CF"
-            strokeWidth="3"
+            stroke="#060ebb"
+            strokeWidth="4"
           />
-
           {/* Stops and Texts */}
           {[
-            { cx: 300, cy: 100, label: "Point A" },
-            { cx: 300, cy: 500, label: "Point B" },
-            { cx: 300, cy: 900, label: "Point C" },
-            { cx: 300, cy: 1200, label: "Point D" },
-            { cx: 300, cy: 1500, label: "Point E" },
+            {
+              cx: 300,
+              cy: 200,
+              label: "CGI + Motions Graphics",
+              dis: "We don't pull numbers out of thin air. We size up your project, giving you a clear cost and timeline.",
+            },
+            {
+              cx: 300,
+              cy: 600,
+              label: "Experiential Mapping",
+              dis: "Industry jargon? Not here. We get to the core of your industry and highlight what sets you apart.",
+            },
+            {
+              cx: 300,
+              cy: 1000,
+              label: "Physical Computing",
+              dis: "Clear numbers and deadlines. We value your time and wallet. Team and Resources: Handpicked talent, no seatfillers. We set a game plan that everyone can rally behind.",
+            },
+            {
+              cx: 300,
+              cy: 1400,
+              label: "Hybrid Communication Solutions",
+              dis: "Estimate costs and timeline with laser-like accuracy(within 15% by project's end)",
+            },
           ].map((stop, i) => (
             <g key={i}>
+              {/* Circle (Stop Point) */}
+
               <circle
                 ref={(el) => (stopsRef.current[i] = el)}
-                cx={stop.cx}
-                cy={stop.cy}
-                r="10" // Adjust radius as needed for better visibility
+                cx={stop.cx + 8} // Move circle 10px to the right
+                cy={stop.cy - 75}
+                r="6"
                 fill="blue"
-              />
-              <text
-                ref={(el) => (textRefs.current[i] = el)}
-                x={stop.cx + 15} // Positioning text slightly right of the stop for visibility
-                y={stop.cy + 5}   // Centering vertically with a slight offset for better alignment
-                fontSize="16"
-                fill="#676767"   // Initial color gray
-                style={{ userSelect: 'none' }} // Prevent text selection
-                className=" absolute  text-white z-[100] "
+                data-svg-origin="308 90"
+              ></circle>
+              {/* Label inside foreignObject */}
+
+              <foreignObject
+                x={stop.cx - 200}
+                y={stop.cy - 100}
+                width="400"
+                height="200"
+                className="foreign-label overflow-visible"
               >
-                {stop.label}
-              </text>
+                <Label
+                  number={i + 1}
+                  className="text-white"
+                  title={stop.label}
+                  description={stop.dis}
+                  textRef={(el) => (textRefs.current[i] = el)}
+                />
+              </foreignObject>
             </g>
           ))}
         </svg>
@@ -262,6 +309,22 @@ const MainServices = () => {
     </>
   );
 };
+const Label = ({ number, title, description, textRef }) => {
+  return (
+    <div
+      class="flex  gap-4 items-start text-left  jost  ml-60  w-[40vw]  text-gray-500 px-4"
+      ref={textRef}
+    >
+      <div class="font-[500] text-3xl mb-2">{number}</div>
+
+      <div>
+        <h1 class="text-3xl uppercase font-[500] mb-2">{title}</h1>
+        <p class="text-lg w-[80%] font-[500] ">{description}</p>
+      </div>
+    </div>
+  );
+};
+
 const Footer = () => {
   return (
     <>
@@ -276,7 +339,7 @@ const Footer = () => {
 import grid from "../assets/lines.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-[70vh] bg-[#0000FF] text-white relative">
+    <div className="min-h-[70vh] bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
         className="absolute inset-0 opacity-100"

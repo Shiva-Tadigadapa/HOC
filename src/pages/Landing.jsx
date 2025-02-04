@@ -13,8 +13,7 @@ const Landing = () => {
   const [currentText, setCurrentText] = useState(0);
 
   const texts = [
-    "We Design to Disrupt",
-    "We are makers of disruption",
+    "We Design to Disrupt", 
     <div>
       We build narrative <br />
       environments for brands
@@ -54,7 +53,7 @@ const Landing = () => {
         className={`${
           isFixed ? "fixed" : "absolute"
         } w-full z-50 top-0 left-0 ${
-          isSection2 ? "bg-white text-black" : "bg-[#0000FF] text-[#F4ECE0]"
+          isSection2 ? "bg-white text-black" : "bg-[#060ebb] text-[#F4ECE0]"
         } transition-all duration-700`}
       >
         {!isSection2 && <CursorHover />} {/* Render only in section 1 */}
@@ -81,7 +80,7 @@ const Landing = () => {
                       
           <motion.div
             className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
-              isToggled ? "bg-black text-white" : "bg-[#F0F0F0] text-[#0000FF]"
+              isToggled ? "bg-black text-white" : "bg-[#F0F0F0] text-[#060ebb]"
             }`}
             onClick={handleToggle}
             initial={{ opacity: 1 }}
@@ -91,7 +90,7 @@ const Landing = () => {
               className={`mr-6 md:mr-9 text-center`}
               animate={{
                 x: isToggled ? "35px" : "0px",
-                color: isToggled ? "#FFFFFF" : "#0000FF",
+                color: isToggled ? "#FFFFFF" : "#060ebb",
               }}
               transition={{ duration: 0.5 }}
             >
@@ -116,7 +115,7 @@ const Landing = () => {
       {/* Section 1 */}
       <div
         className={`${
-          isSection2 ? "bg-white text-[#0000FF]" : "bg-[#0000FF] text-[#F4ECE0]"
+          isSection2 ? "bg-white text-[#060ebb]" : "bg-[#060ebb] text-[#F4ECE0]"
         } relative transition-all duration-700`}
         style={{ minHeight: "100vh" }}
       >

@@ -67,7 +67,7 @@ const Contact = () => {
                 className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
                   isToggled
                     ? "bg-black text-white"
-                    : "bg-[#F0F0F0] text-[#0000FF]"
+                    : "bg-[#F0F0F0] text-[#060ebb]"
                 }`}
                 onClick={handleToggle}
                 initial={{ opacity: 1 }}
@@ -77,7 +77,7 @@ const Contact = () => {
                   className={`mr-6 md:mr-9 text-center`}
                   animate={{
                     x: isToggled ? "35px" : "0px",
-                    color: isToggled ? "#FFFFFF" : "#0000FF",
+                    color: isToggled ? "#FFFFFF" : "#060ebb",
                   }}
                   transition={{ duration: 1 }}
                 >
@@ -101,7 +101,7 @@ const Contact = () => {
         <div className="items-center flex-col -space-y-24 relative justify-center h-screen flex px-10">
   {/* CONTACT Heading with Spring Animation */}
   <motion.h1
-    className="font-[1000] text-[260px] alinsa text-[#0000FF] z-[10]"
+    className="font-[1000] text-[260px] alinsa text-[#060ebb] z-[10]"
     initial={{ scale: 0.8, opacity: 0 }}
     animate={{ scale: 1, opacity: 1 }}
     transition={{ type: "spring", stiffness: 120, damping: 10 }}
@@ -139,14 +139,14 @@ const JobListings = () => {
         <div className=" scale-90  gap-6  flex flex-col   items-start justify-start">
           <h1 className=" whitespace-nowrap  font-[600]  text-[50px]  jost  leading-[56px] text-left">
             Email &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span className=" -ml-[4px]">:</span>&nbsp;&nbsp;&nbsp;
-            <a className="text-[#0000FF]" href="mailto:explore@hausofchaos.co">
+            <a className="text-[#060ebb]" href="mailto:explore@hausofchaos.co">
               explore@hausofchaos.co
             </a>
           </h1>
           {/* <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
             Instagram &nbsp;: &nbsp;&nbsp;
             <a
-              className="text-[#0000FF]"
+              className="text-[#060ebb]"
               href="https://www.instagram.com/hausofchaos.co/"
             >
               @hausofchaos.co
@@ -155,7 +155,7 @@ const JobListings = () => {
           <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
             LinkedIn &nbsp;&nbsp;&nbsp;<span className=" ml-[2px]">:</span>&nbsp;&nbsp;&nbsp;
             <a
-              className="text-[#0000FF]"
+              className="text-[#060ebb]"
               href="https://www.linkedin.com/company/hausofchaos/"
             >
               Haus Of Chaos
@@ -164,7 +164,7 @@ const JobListings = () => {
           <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
             Address&nbsp;&nbsp;&nbsp;&nbsp; <span className=" -ml-[10px]">:</span>
             <a
-              className="text-[#0000FF] ml-12"
+              className="text-[#060ebb] ml-12"
               href="#"
             >
 
@@ -178,7 +178,7 @@ const JobListings = () => {
           </h1>
           <h1 className=" whitespace-nowrap  font-[600]  text-[50px]  jost  leading-[56px] text-left">
             Phone &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span className=" -ml-[20px]">:</span>&nbsp;&nbsp;&nbsp;
-            <a className="text-[#0000FF]" href=" tel:+91 9600931366">
+            <a className="text-[#060ebb]" href=" tel:+91 9600931366">
             +91 9600931366
             </a>
           </h1>
@@ -209,7 +209,7 @@ import logo1 from "../assets/logo.png";
 
 const HausOfChaos = () => {
   return (
-    <div className="min-h-screen bg-[#0000FF] text-white relative">
+    <div className="min-h-screen bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
         className="absolute inset-0 opacity-50"

@@ -67,7 +67,7 @@ const Ethos = () => {
               className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
                 isToggled
                   ? "bg-black text-white"
-                  : "bg-[#F0F0F0] text-[#0000FF]"
+                  : "bg-[#F0F0F0] text-[#060ebb]"
               }`}
               onClick={handleToggle}
               initial={{ opacity: 1 }}
@@ -77,7 +77,7 @@ const Ethos = () => {
                 className={`mr-6 md:mr-9 text-center`}
                 animate={{
                   x: isToggled ? "35px" : "0px",
-                  color: isToggled ? "#FFFFFF" : "#0000FF",
+                  color: isToggled ? "#FFFFFF" : "#060ebb",
                 }}
                 transition={{ duration: 0.5 }}
               >
@@ -101,14 +101,14 @@ const Ethos = () => {
         <div className="    items-end   h-full mt-20  bottom-0 flex px-10">
           <div className="  capitalize  w-[100%]">
             <h2 className="jost text-[26px] text-left leading-[40px]">
-              <span className=" text-[45px] salo  text-[#0000FF]">
+              <span className=" text-[45px] salo  text-[#060ebb]">
                 {" "}
                 Haus Of Chaos{" "}
               </span>{" "}
               <span  className="   whitespace-nowrap">
               is a process-oriented design firm that prioritizes <br /> innovative
               forms of communication. Embracing the concept of <br />
-              <span className=" text-[45px] salo text-[#0000FF]">
+              <span className=" text-[45px] salo text-[#060ebb]">
                 {" "}
                 Organized Chaos
               </span>
@@ -117,13 +117,13 @@ const Ethos = () => {
               conventional{" "}
               </span>
               </span>
-              <span className="  text-[45px] salo text-[#0000FF]">
+              <span className="  text-[45px] salo text-[#060ebb]">
                 {" "}
                 Design{" "}
               </span>{" "}
               paradigms and integrating <br /> the intangible aspects of
               interdisciplinary design, particularly
-              <span className=" text-[45px] salo text-[#0000FF]">
+              <span className=" text-[45px] salo text-[#060ebb]">
                 {" "}
                 <br /> Transmedia Approaches.
               </span>
@@ -245,7 +245,7 @@ const FounderSection = () => {
     <div className="mt-40 ">
       <div
         ref={ref}
-        className=" bg-[#0000FF]   p-8 relative overflow-hidden flex items-center justify-between w-full"
+        className=" bg-[#060ebb]   p-8 relative overflow-hidden flex items-center justify-between w-full"
       >
         <div className="px-14 pb-60 flex flex-col items-start justify-center mt-40 text-left">
           <motion.div
@@ -335,7 +335,7 @@ const Footer = () => {
 import grid from "../assets/lines.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-[70vh] bg-[#0000FF] text-white relative">
+    <div className="min-h-[70vh] bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
         className="absolute inset-0 opacity-100"

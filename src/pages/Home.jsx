@@ -26,7 +26,7 @@ const Home = () => {
           <div className="absolute  transform  md:top-80 -top-40 md:-bottom-40 flex px-4 md:px-10">
             <div>
               <h1
-                className="text-3xl salo md:text-[110px] text-[#0000FF]
+                className="text-3xl salo md:text-[110px] text-[#060ebb]
                font-[400] text-left leading-tight md:leading-normal"
               >
                 WHO WE ARE
@@ -56,7 +56,7 @@ const Home = () => {
             {/* <img src={swrillpng} className="w-[80%]" alt="Swrill" /> */}
           </motion.div>
           <div className=" w-full md:-mt-12 mt-40 whitespace-nowrap md:mr-20">
-            <h1 className="text-3xl salo md:text-[110px] text-[#0000FF] font-[400] text-right leading-tight md:leading-normal">
+            <h1 className="text-3xl salo md:text-[110px] text-[#060ebb] font-[400] text-right leading-tight md:leading-normal">
               WHAT WE DO
             </h1>
             <h2 className="jost md:text-[40px]  w-[100%] text-right  text-xl md:leading-[40px]">
@@ -334,7 +334,7 @@ const Footer = () => {
 import grid from "../assets/lines.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-screen bg-[#0000FF] text-white relative">
+    <div className="min-h-screen bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
         className="absolute inset-0 opacity-50"
