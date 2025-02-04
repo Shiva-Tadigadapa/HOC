@@ -184,22 +184,26 @@ const MainServices = () => {
           end: "top 50%",
           scrub: true,
           onEnter: () => {
+            gsap.to(`.label-text-${index} div`, {
+              color: "#0000ff", // Color for h1
+              duration: 0.5,
+            });
             gsap.to(`.label-text-${index} h1`, {
-              color: "#ff5733", // Color for h1
+              color: "#F2F2F2", // Color for h1
               duration: 0.5,
             });
             gsap.to(`.label-text-${index} p`, {
-              color: "#33c1ff", // Different color for p
+              color: "#BFBFBF", // Different color for p
               duration: 0.5,
             });
           },
           onLeaveBack: () => {
             gsap.to(`.label-text-${index} h1`, {
-              color: "#676767", // Reset color for h1
+              color: "#242424", // Reset color for h1
               duration: 0.5,
             });
             gsap.to(`.label-text-${index} p`, {
-              color: "#999999", // Reset color for p
+              color: "#242424", // Reset color for p
               duration: 0.5,
             });
           },
@@ -358,7 +362,7 @@ const Footer = () => {
 import grid from "../assets/lines.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-[70vh] bg-[#060ebb] text-white relative">
+    <div className="min-h-[70vh]  !z-[1000] bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
         className="absolute inset-0 opacity-100"
