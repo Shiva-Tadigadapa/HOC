@@ -13,7 +13,7 @@ const Landing = () => {
   const [currentText, setCurrentText] = useState(0);
 
   const texts = [
-    "We Design to Disrupt", 
+    "We Design to Disrupt",
     <div>
       We build narrative <br />
       environments for brands
@@ -79,39 +79,39 @@ const Landing = () => {
               <h1>CAREERS</h1>
             </Link>
           </div>
-                      <Link to={"/Contact"} >
-                      
-          <motion.div
-            className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
-              isToggled ? "bg-black text-white" : "bg-[#F0F0F0] text-[#060ebb]"
-            }`}
-            onClick={handleToggle}
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-          >
-            <motion.h1
-              className={`mr-6 md:mr-9 text-center`}
-              animate={{
-                x: isToggled ? "35px" : "0px",
-                color: isToggled ? "#FFFFFF" : "#060ebb",
-              }}
-              transition={{ duration: 0.5 }}
+          <Link to={"/Contact"}>
+            <motion.div
+              className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
+                isToggled
+                  ? "bg-black text-white"
+                  : "bg-[#F0F0F0] text-[#060ebb]"
+              }`}
+              onClick={handleToggle}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
             >
-              CONTACT
-            </motion.h1>
-            <motion.img
-              className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
-              src={worldsmall}
-              alt="World"
-              animate={{
-                x: isToggled ? "-50%" : "150%",
-                rotate: isToggled ? 360 : 0,
-              }}
-              transition={{ duration: 0.8 }}
-            />
-          </motion.div>
+              <motion.h1
+                className={`mr-6 md:mr-9 text-center`}
+                animate={{
+                  x: isToggled ? "35px" : "0px",
+                  color: isToggled ? "#FFFFFF" : "#060ebb",
+                }}
+                transition={{ duration: 0.5 }}
+              >
+                CONTACT
+              </motion.h1>
+              <motion.img
+                className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
+                src={worldsmall}
+                alt="World"
+                animate={{
+                  x: isToggled ? "-50%" : "150%",
+                  rotate: isToggled ? 360 : 0,
+                }}
+                transition={{ duration: 0.8 }}
+              />
+            </motion.div>
           </Link>
-
         </div>
       </div>
 

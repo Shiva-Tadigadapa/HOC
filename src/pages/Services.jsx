@@ -311,7 +311,7 @@ const MainServices = () => {
                 y={stop.cy - 100}
                 width="400"
                 height="200"
-                className="foreign-label !z-[700] !overflow-visible"
+                className={`foreign-label !z-[700] label-text-${i} !overflow-visible`}
               >
                 <Label
                   number={i + 1}

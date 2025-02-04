@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 #root {
-  max-width: 1780px;
+  max-width: 2080px;
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
@@ -11,6 +11,7 @@
   font-family: 'alinsa';
   src: url('./assets/alinsa.otf') format('truetype');
 }
+
 @font-face {
   font-family: 'salo';
   src: url('./assets/salo3.otf') format('truetype');
@@ -19,6 +20,7 @@
 .alinsa {
   font-family: 'alinsa';
 }
+
 .salo {
   font-family: 'salo';
 }
@@ -43,18 +45,21 @@
   animation: infiniteSlider 20s linear infinite;
 } */
 /* Remove horizontal scroll bar */
-html, body {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+html,
+body {
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
 }
+
 /* For modern browsers */
 body::-webkit-scrollbar {
   width: 0.5em;
 }
- 
+
 body::-webkit-scrollbar-track {
-  box-shadow:   0 0 6px rgba(255, 255, 255, 0);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0);
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: slategrey;
   border-radius: 26px;

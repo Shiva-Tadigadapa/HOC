@@ -362,7 +362,16 @@ const HausOfChaos = () => {
             />
 
             <p className="text-lg md:block hidden text-left mb-6">
-            Step into the chaos of creativity<br />Where bold ideas and designs collide<br />Stay ahead with innovative thoughts<br />Experience transformative journeys<br />Embrace the unexpected and <br />disrupt the norm
+              Step into the chaos of creativity
+              <br />
+              Where bold ideas and designs collide
+              <br />
+              Stay ahead with innovative thoughts
+              <br />
+              Experience transformative journeys
+              <br />
+              Embrace the unexpected and <br />
+              disrupt the norm
             </p>
           </div>
 
@@ -409,12 +418,18 @@ const HausOfChaos = () => {
               MAIL
             </a>
             <span>|</span>
-            <a href="https://www.linkedin.com/company/105575916/" className="hover:underline">
+            <a
+              href="https://www.linkedin.com/company/105575916/"
+              className="hover:underline"
+            >
               LINKEDIN
             </a>
             <span>|</span>
-            <a href="https://www.instagram.com/hausofchaos.co/" className="hover:underline">
-            INSTAGRAM
+            <a
+              href="https://www.instagram.com/hausofchaos.co/"
+              className="hover:underline"
+            >
+              INSTAGRAM
             </a>
             <span>|</span>
             <a href="#" className="hover:underline">
@@ -440,7 +455,10 @@ const HausOfChaos = () => {
           </div>
           <div className=" text-sm md:text-base">
             Design by{" "}
-            <a href="https://theinternetcompany.one/" className="hover:underline">
+            <a
+              href="https://theinternetcompany.one/"
+              className="hover:underline"
+            >
               TIC GLOBAL
             </a>
           </div>
