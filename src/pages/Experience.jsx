@@ -13,6 +13,7 @@ import three from "../assets/three.png";
 import linelab from "../assets/linelab.png";
 import { motion } from "framer-motion";
 import { div } from "framer-motion/client";
+import grid from "../assets/lines.png";
 
 import noswitch from "../assets/noswitch.svg";
 const Experience = () => {
@@ -42,28 +43,30 @@ const Experience = () => {
         {/* Navbar */}
         <div
           className={`  absolute w-full z-[500] -top-14 left-0 ${
-            isSection2 ? " bg-white/20 backdrop-blur-xl text-black" : "  text-[#000000]"
+            isSection2
+              ? " bg-white/20 backdrop-blur-xl text-black"
+              : "text-[#ffffff] bg-black "
           } transition-all py-2 duration-700`}
         >
           <div className="flex py-4 jost px-4 md:px-10 justify-between items-start">
             <Link to={"/"}>
               <img
-                src={isSection2 ? logo2 : logo2}
+                src={isSection2 ? logo : logo}
                 className="w-[80px] md:w-[110px] transition-all duration-700"
                 alt="Logo"
               />
             </Link>
             <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-              <Link to={"/Services"} className=" hover:text-black/50">
+              <Link to={"/Services"} className=" hover:text-white/50">
                 <h1>SERVICES</h1>
               </Link>
-              <Link to={"/Experience"} className=" hover:text-black/50">
+              <Link to={"/Experience"} className=" hover:text-white/50">
                 <h1>EXPERIENCE LAB</h1>
               </Link>
-              <Link to={"/Ethos"} className=" hover:text-black/50">
+              <Link to={"/Ethos"} className=" hover:text-white/50">
                 <h1>ETHOS</h1>
               </Link>
-              <Link to={"/Careers"} className=" hover:text-black/50">
+              <Link to={"/Careers"} className=" hover:text-white/50">
                 <h1>CAREERS</h1>
               </Link>
             </div>
@@ -107,7 +110,7 @@ const Experience = () => {
           <SecondSection />
         </div>
         {/* <div className="items-center flex-col   -mt-20 relative justify-center !h-screen  flex "> */}
-          <Play />
+        <Play />
         {/* </div> */}
         <Footer />
       </div>
@@ -172,9 +175,9 @@ const SecondSection = () => {
 
   return (
     <div ref={sectionRef} className="overflow-hidden z-[300] ">
-      <div className="bg-black py-20 flex flex-col   gap-10">
+      <div className="bg-black py-[120px] flex flex-col   items-center gap-10">
         <div>
-          <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center salo">
+          <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center  uppercase alinsa">
             Experience Lab
           </h1>
           <h2 className="text-white md:text-[30px] text-xl text-center jost">
@@ -219,12 +222,12 @@ const SecondSection = () => {
             alt="Lab"
           />
         </div>
-        <h1 className="md:px-20 px-4 md:text-2xl text-white text-center jost">
+        <h1 className="md:px-20  -pt-40 px-4 md:text-2xl pb-[80px] text-white w-[70%] text-center jost">
           Born from our ethos, the Chaos Lab serves as a testing ground for the
           diverse narrative environments we experiment with and explore. Based
           in India, with plans for growth, we embrace a ‘test-and-learn’
-          mindset. Our aim is to decode and disrupt conventional norms and
-          beliefs in experimental communication and experience design.
+          mindset. Our aim is to decode + disrupt conventional norms and
+          beliefs in experimental communication + experience design.
         </h1>
       </div>
     </div>
@@ -271,14 +274,14 @@ const Play = () => {
 
   return (
     <div
-      className="min-h-screen -mt-2 bg-black text-white relative overflow-hidden"
+      className="min-h-screen -mt-[35px] bg-black text-white relative overflow-hidden"
       onClick={handleClick}
     >
       {/* Grid Overlay */}
       <div
-        className="absolute inset-0 opacity-100"
+        className="absolute inset-0   -ml-2.5 opacity-50"
         style={{
-          backgroundImage: `url(${gridethos})`,
+          backgroundImage: `url(${grid})`,
           backgroundSize: "cover",
         }}
       />
@@ -288,14 +291,16 @@ const Play = () => {
         <div className="flex justify-between items-center px-20 py-10">
           <div className="max-w-xl"></div>
 
-          <div className="max-w-xl flex flex-col items-end">
-            <h1 className="font-[1000] -ml-40 text-[100px] whitespace-nowrap">
+          <div className="max-w-xl relative flex flex-col  justify-start items-end">
+            <h1 className="font-[1000] alinsa -ml-40 text-[100px] whitespace-nowrap">
               PLAY GROUND
             </h1>
-            <p className="text-3xl mb-2 font-bold text-white/60">
+            <p className="text-3xl -mt-10 mb-10  -left-40 top-[155px] absolute !text-left  whitespace-nowrap font-bold text-white/60">
               Click on the boxes to explore X's and O's
             </p>
-            <img src={playground} className="w-[90%]" alt="Playground" />
+            <div className="relative w-[130%] mt-10 h-[700px] [perspective:1000px]">
+              <AutoFlipImages />
+            </div>
           </div>
         </div>
       </div>
@@ -317,7 +322,51 @@ const Play = () => {
     </div>
   );
 };
+// import playground1 from "../assets/hocpo/05080625-c986-468e-b4c1-1376ff24c56f-min.jpg";
+// import playground2 from "../assets/hocpo/54f31009-987f-4ed5-be3c-1500148ef995-min.jpg";
+// import playground3 from "../assets/hocpo/831bc518-1ffb-4c9c-a99d-356d62ccb9eb-min.jpg";
+import playgorund4 from "../assets/hocpo/TID05717-min.jpg"
+import playground5 from "../assets/hocpo/TID05724-min.jpg"
+import playground6 from "../assets/hocpo/TID05738-min.jpg"
+import playground7 from "../assets/hocpo/TID05735-min.jpg"
+import playground8 from "../assets/hocpo/TID05757-min.jpg"
 
+const AutoFlipImages = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [playground8, playgorund4, playground5, playground6, playground7];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative w-full h-full">
+      {images.map((image, index) => (
+        <motion.div
+          key={index}
+          className="absolute w-full h-full [transform-style:preserve-3d]"
+          initial={{ rotateY: index === currentIndex ? 0 : -180 }}
+          animate={{ rotateY: index === currentIndex ? 0 : 180 }}
+          transition={{ duration: 0.8 }}
+          style={{ 
+            zIndex: index === currentIndex ? 1 : 0,
+            backfaceVisibility: 'hidden'
+          }}
+        >
+          <img
+            src={image}
+            alt={`Playground ${index + 1}`}
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 const Footer = () => {
   return (
     <>
@@ -329,13 +378,13 @@ const Footer = () => {
   );
 };
 
-import grid from "../assets/lines.png";
+import logo1 from "../assets/logo.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-[70vh] bg-[#060ebb] text-white relative">
+    <div className="min-h-screen bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
-        className="absolute inset-0 opacity-100"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage: `url(${grid})`,
           backgroundSize: "cover",
@@ -343,23 +392,33 @@ const HausOfChaos = () => {
       />
 
       {/* Main content container */}
-      <div className="relative    px-20 py-48 min-h-screen flex flex-col justify-between">
+      <div className="relative    px-4 py-20 md:px-20 md:py-48 min-h-screen flex flex-col justify-between">
         {/* Logo and description section */}
-        <div className=" flex">
-          <div className="max-w-xl ">
-            <img src={logo} className="w-40 mb-8" alt="Haus Of Chaos" />
+        <img
+          src={logo1}
+          className="w-1/2   md:hidden block  mb-8"
+          alt="Haus Of Chaos"
+        />
 
-            <p className="text-lg text-left mb-6">
-              Die Hauspost liefert dir Trends, Ideen +<br />
-              Facts aus der Wirbelwelt des Corporate
+        <div className=" flex">
+          <div className="md:max-w-xl ">
+            <img
+              src={logo1}
+              className="md:w-40   md:block hidden  mb-4"
+              alt="Haus Of Chaos"
+            />
+
+            <p className="text-lg md:block hidden text-left mb-6">
+              Step into the chaos of creativity
               <br />
-              Influencer Marketing und Personal
+              Where bold ideas and designs collide
               <br />
-              Branding. Immer mit dem "Wieder was
+              Stay ahead with innovative thoughts
               <br />
-              gelernt"-Gefühl. Jeden Freitagnachmittag
+              Experience transformative journeys
               <br />
-              zum Gönnenwollen.
+              Embrace the unexpected and <br />
+              disrupt the norm
             </p>
           </div>
 
@@ -369,22 +428,21 @@ const HausOfChaos = () => {
               <div>
                 <input
                   type="text"
-                  placeholder="Dein Name*"
+                  placeholder="Full Name*"
                   className="w-full p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <div>
                 <input
                   type="email"
-                  placeholder="Deine E-Mail-Adresse*"
-                  className="w-full mt-10 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
+                  placeholder="Email Address*"
+                  className="w-full mt-6 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <p className="text-sm text-left opacity-80">
-                Ich verwende MailerLite für den Versand meines Newsletters. Mit
-                der Anmeldung bestätigst Du, dass Deine Daten an MailerLite
-                übermittelt werden. Wenn Du mehr über die Datenschutzpraktiken
-                von MailerLite erfahren möchtest, klick{" "}
+                Where ideas collide and stories unfold, Haus of Chaos transforms
+                narratives into immersive brand experiences. Explore innovation,
+                redefine design, and disrupt the ordinary with us.{" "}
                 <a href="#" className="underline">
                   hier
                 </a>
@@ -401,38 +459,50 @@ const HausOfChaos = () => {
         </div>
 
         {/* Footer section */}
-        <div className="relative pt-16">
-          <div className="flex justify-end gap-4 text-sm">
-            <a href="#" className="hover:underline">
+        <div className="relative  whitespace-normal md:pt-16 pt-6 md:pb-0 pb-20">
+          <div className="flex md:justify-end gap-4 text-sm">
+            <a href="mailto:explore@hausofchaos.co" className="hover:underline">
+              MAIL
+            </a>
+            <span>|</span>
+            <a
+              href="https://www.linkedin.com/company/105575916/"
+              className="hover:underline"
+            >
               LINKEDIN
             </a>
             <span>|</span>
-            <a href="#" className="hover:underline">
-              AMAZON
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              SPOTIFY
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              MAIL
-            </a>
+            <a
+              href="https://www.instagram.com/hausofchaos.co/"
+              className="hover:underline"
+            >
+              INSTAGRAM
+            </a> 
+            
           </div>
         </div>
-        <div className="   absolute left-0 px-10 bottom-10 flex justify-between w-full ">
-          <div className="text-sm">2025 © Haus Of chaos Ltd.</div>
-          <div className="flex gap-4 text-sm">
+        <div className="   absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row  items-start md:gap-0 gap-3 md:justify-between w-full ">
+          <div className="text-sm md:block hidden">
+            2025 © Haus Of chaos Ltd.
+          </div>
+          {/* <div className="md:flex gap-4 text-sm  hidden">
             <a href="#" className="hover:underline">
-              Impressum
+              RIA
             </a>
             <a href="#" className="hover:underline">
               Datenschutz
             </a>
+          </div> */}
+          <div className=" text-sm whitespace-nowrap text-left   md:hidden block ">
+            2025 © Haus Of chaos Ltd. <br />
+            Impressum | Datenschutz
           </div>
-          <div className="">
+          <div className=" text-sm md:text-base">
             Design by{" "}
-            <a href="#" className="hover:underline">
+            <a
+              href="https://theinternetcompany.one/"
+              className="hover:underline"
+            >
               TIC GLOBAL
             </a>
           </div>

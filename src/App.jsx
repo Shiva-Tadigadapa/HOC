@@ -9,13 +9,14 @@ import Careers from "./pages/Careers";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Experience from "./pages/Experience";
+ 
 
 function App() {
   return (
     <Router>
       {/* Global CursorHover component */}
       {/*  <CursorHover />*/}
-      <Routes>
+      <Routes> 
         <Route path="/" element={<Landing />} />
         <Route path="/Ethos" element={<Ethos />} />
         <Route path="/Careers" element={<Careers />} />

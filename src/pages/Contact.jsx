@@ -140,63 +140,41 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import heartkey from "../assets/heartkey.png";
 
+import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md'; // Add this import at the top
+
 const JobListings = () => {
   return (
     <div className="px-10 py-10">
-      <div className="min-h-screen  flex  items-start justify-start  p-8">
-        <div className=" scale-90  gap-6  flex flex-col   items-start justify-start">
-          <h1 className=" whitespace-nowrap  font-[600]  text-[50px]  jost  leading-[56px] text-left">
-            Email &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-            <span className=" -ml-[4px]">:</span>&nbsp;&nbsp;&nbsp;
-            <a className="text-[#060ebb]" href="mailto:explore@hausofchaos.co">
+      <div className="min-h-screen flex items-start justify-start p-8">
+        <div className="scale-90 gap-10 flex flex-col items-start justify-start">
+          <div className="flex items-center gap-6">
+            <MdEmail className="text-black text-[60px]" />
+            <a className="text-black text-5xl font-bold hover:text-[#060ebb] transition-colors" href="mailto:explore@hausofchaos.co">
               explore@hausofchaos.co
             </a>
-          </h1>
-          {/* <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
-            Instagram &nbsp;: &nbsp;&nbsp;
-            <a
-              className="text-[#060ebb]"
-              href="https://www.instagram.com/hausofchaos.co/"
-            >
-              @hausofchaos.co
-            </a>
-          </h1>
-          <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
-            LinkedIn &nbsp;&nbsp;&nbsp;<span className=" ml-[2px]">:</span>&nbsp;&nbsp;&nbsp;
-            <a
-              className="text-[#060ebb]"
-              href="https://www.linkedin.com/company/hausofchaos/"
-            >
-              Haus Of Chaos
-            </a>
-          </h1> */}
-          <h1 className="  font-[600]  text-[50px]  jost  leading-[56px] text-left">
-            Address&nbsp;&nbsp;&nbsp;&nbsp;{" "}
-            <span className=" -ml-[10px]">:</span>
-            <a className="text-[#060ebb] ml-12" href="#">
-              4th Floor <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              No 9, Seshadri Road,
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Teynampet,
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          
+          <div className="flex items-start gap-6">
+            <MdLocationOn className="text-black text-[60px] mt-2" />
+            <a className="text-black text-5xl font-bold text-left hover:text-[#060ebb] transition-colors" href="#">
+              4th Floor,<br />
+              No 9, Seshadri Road,<br />
+              Teynampet,<br />
               Chennai - 86
             </a>
-          </h1>
-          <h1 className=" whitespace-nowrap  font-[600]  text-[50px]  jost  leading-[56px] text-left">
-            Phone &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-            <span className=" -ml-[20px]">:</span>&nbsp;&nbsp;&nbsp;
-            <a className="text-[#060ebb]" href=" tel:+91 9600931366">
+          </div>
+
+          <div className="flex items-center gap-6">
+            <MdPhone className="text-black text-[60px]" />
+            <a className="text-black first-line:text-5xl font-bold hover:text-[#060ebb] transition-colors" href="tel:+91 9600931366">
               +91 9600931366
             </a>
-          </h1>
-          <button className=" text-[#2354CF]  border-[2px] border-[#000000]  rounded-full px-8 font-[700] py-2 mt-4">
+          </div>
+
+          <button className="text-black border-[2px] border-[#000000] rounded-full px-8 font-[700] py-2 mt-4 hover:bg-black hover:text-white transition-all duration-300">
             JOIN CHAOS
           </button>
         </div>
-        {/* <img src={heartkey} className=" w-1/2  -mt-40" alt="" /> */}
       </div>
     </div>
   );
@@ -316,10 +294,7 @@ const HausOfChaos = () => {
             >
               INSTAGRAM
             </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              SPOTIFY
-            </a>
+            
           </div>
         </div>
         <div className="   absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row  items-start md:gap-0 gap-3 md:justify-between w-full ">

@@ -4,9 +4,9 @@ import logo from "../assets/logo2.png";
 import logo1 from "../assets/logo.png";
 import swrillpng from "../assets/swrill2.png";
 import worldsmall from "../assets/worldsmall.png";
-import labsvg from "../assets/labsvg.svg";
-import ScrollToMoveImage from "./Swrilltrans";
+import labsvg from "../assets/labsvg.svg"; 
 import { useScroll } from "framer-motion";
+ 
 
 import { useEffect } from "react";
 import noswitch from "../assets/noswitch.svg";
@@ -26,15 +26,16 @@ const Home = () => {
           <div className="absolute  transform  md:top-[35rem] -top-40 md:-bottom-40 flex px-4 md:px-10">
             <div>
               <h1
-                className="text-3xl salo md:text-[110px] text-[#060ebb]
-               font-[400] text-left leading-tight md:leading-normal"
+                className="text-3xl   salo md:text-[110px] text-[#060ebb]
+               font-[500] text-left leading-tight md:leading-normal"
               >
                 WHO WE ARE
               </h1>
-              <h2 className="jost text-xl md:text-[40px]  whitespace-nowrap w-[100%] text-left md:leading-[40px]">
+              
+              <h2 className="jost text-xl md:text-[30px]  whitespace-nowrap w-[100%] text-left md:leading-[40px]">
                 A seriously playful process-oriented <br /> experience design
-                studio that disrupts, <br /> questions, and creates narrative{" "}
-                <br /> environments and experiences for brands <br /> worldwide
+                studio that disrupts +<br /> questions + creates narrative{" "}
+               environments <br /> and experiences for brands   worldwide
               </h2>
             </div>
 
@@ -56,18 +57,18 @@ const Home = () => {
             {/* <img src={swrillpng} className="w-[80%]" alt="Swrill" /> */}
           </motion.div>
           <div className=" w-full md:-mt-12 mt-40 whitespace-nowrap md:mr-20">
-            <h1 className="text-3xl salo md:text-[110px] text-[#060ebb] font-[400] text-right leading-tight md:leading-normal">
+            <h1 className="text-3xl  salo md:text-[110px] text-[#060ebb] font-[500] text-right leading-tight md:leading-normal">
               WHAT WE DO
             </h1>
-            <h2 className="jost md:text-[40px]  w-[100%] text-right  text-xl md:leading-[40px]">
+            <h2 className="jost md:text-[30px]  w-[100%] text-right  text-xl md:leading-[40px]">
               We dabble in graphic design, <br />
-               a smidge of branding and packaging,
+               a smidge of branding + packaging,
               <br />
-               and focus extensively on experience design to tie <br />
+              + focus extensively on experience design  <br />to tie 
               everything together seamlessly.
             </h2>
           </div>
-          <div className=" md:text-[22px] text-sm -left-20 bottom-20 md:left-auto  flex gap-4  text-[#2354CF]  md:leading-[32px]  tracking-widest md:bottom-[20rem] whitespace-nowrap md:-right-20  rotate-[-90deg]    absolute md:rotate-[90deg]">
+          {/* <div className=" md:text-[22px] text-sm -left-20 bottom-20 md:left-auto  flex gap-4  text-[#2354CF]  md:leading-[32px]  tracking-widest md:bottom-[20rem] whitespace-nowrap md:-right-20  rotate-[-90deg]    absolute md:rotate-[90deg]">
             Scroll To Learn More
             <svg
               width="36"
@@ -109,7 +110,7 @@ const Home = () => {
                 stroke-linejoin="round"
               />
             </svg>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -182,7 +183,7 @@ const SecondSection = () => {
     <div ref={sectionRef} className="overflow-hidden py-40">
       <div className="bg-black py-20 flex flex-col   gap-10">
         <div>
-          <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center salo">
+          <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center font-sans">
             Experience Lab
           </h1>
           <h2 className="text-white md:text-[30px] text-xl text-center jost">
@@ -294,21 +295,24 @@ const ThirdSection = () => {
   const videoSource = isIOS || isSafari ? iosVideo : one;
 
   return (
-    <div className="relative md:-mt-20">
-      <video id="loader-video" autoPlay muted loop playsInline>
+    <div className="relative md:-mt-40">
+      <video id="loader-video" autoPlay muted loop playsInline className="  scale-125">
         <source
           src={videoSource}
           type={isIOS || isSafari ? "video/mp4" : "video/webm"}
         />
       </video>
-      <div className="absolute md:-bottom-16 jost text-center flex-col flex items-center justify-center w-full">
-        <h1 className="text-[#5B636D]  px-4 font-[500] md:w-[70%] text-sm md:text-[27px] text-center md:leading-[34px]">
+      <div className="absolute md:-bottom-20 jost text-center flex-col flex items-center justify-center w-full">
+        <h1 className="text-[#5B636D]  px-4 font-[500] md:w-[60%] text-sm md:text-[24px] text-center md:leading-[30px]">
           After years of searching for a graphic designer to create our logo and
           brand identity, we realized it wasn’t just about a logo—it was about
           crafting an experience that reflects what our company truly stands
           for. Ria, the creative director of Haus of Chaos, not only
           conceptualized the journey of how clients experience our brand but
-          also responded to all our needs with remarkable efficiency.
+        
+
+          also responded with remarkable efficiency.
+        
         </h1>
         <h2 className="text-[#2354CF] text-xs md:text-[20px] mt-5">
           Rak’s Pallikkoodam, 21st century international school
@@ -324,7 +328,7 @@ const Footer = () => {
   return (
     <>
       <div className=" ">
-        <img src={befooter} className="  " alt="" />
+        {/* <img src={befooter} className="  " alt="" /> */}
         <HausOfChaos />
       </div>
     </>
@@ -332,6 +336,7 @@ const Footer = () => {
 };
 
 import grid from "../assets/lines.png";
+import { title } from "framer-motion/client";
 const HausOfChaos = () => {
   return (
     <div className="min-h-screen bg-[#060ebb] text-white relative">
@@ -441,14 +446,14 @@ const HausOfChaos = () => {
           <div className="text-sm md:block hidden">
             2025 © Haus Of chaos Ltd.
           </div>
-          <div className="md:flex gap-4 text-sm  hidden">
+          {/* <div className="md:flex gap-4 text-sm  hidden">
             <a href="#" className="hover:underline">
-              Impressum
+              RIA
             </a>
             <a href="#" className="hover:underline">
               Datenschutz
             </a>
-          </div>
+          </div> */}
           <div className=" text-sm whitespace-nowrap text-left   md:hidden block ">
             2025 © Haus Of chaos Ltd. <br />
             Impressum | Datenschutz
@@ -467,7 +472,6 @@ const HausOfChaos = () => {
     </div>
   );
 };
-
 const FAQ_DATA = [
   {
     id: "01",
@@ -542,13 +546,13 @@ const FAQ_DATA = [
       "Of course! We are happy to collaborate with your in-house team and align with any existing brand guidelines to create cohesive and impactful experiences.  ",
   },
   {
-    id: "12",
+    id: "13",
     question: "Do you provide event-based experiential design services?",
     answer:
       "Yes, we curate and design immersive experiences for events, launches, and activations that bring your brand to life.  ",
   },
   {
-    id: "13",
+    id: "14",
     question: "Do you provide event-based experiential design services?",
     answer:
       "Yes, we curate and design immersive experiences for events, launches, and activations that bring your brand to life.  ",
@@ -560,6 +564,63 @@ const FAQ_DATA = [
       "We define success based on your goals, which may include metrics such as increased engagement, strengthened client relationships, or elevated brand perception. We’ll work with you to establish benchmarks and assess outcomes.",
   },
 ];
+const FAQ_CATEGORIES = [
+  {
+    idx:1,
+    id: "services",
+    title: "General Questions",
+    faqs: [
+      FAQ_DATA[0], // What services does your firm provide?
+      FAQ_DATA[1], // How do I begin working with your team?
+      FAQ_DATA[2], // Will I have input throughout the project?
+      // FAQ_DATA[11], // Can you integrate with our existing team?
+    ]
+  },
+  {
+    idx:2,
+    id: "process",
+    title: "Process & Collaboration",
+    faqs: [
+      FAQ_DATA[3], // What does your process look like?
+      FAQ_DATA[4], // Do you offer support after the project is complete?
+      FAQ_DATA[5], // What will I receive upon project completion?
+    ]
+  },
+  {
+    idx:3,
+    id: "industries",
+    title: "Pricing & Payments",
+    faqs: [
+      FAQ_DATA[6], // What industries do you typically work with?
+      FAQ_DATA[7], // Do you take on international clients?
+      FAQ_DATA[8], // Do you provide event-based experiential design services?
+     // How do you measure the success?
+    ]
+  },
+ 
+  {
+    idx:4,
+    id: "pricing",
+    title: "Deliverables",
+    faqs: [
+      FAQ_DATA[9], // How is pricing determined?
+      FAQ_DATA[10], // Do you offer retainers?
+      FAQ_DATA[11], // What payment structures do you offer?
+    ]
+  },
+  {
+    idx:5,
+    id:"others",
+    title:"Other FAQ'S",
+    faqs:[
+      FAQ_DATA[12],
+      FAQ_DATA[13],
+      FAQ_DATA[14],
+    ]
+  }
+];
+
+
 
 const FAQItem = ({ item, isOpen, onToggle }) => {
   return (
@@ -570,7 +631,7 @@ const FAQItem = ({ item, isOpen, onToggle }) => {
       >
         <div className="flex items-center">
           <span className="text-[#2354CF] font-bold mr-4 text-xl md:text-[32px]">
-            {item.id}
+            -
           </span>
           <span className="text-white text-xl md:text-2xl">
             {item.question}
@@ -648,33 +709,131 @@ const FAQItem = ({ item, isOpen, onToggle }) => {
     </div>
   );
 };
+const CategoryAccordion = ({ category, openCategoryId, openFaqId, onCategoryToggle, onFaqToggle }) => {
+  return (
+    <div className="border-b border-blue-100/10">
+      <button
+        className="flex w-full items-center justify-between py-6 text-left"
+        onClick={() => onCategoryToggle(category.id)}
+      >
+        <span className="text-white text-2xl md:text-3xl font-bold">
+         <span className=" text-4xl text-blue-700 mr-2"> 0{category.idx}</span> {category.title}
+        </span>
+        <motion.span
+          animate={{ rotate: openCategoryId === category.id ? 45 : 0 }}
+          className="text-blue-500"
+        >
+          <svg
+            width="33"
+            height="32"
+            viewBox="0 0 33 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_20_2512)">
+              <g clip-path="url(#clip1_20_2512)">
+                <path
+                  d="M19.5509 28.6184L21.5812 26.5881V20.9292H27.2401L29.2704 18.8989H19.5509V28.6184Z"
+                  fill="#2354CF"
+                />
+                <path
+                  d="M15.4759 1.01491C15.4759 3.95236 15.4759 12.016 15.4759 14.8238C12.7113 14.8238 4.54689 14.8238 1.66703 14.8238L0.651886 15.8389L1.66703 16.8541H15.4759C15.4759 17.9196 15.4759 29.2807 15.4759 30.663L16.4911 31.6781L17.5063 30.663V16.8541H31.3151L32.3303 15.8389L31.3151 14.8238C29.8752 14.8238 18.615 14.8238 17.5063 14.8238V1.01491L16.4911 -0.000244141L15.4759 1.01491Z"
+                  fill="#2354CF"
+                />
+                <path
+                  d="M3.71173 18.8989L5.74203 20.9292H11.401V26.5881L13.4312 28.6184V18.8989H3.71173Z"
+                  fill="#2354CF"
+                />
+                <path
+                  d="M13.4312 12.7793V3.05981L11.401 5.09011V10.7491H5.74203L3.71173 12.7793H13.4312Z"
+                  fill="#2354CF"
+                />
+                <path
+                  d="M19.5509 12.7793H29.2704L27.2401 10.7491H21.5812V5.09011L19.5509 3.05981V12.7793Z"
+                  fill="#2354CF"
+                />
+              </g>
+            </g>
+            <defs>
+              <clipPath id="clip0_20_2512">
+                <rect
+                  width="32"
+                  height="32"
+                  fill="white"
+                  transform="translate(0.330017)"
+                />
+              </clipPath>
+              <clipPath id="clip1_20_2512">
+                <rect
+                  width="32"
+                  height="32"
+                  fill="white"
+                  transform="translate(0.330017)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+        </motion.span>
+      </button>
+      <AnimatePresence>
+        {openCategoryId === category.id && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            {category.faqs.map((faq) => (
+              <FAQItem
+                key={faq.id}
+                item={faq}
+                isOpen={openFaqId === faq.id}
+                onToggle={() => onFaqToggle(category.id, faq.id)}
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const FAQ = () => {
-  const [openId, setOpenId] = useState(null);
+  const [openCategoryId, setOpenCategoryId] = useState(null);
+  const [openFaqId, setOpenFaqId] = useState(null);
 
-  const handleToggle = (id) => {
-    setOpenId(openId === id ? null : id);
+  const handleCategoryToggle = (categoryId) => {
+    setOpenCategoryId(openCategoryId === categoryId ? null : categoryId);
+    setOpenFaqId(null); // Close any open FAQ when switching categories
+  };
+
+  const handleFaqToggle = (categoryId, faqId) => {
+    setOpenCategoryId(categoryId);
+    setOpenFaqId(openFaqId === faqId ? null : faqId);
   };
 
   return (
-    <div className="min-h-screen mt-60  bg-black ">
-      <div className=" justify-evenly flex md:flex-row flex-col mx-auto py-32">
-        <div className="mb-12  text-left  md:block flex justify-center items-center flex-col">
-          <h2 className="text-[#2354CF] salo  text-5xl md:leading-[120px] md:text-[90px]   ">
+    <div className="min-h-screen mt-60 bg-black">
+      <div className="justify-evenly flex flex-col md:flex-row mx-auto py-32">
+        <div className="mb-12 text-left md:sticky md:top-32 md:h-fit">
+          <h2 className="text-[#2354CF] salo text-5xl md:text-[90px] md:leading-[120px]">
             FAQS
           </h2>
-          <p className="text-[#F4ECE0] text-xs md:text-[15px] font-bold">
-            HÄUFIG GESTELLTE FRAGEN
+          <p className="text-[#F4ECE0] uppercase text-xs md:text-[15px] font-bold">
+          frequently asked questions
           </p>
         </div>
 
-        <div className="space-y-2">
-          {FAQ_DATA.map((item) => (
-            <FAQItem
-              key={item.id}
-              item={item}
-              isOpen={openId === item.id}
-              onToggle={() => handleToggle(item.id)}
+        <div className="space-y-4 md:w-[600px] px-4">
+          {FAQ_CATEGORIES.map((category) => (
+            <CategoryAccordion
+              key={category.id}
+              category={category}
+              openCategoryId={openCategoryId}
+              openFaqId={openFaqId}
+              onCategoryToggle={handleCategoryToggle}
+              onFaqToggle={handleFaqToggle}
             />
           ))}
         </div>
@@ -879,7 +1038,7 @@ const FAQ = () => {
 //     <div className="min-h-screen mt-60 bg-black">
 //       <div className="justify-evenly flex mx-auto py-32">
 //         <div className="mb-12 text-left">
-//           <h2 className="text-[#2354CF] salo text-[90px]">FAQS</h2>
+//           <h2 className="text-[#2354CF] weirdy text-[90px]">FAQS</h2>
 //           <p className="text-[#F4ECE0] text-[15px] font-bold">
 //             HÄUFIG GESTELLTE FRAGEN
 //           </p>

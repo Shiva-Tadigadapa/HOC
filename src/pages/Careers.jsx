@@ -171,7 +171,7 @@ const Careers = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            WANNA JOIN THE CHAOS ?
+            WANT TO JOIN THE CHAOS ?
           </motion.p>
         </div>
         <JobListings />
@@ -219,7 +219,7 @@ const JobListings = () => {
               transition={{ delay: 0.3 }}
               className="text-[50px] leading-[50px] font-bold jost mb-6"
             >
-              <span className="text-[#060ebb]">E-mail us</span> if you are a
+              <span className="text-blue-800 ">E-mail us</span> if you are a
               creative open to learning, nurturing, growing, and fostering the
               ethos of the company, "order in chaos".
             </motion.h1>
@@ -280,12 +280,13 @@ const Footer = () => {
 };
 
 import grid from "../assets/lines.png";
+import logo1 from "../assets/logo.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-[70vh] bg-[#060ebb] text-white relative">
+    <div className="min-h-screen bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
-        className="absolute inset-0 opacity-100"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage: `url(${grid})`,
           backgroundSize: "cover",
@@ -293,23 +294,33 @@ const HausOfChaos = () => {
       />
 
       {/* Main content container */}
-      <div className="relative    px-20 py-48 min-h-screen flex flex-col justify-between">
+      <div className="relative    px-4 py-20 md:px-20 md:py-48 min-h-screen flex flex-col justify-between">
         {/* Logo and description section */}
-        <div className=" flex">
-          <div className="max-w-xl ">
-            <img src={logo} className="w-40 mb-8" alt="Haus Of Chaos" />
+        <img
+          src={logo1}
+          className="w-1/2   md:hidden block  mb-8"
+          alt="Haus Of Chaos"
+        />
 
-            <p className="text-lg text-left mb-6">
-              Die Hauspost liefert dir Trends, Ideen +<br />
-              Facts aus der Wirbelwelt des Corporate
+        <div className=" flex">
+          <div className="md:max-w-xl ">
+            <img
+              src={logo1}
+              className="md:w-40   md:block hidden  mb-4"
+              alt="Haus Of Chaos"
+            />
+
+            <p className="text-lg md:block hidden text-left mb-6">
+              Step into the chaos of creativity
               <br />
-              Influencer Marketing und Personal
+              Where bold ideas and designs collide
               <br />
-              Branding. Immer mit dem "Wieder was
+              Stay ahead with innovative thoughts
               <br />
-              gelernt"-Gefühl. Jeden Freitagnachmittag
+              Experience transformative journeys
               <br />
-              zum Gönnenwollen.
+              Embrace the unexpected and <br />
+              disrupt the norm
             </p>
           </div>
 
@@ -319,22 +330,21 @@ const HausOfChaos = () => {
               <div>
                 <input
                   type="text"
-                  placeholder="Dein Name*"
+                  placeholder="Full Name*"
                   className="w-full p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <div>
                 <input
                   type="email"
-                  placeholder="Deine E-Mail-Adresse*"
-                  className="w-full mt-10 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
+                  placeholder="Email Address*"
+                  className="w-full mt-6 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <p className="text-sm text-left opacity-80">
-                Ich verwende MailerLite für den Versand meines Newsletters. Mit
-                der Anmeldung bestätigst Du, dass Deine Daten an MailerLite
-                übermittelt werden. Wenn Du mehr über die Datenschutzpraktiken
-                von MailerLite erfahren möchtest, klick{" "}
+                Where ideas collide and stories unfold, Haus of Chaos transforms
+                narratives into immersive brand experiences. Explore innovation,
+                redefine design, and disrupt the ordinary with us.{" "}
                 <a href="#" className="underline">
                   hier
                 </a>
@@ -351,38 +361,50 @@ const HausOfChaos = () => {
         </div>
 
         {/* Footer section */}
-        <div className="relative pt-16">
-          <div className="flex justify-end gap-4 text-sm">
-            <a href="#" className="hover:underline">
+        <div className="relative  whitespace-normal md:pt-16 pt-6 md:pb-0 pb-20">
+          <div className="flex md:justify-end gap-4 text-sm">
+            <a href="mailto:explore@hausofchaos.co" className="hover:underline">
+              MAIL
+            </a>
+            <span>|</span>
+            <a
+              href="https://www.linkedin.com/company/105575916/"
+              className="hover:underline"
+            >
               LINKEDIN
             </a>
             <span>|</span>
-            <a href="#" className="hover:underline">
-              AMAZON
+            <a
+              href="https://www.instagram.com/hausofchaos.co/"
+              className="hover:underline"
+            >
+              INSTAGRAM
             </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              SPOTIFY
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              MAIL
-            </a>
+         
           </div>
         </div>
-        <div className="   absolute left-0 px-10 bottom-10 flex justify-between w-full ">
-          <div className="text-sm">2025 © Haus Of chaos Ltd.</div>
-          <div className="flex gap-4 text-sm">
+        <div className="   absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row  items-start md:gap-0 gap-3 md:justify-between w-full ">
+          <div className="text-sm md:block hidden">
+            2025 © Haus Of chaos Ltd.
+          </div>
+          {/* <div className="md:flex gap-4 text-sm  hidden">
             <a href="#" className="hover:underline">
-              Impressum
+              RIA
             </a>
             <a href="#" className="hover:underline">
               Datenschutz
             </a>
+          </div> */}
+          <div className=" text-sm whitespace-nowrap text-left   md:hidden block ">
+            2025 © Haus Of chaos Ltd. <br />
+            Impressum | Datenschutz
           </div>
-          <div className="">
+          <div className=" text-sm md:text-base">
             Design by{" "}
-            <a href="#" className="hover:underline">
+            <a
+              href="https://theinternetcompany.one/"
+              className="hover:underline"
+            >
               TIC GLOBAL
             </a>
           </div>

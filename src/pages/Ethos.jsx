@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence,useInView } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import tvpng from "../assets/tv.png";
 import worldsmall from "../assets/worldsmall.png";
 import logo from "../assets/logo.png";
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import logo1 from "../assets/logo.png";
 import befooter from "../assets/befooter.png";
 
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Ethos = () => {
   const [isSection2, setIsSection2] = useState(false);
@@ -64,40 +64,39 @@ const Ethos = () => {
               <Link to={"/Careers"} className=" hover:text-black/50">
                 <h1>CAREERS</h1>
               </Link>
-
             </div>
             <Link to={"/Contact"}>
-            <motion.div
-              className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
-                isToggled
-                  ? "bg-black text-white"
-                  : "bg-[#F0F0F0] text-[#060ebb]"
-              }`}
-              onClick={handleToggle}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-            >
-              <motion.h1
-                className={`mr-6 md:mr-9 text-center`}
-                animate={{
-                  x: isToggled ? "35px" : "0px",
-                  color: isToggled ? "#FFFFFF" : "#060ebb",
-                }}
-                transition={{ duration: 0.5 }}
+              <motion.div
+                className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
+                  isToggled
+                    ? "bg-black text-white"
+                    : "bg-[#F0F0F0] text-[#060ebb]"
+                }`}
+                onClick={handleToggle}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
               >
-                CONTACT
-              </motion.h1>
-              <motion.img
-                className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
-                src={worldsmall}
-                alt="World"
-                animate={{
-                  x: isToggled ? "-50%" : "150%",
-                  rotate: isToggled ? 360 : 0,
-                }}
-                transition={{ duration: 0.8 }}
-              />
-            </motion.div>
+                <motion.h1
+                  className={`mr-6 md:mr-9 text-center`}
+                  animate={{
+                    x: isToggled ? "35px" : "0px",
+                    color: isToggled ? "#FFFFFF" : "#060ebb",
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
+                  CONTACT
+                </motion.h1>
+                <motion.img
+                  className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
+                  src={worldsmall}
+                  alt="World"
+                  animate={{
+                    x: isToggled ? "-50%" : "150%",
+                    rotate: isToggled ? 360 : 0,
+                  }}
+                  transition={{ duration: 0.8 }}
+                />
+              </motion.div>
             </Link>
           </div>
         </div>
@@ -105,31 +104,33 @@ const Ethos = () => {
         <div className="    items-end   h-full mt-20  bottom-0 flex px-10">
           <div className="  capitalize  w-[100%]">
             <h2 className="jost text-[26px] text-left leading-[40px]">
-              <span className=" text-[45px] salo  text-[#060ebb]">
+              <span className=" text-[45px]  salo uppercase  text-[#060ebb]">
                 {" "}
                 Haus Of Chaos{" "}
               </span>{" "}
-              <span  className="   whitespace-nowrap">
-              is a process-oriented design firm that prioritizes <br /> innovative
-              forms of communication. Embracing the concept of <br />
-              <span className=" text-[45px] salo text-[#060ebb]">
-                {" "}
-                Organized Chaos
+              <span className="   whitespace-nowrap">
+                is a process-oriented design firm <br /> that prioritizes {" "}
+                innovative forms of communication. <br /> Embracing the concept of{" "}
+                
+                <span className=" text-[45px]  uppercase salo text-[#060ebb]">
+                  {" "}
+                  Organized Chaos
+                </span>
+                <br />
+                <span className=" whitespace-nowrap">
+                  —akin to chaos theory—our philosophy centers   on <br />
+                  challenging conventional{" "}
+                </span>
               </span>
-              <span className=" whitespace-nowrap">
-              —akin to chaos theory—our philosophy centers <br /> on challenging
-              conventional{" "}
-              </span>
-              </span>
-              <span className="  text-[45px] salo text-[#060ebb]">
+              <span className="  text-[45px]  salo uppercase text-[#060ebb]">
                 {" "}
                 Design{" "}
               </span>{" "}
-              paradigms and integrating <br /> the intangible aspects of
-              interdisciplinary design, particularly
-              <span className=" text-[45px] salo text-[#060ebb]">
+              paradigms and <br /> integrating the intangible aspects of
+              interdisciplinary <br /> design, particularly
+              <span className=" text-[45px]  uppercase salo text-[#060ebb]">
                 {" "}
-                <br /> Transmedia Approaches.
+                 Transmedia Approaches.
               </span>
             </h2>
           </div>
@@ -143,104 +144,18 @@ const Ethos = () => {
           </motion.div>
         </div>
         <FounderSection />
-        <Play />
-        <FAQ />
+        {/* <Play /> */}
+        {/* <FAQ /> */}
         <Footer />
       </div>
     </>
   );
 };
 
-export default Ethos; 
-import gridethos from "../assets/gridethos.png";
-import playground from "../assets/playground.png";
-import tictacX from "../assets/tictacX.png";
-import tictacO from "../assets/tictacO.png";
-
-const Play = () => {
-  const [clicks, setClicks] = useState([]);
-  const [isXTurn, setIsXTurn] = useState(true); // Explicitly track turns
-  const isClicking = useRef(false); // Prevents fast consecutive clicks
-
-  const handleClick = (e) => {
-    if (isClicking.current) return; // Prevent rapid clicks
-    isClicking.current = true;
-
-    setTimeout(() => {
-      isClicking.current = false; // Re-enable clicks after a short delay
-    }, 300);
-
-    // Get container position relative to viewport
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const id = Date.now();
-    const newClick = {
-      id,
-      x,
-      y,
-      type: isXTurn ? "X" : "O", // Strict alternation
-    };
-
-    setClicks((prev) => [...prev, newClick]);
-    setIsXTurn((prev) => !prev); // Toggle turn
-
-    setTimeout(() => {
-      setClicks((prev) => prev.filter((click) => click.id !== id));
-    }, 2000);
-  };
-
-  return (
-    <div
-      className="min-h-screen bg-black text-white relative overflow-hidden"
-      onClick={handleClick}
-    >
-      {/* Grid Overlay */}
-      <div
-        className="absolute inset-0 opacity-100"
-        style={{
-          backgroundImage: `url(${gridethos})`,
-          backgroundSize: "cover",
-        }}
-      />
-
-      {/* Main Content */}
-      <div className="relative flex flex-col justify-between">
-        <div className="flex justify-between items-center px-20 py-10">
-          <div className="max-w-xl"></div>
-
-          <div className="max-w-xl flex flex-col items-end">
-            <h1 className="font-[1000] -ml-40 text-[100px] whitespace-nowrap">
-              PLAY GROUND
-            </h1>
-            <p className="text-3xl mb-2 font-bold text-white/60">
-              Click on the boxes to explore X's and O's
-            </p>
-            <img src={playground} className="w-[90%]" alt="Playground" />
-          </div>
-        </div>
-      </div>
-
-      {/* Clicked Symbols */}
-      {clicks.map(({ id, x, y, type }) => (
-        <motion.img
-          key={id}
-          src={type === "X" ? tictacX : tictacO}
-          alt={type}
-          className="absolute w-20 h-20"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          transition={{ duration: 0.3 }}
-          style={{ top: y - 40, left: x - 40 }} // Centered positioning
-        />
-      ))}
-    </div>
-  );
-};
+export default Ethos;
 
 import founder from "../assets/RIA3.jpg";
+import founder2 from "../assets/FounderBanner.jpg";
 const FounderSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Trigger animation once when in view
@@ -251,25 +166,25 @@ const FounderSection = () => {
         ref={ref}
         className=" bg-[#060ebb]   p-8 relative overflow-hidden flex items-center justify-between w-full"
       >
-        <div className="px-14 pb-60 flex flex-col items-start justify-center mt-40 text-left">
+        <div className="px-14   flex flex-col items-start justify-center mt-40 text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-white salo text-[110px] font-bold tracking-wide">
+            <h1 className="text-white  alinsa text-[110px] font-bold tracking-wide">
               FOUNDER
             </h1>
           </motion.div>
 
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+          <div className="flex w-[88%] -mt-6 flex-col lg:flex-row justify-between items-start gap-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="lg:w-1/2"
             >
-              <p className="text-white text-[30px] jost leading-[37px] mb-8">
+              <p className="text-white text-[26px] jost leading-[37px] mb-8">
                 As Experience designers, we never remain neutral. The more
                 compelling the story, the greater the influence we hold. Haus of
                 Chaos is the intersection of a graphic design house and an
@@ -282,14 +197,14 @@ const FounderSection = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-blue-600 px-6 py-3 rounded-full font-medium"
                 >
-                  LASS UNS REDEN
+                  E-mail
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white px-6 py-3 rounded-full font-medium"
                 >
-                  ZEIG MIR MEHR WORTE!
+                  LinkedIn
                 </motion.button>
               </div>
             </motion.div>
@@ -307,15 +222,27 @@ const FounderSection = () => {
                 scale: 1.05,
                 transition: { duration: 0.2 },
               }}
-              className="lg:w-1/2 relative"
+              className="lg:w-1/2 relative  h-full"
             >
-              <div className="relative -top-40 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <div className="absolute inset-0 rounded-lg transform -rotate-3"></div>
-                <img
-                  src={founder}
-                  alt="Founder"
-                  className="w-full  border-[1rem] absolute block max-w-xl ml-auto rounded-lg"
-                />
+              <div className="relative left-40 -top-40 h-[800px] [perspective:900px] cursor-pointer group">
+                <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front image */}
+                  <div className="absolute inset-0 h-[90%] w-full">
+                    <img
+                      src={founder}
+                      alt="Founder Front"
+                      className="w-full h-full object-cover border-[1rem] block rounded-lg"
+                    />
+                  </div>
+                  {/* Back image */}
+                  <div className="absolute inset-0 h-[90%] w-full [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                    <img
+                      src={founder2}
+                      alt="Founder Back"
+                      className="w-full h-full object-cover object-top border-[1rem] block rounded-lg"
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -337,12 +264,13 @@ const Footer = () => {
 };
 
 import grid from "../assets/lines.png";
+// import logo1 from "../assets/logo.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-[70vh] bg-[#060ebb] text-white relative">
+    <div className="min-h-screen bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
-        className="absolute inset-0 opacity-100"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage: `url(${grid})`,
           backgroundSize: "cover",
@@ -350,23 +278,33 @@ const HausOfChaos = () => {
       />
 
       {/* Main content container */}
-      <div className="relative    px-20 py-48 min-h-screen flex flex-col justify-between">
+      <div className="relative    px-4 py-20 md:px-20 md:py-48 min-h-screen flex flex-col justify-between">
         {/* Logo and description section */}
-        <div className=" flex">
-          <div className="max-w-xl ">
-            <img src={logo1} className="w-40 mb-8" alt="Haus Of Chaos" />
+        <img
+          src={logo1}
+          className="w-1/2   md:hidden block  mb-8"
+          alt="Haus Of Chaos"
+        />
 
-            <p className="text-lg text-left mb-6">
-              Die Hauspost liefert dir Trends, Ideen +<br />
-              Facts aus der Wirbelwelt des Corporate
+        <div className=" flex">
+          <div className="md:max-w-xl ">
+            <img
+              src={logo1}
+              className="md:w-40   md:block hidden  mb-4"
+              alt="Haus Of Chaos"
+            />
+
+            <p className="text-lg md:block hidden text-left mb-6">
+              Step into the chaos of creativity
               <br />
-              Influencer Marketing und Personal
+              Where bold ideas and designs collide
               <br />
-              Branding. Immer mit dem "Wieder was
+              Stay ahead with innovative thoughts
               <br />
-              gelernt"-Gefühl. Jeden Freitagnachmittag
+              Experience transformative journeys
               <br />
-              zum Gönnenwollen.
+              Embrace the unexpected and <br />
+              disrupt the norm
             </p>
           </div>
 
@@ -376,22 +314,21 @@ const HausOfChaos = () => {
               <div>
                 <input
                   type="text"
-                  placeholder="Dein Name*"
+                  placeholder="Full Name*"
                   className="w-full p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <div>
                 <input
                   type="email"
-                  placeholder="Deine E-Mail-Adresse*"
-                  className="w-full mt-10 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
+                  placeholder="Email Address*"
+                  className="w-full mt-6 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <p className="text-sm text-left opacity-80">
-                Ich verwende MailerLite für den Versand meines Newsletters. Mit
-                der Anmeldung bestätigst Du, dass Deine Daten an MailerLite
-                übermittelt werden. Wenn Du mehr über die Datenschutzpraktiken
-                von MailerLite erfahren möchtest, klick{" "}
+                Where ideas collide and stories unfold, Haus of Chaos transforms
+                narratives into immersive brand experiences. Explore innovation,
+                redefine design, and disrupt the ordinary with us.{" "}
                 <a href="#" className="underline">
                   hier
                 </a>
@@ -408,38 +345,50 @@ const HausOfChaos = () => {
         </div>
 
         {/* Footer section */}
-        <div className="relative pt-16">
-          <div className="flex justify-end gap-4 text-sm">
-            <a href="#" className="hover:underline">
+        <div className="relative  whitespace-normal md:pt-16 pt-6 md:pb-0 pb-20">
+          <div className="flex md:justify-end gap-4 text-sm">
+            <a href="mailto:explore@hausofchaos.co" className="hover:underline">
+              MAIL
+            </a>
+            <span>|</span>
+            <a
+              href="https://www.linkedin.com/company/105575916/"
+              className="hover:underline"
+            >
               LINKEDIN
             </a>
             <span>|</span>
-            <a href="#" className="hover:underline">
-              AMAZON
+            <a
+              href="https://www.instagram.com/hausofchaos.co/"
+              className="hover:underline"
+            >
+              INSTAGRAM
             </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              SPOTIFY
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              MAIL
-            </a>
+            
           </div>
         </div>
-        <div className="   absolute left-0 px-10 bottom-10 flex justify-between w-full ">
-          <div className="text-sm">2025 © Haus Of chaos Ltd.</div>
-          <div className="flex gap-4 text-sm">
+        <div className="   absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row  items-start md:gap-0 gap-3 md:justify-between w-full ">
+          <div className="text-sm md:block hidden">
+            2025 © Haus Of chaos Ltd.
+          </div>
+          {/* <div className="md:flex gap-4 text-sm  hidden">
             <a href="#" className="hover:underline">
-              Impressum
+              RIA
             </a>
             <a href="#" className="hover:underline">
               Datenschutz
             </a>
+          </div> */}
+          <div className=" text-sm whitespace-nowrap text-left   md:hidden block ">
+            2025 © Haus Of chaos Ltd. <br />
+            Impressum | Datenschutz
           </div>
-          <div className="">
+          <div className=" text-sm md:text-base">
             Design by{" "}
-            <a href="#" className="hover:underline">
+            <a
+              href="https://theinternetcompany.one/"
+              className="hover:underline"
+            >
               TIC GLOBAL
             </a>
           </div>
@@ -601,7 +550,7 @@ const FAQ = () => {
     <div className="min-h-screen  mt-1  bg-black ">
       <div className=" justify-evenly flex  mx-auto py-32">
         <div className="mb-12  text-left ">
-          <h2 className="text-[#2354CF] salo text-[90px] ">FAQS</h2>
+          <h2 className="text-[#2354CF] font-sans text-[90px] ">FAQS</h2>
           <p className="text-[#F4ECE0] text-[15px] font-bold">
             HÄUFIG GESTELLTE FRAGEN
           </p>

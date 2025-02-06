@@ -13,16 +13,24 @@
 }
 
 @font-face {
-  font-family: 'salo';
-  src: url('./assets/salo3.otf') format('truetype');
+  font-family: 'weirdy';
+  src: url('./assets/weirdy3.otf') format('truetype');
 }
 
-.alinsa {
-  font-family: 'alinsa';
+@font-face {
+  font-family: 'salo';
+  src: url('./assets//salo3.otf') format('truetype');
 }
 
 .salo {
   font-family: 'salo';
+}
+.alinsa {
+  font-family: 'alinsa';
+}
+
+.weirdy {
+  font-family: 'weirdy';
 }
 
 

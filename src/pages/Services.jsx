@@ -110,7 +110,86 @@ const Contact = () => {
 };
 
 export default Contact;
-
+const categories = {
+  experience: [
+    {
+      cx: 300,
+      cy: 200,
+      label: "CGI + Motions Graphics",
+      dis: "We don't pull numbers out of thin air. We size up your project, giving you a clear cost and timeline.",
+    },
+    {
+      cx: 300,
+      cy: 600,
+      label: "Experiential Mapping",
+      dis: "Industry jargon? Not here. We get to the core of your industry and highlight what sets you apart.",
+    },
+    {
+      cx: 300,
+      cy: 1000,
+      label: "Physical Computing",
+      dis: "Clear numbers and deadlines. We value your time and wallet. Team and Resources: Handpicked talent, no seatfillers.",
+    },
+    {
+      cx: 300,
+      cy: 1400,
+      label: "Hybrid Communication Solutions",
+      dis: "Estimate costs and timeline with laser-like accuracy(within 15% by project's end)",
+    },
+  ],
+  design: [
+    {
+      cx: 300,
+      cy: 200,
+      label: "Brand Identity Design",
+      dis: "Creating distinctive visual languages that embody your brand's essence and values.",
+    },
+    {
+      cx: 300,
+      cy: 600,
+      label: "UI/UX Design",
+      dis: "Crafting intuitive and engaging digital experiences that connect with your audience.",
+    },
+    {
+      cx: 300,
+      cy: 1000,
+      label: "Print & Digital Design",
+      dis: "Seamlessly bridging traditional and digital design to create cohesive brand experiences.",
+    },
+    {
+      cx: 300,
+      cy: 1400,
+      label: "Environmental Design",
+      dis: "Transforming spaces into immersive brand environments that tell your story.",
+    },
+  ],
+  build: [
+    {
+      cx: 300,
+      cy: 200,
+      label: "Web Development",
+      dis: "Building robust, scalable websites and applications with cutting-edge technologies.",
+    },
+    {
+      cx: 300,
+      cy: 600,
+      label: "Mobile Applications",
+      dis: "Developing native and cross-platform mobile solutions that engage and perform.",
+    },
+    {
+      cx: 300,
+      cy: 1000,
+      label: "Custom Software",
+      dis: "Creating bespoke software solutions tailored to your specific business needs.",
+    },
+    {
+      cx: 300,
+      cy: 1400,
+      label: "System Integration",
+      dis: "Seamlessly connecting different systems and platforms for optimal performance.",
+    },
+  ],
+};
 import blackgrid from "../assets/blackgrid.png";
 import wiresm from "../assets/wiresm.png";
 import plugservicesleft from "../assets/plugservicesleft.png";
@@ -118,6 +197,7 @@ import plugservicesright from "../assets/plugservicesright.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { AnimatePresence } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger);
 const MainServices = () => {
   const plugRightRef = useRef(null);
@@ -198,6 +278,10 @@ const MainServices = () => {
             });
           },
           onLeaveBack: () => {
+            gsap.to(`.label-text-${index} div`, {
+              color: "#242424", // Color for h1
+              duration: 0.5,
+            });
             gsap.to(`.label-text-${index} h1`, {
               color: "#242424", // Reset color for h1
               duration: 0.5,
@@ -211,7 +295,8 @@ const MainServices = () => {
       });
     });
   }, []);
-
+  const [active, setActive] = useState("Experience");
+  const currentItems = categories[active.toLowerCase()] || [];
   return (
     <>
       <div className="flex items-start overflow-x-visible  w-full justify-start h-full px-16 py-32">
@@ -226,12 +311,12 @@ const MainServices = () => {
         />
 
         {/* Title */}
-        <div className="flex flex-col -space-y-16 uppercase z-[100] text-[108px] font-[1000] text-[#060ebb] alinsa">
+        <div className="flex  relative flex-col -space-y-16 uppercase z-[100] text-[108px] font-[1000] text-[#F4ECE0] alinsa">
           <div className="flex relative">
             <h1 className="z-[100]">Our</h1>
             <img
               src={wiresm}
-              className="-ml-2 mt-9 w-[80px] h-[80px] object-cover"
+              className="-ml-2 mt-8 w-[80px] h-[80px] object-cover"
               alt=""
             />
             <img
@@ -248,6 +333,21 @@ const MainServices = () => {
             />
           </div>
           <h1>Services</h1>
+          <div className="bg-[#242424] px-3 py-3 rounded-[76px] -bottom-16 flex gap-2 absolute text-base jost text-white font-medium">
+      {["Experience", "Design", "Build"].map((item) => (
+        <button
+          key={item}
+          className={`px-6 py-2 uppercase rounded-[59px] transition-all duration-300 ${
+            active === item
+              ? "bg-[#174DD5] text-white"
+              : "bg-black text-[#C9C9C9] hover:bg-[#174DD5] hover:text-white"
+          }`}
+          onClick={() => setActive(item)}
+        >
+          {item}
+        </button>
+      ))}
+    </div>
         </div>
 
         <svg
@@ -271,62 +371,53 @@ const MainServices = () => {
             strokeWidth="4"
           />
           {/* Stops and Texts */}
-          {[
-            {
-              cx: 300,
-              cy: 200,
-              label: "CGI + Motions Graphics",
-              dis: "We don't pull numbers out of thin air. We size up your project, giving you a clear cost and timeline.",
-            },
-            {
-              cx: 300,
-              cy: 600,
-              label: "Experiential Mapping",
-              dis: "Industry jargon? Not here. We get to the core of your industry and highlight what sets you apart.",
-            },
-            {
-              cx: 300,
-              cy: 1000,
-              label: "Physical Computing",
-              dis: "Clear numbers and deadlines. We value your time and wallet. Team and Resources: Handpicked talent, no seatfillers. We set a game plan that everyone can rally behind.",
-            },
-            {
-              cx: 300,
-              cy: 1400,
-              label: "Hybrid Communication Solutions",
-              dis: "Estimate costs and timeline with laser-like accuracy(within 15% by project's end)",
-            },
-          ].map((stop, i) => (
-            <g key={i} className=" !overflow-visible">
-              {/* Circle (Stop Point) */}
-
-              <circle
-                ref={(el) => (stopsRef.current[i] = el)}
-                cx={stop.cx + 8} // Move circle 10px to the right
-                cy={stop.cy - 75}
-                r="6"
-                fill="blue"
-                data-svg-origin="308 90"
-              ></circle>
-              {/* Label inside foreignObject */}
-
-              <foreignObject
-                x={stop.cx - 400}
-                y={stop.cy - 100}
-                width="400"
-                height="200"
-                className={`foreign-label !z-[700] label-text-${i} !overflow-visible`}
+                   <AnimatePresence mode="wait">
+            {currentItems.map((item, i) => (
+              <motion.g
+                key={active + i}
+                className="!overflow-visible"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Label
-                  number={i + 1}
-                  className="text-white"
-                  title={stop.label}
-                  description={stop.dis}
-                  textRef={(el) => (textRefs.current[i] = el)}
+                <motion.circle
+                  ref={(el) => (stopsRef.current[i] = el)}
+                  cx={item.cx + 8}
+                  cy={item.cy - 75}
+                  r="6"
+                  fill="blue"
+                  data-svg-origin="308 90"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.3, delay: i * 0.1 }}
                 />
-              </foreignObject>
-            </g>
-          ))}
+
+                <foreignObject
+                  x={item.cx - 400}
+                  y={item.cy - 100}
+                  width="400"
+                  height="200"
+                  className={`foreign-label !z-[700] label-text-${i} !overflow-visible`}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                  >
+                    <Label
+                      number={i + 1}
+                      className="text-white"
+                      title={item.label}
+                      description={item.dis}
+                      textRef={(el) => (textRefs.current[i] = el)}
+                    />
+                  </motion.div>
+                </foreignObject>
+              </motion.g>
+            ))}
+          </AnimatePresence>
         </svg>
       </div>
     </>
@@ -335,19 +426,26 @@ const MainServices = () => {
 const Label = ({ number, title, description, textRef }) => {
   return (
     <div
-      class="flex  gap-4 items-start text-left  jost  ml-[28rem]   w-[40vw]  text-[#242424] px-4"
+      class={`flex gap-4 items-start text-left jost ml-[28rem] w-[40vw] ${
+        number === 1 ? 'text-white' : 'text-[#242424]'
+      } px-4`}
       ref={textRef}
     >
-      <div class="font-[500] number-text text-3xl mb-2">0{number}</div>
+      <div class={`font-[500] number-text text-3xl mb-2 ${number === 1 ? 'text-[#0000ff]' : ''}`}>
+        0{number}
+      </div>
 
       <div>
-        <h1 class="text-3xl uppercase font-[500] mb-2">{title}</h1>
-        <p class="text-lg w-[80%] font-[500] ">{description}</p>
+        <h1 class={`text-3xl uppercase font-[500] mb-2 ${number === 1 ? 'text-white' : ''}`}>
+          {title}
+        </h1>
+        <p class={`text-lg w-[80%] font-[500] ${number === 1 ? 'text-[#BFBFBF]' : ''}`}>
+          {description}
+        </p>
       </div>
     </div>
   );
 };
-
 const Footer = () => {
   return (
     <>
@@ -360,12 +458,13 @@ const Footer = () => {
 };
 
 import grid from "../assets/lines.png";
+import logo1 from "../assets/logo.png";
 const HausOfChaos = () => {
   return (
-    <div className="min-h-[70vh]  !z-[1000] bg-[#060ebb] text-white relative">
+    <div className="min-h-screen z-[900] bg-[#060ebb] text-white relative">
       {/* Grid overlay background */}
       <div
-        className="absolute inset-0 opacity-100"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage: `url(${grid})`,
           backgroundSize: "cover",
@@ -373,23 +472,33 @@ const HausOfChaos = () => {
       />
 
       {/* Main content container */}
-      <div className="relative    px-20 py-48 min-h-screen flex flex-col justify-between">
+      <div className="relative    px-4 py-20 md:px-20 md:py-48 min-h-screen flex flex-col justify-between">
         {/* Logo and description section */}
-        <div className=" flex">
-          <div className="max-w-xl ">
-            <img src={logo} className="w-40 mb-8" alt="Haus Of Chaos" />
+        <img
+          src={logo1}
+          className="w-1/2   md:hidden block  mb-8"
+          alt="Haus Of Chaos"
+        />
 
-            <p className="text-lg text-left mb-6">
-              Die Hauspost liefert dir Trends, Ideen +<br />
-              Facts aus der Wirbelwelt des Corporate
+        <div className=" flex">
+          <div className="md:max-w-xl ">
+            <img
+              src={logo1}
+              className="md:w-40   md:block hidden  mb-4"
+              alt="Haus Of Chaos"
+            />
+
+            <p className="text-lg md:block hidden text-left mb-6">
+              Step into the chaos of creativity
               <br />
-              Influencer Marketing und Personal
+              Where bold ideas and designs collide
               <br />
-              Branding. Immer mit dem "Wieder was
+              Stay ahead with innovative thoughts
               <br />
-              gelernt"-Gefühl. Jeden Freitagnachmittag
+              Experience transformative journeys
               <br />
-              zum Gönnenwollen.
+              Embrace the unexpected and <br />
+              disrupt the norm
             </p>
           </div>
 
@@ -399,22 +508,21 @@ const HausOfChaos = () => {
               <div>
                 <input
                   type="text"
-                  placeholder="Dein Name*"
+                  placeholder="Full Name*"
                   className="w-full p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <div>
                 <input
                   type="email"
-                  placeholder="Deine E-Mail-Adresse*"
-                  className="w-full mt-10 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
+                  placeholder="Email Address*"
+                  className="w-full mt-6 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <p className="text-sm text-left opacity-80">
-                Ich verwende MailerLite für den Versand meines Newsletters. Mit
-                der Anmeldung bestätigst Du, dass Deine Daten an MailerLite
-                übermittelt werden. Wenn Du mehr über die Datenschutzpraktiken
-                von MailerLite erfahren möchtest, klick{" "}
+                Where ideas collide and stories unfold, Haus of Chaos transforms
+                narratives into immersive brand experiences. Explore innovation,
+                redefine design, and disrupt the ordinary with us.{" "}
                 <a href="#" className="underline">
                   hier
                 </a>
@@ -431,38 +539,50 @@ const HausOfChaos = () => {
         </div>
 
         {/* Footer section */}
-        <div className="relative pt-16">
-          <div className="flex justify-end gap-4 text-sm">
-            <a href="#" className="hover:underline">
+        <div className="relative  whitespace-normal md:pt-16 pt-6 md:pb-0 pb-20">
+          <div className="flex md:justify-end gap-4 text-sm">
+            <a href="mailto:explore@hausofchaos.co" className="hover:underline">
+              MAIL
+            </a>
+            <span>|</span>
+            <a
+              href="https://www.linkedin.com/company/105575916/"
+              className="hover:underline"
+            >
               LINKEDIN
             </a>
             <span>|</span>
-            <a href="#" className="hover:underline">
-              AMAZON
+            <a
+              href="https://www.instagram.com/hausofchaos.co/"
+              className="hover:underline"
+            >
+              INSTAGRAM
             </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              SPOTIFY
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:underline">
-              MAIL
-            </a>
+            
           </div>
         </div>
-        <div className="   absolute left-0 px-10 bottom-10 flex justify-between w-full ">
-          <div className="text-sm">2025 © Haus Of chaos Ltd.</div>
-          <div className="flex gap-4 text-sm">
+        <div className="   absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row  items-start md:gap-0 gap-3 md:justify-between w-full ">
+          <div className="text-sm md:block hidden">
+            2025 © Haus Of chaos Ltd.
+          </div>
+          {/* <div className="md:flex gap-4 text-sm  hidden">
             <a href="#" className="hover:underline">
-              Impressum
+              RIA
             </a>
             <a href="#" className="hover:underline">
               Datenschutz
             </a>
+          </div> */}
+          <div className=" text-sm whitespace-nowrap text-left   md:hidden block ">
+            2025 © Haus Of chaos Ltd. <br />
+            Impressum | Datenschutz
           </div>
-          <div className="">
+          <div className=" text-sm md:text-base">
             Design by{" "}
-            <a href="#" className="hover:underline">
+            <a
+              href="https://theinternetcompany.one/"
+              className="hover:underline"
+            >
               TIC GLOBAL
             </a>
           </div>

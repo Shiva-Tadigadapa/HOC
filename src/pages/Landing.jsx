@@ -7,13 +7,18 @@ import Home from "./Home";
 import { Link } from "react-router-dom";
 import CursorHover from "../utils/Hover";
 
+
 const Landing = () => {
   const [isSection2, setIsSection2] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
   const [currentText, setCurrentText] = useState(0);
 
   const texts = [
-    "We Design to Disrupt",
+    <div
+      dangerouslySetInnerHTML={{
+        __html: "We Design tO  DisRupt",
+      }}
+    />,
     <div>
       We build narrative <br />
       environments for brands
@@ -36,7 +41,7 @@ const Landing = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % texts.length); // Cycle through texts
-    }, 3000); // Change text every 3 seconds
+    }, 4000); // Change text every 3 seconds
     return () => clearInterval(interval);
   }, [texts.length]);
 
@@ -53,7 +58,7 @@ const Landing = () => {
         className={`${
           isFixed ? "fixed" : "absolute"
         } w-full !z-[800] top-0 left-0 ${
-          isSection2 ? "bg-white text-black" : "bg-[#060ebb] text-[#F4ECE0]"
+          isSection2 ? "bg-white text-black" : "bg-[#060ebb] text-white"
         } transition-all duration-700`}
       >
         {!isSection2 && <CursorHover />} {/* Render only in section 1 */}
@@ -118,8 +123,8 @@ const Landing = () => {
       {/* Section 1 */}
       <div
         className={`${
-          isSection2 ? "bg-white text-[#060ebb]" : "bg-[#060ebb] text-[#F4ECE0]"
-        } relative transition-all !z-[700]  duration-700`}
+          isSection2 ? "bg-white text-[#060ebb]" : "bg-[#060ebb] text-white"
+        } relative cursor-pointer transition-all !z-[700]  duration-700`}
         style={{ minHeight: "100vh" }}
       >
         {/* Centered Text */}
@@ -132,7 +137,7 @@ const Landing = () => {
           <AnimatePresence mode="wait">
             <motion.h1
               key={currentText}
-              className="text-[48px] px-10 alinsa md:text-[80px] font-[1000] text-center leading-tight md:leading-[1]"
+              className="text-[48px] px-10   alinsa uppercase md:text-[90px] font-[1000] text-center leading-tight md:leading-[1]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -140,10 +145,39 @@ const Landing = () => {
             >
               {texts[currentText]}
             </motion.h1>
+            {currentText === 0 && (
+              <>
+              {/* <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="z-[-1] w-full right-[23.5rem] -top-[15.5rem] absolute"
+                >
+                <Three />
+              </motion.div>
+                <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="z-[-1] w-full left-[6.1rem] -top-[15rem] absolute"
+                >
+                <O />
+                
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="z-[-1] w-full left-[20rem] -top-[13rem] absolute"
+                >
+                <R /> */}
+                {/* </motion.div> */}
+                </>
+            )}
           </AnimatePresence>
         </motion.div>
-
         {/* Footer */}
+
         <div className="absolute px-4 md:px-20 text-[14px] flex w-full items-center justify-between bottom-4">
           <h1>@Madeintic</h1>
           <h1>SCROLL NOW</h1>
