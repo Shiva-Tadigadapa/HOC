@@ -156,7 +156,7 @@ const Careers = () => {
 
           {/* CAREERS Title Animation */}
           <motion.h1
-            className="font-[1000]   !mt-20 md:leading-[0px] text-8xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
+            className="font-[1000] px-10  !mt-20 md:leading-[0px] text-8xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
