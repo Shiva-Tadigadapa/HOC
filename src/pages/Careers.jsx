@@ -101,7 +101,7 @@ const Careers = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="items-center flex-col -space-y-24 relative justify-center h-screen mt-20 flex px-10">
+        <div className="items-center flex-col md:-space-y-24 relative justify-center h-screen mt-20 flex px-10">
           {/* Hand Image Animation */}
           <motion.img
             src={hand}
@@ -156,7 +156,7 @@ const Careers = () => {
 
           {/* CAREERS Title Animation */}
           <motion.h1
-            className="font-[1000] px-10  !mt-20 md:leading-[0px] text-8xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
+            className="font-[1000] px-10  !mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -166,7 +166,7 @@ const Careers = () => {
 
           {/* Tagline Animation */}
           <motion.p
-            className="jost font-[500] !mt-24 lowercase md:text-[60px] z-[10]"
+            className="jost font-[500]  md:!mt-24 lowercase md:text-[60px] z-[10]"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
