@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 import logo1 from "../assets/logo.png";
 import befooter from "../assets/befooter.png";
+import Footer from "./Footer";
+ 
 
 import { useState, useEffect, useRef } from "react";
 
@@ -101,10 +103,10 @@ const Ethos = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="    items-end   h-full mt-20  bottom-0 flex px-10">
+        <div className="  items-end h-screen md:h-full mt-0 md:mt-24  bottom-0 flex px-4 md:px-10">
           <div className="  capitalize  w-[100%]">
-            <h2 className="jost text-[26px] text-left leading-[40px]">
-              <span className=" text-[45px]  salo uppercase  text-[#060ebb]">
+            <h2 className="jost md:text-[26px] text-2xl text-left   -mb-20 md:leading-[40px]">
+              <span className=" md:text-[45px]  text-3xl salo uppercase  text-[#060ebb]">
                 {" "}
                 Haus Of Chaos{" "}
               </span>{" "}
@@ -112,7 +114,7 @@ const Ethos = () => {
                 is a process-oriented design firm <br /> that prioritizes {" "}
                 innovative forms of communication. <br /> Embracing the concept of{" "}
                 
-                <span className=" text-[45px]  uppercase salo text-[#060ebb]">
+                <span className=" md:text-[45px] text-3xl uppercase salo text-[#060ebb]">
                   {" "}
                   Organized Chaos
                 </span>
@@ -122,13 +124,13 @@ const Ethos = () => {
                   challenging conventional{" "}
                 </span>
               </span>
-              <span className="  text-[45px]  salo uppercase text-[#060ebb]">
+              <span className="  md:text-[45px] text-3xl salo uppercase text-[#060ebb]">
                 {" "}
                 Design{" "}
               </span>{" "}
-              paradigms and <br /> integrating the intangible aspects of
+              paradigms  <br  className=" md:block hidden"/> integrating the intangible aspects of
               interdisciplinary <br /> design, particularly
-              <span className=" text-[45px]  uppercase salo text-[#060ebb]">
+              <span className=" md:text-[45px] text-3xl uppercase salo text-[#060ebb]">
                 {" "}
                  Transmedia Approaches.
               </span>
@@ -161,30 +163,71 @@ const FounderSection = () => {
   const isInView = useInView(ref, { once: true }); // Trigger animation once when in view
 
   return (
-    <div className="mt-40 ">
+    <div className="md:mt-40   mt-20">
       <div
         ref={ref}
-        className=" bg-[#060ebb]   p-8 relative overflow-hidden flex items-center justify-between w-full"
+        className=" bg-[#060ebb]  md:pb-0 pb-20  md:p-8 relative overflow-hidden flex items-center justify-between w-full"
       >
-        <div className="px-14   flex flex-col items-start justify-center mt-40 text-left">
+        <div className="md:px-14   flex flex-col  md:items-start justify-center mt-20 md:mt-40 text-left">
+
+
+        <motion.div
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={isInView ? { scale: 1, opacity: 1 } : {}}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                type: "spring",
+                stiffness: 200,
+              }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.2 },
+              }}
+              className=" lg:w-1/2  !scale-75 w-full md:w-1/2 block md:hidden relative  h-full"
+            >
+              <div className="relative   -top-20 h-[800px] [perspective:1000px] cursor-pointer group">
+                <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front image */}
+                  <div className="absolute inset-0 h-[80%] w-full">
+                    <img
+                      src={founder}
+                      alt="Founder Front"
+                      className="w-full h-full object-cover border-[1rem] block rounded-lg"
+                    />
+                  </div>
+                  {/* Back image */}
+                  <div className="absolute inset-0 h-[80%] w-full [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                    <img
+                      src={founder2}
+                      alt="Founder Back"
+                      className="w-full h-full object-cover object-top border-[1rem] block rounded-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-white  alinsa text-[110px] font-bold tracking-wide">
+            <h1 className="text-white md:mt-0 -mt-52 text-center  alinsa text-7xl mb-10 md:text-[110px] font-bold tracking-wide">
               FOUNDER
             </h1>
           </motion.div>
 
-          <div className="flex w-[88%] -mt-6 flex-col lg:flex-row justify-between items-start gap-12">
+          <div className="flex md:w-[88%] md:p-0 p-2  -mt-32 md:-mt-6 flex-col lg:flex-row justify-between md:text-left text-center  md:items-start gap-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:w-1/2"
+              className="lg:w-1/2 md:block flex flex-col items-center"
             >
-              <p className="text-white text-[26px] jost leading-[37px] mb-8">
+              <p className="text-white md:text-[26px] jost  text-xl md:leading-[37px] mb-8">
                 As Experience designers, we never remain neutral. The more
                 compelling the story, the greater the influence we hold. Haus of
                 Chaos is the intersection of a graphic design house and an
@@ -222,7 +265,7 @@ const FounderSection = () => {
                 scale: 1.05,
                 transition: { duration: 0.2 },
               }}
-              className="lg:w-1/2 relative  h-full"
+              className=" lg:w-1/2 md:block md:w-1/2 hidden relative  h-full"
             >
               <div className="relative left-40 -top-40 h-[800px] [perspective:900px] cursor-pointer group">
                 <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -252,321 +295,3 @@ const FounderSection = () => {
   );
 };
 
-const Footer = () => {
-  return (
-    <>
-      <div className=" ">
-        {/* <img src={befooter} className="  " alt="" /> */}
-        <HausOfChaos />
-      </div>
-    </>
-  );
-};
-
-import grid from "../assets/lines.png";
-// import logo1 from "../assets/logo.png";
-const HausOfChaos = () => {
-  return (
-    <div className="min-h-screen bg-[#060ebb] text-white relative">
-      {/* Grid overlay background */}
-      <div
-        className="absolute inset-0 opacity-50"
-        style={{
-          backgroundImage: `url(${grid})`,
-          backgroundSize: "cover",
-        }}
-      />
-
-      {/* Main content container */}
-      <div className="relative    px-4 py-20 md:px-20 md:py-48 min-h-screen flex flex-col justify-between">
-        {/* Logo and description section */}
-        <img
-          src={logo1}
-          className="w-1/2   md:hidden block  mb-8"
-          alt="Haus Of Chaos"
-        />
-
-        <div className=" flex">
-          <div className="md:max-w-xl ">
-            <img
-              src={logo1}
-              className="md:w-40   md:block hidden  mb-4"
-              alt="Haus Of Chaos"
-            />
-
-            <p className="text-lg md:block hidden text-left mb-6">
-              Step into the chaos of creativity
-              <br />
-              Where bold ideas and designs collide
-              <br />
-              Stay ahead with innovative thoughts
-              <br />
-              Experience transformative journeys
-              <br />
-              Embrace the unexpected and <br />
-              disrupt the norm
-            </p>
-          </div>
-
-          {/* Newsletter signup form */}
-          <div className="max-w-xl mt-20 ml-auto">
-            <form className="space-y-4 flex flex-col ">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Full Name*"
-                  className="w-full p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email Address*"
-                  className="w-full mt-6 p-4 bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/20 focus:outline-none focus:border-white/40"
-                />
-              </div>
-              <p className="text-sm text-left opacity-80">
-                Where ideas collide and stories unfold, Haus of Chaos transforms
-                narratives into immersive brand experiences. Explore innovation,
-                redefine design, and disrupt the ordinary with us.{" "}
-                <a href="#" className="underline">
-                  hier
-                </a>
-                .
-              </p>
-              <button
-                type="submit"
-                className="px-12 py-3  w-fit border-2 border-white bg-black text-blue-600 rounded-full hover:bg-black/90 transition-colors"
-              >
-                SUBMIT
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* Footer section */}
-        <div className="relative  whitespace-normal md:pt-16 pt-6 md:pb-0 pb-20">
-          <div className="flex md:justify-end gap-4 text-sm">
-            <a href="mailto:explore@hausofchaos.co" className="hover:underline">
-              MAIL
-            </a>
-            <span>|</span>
-            <a
-              href="https://www.linkedin.com/company/105575916/"
-              className="hover:underline"
-            >
-              LINKEDIN
-            </a>
-            <span>|</span>
-            <a
-              href="https://www.instagram.com/hausofchaos.co/"
-              className="hover:underline"
-            >
-              INSTAGRAM
-            </a>
-            
-          </div>
-        </div>
-        <div className="   absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row  items-start md:gap-0 gap-3 md:justify-between w-full ">
-          <div className="text-sm md:block hidden">
-            2025 © Haus Of chaos Ltd.
-          </div>
-          {/* <div className="md:flex gap-4 text-sm  hidden">
-            <a href="#" className="hover:underline">
-              RIA
-            </a>
-            <a href="#" className="hover:underline">
-              Datenschutz
-            </a>
-          </div> */}
-          <div className=" text-sm whitespace-nowrap text-left   md:hidden block ">
-            2025 © Haus Of chaos Ltd. <br />
-            Impressum | Datenschutz
-          </div>
-          <div className=" text-sm md:text-base">
-            Design by{" "}
-            <a
-              href="https://theinternetcompany.one/"
-              className="hover:underline"
-            >
-              TIC GLOBAL
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const FAQ_DATA = [
-  {
-    id: "01",
-    question:
-      "WIR HABEN UNS BEI AGENTUREN SCHON DIE FINGER VERBRANNT. WIESO IST HAUS OF CHAOS BESSER?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
-  },
-  {
-    id: "02",
-    question: "WIESO IST CORPORATE INFLUENCER MARKETING SO WIRKUNGSVOLL?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
-  },
-  {
-    id: "03",
-    question:
-      "WIR HABEN KAUM/KEINE ZEIT FÜR CONTENT CREATION. WELCHE LÖSUNG GIBT ES IN DEM FALL?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
-  },
-  {
-    id: "04",
-    question: "UNSER MARKETINGBUDGET LÄSST KEINE GROSEN SPRÜNGE ZU. WAS TUN?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
-  },
-  {
-    id: "05",
-    question: "WIE KÖNNEN WIR UNS DIE ZUSAMMENARBEIT MIT DIR VORSTELLEN?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
-  },
-  {
-    id: "06",
-    question: "WELCHES INVEST KOMMT AUF UNS ZU?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
-  },
-  {
-    id: "07",
-    question:
-      "KATIE, WO BEKOMME ICH DEIN NEUES BUCH ZUM CORPORATE INFLUENCER MARKETING?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
-  },
-  {
-    id: "08",
-    question:
-      "WIR HABEN INTERNATIONALE KUNDSCHAFT. BEKOMME ICH AUCH ÜBERSETZUNGEN?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus.",
-  },
-];
-
-const FAQItem = ({ item, isOpen, onToggle }) => {
-  return (
-    <div className="border-b max-w-2xl border-blue-100/10">
-      <button
-        className="flex w-full items-center justify-between py-6 text-left"
-        onClick={onToggle}
-      >
-        <div className="flex items-center">
-          <span className="text-[#2354CF] font-bold mr-4 text-[32px]">
-            {item.id}
-          </span>
-          <span className="text-white text-2xl">{item.question}</span>
-        </div>
-        <motion.span
-          animate={{ rotate: isOpen ? 45 : 0 }}
-          className="text-blue-500 text-2xl ml-4"
-        >
-          <svg
-            width="33"
-            height="32"
-            viewBox="0 0 33 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_20_2512)">
-              <g clip-path="url(#clip1_20_2512)">
-                <path
-                  d="M19.5509 28.6184L21.5812 26.5881V20.9292H27.2401L29.2704 18.8989H19.5509V28.6184Z"
-                  fill="#2354CF"
-                />
-                <path
-                  d="M15.4759 1.01491C15.4759 3.95236 15.4759 12.016 15.4759 14.8238C12.7113 14.8238 4.54689 14.8238 1.66703 14.8238L0.651886 15.8389L1.66703 16.8541H15.4759C15.4759 17.9196 15.4759 29.2807 15.4759 30.663L16.4911 31.6781L17.5063 30.663V16.8541H31.3151L32.3303 15.8389L31.3151 14.8238C29.8752 14.8238 18.615 14.8238 17.5063 14.8238V1.01491L16.4911 -0.000244141L15.4759 1.01491Z"
-                  fill="#2354CF"
-                />
-                <path
-                  d="M3.71173 18.8989L5.74203 20.9292H11.401V26.5881L13.4312 28.6184V18.8989H3.71173Z"
-                  fill="#2354CF"
-                />
-                <path
-                  d="M13.4312 12.7793V3.05981L11.401 5.09011V10.7491H5.74203L3.71173 12.7793H13.4312Z"
-                  fill="#2354CF"
-                />
-                <path
-                  d="M19.5509 12.7793H29.2704L27.2401 10.7491H21.5812V5.09011L19.5509 3.05981V12.7793Z"
-                  fill="#2354CF"
-                />
-              </g>
-            </g>
-            <defs>
-              <clipPath id="clip0_20_2512">
-                <rect
-                  width="32"
-                  height="32"
-                  fill="white"
-                  transform="translate(0.330017)"
-                />
-              </clipPath>
-              <clipPath id="clip1_20_2512">
-                <rect
-                  width="32"
-                  height="32"
-                  fill="white"
-                  transform="translate(0.330017)"
-                />
-              </clipPath>
-            </defs>
-          </svg>
-        </motion.span>
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-6 pl-12  text-left text-gray-300">{item.answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-const FAQ = () => {
-  const [openId, setOpenId] = useState(null);
-
-  const handleToggle = (id) => {
-    setOpenId(openId === id ? null : id);
-  };
-
-  return (
-    <div className="min-h-screen  mt-1  bg-black ">
-      <div className=" justify-evenly flex  mx-auto py-32">
-        <div className="mb-12  text-left ">
-          <h2 className="text-[#2354CF] font-sans text-[90px] ">FAQS</h2>
-          <p className="text-[#F4ECE0] text-[15px] font-bold">
-            HÄUFIG GESTELLTE FRAGEN
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          {FAQ_DATA.map((item) => (
-            <FAQItem
-              key={item.id}
-              item={item}
-              isOpen={openId === item.id}
-              onToggle={() => handleToggle(item.id)}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};

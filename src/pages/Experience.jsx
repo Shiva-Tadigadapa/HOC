@@ -106,7 +106,7 @@ const Experience = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="items-center flex-col   mt-14 relative justify-center !h-screen  flex ">
+        <div className="items-center flex-col  bg-black mt-14 relative justify-center !h-screen  flex ">
           <SecondSection />
         </div>
         {/* <div className="items-center flex-col   -mt-20 relative justify-center !h-screen  flex "> */}
@@ -175,7 +175,7 @@ const SecondSection = () => {
 
   return (
     <div ref={sectionRef} className="overflow-hidden z-[300] ">
-      <div className="bg-black py-[120px] flex flex-col   items-center gap-10">
+      <div className="bg-black  py-[160px] md:py-[120px] flex flex-col   items-center gap-10">
         <div>
           <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center  uppercase alinsa">
             Experience Lab
@@ -222,13 +222,52 @@ const SecondSection = () => {
             alt="Lab"
           />
         </div>
-        <h1 className="md:px-20  -pt-40 px-4 md:text-2xl pb-[80px] text-white w-[70%] text-center jost">
+        <h1 className="md:px-20  -pt-40 px-10 text-xl md:text-2xl pb-[80px] text-white md:w-[70%] text-center jost">
           Born from our ethos, the Chaos Lab serves as a testing ground for the
           diverse narrative environments we experiment with and explore. Based
           in India, with plans for growth, we embrace a ‘test-and-learn’
           mindset. Our aim is to decode + disrupt conventional norms and
           beliefs in experimental communication + experience design.
         </h1>
+
+        <div className="relative md:hidden -mt-40 flex justify-center items-center gap-10 h-[300px]">
+          {/* LineLab Image */}
+          {/* <img
+            src={linelab}
+            className="w-[30%] left-[0rem] top-1/2 -mt-[1.2px] absolute"
+            alt="Lab"
+          /> */}
+
+          {/* Three Image */}
+          <motion.img
+            src={three}
+            className="w-[80%] z-[10] absolute -left-[12%]"
+            alt="Lab"
+            style={{
+              transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
+            }}
+            transition={{ duration: 0.4 }}
+          />
+
+          <img src={noswitch} className="w-full scale-125" alt="Lab" />
+
+          {/* Two Image */}
+          <motion.img
+            src={two}
+            className="w-[100%] z-[2] absolute -right-[15%] !-mr-10"
+            alt="Lab"
+            style={{
+              transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
+            }}
+            transition={{ duration: 0.4 }}
+          />
+
+          {/* <img
+            src={linelab}
+            className="w-[40%] z-[1] right-[1rem] top-1/2 -mt-[5.5px] absolute"
+            alt="Lab"
+          /> */}
+        </div>
       </div>
     </div>
   );
@@ -274,7 +313,7 @@ const Play = () => {
 
   return (
     <div
-      className="min-h-screen -mt-[35px] bg-black text-white relative overflow-hidden"
+      className="md:min-h-screen -mt-[35px] bg-black text-white relative overflow-hidden"
       onClick={handleClick}
     >
       {/* Grid Overlay */}
@@ -291,7 +330,7 @@ const Play = () => {
         <div className="flex justify-between items-center px-20 py-10">
           <div className="max-w-xl"></div>
 
-          <div className="max-w-xl relative flex flex-col  justify-start items-end">
+          <div className="max-w-xl relative hidden md:flex flex-col  justify-start items-end">
             <h1 className="font-[1000] alinsa -ml-40 text-[100px] whitespace-nowrap">
               PLAY GROUND
             </h1>
@@ -299,6 +338,18 @@ const Play = () => {
               Click on the boxes to explore X's and O's
             </p>
             <div className="relative w-[130%] mt-10 h-[700px] [perspective:1000px]">
+              <AutoFlipImages />
+            </div>
+          </div>
+
+          <div className= "w-full  py-10 relative md:hidden flex flex-col  text-center   items-center justify-center">
+            <h1 className="  alinsa   text-center text-5xl !font-medium whitespace-nowrap">
+              PLAY GROUND
+            </h1>
+            <p className="text-sm   mb-10      text-center whitespace-nowrap font-bold text-white/60">
+              Click on the boxes to explore X's and O's
+            </p>
+            <div className="relative w-[90vw] mt-60 h-[600px] [perspective:1000px]">
               <AutoFlipImages />
             </div>
           </div>

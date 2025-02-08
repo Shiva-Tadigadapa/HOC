@@ -105,7 +105,7 @@ const Careers = () => {
           {/* Hand Image Animation */}
           <motion.img
             src={hand}
-            className="w-[100px] md:w-[150px] absolute z-[1] left-1/4 ml-20 top-28"
+            className="w-[70px] md:w-[150px] absolute z-[1] left-10 md:left-1/4 ml-20 top-60 md:top-28"
             alt="Hand"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -115,7 +115,7 @@ const Careers = () => {
           {/* UFO Image Animation */}
           <motion.img
             src={ufo}
-            className="w-[100px] md:w-[150px] absolute z-[20] top-1/2"
+            className="w-[100px] md:w-[150px] absolute z-[20] !-mt-[7.5rem] top-1/2"
             alt="UFO"
             initial={{ x: 0, opacity: 0 }} // Start slightly off-screen right
             animate={{ x: 300, opacity: 1 }} // Spring animation into position
@@ -156,7 +156,7 @@ const Careers = () => {
 
           {/* CAREERS Title Animation */}
           <motion.h1
-            className="font-[1000] text-[260px] alinsa text-[#060ebb] z-[10]"
+            className="font-[1000]   !mt-20 md:leading-[0px] text-8xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -166,7 +166,7 @@ const Careers = () => {
 
           {/* Tagline Animation */}
           <motion.p
-            className="jost font-[500] lowercase text-[60px] z-[10]"
+            className="jost font-[500] !mt-24 lowercase md:text-[60px] z-[10]"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -201,25 +201,25 @@ const JobListings = () => {
   ];
 
   return (
-    <div className="px-10 py-10">
+    <div className="md:px-10 px-2 py-10">
       <div
         ref={ref}
-        className="min-h-screen rounded-[20px] bg-black text-white p-8"
+        className="min-h-screen rounded-[20px] bg-black text-white p-4 md:p-8"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex mx-auto px-10 py-20 gap-10"
+          className="flex  md:flex-row flex-col mx-auto md:px-10 py-10 md:py-20 gap-10"
         >
-          <div className="mb-12 w-[55%] text-left">
+          <div className="mb-12 md:w-[55%] text-left">
             <motion.h1
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.3 }}
-              className="text-[50px] leading-[50px] font-bold jost mb-6"
+              className="md:text-[50px] text-4xl md:leading-[50px] font-bold jost mb-6"
             >
-              <span className="text-blue-800 ">E-mail us</span> if you are a
+              <span className="text-blue-600 ">E-mail us</span> if you are a
               creative open to learning, nurturing, growing, and fostering the
               ethos of the company, "order in chaos".
             </motion.h1>
@@ -247,7 +247,7 @@ const JobListings = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
-            className="space-y-4 mt-20 text-right w-[45%]"
+            className="space-y-4  md:mt-20 text-right md:w-[45%]"
           >
             {positions.map((position, index) => (
               <motion.div
