@@ -8,6 +8,7 @@ import logo2 from "../assets/logo2.png";
 import befooter from "../assets/befooter.png";
 import hand from "../assets/hand.png";
 import ufo from "../assets/ufo.png";
+import MobileNav from "./MobileNav";
 
 import { motion } from "framer-motion";
 import { div } from "framer-motion/client";
@@ -34,70 +35,76 @@ const Careers = () => {
   };
   return (
     <>
+       {/* Navbar */}
+       <div className="md:hidden  block !bg-white">
+          <MobileNav />
+        </div>
       <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
-        {/* Navbar */}
-        <div
-          className={`${
-            isFixed ? "fixed" : "absolute"
-          } w-full z-[500] top-0 left-0 ${
-            isSection2 ? "bg-white text-black" : "  text-[#000000]"
-          } transition-all py-2 duration-700`}
-        >
-          <div className="flex py-4 jost px-4 md:px-10 justify-between items-start">
-            <Link to={"/"}>
-              <img
-                src={isSection2 ? logo2 : logo2}
-                className="w-[80px] md:w-[110px] transition-all duration-700"
-                alt="Logo"
-              />
-            </Link>
-            <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-              <Link to={"/Services"} className=" hover:text-black/50">
-                <h1>SERVICES</h1>
+     
+        <div className="hidden md:block">
+          <div
+            className={`${
+              isFixed ? "fixed" : "absolute"
+            } w-full z-[500] top-0 left-0 ${
+              isSection2 ? "bg-white text-black" : "  text-[#000000]"
+            } transition-all py-2 duration-700`}
+          >
+            <div className="flex py-4 jost px-4 md:px-10 justify-between items-start">
+              <Link to={"/"}>
+                <img
+                  src={isSection2 ? logo2 : logo2}
+                  className="w-[80px] md:w-[110px] transition-all duration-700"
+                  alt="Logo"
+                />
               </Link>
-              <Link to={"/Experience"} className=" hover:text-black/50">
-                <h1>EXPERIENCE LAB</h1>
-              </Link>
-              <Link to={"/Ethos"} className=" hover:text-black/50">
-                <h1>ETHOS</h1>
-              </Link>
-              <Link to={"/Careers"} className=" hover:text-black/50">
-                <h1>CAREERS</h1>
+              <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
+                <Link to={"/Services"} className=" hover:text-black/50">
+                  <h1>SERVICES</h1>
+                </Link>
+                <Link to={"/Experience"} className=" hover:text-black/50">
+                  <h1>EXPERIENCE LAB</h1>
+                </Link>
+                <Link to={"/Ethos"} className=" hover:text-black/50">
+                  <h1>ETHOS</h1>
+                </Link>
+                <Link to={"/Careers"} className=" hover:text-black/50">
+                  <h1>CAREERS</h1>
+                </Link>
+              </div>
+              <Link to={"/"}>
+                <motion.div
+                  className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
+                    isToggled
+                      ? "bg-black text-white"
+                      : "bg-[#F0F0F0] text-[#060ebb]"
+                  }`}
+                  onClick={handleToggle}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <motion.h1
+                    className={`mr-6 md:mr-9 text-center`}
+                    animate={{
+                      x: isToggled ? "35px" : "0px",
+                      color: isToggled ? "#FFFFFF" : "#060ebb",
+                    }}
+                    transition={{ duration: 1 }}
+                  >
+                    CONTACT
+                  </motion.h1>
+                  <motion.img
+                    className="w-[36px] ml-20 md:w-[46px] h-[36px] md:h-[46px] absolute"
+                    src={worldsmall}
+                    alt="World"
+                    animate={{
+                      x: isToggled ? "-220%" : "150%",
+                      rotate: isToggled ? 360 : 0,
+                    }}
+                    transition={{ duration: 1 }}
+                  />
+                </motion.div>
               </Link>
             </div>
-            <Link to={"/Contact"}>
-              <motion.div
-                className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
-                  isToggled
-                    ? "bg-black text-white"
-                    : "bg-[#F0F0F0] text-[#060ebb]"
-                }`}
-                onClick={handleToggle}
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-              >
-                <motion.h1
-                  className={`mr-6 md:mr-9 text-center`}
-                  animate={{
-                    x: isToggled ? "35px" : "0px",
-                    color: isToggled ? "#FFFFFF" : "#060ebb",
-                  }}
-                  transition={{ duration: 0.5 }}
-                >
-                  CONTACT
-                </motion.h1>
-                <motion.img
-                  className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
-                  src={worldsmall}
-                  alt="World"
-                  animate={{
-                    x: isToggled ? "-50%" : "150%",
-                    rotate: isToggled ? 360 : 0,
-                  }}
-                  transition={{ duration: 0.8 }}
-                />
-              </motion.div>
-            </Link>
           </div>
         </div>
         {/* Absolutely Centered Text */}

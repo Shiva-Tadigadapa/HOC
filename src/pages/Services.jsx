@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import grid from "../assets/lines.png";
 import { motion } from "framer-motion";
 import { div } from "framer-motion/client";
+import MobileNav2 from "./MobileNav";
 const Contact = () => {
   const [isSection2, setIsSection2] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
@@ -38,11 +39,14 @@ const Contact = () => {
     <>
       <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
         {/* Navbar */}
+        <div className="md:hidden">
+          <MobileNav2 />
+        </div>
         <div
           className={`${
             // isFixed  w-full z-[500] top-0 left-0 ${
             isSection2 ? "bg-white text-black" : "  text-[#000000]"
-          } transition-all  py-2 duration-700`}
+          } transition-all  py-2 duration-700 md:block hidden`}
         >
           <div className="flex py-4 jost px-4 md:px-10 justify-between items-start">
             <Link to={"/"}>
@@ -102,7 +106,7 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="   bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[214vh] mt-20 rounded-t-3xl   flex px-10">
+        <div className="   bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[214vh] mt-40 md:mt-20 rounded-t-3xl   flex px-10">
           <MainServices />
         </div>
         <Footer />

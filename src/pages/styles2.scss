@@ -1,0 +1,153 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {  
+  font-family: 'Georgia';
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container2 {
+  height: 100px;
+  overflow-y: hidden;
+  // position: fixed;
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  font-family: alinsa;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+nav {  
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 45px;
+
+  .logo-container {
+    overflow-y: hidden;
+    
+    h1 {
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+  }
+
+  .menu-container {
+    overflow-y: hidden;
+
+    div {
+      text-transform: uppercase;
+      font-size: 13px;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.mobile-menu2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh !important;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000 !important;
+  color: white;
+
+  button {
+    align-self: flex-end;
+    margin: 35px 45px 0 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 13px;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 40px;
+    
+    li {
+      margin: 20px 0;
+      overflow-y: hidden;   
+      user-select: none;   
+      
+      div {
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 34px;
+      }
+
+      &:hover {
+        font-style: italic;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .contact {
+    margin-top: 80px;
+    display: flex;
+
+    h5 {
+      font-weight: normal;
+
+      &:first-of-type {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+.img-container {  
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  width: 100%;
+  
+    img {  
+      height: 700px;
+      pointer-events: none;
+    }
+}
+
+.hamburger-menu2 {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+}
+
+.hamburger-line2 {
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.open2 span{
+  background-color: #ffffff !important;
+}

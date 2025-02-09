@@ -6,6 +6,7 @@ import worldsmall from "../assets/worldsmall.png";
 import Home from "./Home";
 import { Link } from "react-router-dom";
 import CursorHover from "../utils/Hover";
+import MobileNav3 from "./MobileNav3";
 
 
 const Landing = () => {
@@ -54,12 +55,15 @@ const Landing = () => {
   return (
     <>
       {/* Navbar */}
+      <div className="md:hidden">
+        <MobileNav3 />
+      </div>
       <div
         className={`${
           isFixed ? "fixed" : "absolute"
         } w-full !z-[800] top-0 left-0 ${
           isSection2 ? "bg-white text-black" : "bg-[#060ebb] text-white"
-        } transition-all duration-700`}
+        } transition-all duration-700 md:block hidden`}
       >
         {!isSection2 && <CursorHover />} {/* Render only in section 1 */}
         <div className="flex py-6 jost px-4 md:px-10 justify-between items-start">
