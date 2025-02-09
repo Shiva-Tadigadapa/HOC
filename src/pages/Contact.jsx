@@ -102,10 +102,10 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="items-center flex-col -space-y-24 relative justify-center h-screen flex px-10">
+        <div className="items-center flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex px-10">
           {/* CONTACT Heading with Spring Animation */}
           <motion.h1
-            className="font-[1000] text-[260px] alinsa text-[#060ebb] z-[10]"
+            className="font-[1000] px-10  -mt-40 md:!mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 120, damping: 10 }}
@@ -115,7 +115,7 @@ const Contact = () => {
 
           {/* Tagline with Spring Animation */}
           <motion.p
-            className="jost font-[500] lowercase text-[60px] z-[10]"
+            className="jost font-[500]  text-xl md:!mt-24 lowercase md:text-[60px] z-[10]"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -125,13 +125,59 @@ const Contact = () => {
               delay: 0.2,
             }}
           >
-            WANNA JOIN THE CHAOS ?
+            WANT TO JOIN THE CHAOS ?
           </motion.p>
         </div>
         <JobListings />
         <Footer />
       </div>
     </>
+  );
+};
+
+const JobListings = () => {
+  return (
+    <div className="px-10 md:mt-0 py-10 flex md:flex-row flex-col-reverse">
+      <div className="scale-90 md:mt-0 mt-20 w-full gap-10 flex flex-col items-start justify-start">
+        <div className="flex items-center gap-6">
+          <MdEmail className="text-black md:text-[60px] text-2xl" />
+          <a className="text-black text-2xl md:text-5xl font-bold hover:text-[#060ebb] transition-colors" href="mailto:explore@hausofchaos.co">
+            explore@hausofchaos.co
+          </a>
+        </div>
+
+        <div className="flex items-start gap-6">
+          <MdLocationOn className="text-black text-6xl  md:text-[60px] mt-2" />
+          <a className="text-black text-2xl md:text-5xl font-bold text-left hover:text-[#060ebb] transition-colors" href="#">
+            4th Floor,<br className="md:block hidden" />
+            No 9, Seshadri Road,<br className="md:block hidden" />
+            Teynampet,<br className="md:block hidden" />
+            Chennai - 86
+          </a>
+        </div>
+
+        <div className="flex items-center gap-6">
+          <MdPhone className="text-black text-2xl md:text-[60px]" />
+          <a className="text-black text-2xl md:text-5xl font-bold hover:text-[#060ebb] transition-colors" href="tel:+91 9600931366">
+            +91 9600931366
+          </a>
+        </div>
+
+        <button className="text-black border-[2px] border-[#000000] rounded-full px-8 font-[700] py-2 mt-4 hover:bg-black hover:text-white transition-all duration-300">
+          JOIN CHAOS
+        </button>
+      </div>
+      <div className="-mt-60 w-full">
+        <video
+          src={keyvideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="scale-150 md:scale-100 md:w-full h-full object-cover"
+        />
+      </div>
+    </div>
   );
 };
 
@@ -143,53 +189,3 @@ import heartkey from "../assets/heartkey.png";
 import keyvideo from "../assets/key.mp4";
 
 import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md'; // Add this import at the top
-
-const JobListings = () => {
-  return (
-    <div className="px-10 py-10 flex">
-      <div className="min-h-screen flex items-start justify-start p-8">
-        <div className="scale-90 gap-10 flex flex-col items-start justify-start">
-          <div className="flex items-center gap-6">
-            <MdEmail className="text-black text-[60px]" />
-            <a className="text-black text-5xl font-bold hover:text-[#060ebb] transition-colors" href="mailto:explore@hausofchaos.co">
-              explore@hausofchaos.co
-            </a>
-          </div>
-          
-          <div className="flex items-start gap-6">
-            <MdLocationOn className="text-black text-[60px] mt-2" />
-            <a className="text-black text-5xl font-bold text-left hover:text-[#060ebb] transition-colors" href="#">
-              4th Floor,<br />
-              No 9, Seshadri Road,<br />
-              Teynampet,<br />
-              Chennai - 86
-            </a>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <MdPhone className="text-black text-[60px]" />
-            <a className="text-black first-line:text-5xl font-bold hover:text-[#060ebb] transition-colors" href="tel:+91 9600931366">
-              +91 9600931366
-            </a>
-          </div>
-
-          <button className="text-black border-[2px] border-[#000000] rounded-full px-8 font-[700] py-2 mt-4 hover:bg-black hover:text-white transition-all duration-300">
-            JOIN CHAOS
-          </button>
-        </div>
-      </div>
-      <div className=" -mt-60 bg-black">
-        <video 
-         src={keyvideo}
-         autoPlay
-         loop
-         muted
-         playsInline
-         className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  );
-};
-
- 

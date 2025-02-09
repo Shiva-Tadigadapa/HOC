@@ -472,6 +472,7 @@ const HausOfChaos = () => {
               disrupt the norm
             </p>
           </div>
+          
 
           {/* Newsletter signup form */}
           <div className="max-w-xl mt-20 ml-auto">

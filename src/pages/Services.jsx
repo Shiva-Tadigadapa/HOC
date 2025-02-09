@@ -338,7 +338,7 @@ const MainServices = () => {
           <h1 className="  flex items-center  justify-center   !font-[400]  text-5xl  text-center md:hidden">
             Our Services
           </h1>
-          <div className="bg-[#242424] px-3 py-3 rounded-[76px] -bottom-12 md:-bottom-16 flex gap-2 absolute text-xs md:text-base jost text-white font-medium">
+          <div className="bg-[#242424] px-3 py-3 rounded-[76px] -bottom-16 md:-bottom-16 flex gap-2 absolute text-xs md:text-base jost text-white font-medium">
             {["Experience", "Design", "Build"].map((item) => (
               <button
                 key={item}
@@ -424,7 +424,7 @@ const MainServices = () => {
             ))}
           </AnimatePresence>
         </svg>
-        <div className="md:hidden w-full items-center justify-center  flex flex-col gap-36 mt-32">
+        <div className="md:hidden w-full items-center justify-center  flex flex-col gap-28 mt-32">
           {currentItems.map((item, i) => (
             <motion.div
               key={active + i}

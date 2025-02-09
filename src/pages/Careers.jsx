@@ -105,7 +105,7 @@ const Careers = () => {
           {/* Hand Image Animation */}
           <motion.img
             src={hand}
-            className="w-[70px] md:w-[150px] absolute z-[1] left-10 md:left-1/4 ml-20 top-60 md:top-28"
+            className="w-[70px] md:w-[150px] absolute z-[1] left-10 md:left-1/4 ml-20 top-44 md:top-28"
             alt="Hand"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -156,7 +156,7 @@ const Careers = () => {
 
           {/* CAREERS Title Animation */}
           <motion.h1
-            className="font-[1000] px-10  !mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
+            className="font-[1000] px-10  -mt-40 md:!mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -166,7 +166,7 @@ const Careers = () => {
 
           {/* Tagline Animation */}
           <motion.p
-            className="jost font-[500]  md:!mt-24 lowercase md:text-[60px] z-[10]"
+            className="jost font-[500]  text-xl md:!mt-24 lowercase md:text-[60px] z-[10]"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -201,7 +201,7 @@ const JobListings = () => {
   ];
 
   return (
-    <div className="md:px-10 px-2 py-10">
+    <div className="md:px-10 px-2  md:mt-0 -mt-40 py-10">
       <div
         ref={ref}
         className="min-h-screen rounded-[20px] bg-black text-white p-4 md:p-8"
