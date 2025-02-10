@@ -106,7 +106,7 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="   bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[214vh] mt-40 md:mt-20 rounded-t-3xl   flex px-10">
+        <div className="  overflow-hidden  bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[214vh] mt-40 md:mt-20 rounded-t-3xl   flex px-10">
           <MainServices />
         </div>
         <Footer />

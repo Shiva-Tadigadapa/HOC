@@ -8,7 +8,7 @@ import grid from "../assets/lines.png";
 
 const Footer = () => {
   return (
-    <div>
+    <div className=" jost">
       <HausOfChaos />
     </div>
   );
