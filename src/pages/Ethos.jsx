@@ -10,6 +10,7 @@ import logo1 from "../assets/logo.png";
 import befooter from "../assets/befooter.png";
 import Footer from "./Footer"; 
 import MobileNav from "./MobileNav";
+import tvideo from "../assets/tv.mp4";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -36,7 +37,7 @@ const Ethos = () => {
   };
   return (
     <>
-      <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
+      <div className="bg-white !z-[1100] jost relative" style={{ minHeight: "100vh" }}>
         {/* Navbar */}
         <div className="md:hidden">
           <MobileNav />
@@ -108,7 +109,7 @@ const Ethos = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="  items-end h-screen md:h-full mt-0 md:mt-24  bottom-0 flex px-4 md:px-10">
+        <div className=" !z-[-200]   items-end h-screen md:h-full mt-0 md:mt-12  bottom-0 flex px-4 md:px-10">
           <div className="  capitalize  w-[100%]">
             <h2 className="jost md:text-[26px] text-2xl text-left   -mb-20 md:leading-[40px]">
               <span className=" md:text-[45px]  text-3xl salo uppercase  text-[#060ebb]">
@@ -144,10 +145,17 @@ const Ethos = () => {
 
           {/* Adding smooth infinite rotation */}
           <motion.div
-            className="w-[80%]  z-[100]  relative -left-10 top-52 overflow-hidden"
+            className="w-[80%]  !z-[-800]  relative -left-10 top-52 overflow-hidden"
             animate={{ rotate: 360 }}
-          >
-            <img src={tvpng} className="w-full" alt="Swrill" />
+          > 
+                    <video
+                      src={tvideo}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-[140%] h-[40rem] object-cover"
+                    />
           </motion.div>
         </div>
         <FounderSection />
@@ -168,10 +176,10 @@ const FounderSection = () => {
   const isInView = useInView(ref, { once: true }); // Trigger animation once when in view
 
   return (
-    <div className="md:mt-40   mt-20">
+    <div className="md:mt-40  !z-[1000]  mt-20">
       <div
         ref={ref}
-        className=" bg-[#060ebb]  md:pb-0 pb-20  md:p-8 relative overflow-hidden flex items-center justify-between w-full"
+        className=" bg-[#1524f5]  md:pb-0 pb-20  md:p-8 relative overflow-hidden flex items-center justify-between w-full"
       >
         <div className="md:px-14   flex flex-col  md:items-start justify-center mt-20 md:mt-40 text-left">
 
