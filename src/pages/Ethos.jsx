@@ -179,7 +179,7 @@ const FounderSection = () => {
     <div className="md:mt-40  !z-[1000]  mt-20">
       <div
         ref={ref}
-        className=" bg-[#1524f5]  md:pb-0 pb-20  md:p-8 relative overflow-hidden flex items-center justify-between w-full"
+        className=" bg-[#060ebb]  md:pb-0 pb-20  md:p-8 relative overflow-hidden flex items-center justify-between w-full"
       >
         <div className="md:px-14   flex flex-col  md:items-start justify-center mt-20 md:mt-40 text-left">
 
