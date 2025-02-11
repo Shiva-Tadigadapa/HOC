@@ -154,7 +154,7 @@ const FAQ_DATA = [
   
   const FAQItem = ({ item, isOpen, onToggle }) => {
     return (
-      <div className="border-b max-w-xl px-4 md:max-w-2xl border-blue-100/10">
+      <div className="border-b   max-w-xl px-4 md:max-w-2xl border-blue-100/10">
         <button
           className="flex w-full items-center justify-between py-6 text-left"
           onClick={onToggle}
@@ -242,7 +242,7 @@ const FAQ_DATA = [
 
   const CategoryAccordion = ({ category, openCategoryId, openFaqId, onCategoryToggle, onFaqToggle }) => {
     return (
-      <div className="border-b border-blue-100/10">
+      <div className="border-b    jost border-blue-100/10">
         <button
           className="flex w-full items-center justify-between py-6 text-left"
           onClick={() => onCategoryToggle(category.id)}
@@ -351,7 +351,7 @@ const FAQ_DATA = [
             <h2 className="text-[#2354CF] salo text-5xl md:text-[90px] md:leading-[120px]">
               FAQS
             </h2>
-            <p className="text-[#F4ECE0] uppercase text-xs md:text-[15px] font-bold">
+            <p className="text-[#F4ECE0] jost uppercase text-xs md:text-[15px] font-bold">
             frequently asked questions
             </p>
           </div>
