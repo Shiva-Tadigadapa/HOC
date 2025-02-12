@@ -84,7 +84,7 @@ const FAQ_DATA = [
         "Yes, we curate and design immersive experiences for events, launches, and activations that bring your brand to life.  ",
     },
     {
-      id: "14",
+      id: "15",
       question: "How do you measure the success of a brand experience?",
       answer:
         "We define success based on your goals, which may include metrics such as increased engagement, strengthened client relationships, or elevated brand perception. We’ll work with you to establish benchmarks and assess outcomes.",
