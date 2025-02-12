@@ -351,9 +351,9 @@ const FAQ_DATA = [
             <h2 className="text-[#2354CF] salo text-5xl md:text-[90px] md:leading-[120px]">
               FAQS
             </h2>
-            <p className="text-[#F4ECE0] jost uppercase text-xs md:text-[15px] font-bold">
+            {/* <p className="text-[#F4ECE0] jost uppercase text-xs md:text-[15px] font-bold">
             frequently asked questions
-            </p>
+            </p> */}
           </div>
   
           <div className="space-y-4 md:w-[600px] px-4">

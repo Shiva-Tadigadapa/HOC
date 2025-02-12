@@ -131,7 +131,7 @@ const HausOfChaos = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="absolute left-0 px-4 md:px-10 bottom-6 md:bottom-10 flex flex-col md:flex-row items-start md:gap-0 gap-3 md:justify-between w-full">
+        <div className="absolute left-0 px-4 md:px-20 bottom-6 md:bottom-10 flex flex-col md:flex-row items-start md:gap-0 gap-3 md:justify-between w-full">
           <div className="text-sm md:block hidden">2025 © Haus Of Chaos Ltd.</div>
           <div className="text-sm whitespace-nowrap text-left md:hidden block">
             2025 © Haus Of Chaos Ltd. <br /> Impressum | Datenschutz

@@ -26,7 +26,7 @@ const Home = () => {
       <div ref={ref} className="md:h-[200vh] h-full relative">
         <div className="bg-white jost md:-mt-[22rem] relative md:min-h-screen">
           <div className="absolute  transform  md:top-[35rem] -top-40 md:-bottom-40 flex px-4 md:px-10">
-            <div>
+            <div  className=" z-[500]">
               <h1
                 className="text-3xl   salo md:text-[110px] text-[#060ebb]
                font-[500] text-left leading-tight md:leading-normal"
@@ -58,7 +58,7 @@ const Home = () => {
           >
             {/* <img src={swrillpng} className="w-[80%]" alt="Swrill" /> */}
           </motion.div>
-          <div className=" w-full md:-mt-12 mt-40 whitespace-nowrap md:mr-20">
+          <div className=" !z-[500] w-full md:-mt-12 mt-40 whitespace-nowrap md:mr-20">
             <h1 className="text-3xl  salo md:text-[110px] text-[#060ebb] font-[500] text-right leading-tight md:leading-normal">
               WHAT WE DO
             </h1>
