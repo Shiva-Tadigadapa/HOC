@@ -182,7 +182,7 @@ const Landing = () => {
         </motion.div>
         {/* Footer */}
 
-        <div className="absolute px-4 md:px-20 text-[14px] flex w-full items-center justify-between bottom-4">
+        <div className="absolute px-4 md:px-20 salo text-[14px] flex w-full items-center justify-between bottom-4">
           <h1>@Madeintic</h1>
           <h1>SCROLL NOW</h1>
           <h1 className="text-right font-normal leading-[17px]">
