@@ -159,8 +159,8 @@ const Contact = () => {
 };
 
 import dragme1 from "../assets/svgs/Dragme.svg";
-import linkdsvg from "../assets/svgs/Linkd.svg";
-import instasvg from "../assets/svgs/Insta.svg";
+import linkdsvg from "../assets/svgs/linkd.svg";
+import instasvg from "../assets/svgs/insta.svg";
 import facebook from "../assets/svgs/facebook.svg"
 import dragleft from "../assets/svgs/dragmeleft.svg"
 import dragright from "../assets/svgs/dargmeright.svg"
