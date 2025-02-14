@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import worldsmall from "../assets/worldsmall.png";
 import tvpng from "../assets/tv.png";
@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { div } from "framer-motion/client";
 import MobileNav2 from "./MobileNav";
 const Contact = () => {
+  const location = useLocation();
   const [isSection2, setIsSection2] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
 
@@ -35,6 +36,11 @@ const Contact = () => {
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
+
+  const isActiveRoute = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <>
       <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
@@ -57,16 +63,28 @@ const Contact = () => {
               />
             </Link>
             <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-              <Link to={"/Services"} className=" hover:text-black/50">
+              <Link 
+                to={"/Services"} 
+                className={`hover:text-black/50 ${isActiveRoute('/Services') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+              >
                 <h1>SERVICES</h1>
               </Link>
-              <Link to={"/Experience"} className=" hover:text-black/50">
+              <Link 
+                to={"/Experience"} 
+                className={`hover:text-black/50 ${isActiveRoute('/Experience') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+              >
                 <h1>EXPERIENCE LAB</h1>
               </Link>
-              <Link to={"/Ethos"} className=" hover:text-black/50">
+              <Link 
+                to={"/Ethos"} 
+                className={`hover:text-black/50 ${isActiveRoute('/Ethos') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+              >
                 <h1>ETHOS</h1>
               </Link>
-              <Link to={"/Careers"} className=" hover:text-black/50">
+              <Link 
+                to={"/Careers"} 
+                className={`hover:text-black/50 ${isActiveRoute('/Careers') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+              >
                 <h1>CAREERS</h1>
               </Link>
             </div>
@@ -106,7 +124,7 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="  overflow-hidden  bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[214vh] mt-40 md:mt-20 rounded-t-3xl   flex px-10">
+        <div className="  overflow-hidden  bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[180vh] mt-40 md:mt-20 rounded-t-3xl   flex px-10">
           <MainServices />
         </div>
         <Footer />
@@ -126,19 +144,19 @@ const categories = {
     },
     {
       cx: 300,
-      cy: 600,
+      cy: 550,
       label: "Experiential Mapping",
       dis: "Industry jargon? Not here. We get to the core of your industry and highlight what sets you apart.",
     },
     {
       cx: 300,
-      cy: 1000,
+      cy: 900,
       label: "Physical Computing",
       dis: "Clear numbers and deadlines. We value your time and wallet. Team and Resources: Handpicked talent, no seatfillers.",
     },
     {
       cx: 300,
-      cy: 1400,
+      cy: 1250,
       label: "Hybrid Communication Solutions",
       dis: "Estimate costs and timeline with laser-like accuracy(within 15% by project's end)",
     },
@@ -152,19 +170,19 @@ const categories = {
     },
     {
       cx: 300,
-      cy: 600,
+      cy: 550,
       label: "UI/UX Design",
       dis: "Crafting intuitive and engaging digital experiences that connect with your audience.",
     },
     {
       cx: 300,
-      cy: 1000,
+      cy: 900,
       label: "Print & Digital Design",
       dis: "Seamlessly bridging traditional and digital design to create cohesive brand experiences.",
     },
     {
       cx: 300,
-      cy: 1400,
+      cy: 1250,
       label: "Environmental Design",
       dis: "Transforming spaces into immersive brand environments that tell your story.",
     },
@@ -178,19 +196,19 @@ const categories = {
     },
     {
       cx: 300,
-      cy: 600,
+      cy: 550,
       label: "Mobile Applications",
       dis: "Developing native and cross-platform mobile solutions that engage and perform.",
     },
     {
       cx: 300,
-      cy: 1000,
+      cy: 900,
       label: "Custom Software",
       dis: "Creating bespoke software solutions tailored to your specific business needs.",
     },
     {
       cx: 300,
-      cy: 1400,
+      cy: 1250,
       label: "System Integration",
       dis: "Seamlessly connecting different systems and platforms for optimal performance.",
     },
@@ -236,18 +254,19 @@ const MainServices = () => {
     const GreenLine = lineRef.current;
     const stops = stopsRef.current;
     const texts = textRefs.current;
-
+  
     const length = GreenLine.getTotalLength();
-
+  
     gsap.set(GreenLine, {
       strokeWidth: 4,
       strokeDasharray: length,
       strokeDashoffset: length, // Start with the full length hidden
+      willChange: "strokeDashoffset", // Improve performance in Safari
     });
-
+  
     gsap.set(stops, { autoAlpha: 1, scale: 0, transformOrigin: "center" });
-    gsap.set(texts, { color: "#676767" }); // Set initial text color to gray
-
+    gsap.set(texts, { color: "#676767", opacity: 0, willChange: "opacity, transform" });
+  
     gsap.to(GreenLine, {
       strokeDashoffset: 0, // Animate to reveal the full path
       ease: "none",
@@ -258,7 +277,7 @@ const MainServices = () => {
         scrub: true,
       },
     });
-
+  
     stops.forEach((stop, index) => {
       gsap.to(stop, {
         scale: 1,
@@ -271,36 +290,50 @@ const MainServices = () => {
           scrub: true,
           onEnter: () => {
             gsap.to(`.label-text-${index} div`, {
-              color: "#0000ff", // Color for h1
+              color: "#0000ff", 
               duration: 0.5,
+              opacity: 1,
+              x: 0,
+              transform: "translate3d(0,0,0)", // Fix for Safari rendering issues
             });
             gsap.to(`.label-text-${index} h1`, {
-              color: "#F2F2F2", // Color for h1
+              color: "#F2F2F2", 
               duration: 0.5,
+              opacity: 1,
+              x: 0,
             });
             gsap.to(`.label-text-${index} p`, {
-              color: "#BFBFBF", // Different color for p
+              color: "#BFBFBF", 
               duration: 0.5,
+              opacity: 1,
+              x: 0,
             });
           },
           onLeaveBack: () => {
             gsap.to(`.label-text-${index} div`, {
-              color: "#242424", // Color for h1
+              color: "#242424", 
               duration: 0.5,
+              opacity: 0, // Ensure smooth transition
+              x: -10, // Slight movement to prevent flickering
             });
             gsap.to(`.label-text-${index} h1`, {
-              color: "#242424", // Reset color for h1
+              color: "#242424", 
               duration: 0.5,
+              opacity: 0,
+              x: -10,
             });
             gsap.to(`.label-text-${index} p`, {
-              color: "#242424", // Reset color for p
+              color: "#242424", 
               duration: 0.5,
+              opacity: 0,
+              x: -10,
             });
           },
         },
       });
     });
   }, []);
+  
   const [active, setActive] = useState("Experience");
   const currentItems = categories[active.toLowerCase()] || [];
   return (
@@ -360,11 +393,14 @@ const MainServices = () => {
         </div>
 
         <svg
-          className="line absolute md:block hidden left-1/2 ml-20  overflow-visible   mt-8 transform -translate-x-1/2"
-          viewBox="0 0 600 4000"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+  className="line absolute md:block hidden left-1/2 ml-20 overflow-visible mt-8 transform -translate-x-1/2"
+  width="600" 
+  height="4000"
+  viewBox="0 0 600 4000"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
           {/* Inactive Path (Gray) */}
           <path
             d="M0.200195 2.24512H268.2C287.056 2.24512 296.484 2.24512 302.342 8.10298C308.2 13.9608 308.2 23.3889 308.2 42.2451V1525.75"

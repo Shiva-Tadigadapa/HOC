@@ -73,10 +73,10 @@ const HausOfChaos = () => {
             <img src={logo1} className="md:w-40 md:block hidden mb-4" alt="Haus Of Chaos" />
             <p className="text-lg md:block hidden text-left mb-6">
               Step into the chaos of creativity <br />
-              Where bold ideas and designs collide <br />
-              Stay ahead with innovative thoughts <br />
-              Experience transformative journeys <br />
-              Embrace the unexpected and <br />
+              Where bold ideas and designs <br /> collide  
+              Stay ahead with innovative <br />thoughts 
+              Experience transformative  <br /> journeys
+              Embrace the unexpected <br /> and 
               disrupt the norm
             </p>
           </div>
@@ -107,7 +107,6 @@ const HausOfChaos = () => {
               <p className="text-sm text-left opacity-80">
                 Where ideas collide and stories unfold, Haus of Chaos transforms narratives into immersive brand experiences. 
                 Explore innovation, redefine design, and disrupt the ordinary with us.{" "}
-                <a href="#" className="underline">hier</a>.
               </p>
               <button
                 type="submit"

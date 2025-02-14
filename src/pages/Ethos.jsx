@@ -4,7 +4,7 @@ import tvpng from "../assets/tv.png";
 import worldsmall from "../assets/worldsmall.png";
 import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import logo1 from "../assets/logo.png";
 import befooter from "../assets/befooter.png";
@@ -15,6 +15,7 @@ import tvideo from "../assets/tv.mp4";
 import { useState, useEffect, useRef } from "react";
 
 const Ethos = () => {
+  const location = useLocation();
   const [isSection2, setIsSection2] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
 
@@ -35,6 +36,11 @@ const Ethos = () => {
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
+
+  const isActiveRoute = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <>
       <div className="bg-white !z-[1100] jost relative" style={{ minHeight: "100vh" }}>
@@ -59,16 +65,28 @@ const Ethos = () => {
                 />
               </Link>
               <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-                <Link to={"/Services"} className=" hover:text-black/50">
+                <Link 
+                  to={"/Services"} 
+                  className={`hover:text-black/50 ${isActiveRoute('/Services') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                >
                   <h1>SERVICES</h1>
                 </Link>
-                <Link to={"/Experience"} className=" hover:text-black/50">
+                <Link 
+                  to={"/Experience"} 
+                  className={`hover:text-black/50 ${isActiveRoute('/Experience') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                >
                   <h1>EXPERIENCE LAB</h1>
                 </Link>
-                <Link to={"/Ethos"} className=" hover:text-black/50">
+                <Link 
+                  to={"/Ethos"} 
+                  className={`hover:text-black/50 ${isActiveRoute('/Ethos') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                >
                   <h1>ETHOS</h1>
                 </Link>
-                <Link to={"/Careers"} className=" hover:text-black/50">
+                <Link 
+                  to={"/Careers"} 
+                  className={`hover:text-black/50 ${isActiveRoute('/Careers') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                >
                   <h1>CAREERS</h1>
                 </Link>
               </div>

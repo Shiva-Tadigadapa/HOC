@@ -71,7 +71,7 @@ const Home = () => {
             </h2>
           </div>
           {/* <div className=" md:text-[22px] text-sm -left-20 bottom-20 md:left-auto  flex gap-4  text-[#2354CF]  md:leading-[32px]  tracking-widest md:bottom-[20rem] whitespace-nowrap md:-right-20  rotate-[-90deg]    absolute md:rotate-[90deg]">
-            Scroll To Learn More
+            Scroll To Learn More
             <svg
               width="36"
               height="36"
@@ -233,7 +233,7 @@ const SecondSection = () => {
         <h1 className="md:px-20 px-4 md:text-2xl text-white text-center jost">
           Born from our ethos, the Chaos Lab serves as a testing ground for the
           diverse narrative environments we experiment with and explore. Based
-          in India, with plans for growth, we embrace a ‘test-and-learn’
+          in India, with plans for growth, we embrace a 'test-and-learn'
           mindset. Our aim is to decode and disrupt conventional norms and
           beliefs in experimental communication and experience design.
         </h1>
@@ -298,7 +298,16 @@ const ThirdSection = () => {
 
   return (
     <div className="relative md:-mt-40">
-      <video id="loader-video" autoPlay muted loop playsInline className="  scale-125">
+      <video 
+        id="loader-video" 
+        autoPlay 
+        muted 
+        loop 
+        playsInline 
+        className={`w-full h-full object-cover ${
+          isIOS || isSafari ? ' scale-75 border-2 border-white' : 'scale-125'
+        }`}
+      >
         <source
           src={videoSource}
           type={isIOS || isSafari ? "video/mp4" : "video/webm"}
@@ -307,7 +316,7 @@ const ThirdSection = () => {
       <div className="absolute md:-bottom-20 jost text-center flex-col flex items-center justify-center w-full">
         <h1 className="text-[#5B636D]  px-4 font-[500] md:w-[60%] text-sm md:text-[24px] text-center md:leading-[30px]">
           After years of searching for a graphic designer to create our logo and
-          brand identity, we realized it wasn’t just about a logo—it was about
+          brand identity, we realized it wasn't just about a logo—it was about
           crafting an experience that reflects what our company truly stands
           for. Ria, the creative director of Haus of Chaos, not only
           conceptualized the journey of how clients experience our brand but
@@ -317,7 +326,7 @@ const ThirdSection = () => {
         
         </h1>
         <h2 className="text-[#2354CF] text-xs md:text-[20px] mt-5">
-          Rak’s Pallikkoodam, 21st century international school
+          Rak's Pallikkoodam, 21st century international school
         </h2>
       </div>
     </div>

@@ -121,8 +121,8 @@ const Contact = () => {
           </motion.h1>
 
           {/* Tagline with Spring Animation */}
-          <motion.p
-            className="jost font-[500]  text-xl md:!mt-24 lowercase md:text-[60px] z-[10]"
+          <motion.div
+            className="jost font-[500] w-full flex items-center justify-center text-xl md:!mt-24 lowercase md:text-base text-left z-[10]"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -132,45 +132,158 @@ const Contact = () => {
               delay: 0.2,
             }}
           >
-            WANT TO JOIN THE CHAOS ?
-          </motion.p>
+           <div className="flex jost w-full items-center justify-between px-20 mt-4 gap-10">
+            <div>
+              <h1 className=" text-[#2354CF] text-lg leading-3">Email</h1>
+              <h2>explore@hausofchaos.co</h2>
+            </div>
+            <div >
+              <h1 className=" text-[#2354CF] text-lg leading-3">Address</h1>
+              <h2>4th floor no 9,Seshadri road ,teynampet ,
+              chennai -86 </h2>
+            </div>
+            <div>
+              <h1 className=" text-[#2354CF] text-lg leading-3">Phone</h1>
+              <h2>+91 9600931366</h2>
+            </div>
+
+
+           </div>
+          </motion.div>
         </div>
         <JobListings />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
 };
 
+import dragme1 from "../assets/svgs/Dragme.svg";
+import linkdsvg from "../assets/svgs/Linkd.svg";
+import instasvg from "../assets/svgs/Insta.svg";
+import facebook from "../assets/svgs/facebook.svg"
+import dragleft from "../assets/svgs/dragmeleft.svg"
+import dragright from "../assets/svgs/dargmeright.svg"
+import bhance from "../assets/svgs/behance.svg"
+import dribble from "../assets/svgs/dribble.svg"
+ 
+    
+  
+ 
+ 
+
+const images = [
+  { src: dragleft, className: "bottom-28 left-0" },
+  { src: linkdsvg, className: "bottom-24 left-10" },
+  { src: instasvg, className: "bottom-[24rem] left-[15rem]" },
+  { src: dragme1, className: "bottom-28 left-[25rem]" },
+  { src: facebook, className: "bottom-20 left-[40rem]" },
+  { src: bhance, className: "bottom-80 left-[40rem]" },
+  { src: dribble, className: "bottom-20 right-20" },
+  { src: dragright, className: "bottom-60 right-0" },
+];
+
+ 
+
 const JobListings = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <div className="px-10 md:mt-0 py-10 flex md:flex-row flex-col-reverse">
-      <div className="scale-90 md:mt-0 mt-20 w-full gap-10 flex flex-col items-start justify-start">
-        <div className="flex items-center gap-6">
-          <MdEmail className="text-black md:text-[60px] text-2xl" />
-          <a className="text-black text-2xl md:text-5xl font-bold hover:text-[#060ebb] transition-colors" href="mailto:explore@hausofchaos.co">
-            explore@hausofchaos.co
-          </a>
-        </div>
+    <div ref={ref} className="w-full h-[80vh]    flex justify-center items-center relative overflow-hidden">
+      {isInView &&
+        images.map((img, index) => (
+          <motion.img
+            key={index}
+            src={img.src}
+            alt={`img-${index}`}
+            className={`absolute ${img.className}`}
+            initial={{ y: -1000, opacity: 0, rotate: Math.random() * 360 }}
+            animate={{ 
+              y: 0, 
+              opacity: 1, 
+              rotate: 0,
+              transition: {
+                type: "spring",
+                duration: 1.5,
+                delay: index * 0.2,
+                bounce: 0.2,
+                damping: 10,
+                stiffness: 100
+              }
+            }}
+            drag
+            dragTransition={{ bounceStiffness: 200, bounceDamping: 5 }}
+            
+            dragConstraints={{
+              top: -400,
+              left: -1000,
+              right: 1000,
+              bottom: 200,
+            }}
+            style={{ 
+              touchAction: "none",
+              cursor: "default",
+            }}
+            whileHover={{
+              scale: 1.1,
+              cursor: "grab"
+            }}
+            whileDrag={{
+              cursor: "grabbing"
+            }}
+          />
+        ))}
 
-        <div className="flex items-start gap-6">
-          <MdLocationOn className="text-black text-6xl  md:text-[60px] mt-2" />
-          <a className="text-black text-2xl md:text-5xl font-bold text-left hover:text-[#060ebb] transition-colors" href="#">
-            4th Floor,<br className="md:block hidden" />
-            No 9, Seshadri Road,<br className="md:block hidden" />
-            Teynampet,<br className="md:block hidden" />
-            Chennai - 86
-          </a>
-        </div>
+      <h1 className="absolute bottom-0 tracking-wide text-[#0000FF] lowercase text-center text-[100px]">
+        EXPLORE@HOUSEOFCHAOS.CO
+      </h1>
+    </div>
+  );
+};
+ 
 
-        <div className="flex items-center gap-6">
-          <MdPhone className="text-black text-2xl md:text-[60px]" />
-          <a className="text-black text-2xl md:text-5xl font-bold hover:text-[#060ebb] transition-colors" href="tel:+91 9600931366">
-            +91 9600931366
-          </a>
-        </div>
 
-        <button className="text-black border-[2px] border-[#000000] rounded-full px-8 font-[700] py-2 mt-4 hover:bg-black hover:text-white transition-all duration-300">
+
+
+ 
+
+export default Contact;
+
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import heartkey from "../assets/heartkey.png";
+import keyvideo from "../assets/key.mp4";
+
+import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md'; // Add this import at the top
+
+
+// <div className="flex items-center gap-6">
+//           <MdEmail className="text-black md:text-[60px] text-2xl" />
+//           <a className="text-black text-2xl md:text-5xl font-bold hover:text-[#060ebb] transition-colors" href="mailto:explore@hausofchaos.co">
+//             explore@hausofchaos.co
+//           </a>
+//         </div>
+
+//         <div className="flex items-start gap-6">
+//           <MdLocationOn className="text-black text-6xl  md:text-[60px] mt-2" />
+//           <a className="text-black text-2xl md:text-5xl font-bold text-left hover:text-[#060ebb] transition-colors" href="#">
+//             4th Floor,<br className="md:block hidden" />
+//             No 9, Seshadri Road,<br className="md:block hidden" />
+//             Teynampet,<br className="md:block hidden" />
+//             Chennai - 86
+//           </a>
+//         </div>
+
+//         <div className="flex items-center gap-6">
+//           <MdPhone className="text-black text-2xl md:text-[60px]" />
+//           <a className="text-black text-2xl md:text-5xl font-bold hover:text-[#060ebb] transition-colors" href="tel:+91 9600931366">
+//             +91 9600931366
+//           </a>
+//         </div>
+
+
+{/* <button className="text-black border-[2px] border-[#000000] rounded-full px-8 font-[700] py-2 mt-4 hover:bg-black hover:text-white transition-all duration-300">
           JOIN CHAOS
         </button>
       </div>
@@ -182,17 +295,4 @@ const JobListings = () => {
           muted
           playsInline
           className="  md:scale-100 md:w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  );
-};
-
-export default Contact;
-
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import heartkey from "../assets/heartkey.png";
-import keyvideo from "../assets/key.mp4";
-
-import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md'; // Add this import at the top
+        /> */}
