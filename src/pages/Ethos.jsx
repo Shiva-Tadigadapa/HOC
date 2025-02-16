@@ -10,7 +10,7 @@ import logo1 from "../assets/logo.png";
 import befooter from "../assets/befooter.png";
 import Footer from "./Footer"; 
 import MobileNav from "./MobileNav";
-import tvideo from "../assets/tv.mp4";
+import tvideo from "../assets/output.webm";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -127,7 +127,7 @@ const Ethos = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className=" !z-[-200]   items-end h-screen md:h-full mt-0 md:mt-12  bottom-0 flex px-4 md:px-10">
+        <div className=" !z-[-200]   items-end h-screen md:h-full mt-0 md:mt-0  bottom-0 flex px-4 md:px-10">
           <div className="  capitalize  w-[100%]">
             <h2 className="jost md:text-[26px] text-2xl text-left   -mb-20 md:leading-[40px]">
               <span className=" md:text-[45px]  text-3xl salo uppercase  text-[#060ebb]">
@@ -163,7 +163,7 @@ const Ethos = () => {
 
           {/* Adding smooth infinite rotation */}
           <motion.div
-            className="w-[80%]  !z-[-800]  relative -left-10 top-52 overflow-hidden"
+            className="w-[80%]  !z-[-800]  relative -left-10 top-[19rem] overflow-hidden"
             animate={{ rotate: 360 }}
           > 
                     <video
@@ -172,7 +172,7 @@ const Ethos = () => {
                       loop
                       muted
                       playsInline
-                      className="w-[140%] h-[40rem] object-cover"
+                      className="w-[140%] h-[45rem] object-cover"
                     />
           </motion.div>
         </div>
@@ -189,7 +189,11 @@ export default Ethos;
 
 import founder from "../assets/RIA3.jpg";
 import founder2 from "../assets/FounderBanner.jpg";
-const FounderSection = () => {
+const FounderSection = () => { 
+  const handleEmailClick = () => {
+    console.log("Email button clicked"); // Debugging
+    window.open("mailto:your@email.com", "_self");
+  };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Trigger animation once when in view
 
@@ -270,6 +274,7 @@ const FounderSection = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-blue-600 px-6 py-3 rounded-full font-medium"
+                  onClick={handleEmailClick}
                 >
                   E-mail
                 </motion.button>
@@ -277,6 +282,7 @@ const FounderSection = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white px-6 py-3 rounded-full font-medium"
+                  onClick={() => window.open('https://www.linkedin.com/company/hausofchaos/', '_blank')}
                 >
                   LinkedIn
                 </motion.button>

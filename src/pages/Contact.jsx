@@ -157,40 +157,42 @@ const Contact = () => {
     </>
   );
 };
-
 import dragme1 from "../assets/svgs/Dragme.svg";
 import linkdsvg from "../assets/svgs/linkd.svg";
 import instasvg from "../assets/svgs/insta.svg";
-import facebook from "../assets/svgs/facebook.svg"
-import dragleft from "../assets/svgs/dragmeleft.svg"
-import dragright from "../assets/svgs/dargmeright.svg"
-import bhance from "../assets/svgs/behance.svg"
-import dribble from "../assets/svgs/dribble.svg"
- 
-    
-  
- 
- 
+import facebook from "../assets/svgs/facebook.svg";
+import dragleft from "../assets/svgs/dragmeleft.svg";
+import dragright from "../assets/svgs/dargmeright.svg";
+import bhance from "../assets/svgs/behance.svg";
+import dribble from "../assets/svgs/dribble.svg";
 
 const images = [
-  { src: dragleft, className: "bottom-28 left-0" },
-  { src: linkdsvg, className: "bottom-24 left-10" },
-  { src: instasvg, className: "bottom-[24rem] left-[15rem]" },
-  { src: dragme1, className: "bottom-28 left-[25rem]" },
-  { src: facebook, className: "bottom-20 left-[40rem]" },
-  { src: bhance, className: "bottom-80 left-[40rem]" },
-  { src: dribble, className: "bottom-20 right-20" },
-  { src: dragright, className: "bottom-60 right-0" },
+  { src: dragleft, className: "bottom-28 left-0", link: "/dragleft-page" },
+  { src: linkdsvg, className: "bottom-24 left-10", link: "/linkedin-page" },
+  { src: instasvg, className: "bottom-[24rem] left-[15rem]", link: "/instagram-page" },
+  { src: dragme1, className: "bottom-28 left-[25rem]", link: "/dragme-page" },
+  { src: facebook, className: "bottom-20 left-[40rem]", link: "/facebook-page" },
+  { src: bhance, className: "bottom-80 left-[40rem]", link: "/behance-page" },
+  { src: dribble, className: "bottom-20 right-20", link: "/dribble-page" },
+  { src: dragright, className: "bottom-60 right-0", link: "/dragright-page" },
 ];
-
- 
 
 const JobListings = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleClick = (link) => {
+    if (!isDragging) {
+      // Use your preferred navigation method here
+      window.location.href = link;
+      // Or with React Router:
+      // navigate(link);
+    }
+  };
 
   return (
-    <div ref={ref} className="w-full h-[80vh]    flex justify-center items-center relative overflow-hidden">
+    <div ref={ref} className="w-full h-[80vh] flex justify-center items-center relative overflow-hidden">
       {isInView &&
         images.map((img, index) => (
           <motion.img
@@ -214,13 +216,15 @@ const JobListings = () => {
             }}
             drag
             dragTransition={{ bounceStiffness: 200, bounceDamping: 5 }}
-            
             dragConstraints={{
               top: -400,
               left: -1000,
               right: 1000,
               bottom: 200,
             }}
+            onDragStart={() => setIsDragging(true)}
+            onDragEnd={() => setTimeout(() => setIsDragging(false), 50)}
+            onClick={() => handleClick(img.link)}
             style={{ 
               touchAction: "none",
               cursor: "default",
