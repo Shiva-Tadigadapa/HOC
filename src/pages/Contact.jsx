@@ -112,7 +112,7 @@ const Contact = () => {
         <div className="items-center flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex px-10">
           {/* CONTACT Heading with Spring Animation */}
           <motion.h1
-            className="font-[1000] px-10  -mt-40 md:!mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
+            className="font-[1000] px-10  mt-0 md:!mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 120, damping: 10 }}
@@ -122,7 +122,7 @@ const Contact = () => {
 
           {/* Tagline with Spring Animation */}
           <motion.div
-            className="jost font-[500] w-full flex items-center justify-center text-xl md:!mt-24 lowercase md:text-base text-left z-[10]"
+            className="jost font-[500] w-full flex items-center justify-center text-xl md:!mt-24 lowercase md:text-base md:text-left z-[10]"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -132,7 +132,7 @@ const Contact = () => {
               delay: 0.2,
             }}
           >
-           <div className="flex jost w-full items-center justify-between px-20 mt-4 gap-10">
+           <div className="flex jost w-full md:flex-row flex-col items-center justify-between px-20 mt-4 gap-10">
             <div>
               <h1 className=" text-[#2354CF] text-lg leading-3">Email</h1>
               <h2>explore@hausofchaos.co</h2>
@@ -167,14 +167,14 @@ import bhance from "../assets/svgs/behance.svg";
 import dribble from "../assets/svgs/dribble.svg";
 
 const images = [
-  { src: dragleft, className: "bottom-28 left-0", link: "/dragleft-page" },
-  { src: linkdsvg, className: "bottom-24 left-10", link: "/linkedin-page" },
-  { src: instasvg, className: "bottom-[24rem] left-[15rem]", link: "/instagram-page" },
-  { src: dragme1, className: "bottom-28 left-[25rem]", link: "/dragme-page" },
+  { src: dragleft, className: "bottom-28 left-0", link: "/Contact" },
+  { src: linkdsvg, className: "bottom-24 left-10", link: "https://www.linkedin.com/company/hausofchaos/" },
+  { src: instasvg, className: "bottom-[24rem] left-[15rem]", link: "https://www.instagram.com/hausofchaos.co/" },
+  { src: dragme1, className: "bottom-28 left-[25rem]", link: "/Contact" },
   { src: facebook, className: "bottom-20 left-[40rem]", link: "/facebook-page" },
   { src: bhance, className: "bottom-80 left-[40rem]", link: "/behance-page" },
-  { src: dribble, className: "bottom-20 right-20", link: "/dribble-page" },
-  { src: dragright, className: "bottom-60 right-0", link: "/dragright-page" },
+  { src: dribble, className: "bottom-20 right-20", link: "/Contact" },
+  { src: dragright, className: "bottom-60 right-0", link: "/Contact" },
 ];
 
 const JobListings = () => {
@@ -192,14 +192,14 @@ const JobListings = () => {
   };
 
   return (
-    <div ref={ref} className="w-full h-[80vh] flex justify-center items-center relative overflow-hidden">
+    <div ref={ref} className="w-full h-[90vh] flex justify-center items-center relative overflow-hidden">
       {isInView &&
         images.map((img, index) => (
           <motion.img
             key={index}
             src={img.src}
             alt={`img-${index}`}
-            className={`absolute ${img.className}`}
+            className={`absolute  w-1/2 md:w-auto  ${img.className}`}
             initial={{ y: -1000, opacity: 0, rotate: Math.random() * 360 }}
             animate={{ 
               y: 0, 
@@ -239,7 +239,7 @@ const JobListings = () => {
           />
         ))}
 
-      <h1 className="absolute bottom-0 tracking-wide text-[#0000FF] lowercase text-center text-[100px]">
+      <h1 className="absolute bottom-10 md:bottom-10 tracking-wide text-[#0000FF] lowercase text-center text-3xl md:text-[100px]">
         EXPLORE@HOUSEOFCHAOS.CO
       </h1>
     </div>

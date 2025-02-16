@@ -127,9 +127,9 @@ const Ethos = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className=" !z-[-200]   items-end h-screen md:h-full mt-0 md:mt-0  bottom-0 flex px-4 md:px-10">
-          <div className="  capitalize  w-[100%]">
-            <h2 className="jost md:text-[26px] text-2xl text-left   -mb-20 md:leading-[40px]">
+        <div className=" !z-[-200]  items-end   md:flex-row flex-col-reverse  h-screen md:h-full mt-0 md:mt-0  bottom-0 flex px-4 md:px-10">
+          <div className="  capitalize    w-[100%]">
+            <h2 className="jost md:text-[26px] text-2xl text-left  mb-10  md:-mb-20 md:leading-[40px]">
               <span className=" md:text-[45px]  text-3xl salo uppercase  text-[#060ebb]">
                 {" "}
                 Haus Of Chaos{" "}
@@ -163,7 +163,7 @@ const Ethos = () => {
 
           {/* Adding smooth infinite rotation */}
           <motion.div
-            className="w-[80%]  !z-[-800]  relative -left-10 top-[19rem] overflow-hidden"
+            className="w-[80%] -mt-10  !z-[-800]  relative left-20 md:top-[19rem] overflow-hidden"
             animate={{ rotate: 360 }}
           > 
                     <video
@@ -172,7 +172,7 @@ const Ethos = () => {
                       loop
                       muted
                       playsInline
-                      className="w-[140%] h-[45rem] object-cover"
+                      className="md:w-[140%]  h-[20rem] md:h-[45rem] object-cover md:rotate-[0deg] -rotate-[10deg] md:scale-x-[1] scale-x-[-1]"
                     />
           </motion.div>
         </div>
@@ -250,7 +250,7 @@ const FounderSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-white md:mt-0 -mt-52 text-center  alinsa text-7xl mb-10 md:text-[110px] font-bold tracking-wide">
+            <h1 className="text-white -ml-10 md:mt-0 -mt-52 text-center  alinsa text-7xl mb-10 md:text-[110px] font-bold tracking-wide">
               FOUNDER
             </h1>
           </motion.div>
@@ -260,7 +260,7 @@ const FounderSection = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:w-1/2 md:block flex flex-col items-center"
+              className="lg:w-1/2 -ml-10 md:block flex flex-col items-center"
             >
               <p className="text-white md:text-[26px] jost  text-xl md:leading-[37px] mb-8">
                 As Experience designers, we never remain neutral. The more

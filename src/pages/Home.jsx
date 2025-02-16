@@ -297,7 +297,7 @@ const ThirdSection = () => {
   const videoSource = isIOS || isSafari ? iosVideo : one;
 
   return (
-    <div className="relative md:-mt-40">
+    <div className="relative mt-32 md:-mt-40">
       <video 
         id="loader-video" 
         autoPlay 
