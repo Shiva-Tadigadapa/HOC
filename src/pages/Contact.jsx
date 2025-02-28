@@ -144,8 +144,8 @@ const Contact = () => {
             </div>
             <div >
               <h1 className=" text-[#2354CF] text-lg leading-3">Address</h1>
-              <h2>4th floor no 9,Seshadri road ,teynampet ,
-              chennai -86 </h2>
+              <h2>4th floor no 9,Seshadri Road ,Teynampet ,
+              Chennai -18 </h2>
             </div>
             <div>
               <h1 className=" text-[#2354CF] text-lg leading-3">Phone</h1>
@@ -246,8 +246,8 @@ const JobListings = ({ scrollToBottom }) => {
           />
         ))}
 
-      <h1 className="absolute cursor-pointer bottom-10 md:bottom-10 tracking-wide text-[#0000FF] lowercase text-center text-2xl md:text-[20px]"  onClick={scrollToBottom}>
-        SCROLL DOWN
+      <h1 className="absolute  cursor-pointer !bottom-2 md:bottom-10 tracking-wide text-[#0000FF]   text-center text-2xl md:text-[20px]"  onClick={scrollToBottom}>
+        Scroll Down
       </h1>
       {/* <div className=" absolute">Scroll Down</div> */}
     </div>

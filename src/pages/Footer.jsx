@@ -153,15 +153,15 @@ const HausOfChaos = () => {
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <div className="text-sm md:block hidden">
+            <div className="text-sm !-mt-10 md:block hidden">
               <span className="  uppercase">2025 © Haus Of Chaos  </span>Ltd.
             </div>
           </Link>
 
           <div className="text-[16px] whitespace-nowrap text-left md:hidden block">
-            2025 © Haus Of Chaos Ltd.
+            2025 © Haus Of Chaos Ltd
           </div>
-          <div className="text-sm md:text-base">
+          <div className="text-sm  !-mt-10  md:text-base">
             Design by{" "}
             <a
               href="https://theinternetcompany.one/"
