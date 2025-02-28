@@ -233,7 +233,7 @@ import founder2 from "../assets/FounderBanner.jpg";
 const FounderSection = () => {
   const handleEmailClick = () => {
     console.log("Email button clicked"); // Debugging
-    window.open("mailto:your@email.com", "_self");
+    window.open("mailto:explore@hausofchaos.co", "_self");
   };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Trigger animation once when in view
