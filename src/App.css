@@ -6,6 +6,7 @@
   /* padding: 2rem; */
   overflow-y: hidden;
   text-align: center;
+  overflow: hidden;
 }
 
 @font-face {
@@ -60,7 +61,7 @@ body {
   /* Prevent horizontal scrolling */
 }
 
-/* For modern browsers */
+/* For modern browsers
 body::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -73,4 +74,4 @@ body::-webkit-scrollbar-thumb {
   background-color: slategrey;
   border-radius: 26px;
   outline: 1px solid slategrey;
-}
+} */
