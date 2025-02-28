@@ -194,21 +194,21 @@ const categories = {
       cy: 950,
       label:"Branding Tools Analogue",
     },
+    // {
+    //   cx: 300,
+    //   cy: 1150,
+    //   label: "Branding Tools Digital"
+    // },
     {
       cx: 300,
       cy: 1150,
-      label: "Branding Tools Digital"
-    },
-    {
-      cx: 300,
-      cy: 1350,
       label:"Product Based Communication Solutions ",
     },
-    {
-      cx :300,
-      cy:1550,
-      label:"Typography"
-    }
+    // {
+    //   cx :300,
+    //   cy:1550,
+    //   label:"Typography"
+    // }
   ],
   
 };

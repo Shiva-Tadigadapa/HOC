@@ -183,7 +183,7 @@ const Ethos = () => {
     loop
     muted
     playsInline
-    className="md:w-[140%] h-[20rem] md:h-[45rem] object-cover md:rotate-[0deg] -rotate-[10deg] md:scale-x-[1] scale-x-[-1]"
+    className="md:w-[140%]  mb-4 h-[20rem] md:h-[45rem] object-cover md:rotate-[0deg] -rotate-[10deg] md:scale-x-[1] scale-x-[-1]"
   />
 </motion.div>
 
