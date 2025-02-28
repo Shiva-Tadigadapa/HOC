@@ -1,10 +1,9 @@
- 
 import logo1 from "../assets/logo.png";
 
-
 import { useState } from "react";
-import emailjs from "@emailjs/browser"; 
+import emailjs from "@emailjs/browser";
 import grid from "../assets/lines.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -26,12 +25,12 @@ const HausOfChaos = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (!formData.name || !formData.email) {
       alert("Please fill in all fields.");
       return;
     }
-  
+
     emailjs
       .send(
         "service_wlj3cut", // Your EmailJS service ID
@@ -54,7 +53,6 @@ const HausOfChaos = () => {
         alert("Failed to send email. Please try again.");
       });
   };
-  
 
   return (
     <div className="min-h-screen bg-[#060ebb] text-white relative">
@@ -67,17 +65,24 @@ const HausOfChaos = () => {
       {/* Main Content */}
       <div className="relative px-4 py-20 md:px-20 md:py-48 min-h-screen flex flex-col justify-between">
         {/* Logo and Description */}
-        <img src={logo1} className="w-1/2 md:hidden block mb-8" alt="Haus Of Chaos" />
+        <img
+          src={logo1}
+          className="w-1/2 md:hidden block mb-8"
+          alt="Haus Of Chaos"
+        />
         <div className="flex">
           <div className="md:max-w-xl">
-            <img src={logo1} className="md:w-40 md:block hidden mb-4" alt="Haus Of Chaos" />
+            <img
+              src={logo1}
+              className="md:w-40 md:block hidden mb-4"
+              alt="Haus Of Chaos"
+            />
             <p className="text-lg md:block hidden text-left mb-6">
               Step into the chaos of creativity <br />
-              Where bold ideas and designs <br /> collide  
-              Stay ahead with innovative <br />thoughts 
-              Experience transformative  <br /> journeys
-              Embrace the unexpected <br /> and 
-              disrupt the norm
+              Where bold ideas and designs <br /> collide Stay ahead with
+              innovative <br />
+              thoughts Experience transformative <br /> journeys Embrace the
+              unexpected <br /> and disrupt the norm
             </p>
           </div>
 
@@ -105,8 +110,9 @@ const HausOfChaos = () => {
                 />
               </div>
               <p className="text-sm text-left opacity-80">
-                Where ideas collide and stories unfold, Haus of Chaos transforms narratives into immersive brand experiences. 
-                Explore innovation, redefine design, and disrupt the ordinary with us.{" "}
+                Where ideas collide and stories unfold, Haus of Chaos transforms
+                narratives into immersive brand experiences. Explore innovation,
+                redefine design, and disrupt the ordinary with us.{" "}
               </p>
               <button
                 type="submit"
@@ -121,23 +127,48 @@ const HausOfChaos = () => {
         {/* Footer Section */}
         <div className="relative whitespace-normal md:pt-16 pt-6 md:pb-0 pb-20">
           <div className="flex md:justify-end gap-4 text-sm">
-            <a href="mailto:explore@hausofchaos.co" className="hover:underline">MAIL</a>
+            <a href="mailto:explore@hausofchaos.co" className="hover:underline">
+              MAIL
+            </a>
             <span>|</span>
-            <a href="https://www.linkedin.com/company/105575916/" className="hover:underline">LINKEDIN</a>
+            <a
+              href="https://www.linkedin.com/company/105575916/"
+              className="hover:underline"
+            >
+              LINKEDIN
+            </a>
             <span>|</span>
-            <a href="https://www.instagram.com/hausofchaos.co/" className="hover:underline">INSTAGRAM</a>
+            <a
+              href="https://www.instagram.com/hausofchaos.co/"
+              className="hover:underline"
+            >
+              INSTAGRAM
+            </a>
           </div>
         </div>
 
         {/* Bottom Footer */}
         <div className="absolute left-0 px-4 md:px-20 bottom-6 md:bottom-10 flex flex-col md:flex-row items-start md:gap-0 gap-3 md:justify-between w-full">
-          <div className="text-sm md:block hidden">2025 © Haus Of Chaos Ltd.</div>
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <div className="text-sm md:block hidden">
+              2025 © Haus Of Chaos Ltd.
+            </div>
+          </Link>
+
           <div className="text-sm whitespace-nowrap text-left md:hidden block">
-            2025 © Haus Of Chaos Ltd. <br /> Impressum | Datenschutz
+            2025 © Haus Of Chaos Ltd.
           </div>
           <div className="text-sm md:text-base">
             Design by{" "}
-            <a href="https://theinternetcompany.one/" className="hover:underline">TIC GLOBAL</a>
+            <a
+              href="https://theinternetcompany.one/"
+              className="hover:underline"
+            >
+              TIC GLOBAL
+            </a>
           </div>
         </div>
       </div>
@@ -146,5 +177,3 @@ const HausOfChaos = () => {
 };
 
 export default Footer;
-
- 

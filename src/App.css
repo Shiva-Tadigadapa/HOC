@@ -4,6 +4,7 @@
   max-width: 2080px;
   margin: 0 auto;
   /* padding: 2rem; */
+  overflow-y: hidden;
   text-align: center;
 }
 

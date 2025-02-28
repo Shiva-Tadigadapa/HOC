@@ -166,16 +166,19 @@ import dragleft from "../assets/svgs/dragmeleft.svg";
 import dragright from "../assets/svgs/dargmeright.svg";
 import bhance from "../assets/svgs/behance.svg";
 import dribble from "../assets/svgs/dribble.svg";
+import svg4 from "../assets/hover/element3-min.png";
+import svg5 from "../assets/hover/element5-min.png";
+import svg6 from "../assets/hover/element6-min.png";
 
 const images = [
-  { src: dragleft, className: "bottom-28 left-0", link: "/Contact" },
+  { src: svg4, className: "bottom-28 !w-1/4 left-0", link: "/Contact" },
   { src: linkdsvg, className: "bottom-24 left-10", link: "https://www.linkedin.com/company/hausofchaos/" },
   { src: instasvg, className: "bottom-[24rem] left-[15rem]", link: "https://www.instagram.com/hausofchaos.co/" },
-  { src: dragme1, className: "bottom-28 left-[25rem]", link: "/Contact" },
+  { src: svg5, className: "bottom-28 !w-1/4 left-[25rem]", link: "/Contact" },
   { src: facebook, className: "bottom-20 left-[40rem]", link: "/facebook-page" },
   { src: bhance, className: "bottom-80 left-[40rem]", link: "/behance-page" },
   { src: dribble, className: "bottom-20 right-20", link: "/Contact" },
-  { src: dragright, className: "bottom-60 right-0", link: "/Contact" },
+  { src: svg6, className: "bottom-60 !w-1/4 right-0", link: "/Contact" },
 ];
 
 const JobListings = () => {

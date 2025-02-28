@@ -8,8 +8,8 @@ import logo2 from "../assets/logo2.png";
 import befooter from "../assets/befooter.png";
 import hand from "../assets/hand.png";
 import ufo from "../assets/ufo.png";
-import two from "../assets/two.png";
-import three from "../assets/three.png";
+import two from "../assets/right.png";
+import three from "../assets/left.png";
 import linelab from "../assets/linelab.png";
 import { motion } from "framer-motion";
 import { div } from "framer-motion/client";
@@ -220,7 +220,7 @@ const SecondSection = () => {
           {/* Three Image */}
           <motion.img
             src={three}
-            className="w-[40%] z-[10] absolute left-[21%]"
+            className="w-[50%] z-[10] -top-[3.6rem] absolute left-[25%]"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
@@ -233,7 +233,7 @@ const SecondSection = () => {
           {/* Two Image */}
           <motion.img
             src={two}
-            className="w-[50%] z-[2] absolute right-[20%] !-mr-10"
+            className="w-[50%] z-[2] -top-16 absolute right-[30%] !-mr-10"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
@@ -266,7 +266,7 @@ const SecondSection = () => {
           {/* Three Image */}
           <motion.img
             src={three}
-            className="w-[80%] z-[10] absolute -left-[12%]"
+            className="w-[95%] z-[10] absolute left-[0.5%]"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
@@ -279,7 +279,7 @@ const SecondSection = () => {
           {/* Two Image */}
           <motion.img
             src={two}
-            className="w-[100%] z-[2] absolute -right-[15%] !-mr-10"
+            className="w-[100%] z-[2] absolute -mt-2 right-[4%] !-mr-10"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY

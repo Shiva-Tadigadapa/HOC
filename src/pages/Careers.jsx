@@ -242,7 +242,7 @@ const JobListings = () => {
               transition={{ delay: 0.3 }}
               className="md:text-[50px] text-4xl md:leading-[50px] font-bold jost mb-6"
             >
-              <span className="text-blue-600 ">E-mail us</span> if you are a
+              <span className="text-[#060ebb] ">E-mail us</span> if you are a
               creative open to learning, nurturing, growing, and fostering the
               ethos of the company, "order in chaos".
             </motion.h1>

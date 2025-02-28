@@ -12,7 +12,7 @@ import Footer from "./Footer";
 
 import grid from "../assets/lines.png";
 import { motion } from "framer-motion";
-import { div } from "framer-motion/client";
+import { div, label } from "framer-motion/client";
 import MobileNav2 from "./MobileNav";
 const Contact = () => {
   const location = useLocation();
@@ -139,80 +139,78 @@ const categories = {
     {
       cx: 300,
       cy: 200,
-      label: "CGI + Motions Graphics",
-      dis: "We don't pull numbers out of thin air. We size up your project, giving you a clear cost and timeline.",
-    },
-    {
-      cx: 300,
-      cy: 550,
-      label: "Experiential Mapping",
-      dis: "Industry jargon? Not here. We get to the core of your industry and highlight what sets you apart.",
-    },
-    {
-      cx: 300,
-      cy: 900,
       label: "Physical Computing",
-      dis: "Clear numbers and deadlines. We value your time and wallet. Team and Resources: Handpicked talent, no seatfillers.",
+      dis: "Blends digital technology with physical interactions to create dynamic, immersive experiences.",
+    
     },
     {
       cx: 300,
-      cy: 1250,
+      cy: 500,
+      label: "CGI + Motions Graphics",
+      dis: "High-end visual storytelling like Cinematic product animations Abstract brand visuals, Interactive brand experiences.",
+     
+    },
+    {
+      cx: 300,
+      cy: 800,
+      label: "Experiential Mapping",
+      dis: "Visualizing and Analyzing how users or customers interact with a brand, space, or service over time. Branded Spaces & Installations, Digital Interactions, Luxury & High-Net-Worth Experiences.",
+    
+    },
+    {
+      cx: 300,
+      cy: 1150,
       label: "Hybrid Communication Solutions",
-      dis: "Estimate costs and timeline with laser-like accuracy(within 15% by project's end)",
+      dis: "Integrate multiple digital and physical communication channels to create seamless, interactive, and immersive brand experiences. These solutions blend traditional and emerging technologies to enhance engagement, storytelling, and customer interaction.",
     },
   ],
   design: [
     {
       cx: 300,
       cy: 200,
-      label: "Brand Identity Design",
-      dis: "Creating distinctive visual languages that embody your brand's essence and values.",
+      label: "Logo Design",
+      
+    },
+    {
+      cx: 300,
+      cy: 350,
+      label: "Visual Identity + Illustrations",
+      
     },
     {
       cx: 300,
       cy: 550,
-      label: "UI/UX Design",
-      dis: "Crafting intuitive and engaging digital experiences that connect with your audience.",
+      label: "Brand Narrative + Content",
+      
     },
     {
       cx: 300,
-      cy: 900,
-      label: "Print & Digital Design",
-      dis: "Seamlessly bridging traditional and digital design to create cohesive brand experiences.",
+      cy: 750,
+      label: "Social Media Package",
+      
     },
     {
       cx: 300,
-      cy: 1250,
-      label: "Environmental Design",
-      dis: "Transforming spaces into immersive brand environments that tell your story.",
+      cy: 950,
+      label:"Branding Tools Analogue",
     },
+    {
+      cx: 300,
+      cy: 1150,
+      label: "Branding Tools Digital"
+    },
+    {
+      cx: 300,
+      cy: 1350,
+      label:"Product Based Communication Solutions ",
+    },
+    {
+      cx :300,
+      cy:1550,
+      label:"Typography"
+    }
   ],
-  build: [
-    {
-      cx: 300,
-      cy: 200,
-      label: "Web Development",
-      dis: "Building robust, scalable websites and applications with cutting-edge technologies.",
-    },
-    {
-      cx: 300,
-      cy: 550,
-      label: "Mobile Applications",
-      dis: "Developing native and cross-platform mobile solutions that engage and perform.",
-    },
-    {
-      cx: 300,
-      cy: 900,
-      label: "Custom Software",
-      dis: "Creating bespoke software solutions tailored to your specific business needs.",
-    },
-    {
-      cx: 300,
-      cy: 1250,
-      label: "System Integration",
-      dis: "Seamlessly connecting different systems and platforms for optimal performance.",
-    },
-  ],
+  
 };
 import blackgrid from "../assets/blackgrid.png";
 import wiresm from "../assets/wiresm.png";
@@ -250,6 +248,10 @@ const MainServices = () => {
       }
     );
   }, []);
+  useEffect(() => {
+  ScrollTrigger.refresh();
+}, []);
+
   useEffect(() => {
     const GreenLine = lineRef.current;
     const stops = stopsRef.current;
@@ -381,7 +383,7 @@ const MainServices = () => {
                 key={item}
                 className={`px-6 py-2 uppercase rounded-[59px] transition-all duration-300 ${
                   active === item
-                    ? "bg-[#174DD5] text-white"
+                    ? "bg-[#060ebb] text-white"
                     : "bg-black text-[#C9C9C9] hover:bg-[#174DD5] hover:text-white"
                 }`}
                 onClick={() => setActive(item)}

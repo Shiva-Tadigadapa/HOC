@@ -348,7 +348,7 @@ const FAQ_DATA = [
       <div className="min-h-screen mt-60 bg-black">
         <div className="justify-evenly md:items-start items-center   flex flex-col md:flex-row mx-auto py-32">
           <div className="mb-12 text-center md:text-left md:sticky md:top-32 md:h-fit">
-            <h2 className="text-[#2354CF] salo text-5xl md:text-[90px] md:leading-[120px]">
+            <h2 className="text-[#060ebb] salo text-5xl md:text-[90px] md:leading-[120px]">
               FAQS
             </h2>
             {/* <p className="text-[#F4ECE0] jost uppercase text-xs md:text-[15px] font-bold">
