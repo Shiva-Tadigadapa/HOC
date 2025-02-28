@@ -248,7 +248,7 @@ const FAQ_DATA = [
           onClick={() => onCategoryToggle(category.id)}
         >
           <span className="text-white text-2xl md:text-3xl font-bold">
-           <span className=" text-4xl text-blue-700 mr-2"> 0{category.idx}</span> {category.title}
+           <span className=" text-4xl text-[#060ebbdone] mr-2"> 0{category.idx}</span> {category.title}
           </span>
           <motion.span
             animate={{ rotate: openCategoryId === category.id ? 45 : 0 }}
