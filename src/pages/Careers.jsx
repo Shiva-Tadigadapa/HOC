@@ -127,11 +127,11 @@ const Careers = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="items-center flex-col md:-space-y-24 relative justify-center h-screen mt-20 flex px-10">
+        <div className="items-center flex-col md:-space-y-24 relative justify-center h-[50vh] md:h-screen mt-20 flex px-10">
           {/* Hand Image Animation */}
           <motion.img
             src={hand}
-            className="w-[70px] md:w-[150px] absolute z-[1] left-10 md:left-1/4 ml-20 top-44 md:top-28"
+            className="w-[70px] md:w-[150px] md:block hidden absolute z-[1] left-10 md:left-1/4 ml-20 top-44 md:top-28"
             alt="Hand"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -141,7 +141,7 @@ const Careers = () => {
           {/* UFO Image Animation */}
           <motion.img
             src={ufo}
-            className="w-[100px] md:w-[150px] absolute z-[20] !-mt-[7.5rem] top-1/2"
+            className="w-[100px] md:w-[150px] md:block hidden absolute z-[20] !-mt-[7.5rem] top-1/2"
             alt="UFO"
             initial={{ x: 0, opacity: 0 }} // Start slightly off-screen right
             animate={{ x: 300, opacity: 1 }} // Spring animation into position
@@ -224,7 +224,7 @@ const JobListings = () => {
   ];
 
   return (
-    <div className="md:px-10 px-2  md:mt-0 -mt-40 py-10">
+    <div className="md:px-10 px-2  md:mt-0 -mt-60 py-10">
       <div
         ref={ref}
         className="min-h-[70vh] rounded-[20px] bg-black text-white p-4 md:p-8"
@@ -286,7 +286,7 @@ const JobListings = () => {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.2 * index }}
                 whileHover={{ x: 10 }}
-                className="border-b border-gray-800 py-4 cursor-pointer transition-colors duration-300 hover:text-[#060ebb]"
+                className="border-b border-gray-800 py-4  transition-colors duration-300 hover:text-[#060ebb]"
               >
                 <h2 className="text-xl font-medium">{position}</h2>
               </motion.div>

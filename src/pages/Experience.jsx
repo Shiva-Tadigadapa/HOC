@@ -247,15 +247,7 @@ const SecondSection = () => {
             alt="Lab"
           />
         </div>
-        <h1 className="md:px-20  -pt-40 px-10 text-xl md:text-2xl pb-[80px] text-white md:w-[70%] text-center jost">
-          Born from our ethos, the Chaos Lab serves as a testing ground for the
-          diverse narrative environments we experiment with and explore. Based
-          in India, with plans for growth, we embrace a 'test-and-learn'
-          mindset. Our aim is to decode + disrupt conventional norms and
-          beliefs in experimental communication + experience design.
-        </h1>
-
-        <div className="relative md:hidden -mt-40 flex justify-center items-center gap-10 h-[300px]">
+        <div className="relative md:hidden -mt-20 flex justify-center items-center gap-10 h-[300px]">
           {/* LineLab Image */}
           {/* <img
             src={linelab}
@@ -279,7 +271,7 @@ const SecondSection = () => {
           {/* Two Image */}
           <motion.img
             src={two}
-            className="w-[100%] z-[2] absolute -mt-2 right-[4%] !-mr-10"
+            className="w-[100%] z-[2] absolute -mt-2 right-[10%] !-mr-10"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
@@ -293,6 +285,15 @@ const SecondSection = () => {
             alt="Lab"
           /> */}
         </div>
+        <h1 className="md:px-20   md:mt-0 -mt-28 md:-pt-40 px-4 text-xl md:text-2xl pb-[80px] text-white md:w-[70%] text-center jost">
+          Born from our ethos, the Chaos Lab serves as a testing ground for the
+          diverse narrative environments we experiment with and explore. Based
+          in India, with plans for growth, we embrace a 'test-and-learn'
+          mindset. Our aim is to decode + disrupt conventional norms and
+          beliefs in experimental communication + experience design.
+        </h1>
+
+       
       </div>
     </div>
   );

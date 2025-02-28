@@ -148,20 +148,18 @@ const HausOfChaos = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="absolute left-0 px-4 md:px-20 bottom-6 md:bottom-10 flex flex-col md:flex-row items-start md:gap-0 gap-3 md:justify-between w-full">
+        <div className="absolute left-0 px-4 md:px-20 bottom-6 md:bottom-10 flex flex-col-reverse md:flex-row items-start md:gap-0 gap-12 md:justify-between w-full">
           <Link
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <div className="text-sm !-mt-10 md:block hidden">
+            <div className="text-sm !-mt-10 ">
               <span className="  uppercase">2025 © Haus Of Chaos  </span>Ltd.
             </div>
           </Link>
 
-          <div className="text-[16px] whitespace-nowrap text-left md:hidden block">
-            2025 © Haus Of Chaos Ltd
-          </div>
-          <div className="text-sm  !-mt-10  md:text-base">
+        
+          <div className="text-sm   md:!-mt-10  md:text-base">
             Design by{" "}
             <a
               href="https://theinternetcompany.one/"

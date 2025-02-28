@@ -63,27 +63,43 @@ const Contact = () => {
               />
             </Link>
             <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-              <Link 
-                to={"/Services"} 
-                className={`hover:text-black/50 ${isActiveRoute('/Services') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+              <Link
+                to={"/Services"}
+                className={`hover:text-black/50 ${
+                  isActiveRoute("/Services")
+                    ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                    : ""
+                }`}
               >
                 <h1>SERVICES</h1>
               </Link>
-              <Link 
-                to={"/Experience"} 
-                className={`hover:text-black/50 ${isActiveRoute('/Experience') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+              <Link
+                to={"/Experience"}
+                className={`hover:text-black/50 ${
+                  isActiveRoute("/Experience")
+                    ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                    : ""
+                }`}
               >
                 <h1>EXPERIENCE LAB</h1>
               </Link>
-              <Link 
-                to={"/Ethos"} 
-                className={`hover:text-black/50 ${isActiveRoute('/Ethos') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+              <Link
+                to={"/Ethos"}
+                className={`hover:text-black/50 ${
+                  isActiveRoute("/Ethos")
+                    ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                    : ""
+                }`}
               >
                 <h1>ETHOS</h1>
               </Link>
-              <Link 
-                to={"/Careers"} 
-                className={`hover:text-black/50 ${isActiveRoute('/Careers') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+              <Link
+                to={"/Careers"}
+                className={`hover:text-black/50 ${
+                  isActiveRoute("/Careers")
+                    ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                    : ""
+                }`}
               >
                 <h1>CAREERS</h1>
               </Link>
@@ -124,7 +140,7 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="  overflow-hidden  bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[180vh] mt-40 md:mt-20 rounded-t-3xl   flex px-10">
+        <div className="  overflow-hidden  bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[180vh] mt-40 md:mt-20 rounded-t-3xl   px-4 flex md:px-10">
           <MainServices />
         </div>
         <Footer />
@@ -141,21 +157,18 @@ const categories = {
       cy: 200,
       label: "Physical Computing",
       dis: "Blends digital technology with physical interactions to create dynamic, immersive experiences.",
-    
     },
     {
       cx: 300,
       cy: 500,
       label: "CGI + Motions Graphics",
       dis: "High-end visual storytelling like Cinematic product animations Abstract brand visuals, Interactive brand experiences.",
-     
     },
     {
       cx: 300,
       cy: 800,
       label: "Experiential Mapping",
       dis: "Visualizing and Analyzing how users or customers interact with a brand, space, or service over time. Branded Spaces & Installations, Digital Interactions, Luxury & High-Net-Worth Experiences.",
-    
     },
     {
       cx: 300,
@@ -169,30 +182,26 @@ const categories = {
       cx: 300,
       cy: 200,
       label: "Logo Design",
-      
     },
     {
       cx: 300,
       cy: 350,
       label: "Visual Identity + Illustrations",
-      
     },
     {
       cx: 300,
       cy: 550,
       label: "Brand Narrative + Content",
-      
     },
     {
       cx: 300,
       cy: 750,
       label: "Social Media Package",
-      
     },
     {
       cx: 300,
       cy: 950,
-      label:"Branding Tools Analogue",
+      label: "Branding Tools Analogue",
     },
     // {
     //   cx: 300,
@@ -202,7 +211,7 @@ const categories = {
     {
       cx: 300,
       cy: 1150,
-      label:"Product Based Communication Solutions ",
+      label: "Product Based Communication Solutions ",
     },
     // {
     //   cx :300,
@@ -210,7 +219,6 @@ const categories = {
     //   label:"Typography"
     // }
   ],
-  
 };
 import blackgrid from "../assets/blackgrid.png";
 import wiresm from "../assets/wiresm.png";
@@ -249,26 +257,30 @@ const MainServices = () => {
     );
   }, []);
   useEffect(() => {
-  ScrollTrigger.refresh();
-}, []);
+    ScrollTrigger.refresh();
+  }, []);
 
   useEffect(() => {
     const GreenLine = lineRef.current;
     const stops = stopsRef.current;
     const texts = textRefs.current;
-  
+
     const length = GreenLine.getTotalLength();
-  
+
     gsap.set(GreenLine, {
       strokeWidth: 4,
       strokeDasharray: length,
       strokeDashoffset: length, // Start with the full length hidden
       willChange: "strokeDashoffset", // Improve performance in Safari
     });
-  
+
     gsap.set(stops, { autoAlpha: 1, scale: 0, transformOrigin: "center" });
-    gsap.set(texts, { color: "#676767", opacity: 0, willChange: "opacity, transform" });
-  
+    gsap.set(texts, {
+      color: "#676767",
+      opacity: 0,
+      willChange: "opacity, transform",
+    });
+
     gsap.to(GreenLine, {
       strokeDashoffset: 0, // Animate to reveal the full path
       ease: "none",
@@ -279,7 +291,7 @@ const MainServices = () => {
         scrub: true,
       },
     });
-  
+
     stops.forEach((stop, index) => {
       gsap.to(stop, {
         scale: 1,
@@ -292,20 +304,20 @@ const MainServices = () => {
           scrub: true,
           onEnter: () => {
             gsap.to(`.label-text-${index} div`, {
-              color: "#0000ff", 
+              color: "#0000ff",
               duration: 0.5,
               opacity: 1,
               x: 0,
               transform: "translate3d(0,0,0)", // Fix for Safari rendering issues
             });
             gsap.to(`.label-text-${index} h1`, {
-              color: "#F2F2F2", 
+              color: "#F2F2F2",
               duration: 0.5,
               opacity: 1,
               x: 0,
             });
             gsap.to(`.label-text-${index} p`, {
-              color: "#BFBFBF", 
+              color: "#BFBFBF",
               duration: 0.5,
               opacity: 1,
               x: 0,
@@ -313,19 +325,19 @@ const MainServices = () => {
           },
           onLeaveBack: () => {
             gsap.to(`.label-text-${index} div`, {
-              color: "#242424", 
+              color: "#242424",
               duration: 0.5,
               opacity: 0, // Ensure smooth transition
               x: -10, // Slight movement to prevent flickering
             });
             gsap.to(`.label-text-${index} h1`, {
-              color: "#242424", 
+              color: "#242424",
               duration: 0.5,
               opacity: 0,
               x: -10,
             });
             gsap.to(`.label-text-${index} p`, {
-              color: "#242424", 
+              color: "#242424",
               duration: 0.5,
               opacity: 0,
               x: -10,
@@ -335,7 +347,7 @@ const MainServices = () => {
       });
     });
   }, []);
-  
+
   const [active, setActive] = useState("Experience");
   const currentItems = categories[active.toLowerCase()] || [];
   return (
@@ -395,14 +407,13 @@ const MainServices = () => {
         </div>
 
         <svg
-  className="line absolute md:block hidden left-1/2 ml-20 overflow-visible mt-8 transform -translate-x-1/2"
-  width="600" 
-  height="4000"
-  viewBox="0 0 600 4000"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-
+          className="line absolute md:block hidden left-1/2 ml-20 overflow-visible mt-8 transform -translate-x-1/2"
+          width="600"
+          height="4000"
+          viewBox="0 0 600 4000"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           {/* Inactive Path (Gray) */}
           <path
             d="M0.200195 2.24512H268.2C287.056 2.24512 296.484 2.24512 302.342 8.10298C308.2 13.9608 308.2 23.3889 308.2 42.2451V1525.75"
@@ -466,7 +477,7 @@ const MainServices = () => {
             ))}
           </AnimatePresence>
         </svg>
-        <div className="md:hidden w-full items-center justify-center  flex flex-col gap-28 mt-32">
+        <div className="md:hidden w-full items-start text-left justify-center  flex flex-col gap-28 mt-32">
           {currentItems.map((item, i) => (
             <motion.div
               key={active + i}
@@ -476,7 +487,7 @@ const MainServices = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="flex flex-col gap-4 px-4"
             >
-              <div className="flex gap-4 items-start">
+              <div className="flex gap-4 items-start text-left">
                 <span className="text-[#0000ff] text-2xl font-medium">
                   0{i + 1}
                 </span>

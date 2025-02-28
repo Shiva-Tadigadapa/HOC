@@ -30,7 +30,7 @@ body {
 nav {  
   display: flex;
   justify-content: space-between;
-  padding: 35px 45px;
+  padding: 35px 20px !important;
 
   .logo-container {
     overflow-y: hidden;

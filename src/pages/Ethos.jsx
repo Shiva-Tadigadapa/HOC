@@ -8,10 +8,10 @@ import { Link, useLocation } from "react-router-dom";
 
 import logo1 from "../assets/logo.png";
 import befooter from "../assets/befooter.png";
-import Footer from "./Footer"; 
+import Footer from "./Footer";
 import MobileNav from "./MobileNav";
 import tvideo from "../assets/6.webm";
-import safarivideo from "../assets/6.mp4"
+import safarivideo from "../assets/6.mp4";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -46,15 +46,19 @@ const Ethos = () => {
   useEffect(() => {
     const ua = navigator.userAgent.toLowerCase();
     const isSafariBrowser =
-      /^((?!chrome|android).)*safari/i.test(navigator.userAgent) || 
-      (ua.includes("iphone") || ua.includes("ipad"));
+      /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
+      ua.includes("iphone") ||
+      ua.includes("ipad");
 
     setIsSafari(isSafariBrowser);
   }, []);
 
   return (
     <>
-      <div className="bg-white !z-[1100] jost relative" style={{ minHeight: "100vh" }}>
+      <div
+        className="bg-white !z-[1100] jost relative"
+        style={{ minHeight: "100vh" }}
+      >
         {/* Navbar */}
         <div className="md:hidden">
           <MobileNav />
@@ -76,86 +80,102 @@ const Ethos = () => {
                 />
               </Link>
               <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-                <Link 
-                  to={"/Services"} 
-                  className={`hover:text-black/50 ${isActiveRoute('/Services') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                <Link
+                  to={"/Services"}
+                  className={`hover:text-black/50 ${
+                    isActiveRoute("/Services")
+                      ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                      : ""
+                  }`}
                 >
                   <h1>SERVICES</h1>
                 </Link>
-                <Link 
-                  to={"/Experience"} 
-                  className={`hover:text-black/50 ${isActiveRoute('/Experience') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                <Link
+                  to={"/Experience"}
+                  className={`hover:text-black/50 ${
+                    isActiveRoute("/Experience")
+                      ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                      : ""
+                  }`}
                 >
                   <h1>EXPERIENCE LAB</h1>
                 </Link>
-                <Link 
-                  to={"/Ethos"} 
-                  className={`hover:text-black/50 ${isActiveRoute('/Ethos') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                <Link
+                  to={"/Ethos"}
+                  className={`hover:text-black/50 ${
+                    isActiveRoute("/Ethos")
+                      ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                      : ""
+                  }`}
                 >
                   <h1>ETHOS</h1>
                 </Link>
-                <Link 
-                  to={"/Careers"} 
-                  className={`hover:text-black/50 ${isActiveRoute('/Careers') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                <Link
+                  to={"/Careers"}
+                  className={`hover:text-black/50 ${
+                    isActiveRoute("/Careers")
+                      ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                      : ""
+                  }`}
                 >
                   <h1>CAREERS</h1>
                 </Link>
               </div>
               <Link to={"/Contact"}>
-            <motion.div
-              className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
-                isToggled
-                  ? "bg-black text-white"
-                  : "bg-[#F0F0F0] text-[#060ebb]"
-              }`}
-              onClick={handleToggle}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-            >
-              <motion.h1
-                className={`mr-6 md:mr-9 text-center`}
-                animate={{
-                  x: isToggled ? "35px" : "0px",
-                  color: isToggled ? "#FFFFFF" : "#060ebb",
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                CONTACT
-              </motion.h1>
-              <motion.img
-                className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
-                src={worldsmall}
-                alt="World"
-                animate={{
-                  x: isToggled ? "-50%" : "150%",
-                  rotate: isToggled ? 360 : 0,
-                }}
-                transition={{ duration: 0.8 }}
-              />
-            </motion.div>
-          </Link>
+                <motion.div
+                  className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
+                    isToggled
+                      ? "bg-black text-white"
+                      : "bg-[#F0F0F0] text-[#060ebb]"
+                  }`}
+                  onClick={handleToggle}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <motion.h1
+                    className={`mr-6 md:mr-9 text-center`}
+                    animate={{
+                      x: isToggled ? "35px" : "0px",
+                      color: isToggled ? "#FFFFFF" : "#060ebb",
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    CONTACT
+                  </motion.h1>
+                  <motion.img
+                    className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
+                    src={worldsmall}
+                    alt="World"
+                    animate={{
+                      x: isToggled ? "-50%" : "150%",
+                      rotate: isToggled ? 360 : 0,
+                    }}
+                    transition={{ duration: 0.8 }}
+                  />
+                </motion.div>
+              </Link>
             </div>
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className=" !z-[-200]  items-end   md:flex-row flex-col-reverse  h-screen md:h-full mt-0 md:mt-0  bottom-0 flex px-4 md:px-10">
-          <div className="  capitalize    w-[100%]">
-            <h2 className="jost md:text-[26px] text-2xl text-left  mb-10  md:-mb-20 md:leading-[40px]">
+        <div className=" !z-[-200]  items-end   md:flex-row flex-col  h-full md:h-full mt-0 md:mt-0  bottom-0 flex px-4 md:px-10">
+          <div className="  capitalize   md:mt-0 mt-80  w-[100%]">
+            <h2 className="jost md:text-[26px] text-2xl text-left md:block hidden  mb-10  md:-mb-20 md:leading-[40px]">
               <span className=" md:text-[45px]  text-3xl salo uppercase  text-[#060ebb]">
                 {" "}
                 Haus Of Chaos{" "}
               </span>{" "}
               <span className="   whitespace-nowrap">
-                is a process-oriented design firm <br /> that prioritizes {" "}
-                innovative forms of communication. <br /> Embracing the concept of{" "}
-                
+                is a process-oriented design firm <br /> that prioritizes{" "}
+                innovative forms of communication. <br /> Embracing the concept
+                of{" "}
                 <span className=" md:text-[45px] text-3xl uppercase salo text-[#060ebb]">
                   {" "}
                   Organized Chaos
                 </span>
                 <br />
                 <span className=" whitespace-nowrap">
-                  —akin to chaos theory—our philosophy centers   on <br />
+                  —akin to chaos theory—our philosophy centers on <br />
                   challenging conventional{" "}
                 </span>
               </span>
@@ -163,30 +183,39 @@ const Ethos = () => {
                 {" "}
                 Design{" "}
               </span>{" "}
-              paradigms  <br  className=" md:block hidden"/> integrating the intangible aspects of
-              interdisciplinary <br /> design, particularly
+              paradigms <br className=" md:block hidden" /> integrating the
+              intangible aspects of interdisciplinary <br /> design,
+              particularly
               <span className=" md:text-[45px] text-3xl uppercase salo text-[#060ebb]">
                 {" "}
-                 Transmedia Approaches.
+                Transmedia Approaches.
               </span>
+            </h2>
+            <h2 className="jost text-2xl  md:hidden block text-left">
+           <span className="salo uppercase  text-3xl text-[#060ebb]">  Haus Of Chaos </span> is a process-oriented design firm
+that prioritizes innovative forms of communication.
+Embracing the concept of  <span className="salo uppercase  text-3xl text-[#060ebb]">Organized Chaos </span>
+—akin to chaos theory—our philosophy centers on
+challenging conventional <span className="salo uppercase  text-3xl text-[#060ebb]"> Design</span> paradigms
+integrating the intangible aspects of interdisciplinary
+design, particularly <span className="salo uppercase  text-3xl text-[#060ebb]"> Transmedia Approaches.</span>
             </h2>
           </div>
 
           {/* Adding smooth infinite rotation */}
           <motion.div
-  className="w-[80%] -mt-10 !z-[-800] relative left-20 md:top-[19rem] overflow-hidden"
-  animate={{ rotate: 360 }}
->
-  <video
-    src={isSafari ? safarivideo : tvideo} // Corrected: Removed `{}` around variables
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="md:w-[140%]  mb-[6px] h-[20rem] md:h-[45rem] object-cover md:rotate-[0deg] -rotate-[10deg] md:scale-x-[1] scale-x-[-1]"
-  />
-</motion.div>
-
+            className="w-[80%]  mt-4 md:-mt-10 !z-[-800] relative left-20 md:top-[19rem] overflow-hidden"
+            animate={{ rotate: 360 }}
+          >
+            <video
+              src={isSafari ? safarivideo : tvideo} // Corrected: Removed `{}` around variables
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="md:w-[140%]  mb-[6px] h-[20rem] md:h-[45rem] object-cover md:rotate-[0deg] -rotate-[10deg] md:scale-x-[1] scale-x-[-1]"
+            />
+          </motion.div>
         </div>
         <FounderSection />
         {/* <Play /> */}
@@ -201,7 +230,7 @@ export default Ethos;
 
 import founder from "../assets/RIA3.jpg";
 import founder2 from "../assets/FounderBanner.jpg";
-const FounderSection = () => { 
+const FounderSection = () => {
   const handleEmailClick = () => {
     console.log("Email button clicked"); // Debugging
     window.open("mailto:your@email.com", "_self");
@@ -210,52 +239,48 @@ const FounderSection = () => {
   const isInView = useInView(ref, { once: true }); // Trigger animation once when in view
 
   return (
-    <div className="md:mt-40  !z-[1000]  mt-20">
+    <div className="md:mt-40  -mt-20 !z-[1000]  ">
       <div
         ref={ref}
         className=" bg-[#060ebb]  md:pb-0 pb-20  md:p-8 relative overflow-hidden flex items-center justify-between w-full"
       >
         <div className="md:px-14   flex flex-col  md:items-start justify-center mt-20 md:mt-40 text-left">
-
-
-        <motion.div
-              initial={{ scale: 1.2, opacity: 0 }}
-              animate={isInView ? { scale: 1, opacity: 1 } : {}}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 200,
-              }}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2 },
-              }}
-              className=" lg:w-1/2  !scale-75 w-full md:w-1/2 block md:hidden relative  h-full"
-            >
-              <div className="relative   -top-20 h-[800px] [perspective:1000px] cursor-pointer group">
-                <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                  {/* Front image */}
-                  <div className="absolute inset-0 h-[80%] w-full">
-                    <img
-                      src={founder}
-                      alt="Founder Front"
-                      className="w-full h-full object-cover border-[1rem] block rounded-lg"
-                    />
-                  </div>
-                  {/* Back image */}
-                  <div className="absolute inset-0 h-[80%] w-full [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                    <img
-                      src={founder2}
-                      alt="Founder Back"
-                      className="w-full h-full object-cover object-top border-[1rem] block rounded-lg"
-                    />
-                  </div>
+          <motion.div
+            initial={{ scale: 1.2, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{
+              duration: 0.8,
+              delay: 0.5,
+              type: "spring",
+              stiffness: 200,
+            }}
+            whileHover={{
+              scale: 1.05,
+              transition: { duration: 0.2 },
+            }}
+            className=" lg:w-1/2  !scale-75 w-full md:w-1/2 block md:hidden relative  h-full"
+          >
+            <div className="relative   -top-20 h-[800px] [perspective:1000px] cursor-pointer group">
+              <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Front image */}
+                <div className="absolute inset-0 h-[80%] w-full">
+                  <img
+                    src={founder}
+                    alt="Founder Front"
+                    className="w-full h-full object-cover border-[1rem] block rounded-lg"
+                  />
+                </div>
+                {/* Back image */}
+                <div className="absolute inset-0 h-[80%] w-full [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <img
+                    src={founder2}
+                    alt="Founder Back"
+                    className="w-full h-full object-cover object-top border-[1rem] block rounded-lg"
+                  />
                 </div>
               </div>
-            </motion.div>
-
-
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -294,7 +319,12 @@ const FounderSection = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white px-6 py-3 rounded-full font-medium"
-                  onClick={() => window.open('https://www.linkedin.com/company/hausofchaos/', '_blank')}
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/company/hausofchaos/",
+                      "_blank"
+                    )
+                  }
                 >
                   LinkedIn
                 </motion.button>
@@ -343,4 +373,3 @@ const FounderSection = () => {
     </div>
   );
 };
-

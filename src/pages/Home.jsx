@@ -4,11 +4,10 @@ import logo from "../assets/logo2.png";
 import logo1 from "../assets/logo.png";
 import swrillpng from "../assets/swrill2.png";
 import worldsmall from "../assets/worldsmall.png";
-import labsvg from "../assets/labsvg.svg"; 
+import labsvg from "../assets/labsvg.svg";
 import { useScroll } from "framer-motion";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
- 
 
 import { useEffect } from "react";
 import noswitch from "../assets/noswitch.svg";
@@ -26,18 +25,18 @@ const Home = () => {
       <div ref={ref} className="md:h-[200vh] h-full relative">
         <div className="bg-white jost md:-mt-[22rem] relative md:min-h-screen">
           <div className="absolute  transform  md:top-[35rem] -top-40 md:-bottom-40 flex px-4 md:px-10">
-            <div  className=" z-[500]">
+            <div className=" z-[500]">
               <h1
                 className="text-3xl   salo md:text-[110px] text-[#060ebb]
                font-[500] text-left leading-tight md:leading-normal"
               >
                 WHO WE ARE
               </h1>
-              
-              <h2 className="jost text-xl md:text-[30px]  whitespace-nowrap w-[100%] text-left md:leading-[40px]">
+
+              <h2 className="jost text-lg md:text-[30px]  whitespace-nowrap w-[100%] text-left md:leading-[40px]">
                 A seriously playful process-oriented <br /> experience design
                 studio that disrupts +<br /> questions + creates narrative{" "}
-               environments <br /> and experiences for brands   worldwide
+                environments <br /> and experiences for brands worldwide
               </h2>
             </div>
 
@@ -62,12 +61,12 @@ const Home = () => {
             <h1 className="text-3xl  salo md:text-[110px] text-[#060ebb] font-[500] text-right leading-tight md:leading-normal">
               WHAT WE DO
             </h1>
-            <h2 className="jost md:text-[30px]  w-[100%] text-right  text-xl md:leading-[40px]">
+            <h2 className="jost md:text-[30px]  w-[100%] text-right  text-lg md:leading-[40px]">
               We dabble in graphic design, <br />
                a smidge of branding + packaging,
               <br />
-              + focus extensively on experience design  <br />to tie 
-              everything together seamlessly.
+              + focus extensively on experience <br  className=" md:hidden block"/> design <br  className=" md:block hidden"/>
+              to tie everything together seamlessly.
             </h2>
           </div>
           {/* <div className=" md:text-[22px] text-sm -left-20 bottom-20 md:left-auto  flex gap-4  text-[#2354CF]  md:leading-[32px]  tracking-widest md:bottom-[20rem] whitespace-nowrap md:-right-20  rotate-[-90deg]    absolute md:rotate-[90deg]">
@@ -297,15 +296,15 @@ const ThirdSection = () => {
   const videoSource = isIOS || isSafari ? iosVideo : one;
 
   return (
-    <div className="relative mt-32 md:-mt-40">
-      <video 
-        id="loader-video" 
-        autoPlay 
-        muted 
-        loop 
-        playsInline 
+    <div className="relative mt-10 md:-mt-40">
+      <video
+        id="loader-video"
+        autoPlay
+        muted
+        loop
+        playsInline
         className={`w-full h-full object-cover ${
-          isIOS || isSafari ? ' scale-75 border-2 border-white' : 'scale-125'
+          isIOS || isSafari ? " scale-75 border-2 border-white" : "scale-125"
         }`}
       >
         <source
@@ -320,10 +319,7 @@ const ThirdSection = () => {
           crafting an experience that reflects what our company truly stands
           for. Ria, the creative director of Haus of Chaos, not only
           conceptualized the journey of how clients experience our brand but
-        
-
           also responded with remarkable efficiency.
-        
         </h1>
         <h2 className="text-[#2354CF] text-xs md:text-[20px] mt-5">
           Rak's Pallikkoodam, 21st century international school
@@ -334,6 +330,3 @@ const ThirdSection = () => {
 };
 
 import befooter from "../assets/FounderBanner.jpg";
-
-
- 

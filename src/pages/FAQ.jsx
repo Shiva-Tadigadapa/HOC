@@ -157,7 +157,7 @@ const FAQItem = ({ item, isOpen, onToggle }) => {
           <span className="text-[#2354CF] font-bold mr-4 text-xl md:text-[32px]">
             -
           </span>
-          <span className="text-white text-xl md:text-2xl">
+          <span className="text-white text-lg md:text-2xl">
             {item.question}
           </span>
         </div>
@@ -247,7 +247,7 @@ const CategoryAccordion = ({
         className="flex w-full items-center justify-between py-6 text-left"
         onClick={() => onCategoryToggle(category.id)}
       >
-        <span className="text-white text-2xl md:text-3xl font-bold">
+        <span className="text-white text-xl md:text-3xl font-bold">
           <span className=" text-4xl text-[#060ebb] mr-2">
             {" "}
             0{category.idx}

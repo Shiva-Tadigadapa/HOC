@@ -113,8 +113,9 @@ const Contact = () => {
         </div>
         {/* Absolutely Centered Text */}
         <JobListings  scrollToBottom={scrollToBottom}/>
+        <JobListings2 scrollToBottom={scrollToBottom}/>
 
-        <div ref={bottomPageRef}  className="items-center BOTTOM-PAGE flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex px-10">
+        <div ref={bottomPageRef}  className="items-center BOTTOM-PAGE   flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex md:px-10">
           {/* CONTACT Heading with Spring Animation */}
           <motion.h1
             className="font-[1000] px-10  mt-0 md:!mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
@@ -184,6 +185,16 @@ const images = [
   { src: svg6, className: "bottom-60 !w-1/4 right-0", link: "/Contact" },
 ];
 
+const images2 = [
+  { src: svg4, className: "  bottom-0 left-0", link: "/Contact" },
+  { src: linkdsvg, className: " bottom-20 ", link: "https://www.linkedin.com/company/hausofchaos/" },
+  { src: instasvg, className: "  bottom-52 left-0", link: "https://www.instagram.com/hausofchaos.co/" },
+  { src: svg5, className: " bottom-0 right-0 ", link: "/Contact" },
+  { src: facebook, className: " bottom-60 right-0", link: "/facebook-page" },
+  { src: bhance, className: " bottom-40 left-20", link: "/behance-page" },
+  { src: dribble, className: "bottom-72 left-10", link: "/Contact" },
+  { src: svg6, className: "  left-32", link: "/Contact" },
+];
 const JobListings = ({ scrollToBottom }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -199,7 +210,7 @@ const JobListings = ({ scrollToBottom }) => {
   };
 
   return (
-    <div ref={ref} className="w-full h-[100vh] flex justify-center items-center relative overflow-hidden">
+    <div ref={ref} className="w-full h-[100vh] hidden md:flex justify-center items-center relative overflow-hidden">
       {isInView &&
         images.map((img, index) => (
           <motion.img
@@ -256,7 +267,76 @@ const JobListings = ({ scrollToBottom }) => {
 };
  
 
+const JobListings2 = ({ scrollToBottom }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isDragging, setIsDragging] = useState(false);
 
+  const handleClick = (link) => {
+    if (!isDragging) {
+      // Use your preferred navigation method here
+      window.location.href = link;
+      // Or with React Router:
+      // navigate(link);
+    }
+  };
+
+  return (
+    <div ref={ref} className="w-full h-[100vh] md:hidden flex justify-center items-center relative overflow-hidden">
+      {isInView &&
+        images2.map((img, index) => (
+          <motion.img
+            key={index}
+            src={img.src}
+            alt={`img-${index}`}
+            className={`absolute  w-1/2 md:w-auto  ${img.className}`}
+            initial={{ y: -1000, opacity: 0, rotate: Math.random() * 360 }}
+            animate={{ 
+              y: 0, 
+              opacity: 1, 
+              rotate: 0,
+              transition: {
+                type: "spring",
+                duration: 1.5,
+                delay: index * 0.2,
+                bounce: 0.2,
+                damping: 10,
+                stiffness: 100
+              }
+            }}
+            drag
+            dragTransition={{ bounceStiffness: 200, bounceDamping: 5 }}
+            dragConstraints={{
+              top: -400,
+              left: -1000,
+              right: 1000,
+              bottom: 200,
+            }}
+            onDragStart={() => setIsDragging(true)}
+            onDragEnd={() => setTimeout(() => setIsDragging(false), 50)}
+            onClick={() => handleClick(img.link)}
+            style={{ 
+              touchAction: "none",
+              cursor: "default",
+            }}
+            whileHover={{
+              scale: 1.1,
+              cursor: "grab"
+            }}
+            whileDrag={{
+              cursor: "grabbing"
+            }}
+          />
+        ))}
+
+      <h1 className="absolute  md:block hidden cursor-pointer !bottom-2 md:bottom-10 tracking-wide text-[#0000FF]   text-center text-2xl md:text-[20px]"  onClick={scrollToBottom}>
+        Scroll Down
+      </h1>
+      {/* <div className=" absolute">Scroll Down</div> */}
+    </div>
+    
+  );
+};
 
 
  
