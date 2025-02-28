@@ -128,7 +128,7 @@ const Contact = () => {
 
           {/* Tagline with Spring Animation */}
           <motion.div
-            className="jost font-[500] w-full flex items-center justify-center text-xl md:!mt-24 lowercase md:text-base md:text-left z-[10]"
+            className="jost font-[500] w-full flex items-center justify-center text-xl md:!mt-24   md:text-base md:text-left z-[10]"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
