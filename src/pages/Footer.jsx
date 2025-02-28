@@ -154,11 +154,11 @@ const HausOfChaos = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <div className="text-sm md:block hidden">
-              2025 © Haus Of Chaos Ltd.
+              <span className="  uppercase">2025 © Haus Of Chaos  </span>Ltd.
             </div>
           </Link>
 
-          <div className="text-sm whitespace-nowrap text-left md:hidden block">
+          <div className="text-[16px] whitespace-nowrap text-left md:hidden block">
             2025 © Haus Of Chaos Ltd.
           </div>
           <div className="text-sm md:text-base">
