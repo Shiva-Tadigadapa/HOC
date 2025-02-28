@@ -57,7 +57,7 @@ const Home = () => {
           >
             {/* <img src={swrillpng} className="w-[80%]" alt="Swrill" /> */}
           </motion.div>
-          <div className=" !z-[500] w-full md:-mt-12 mt-40 whitespace-nowrap md:mr-20">
+          <div className=" !z-[500] w-full md:-mt-12 mt-20 whitespace-nowrap -mr-5 md:mr-0">
             <h1 className="text-3xl  salo md:text-[110px] text-[#060ebb] font-[500] text-right leading-tight md:leading-normal">
               WHAT WE DO
             </h1>
