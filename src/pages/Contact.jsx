@@ -18,6 +18,7 @@ const Contact = () => {
   const [isFixed, setIsFixed] = useState(true);
   const [isToggled, setIsToggled] = useState(true);
 
+  const bottomPageRef = useRef(null);
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -34,7 +35,9 @@ const Contact = () => {
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
-
+  const scrollToBottom = () => {
+    bottomPageRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <>
       <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
@@ -109,9 +112,9 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <JobListings />
+        <JobListings  scrollToBottom={scrollToBottom}/>
 
-        <div className="items-center flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex px-10">
+        <div ref={bottomPageRef}  className="items-center BOTTOM-PAGE flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex px-10">
           {/* CONTACT Heading with Spring Animation */}
           <motion.h1
             className="font-[1000] px-10  mt-0 md:!mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
@@ -181,7 +184,7 @@ const images = [
   { src: svg6, className: "bottom-60 !w-1/4 right-0", link: "/Contact" },
 ];
 
-const JobListings = () => {
+const JobListings = ({ scrollToBottom }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isDragging, setIsDragging] = useState(false);
@@ -243,10 +246,12 @@ const JobListings = () => {
           />
         ))}
 
-      {/* <h1 className="absolute bottom-10 md:bottom-10 tracking-wide text-[#0000FF] lowercase text-center text-3xl md:text-[100px]">
-        EXPLORE@HOUSEOFCHAOS.CO
-      </h1> */}
+      <h1 className="absolute cursor-pointer bottom-10 md:bottom-10 tracking-wide text-[#0000FF] lowercase text-center text-2xl md:text-[20px]"  onClick={scrollToBottom}>
+        SCROLL DOWN
+      </h1>
+      {/* <div className=" absolute">Scroll Down</div> */}
     </div>
+    
   );
 };
  

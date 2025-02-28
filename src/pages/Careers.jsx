@@ -248,21 +248,28 @@ const JobListings = () => {
             </motion.h1>
 
             <div className="flex gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#060ebb] px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-blue-600"
-              >
-                E-MAIL NOW
-              </motion.button>
+            <div className="flex justify-center items-center">
+  <button
+ 
+    className="bg-white text-[#060ebb] px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-blue-600 hover:text-white"
+    onClick={(e) => {
+      e.preventDefault(); // Prevents unwanted navigation issues
+      window.open("mailto:explore@hausofchaos.co?subject=Contact%20from%20Website", "_self");
+    }}
+  >
+    E-MAIL NOW
+  </button>
+</div>
 
+              <a href="https://www.linkedin.com/company/hausofchaos/">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border border-white px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-white hover:text-black"
-              >
+                >
                 VIEW LINKEDIN
               </motion.button>
+                </a>
             </div>
           </div>
 
