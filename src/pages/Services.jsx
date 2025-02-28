@@ -216,8 +216,8 @@ const categories = {
 };
 import blackgrid from "../assets/blackgrid.png";
 import wiresm from "../assets/wiresm.png";
-import plugservicesleft from "../assets/plugservicesleft.png";
-import plugservicesright from "../assets/plugservicesright.png";
+import plugservicesleft from "../assets/left.png";
+import plugservicesright from "../assets/right.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
@@ -360,13 +360,13 @@ const MainServices = () => {
             />
             <img
               src={plugservicesleft}
-              className="absolute w-1/3 right-16 -top-10 z-[100]"
+              className="absolute  w-full left-52 -top-28 scale-[1.2] z-[100]"
               alt=""
             />
             <img
               ref={plugRightRef}
               src={plugservicesright}
-              className="absolute w-1/2 scale-90 -right-[116px] mr-2.5 -mt-0.5 -top-12 z-[90]"
+              className="absolute w-full scale-[1.3]  -right-[180px] mr-2.5 -mt-0.5 -top-28 z-[90]"
               alt=""
               style={{ transformOrigin: "right center" }}
             />
@@ -376,7 +376,7 @@ const MainServices = () => {
             Our Services
           </h1>
           <div className="bg-[#242424] px-3 py-3 rounded-[76px] -bottom-16 md:-bottom-16 flex gap-2 absolute text-xs md:text-base jost text-white font-medium">
-            {["Experience", "Design", "Build"].map((item) => (
+            {["Experience", "Design"].map((item) => (
               <button
                 key={item}
                 className={`px-6 py-2 uppercase rounded-[59px] transition-all duration-300 ${

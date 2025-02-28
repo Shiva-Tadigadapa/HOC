@@ -10,7 +10,8 @@ import logo1 from "../assets/logo.png";
 import befooter from "../assets/befooter.png";
 import Footer from "./Footer"; 
 import MobileNav from "./MobileNav";
-import tvideo from "../assets/output.webm";
+import tvideo from "../assets/6.webm";
+import safarivideo from "../assets/6.mp4"
 
 import { useState, useEffect, useRef } from "react";
 
@@ -40,6 +41,16 @@ const Ethos = () => {
   const isActiveRoute = (path) => {
     return location.pathname === path;
   };
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    const ua = navigator.userAgent.toLowerCase();
+    const isSafariBrowser =
+      /^((?!chrome|android).)*safari/i.test(navigator.userAgent) || 
+      (ua.includes("iphone") || ua.includes("ipad"));
+
+    setIsSafari(isSafariBrowser);
+  }, []);
 
   return (
     <>
@@ -163,18 +174,19 @@ const Ethos = () => {
 
           {/* Adding smooth infinite rotation */}
           <motion.div
-            className="w-[80%] -mt-10  !z-[-800]  relative left-20 md:top-[19rem] overflow-hidden"
-            animate={{ rotate: 360 }}
-          > 
-                    <video
-                      src={tvideo}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="md:w-[140%]  h-[20rem] md:h-[45rem] object-cover md:rotate-[0deg] -rotate-[10deg] md:scale-x-[1] scale-x-[-1]"
-                    />
-          </motion.div>
+  className="w-[80%] -mt-10 !z-[-800] relative left-20 md:top-[19rem] overflow-hidden"
+  animate={{ rotate: 360 }}
+>
+  <video
+    src={isSafari ? safarivideo : tvideo} // Corrected: Removed `{}` around variables
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="md:w-[140%] h-[20rem] md:h-[45rem] object-cover md:rotate-[0deg] -rotate-[10deg] md:scale-x-[1] scale-x-[-1]"
+  />
+</motion.div>
+
         </div>
         <FounderSection />
         {/* <Play /> */}

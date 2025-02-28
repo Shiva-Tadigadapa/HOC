@@ -109,6 +109,8 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
+        <JobListings />
+
         <div className="items-center flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex px-10">
           {/* CONTACT Heading with Spring Animation */}
           <motion.h1
@@ -151,7 +153,6 @@ const Contact = () => {
            </div>
           </motion.div>
         </div>
-        <JobListings />
         {/* <Footer /> */}
       </div>
     </>
@@ -192,7 +193,7 @@ const JobListings = () => {
   };
 
   return (
-    <div ref={ref} className="w-full h-[90vh] flex justify-center items-center relative overflow-hidden">
+    <div ref={ref} className="w-full h-[100vh] flex justify-center items-center relative overflow-hidden">
       {isInView &&
         images.map((img, index) => (
           <motion.img
@@ -239,9 +240,9 @@ const JobListings = () => {
           />
         ))}
 
-      <h1 className="absolute bottom-10 md:bottom-10 tracking-wide text-[#0000FF] lowercase text-center text-3xl md:text-[100px]">
+      {/* <h1 className="absolute bottom-10 md:bottom-10 tracking-wide text-[#0000FF] lowercase text-center text-3xl md:text-[100px]">
         EXPLORE@HOUSEOFCHAOS.CO
-      </h1>
+      </h1> */}
     </div>
   );
 };

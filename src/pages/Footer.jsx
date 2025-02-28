@@ -60,7 +60,7 @@ const HausOfChaos = () => {
     <div className="min-h-screen bg-[#060ebb] text-white relative">
       {/* Background Grid Overlay */}
       <div
-        className="absolute inset-0 opacity-50"
+        className="absolute inset-0 opacity-50 rotate-[0.5deg]"
         style={{ backgroundImage: `url(${grid})`, backgroundSize: "cover" }}
       />
 
