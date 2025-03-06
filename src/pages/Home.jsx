@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/logo2.png";
-import logo1 from "../assets/logo.png";
-import swrillpng from "../assets/swrill2.png";
-import worldsmall from "../assets/worldsmall.png";
-import labsvg from "../assets/labsvg.svg";
+// import logo from "../assets/logo2.png";
+// import logo1 from "../assets/logo.png";
+// import swrillpng from "../assets/swrill2.png";
+// import worldsmall from "../assets/worldsmall.png";
+// import labsvg from "../assets/labsvg.svg";
 import { useScroll } from "framer-motion";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
@@ -241,50 +241,50 @@ const SecondSection = () => {
   );
 };
 
-import slider1 from "../assets/slider1.png";
-import slider2 from "../assets/slider2.png";
-import slider3 from "../assets/slider3.png";
-import slider4 from "../assets/slider4.png";
-import slider5 from "../assets/slider5.png";
+// import slider1 from "../assets/slider1.png";
+// import slider2 from "../assets/slider2.png";
+// import slider3 from "../assets/slider3.png";
+// import slider4 from "../assets/slider4.png";
+// import slider5 from "../assets/slider5.png";
 
-const Partner = () => {
-  const LOGOS = [
-    <img src={slider1} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider2} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider3} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider4} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider5} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider1} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider2} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider3} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider4} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider5} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider1} alt="aurobindo" className="  w-72  h-auto" />,
-    <img src={slider2} alt="aurobindo" className="  w-72  h-auto" />,
-  ];
-  return (
-    <div className="w-screen py-10   z-[300] overflow-hidden  md:flex items-center relative justify-center  gap-20 flex-col">
-      <div
-        className="relative items-center justify-center w-[100%] z-[300] overflow-hidden bg-white 
-  before:absolute before:z-[300] before:left-0 before:top-0 before:h-full before:w-[200px] 
-  before:bg-[linear-gradient(to_right,rgba(227,222,212,0)_100%)] before:content-[''] 
-  after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[200px] 
-  after:-scale-x-100 after:bg-[linear-gradient(to_right,rgba(255,0,0,0))] after:content-['']"
-      >
-        <div className="animate-infinite-slider overflow-hidden gap-10 flex w-[calc(350px*10)]">
-          {LOGOS.map((logo, index) => (
-            <div
-              className="slide flex w-[30%] mx-4 items-center justify-center"
-              key={index}
-            >
-              {logo}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+// const Partner = () => {
+//   const LOGOS = [
+//     <img src={slider1} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider2} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider3} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider4} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider5} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider1} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider2} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider3} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider4} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider5} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider1} alt="aurobindo" className="  w-72  h-auto" />,
+//     <img src={slider2} alt="aurobindo" className="  w-72  h-auto" />,
+//   ];
+//   return (
+//     <div className="w-screen py-10   z-[300] overflow-hidden  md:flex items-center relative justify-center  gap-20 flex-col">
+//       <div
+//         className="relative items-center justify-center w-[100%] z-[300] overflow-hidden bg-white 
+//   before:absolute before:z-[300] before:left-0 before:top-0 before:h-full before:w-[200px] 
+//   before:bg-[linear-gradient(to_right,rgba(227,222,212,0)_100%)] before:content-[''] 
+//   after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[200px] 
+//   after:-scale-x-100 after:bg-[linear-gradient(to_right,rgba(255,0,0,0))] after:content-['']"
+//       >
+//         <div className="animate-infinite-slider overflow-hidden gap-10 flex w-[calc(350px*10)]">
+//           {LOGOS.map((logo, index) => (
+//             <div
+//               className="slide flex w-[30%] mx-4 items-center justify-center"
+//               key={index}
+//             >
+//               {logo}
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 import one from "../assets/1.webm";
 import iosVideo from "../assets/2.mp4"; // Your video for iOS/Safari

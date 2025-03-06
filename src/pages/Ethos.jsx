@@ -1,13 +1,13 @@
 import React from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import tvpng from "../assets/tv.png";
+// import tvpng from "../assets/tv.png";
 import worldsmall from "../assets/worldsmall.png";
-import logo from "../assets/logo.png";
+// import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
 import { Link, useLocation } from "react-router-dom";
 
-import logo1 from "../assets/logo.png";
-import befooter from "../assets/befooter.png";
+// import logo1 from "../assets/logo.png";
+// import befooter from "../assets/befooter.png";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
 import tvideo from "../assets/6.webm";

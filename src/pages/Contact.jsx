@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import worldsmall from "../assets/worldsmall.png";
-import tvpng from "../assets/tv.png";
-import logo from "../assets/logo.png";
+// import tvpng from "../assets/tv.png";
+// import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
-import befooter from "../assets/befooter.png";
-import hand from "../assets/hand.png";
-import ufo from "../assets/ufo.png";
-import Footer from "./Footer";
+// import befooter from "../assets/befooter.png";
+// import hand from "../assets/hand.png";
+// import ufo from "../assets/ufo.png";
+// import Footer from "./Footer";
 import MobileNav from "./MobileNav";
 
 import { motion } from "framer-motion";
@@ -461,14 +461,14 @@ import { OrbitControls, useGLTF } from "@react-three/drei"; // Removed incorrect
 //   { src: dribble, className: "bottom-72 left-10", link: "/Contact" },
 //   { src: svg6, className: "  left-32", link: "/Contact" },
 // ];
-import dragme1 from "../assets/svgs/Dragme.svg";
-import linkdsvg from "../assets/svgs/linkd.svg";
-import instasvg from "../assets/svgs/insta.svg";
-import facebook from "../assets/svgs/facebook.svg";
-import dragleft from "../assets/svgs/dragmeleft.svg";
-import dragright from "../assets/svgs/dargmeright.svg";
-import bhance from "../assets/svgs/behance.svg";
-import dribble from "../assets/svgs/dribble.svg";
+// import dragme1 from "../assets/svgs/Dragme.svg";
+// import linkdsvg from "../assets/svgs/linkd.svg";
+// import instasvg from "../assets/svgs/insta.svg";
+// import facebook from "../assets/svgs/facebook.svg";
+// import dragleft from "../assets/svgs/dragmeleft.svg";
+// import dragright from "../assets/svgs/dargmeright.svg";
+// import bhance from "../assets/svgs/behance.svg";
+// import dribble from "../assets/svgs/dribble.svg";
 import svg4 from "../assets/hover/element3-min.png";
 import svg5 from "../assets/hover/element5-min.png";
 import svg6 from "../assets/hover/element6-min.png";
