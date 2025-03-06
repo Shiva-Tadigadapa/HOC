@@ -1,94 +1,94 @@
 const FAQ_DATA = [
   {
     id: "01",
-    question: "What services does your firm provide?",
+    question: "What Services does your firm provide?",
     answer:
-      "We specialize in creating immersive brand experiences, including experiential design, branding, communication strategy, and curated touchpoints for brands and companies.",
+      "We specialize in creating immersive brand experiences, including experiential design, branding, communication strategy, and curating touchpoints for brands and companies.",
   },
   {
     id: "02",
-    question: "How do I begin working with your team?",
+    question: "How do I begin working with Haus of Chaos?",
     answer:
-      "The first step is to schedule a consultation. This allows us to understand your brand, goals, and target audience before crafting a bespoke solution for your needs.  ",
+      "The first step is to schedule a consultation. This allows us to understand your brand, goals, and target audience before crafting a bespoke solution for your needs. ",
   },
   {
     id: "03",
-    question: "What industries do you typically work with?",
+    question: "What industries does Haus of Chaos work with?",
     answer:
-      "Our clients span industries such as luxury retail, hospitality, real estate, tech, and more. If your brand seeks to deliver an elevated, meaningful experience, we’d love to collaborate.  ",
+      "Our clients span across industries such as luxury retail, hospitality, real estate, tech, and more. If your brand seeks to deliver an elevated, meaningful experience, we’d love to collaborate. ",
   },
   {
     id: "04",
-    question: "What does your process look like ?",
+    question: "What does the onboarding process with Haus of Chaos look like? ",
     answer:
-      "Our process includes a discovery phase, research and strategy development, creative ideation, design execution, and final implementation. Every step is tailored to ensure the experience we create is aligned with your brand’s vision.  ",
+      "Our process includes a discovery phase, research and strategy development, creative ideation, design execution, and final implementation. Every step is tailored to ensure the experience we create is aligned with your brand’s vision. ",
   },
   {
     id: "05",
-    question: "Will I have input throughout the project?",
+    question: "Can a client provide inputs throughout the project?",
     answer:
-      "Absolutely. We believe in collaboration and will keep you involved throughout the process to ensure the results resonate with your vision and goals.  ",
+      "Absolutely. We believe in collaboration and will keep you involved throughout the process to ensure that the results resonate with your vision and goals. ",
   },
   {
     id: "06",
-    question: "Do you take on international clients ?",
+    question: "Does Haus of Chaos take on international clients?",
     answer:
-      "Yes, we work with clients globally and have extensive experience managing remote collaborations seamlessly.",
+      "Yes, we work with clients globally and have extensive experience managing remote collaborations seamlessly. ",
   },
   {
     id: "07",
-    question: "How is pricing determined?",
+    question: "How is pricing with Haus of Chaos determined? ",
     answer:
-      "Pricing is bespoke, tailored to the scope and complexity of the project. After our initial consultation, we’ll provide you with a detailed proposal and estimate.  ",
+      "Pricing is bespoke, tailored to the scope and complexity of the project. After our initial consultation, we’ll provide you with a detailed proposal and estimate. ",
   },
   {
     id: "08",
-    question: "Do you offer retainers for ongoing collaboration?",
+    question: "Does Haus of Chaos offer retainers for ongoing collaboration?",
     answer:
-      "Yes, we provide retainer options for clients looking for continuous support in curating and evolving their brand experiences.",
+      "Yes, we provide retainer options for clients looking for continuous support in curating and evolving their brand experiences. ",
   },
   {
     id: "09",
-    question: "What payment structures do you offer?",
+    question: "What payment structures does Haus of Chaos offer?",
     answer:
       "We typically require a deposit to initiate the project, with the balance divided across key milestones or paid upon completion. Payment plans can also be customized based on your preferences.",
   },
   {
     id: "10",
-    question: "What will I receive upon project completion?",
+    question: "What will the client receive upon project completion?",
     answer:
-      "Depending on the project, you’ll receive a full suite of deliverables, including brand guidelines, digital and print-ready assets, and any experiential components created as part of the project.  ",
+      "Depending on the project, you’ll receive a full suite of deliverables, including brand guidelines, digital and print-ready assets, and any experiential components created as part of the project.",
   },
   {
     id: "11",
-    question: "Do you offer support after the project is complete?",
+    question: "Does Haus of Chaos offer support after project completion? ",
     answer:
-      "Of course! We are happy to collaborate with your in-house team and align with any existing brand guidelines to create cohesive and impactful experiences. ",
+      "Yes, we offer post-project support, including brand evolution strategies, updates, and ongoing consultation to ensure the longevity of your brand’s experience. ",
   },
   {
     id: "12",
-    question: "Can you integrate with our existing team or brand guidelines?",
+    question: "Can Haus of Chaos integrate with our existing team or brand guidelines?",
     answer:
-      "Of course! We are happy to collaborate with your in-house team and align with any existing brand guidelines to create cohesive and impactful experiences.  ",
+      "Of course! We are happy to collaborate with your in-house team and align with any existing brand guidelines to create a cohesive and impactful experience. ",
   },
   {
     id: "13",
-    question: "Do you provide event-based experiential design services?",
+    question: "Does Haus of Chaos provide event-based experiential design services?",
     answer:
       "Yes, we curate and design immersive experiences for events, launches, and activations that bring your brand to life.  ",
   },
   {
     id: "14",
-    question: "Do you provide event-based experiential design services?",
+    question: "How does Haus of Chaos measure the success of a brand experience?",
     answer:
-      "Yes, we curate and design immersive experiences for events, launches, and activations that bring your brand to life.  ",
+      "We define success based on your goals, which may include metrics such as increased engagement, strengthened client relationships, or elevated brand perception. We’ll work with you to establish benchmarks and assess outcomes. ",
   },
-  {
-    id: "15",
-    question: "How do you measure the success of a brand experience?",
-    answer:
-      "We define success based on your goals, which may include metrics such as increased engagement, strengthened client relationships, or elevated brand perception. We’ll work with you to establish benchmarks and assess outcomes.",
-  },
+  // {
+  //   id: "15",
+  //   question: "How do you measure the success of a brand experience?",
+  //   answer:
+  //     "We define success based on your goals, which may include metrics such as increased engagement, strengthened client relationships, or elevated brand perception. We’ll work with you to establish benchmarks and assess outcomes.",
+  // },
 ];
 const FAQ_CATEGORIES = [
   {
@@ -129,6 +129,7 @@ const FAQ_CATEGORIES = [
     id: "pricing",
     title: "Deliverables",
     faqs: [
+      
       FAQ_DATA[9], // How is pricing determined?
       FAQ_DATA[10], // Do you offer retainers?
       FAQ_DATA[11], // What payment structures do you offer?
@@ -138,7 +139,7 @@ const FAQ_CATEGORIES = [
     idx: 5,
     id: "others",
     title: "Other FAQ'S",
-    faqs: [FAQ_DATA[12], FAQ_DATA[13], FAQ_DATA[14]],
+    faqs: [FAQ_DATA[12], FAQ_DATA[13]],
   },
 ];
 

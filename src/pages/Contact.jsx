@@ -142,15 +142,15 @@ const Contact = () => {
               delay: 0.2,
             }}
           >
-            <div className="flex jost w-full md:flex-row flex-col items-center justify-between px-20 mt-4 gap-10">
+            <div className="flex jost w-full md:flex-row flex-col items-center justify-between  px-10 mt-4 gap-10">
               <div>
                 <h1 className=" text-[#2354CF] text-lg leading-3">Email</h1>
                 <h2>explore@hausofchaos.co</h2>
               </div>
-              <div>
+              {/* <div>
                 <h1 className=" text-[#2354CF] text-lg leading-3">Address</h1>
                 <h2>4th floor no 9,Seshadri Road ,Teynampet , Chennai -18 </h2>
-              </div>
+              </div> */}
               <div>
                 <h1 className=" text-[#2354CF] text-lg leading-3">Phone</h1>
                 <h2>+91 9600931366</h2>
@@ -475,19 +475,19 @@ import svg6 from "../assets/hover/element6-min.png";
 
 import lin from "../assets/lin.png";
 import ins from "../assets/ins.png";
-import fab from "../assets/fab.png";
-import bhe from "../assets/bhe.png";
-import dri from "../assets/dri.png";
+// import fab from "../assets/fab.png";
+import bhe from "../assets/mail.png";
+import dri from "../assets/phone.png";
 
-
+import arrow from "../assets/down-arrow.png";
 const images = [
   { src: svg4, className: "bottom-28 !w-1/4 left-0", link: "/Contact", rotate: 0 },
   { src: lin, className: "bottom-24 !w-[40%] left-10", link: "https://www.linkedin.com/company/hausofchaos/", rotate: -20 },
   { src: ins, className: "bottom-[24rem] !w-[40%] left-[15rem]", link: "https://www.instagram.com/hausofchaos.co/", rotate: -20 },
   { src: svg5, className: "bottom-28 !w-1/4 left-[25rem]", link: "/Contact", rotate: 8 },
-  { src: fab, className: "bottom-0 !w-[40%] left-[40rem]", link: "/facebook-page", rotate: -12 },
-  { src: bhe, className: "bottom-60 !w-[40%] left-[40rem]", link: "/behance-page", rotate: 20 },
-  { src: dri, className: "bottom-20 !w-[40%] right-0", link: "/Contact", rotate: 10 },
+  // { src: fab, className: "bottom-0 !w-[40%] left-[40rem]", link: "/facebook-page", rotate: -12 },
+  { src: bhe, className: "bottom-60 !w-[40%] left-[40rem]", link: "explore@hausofchaos.co.", rotate: 20 },
+  { src: dri, className: "bottom-0 !w-[40%] right-0", link: "/Contact", rotate: 10 },
   { src: svg6, className: "bottom-60 !w-1/4 right-0", link: "/Contact", rotate: 10 },
 ];
 const images2 = [
@@ -495,8 +495,8 @@ const images2 = [
   { src: lin, className: " bottom-20 ", link: "https://www.linkedin.com/company/hausofchaos/" ,rotate: -20},
   { src: ins, className: "  bottom-52 left-0", link: "https://www.instagram.com/hausofchaos.co/" ,rotate: -20},
   { src: svg5, className: " bottom-0 right-0 ", link: "/Contact",rotate:8 },
-  { src: fab, className: " bottom-60 right-0", link: "/facebook-page",rotate: -12 },
-  { src: bhe, className: " bottom-40 left-20", link: "/behance-page", rotate: 20},
+  // { src: fab, className: " bottom-60 right-0", link: "/facebook-page",rotate: -12 },
+  { src: bhe, className: " bottom-40 left-20", link: "explore@hausofchaos.co.", rotate: 20},
   { src: dri, className: "bottom-72 left-10", link: "/Contact" ,rotate: 10},
   { src: svg6, className: "  left-32", link: "/Contact" ,rotate: 10},
 ];
@@ -568,7 +568,7 @@ const JobListings = ({ scrollToBottom }) => {
   ))}
 
       <h1 className="absolute  cursor-pointer !bottom-2 md:bottom-10 tracking-wide text-[#0000FF]   text-center text-2xl md:text-[20px]"  onClick={scrollToBottom}>
-        Scroll Down
+        <img src={arrow} alt="Arrow" className="w-10" />
       </h1>
       {/* <div className=" absolute">Scroll Down</div> */}
     </div>

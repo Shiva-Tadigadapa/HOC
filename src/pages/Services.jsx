@@ -2,17 +2,17 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import worldsmall from "../assets/worldsmall.png";
-import tvpng from "../assets/tv.png";
-import logo from "../assets/logo.png";
+// import tvpng from "../assets/tv.png";
+// import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
-import befooter from "../assets/befooter.png";
-import hand from "../assets/hand.png";
-import ufo from "../assets/ufo.png";
+// import befooter from "../assets/befooter.png";
+// import hand from "../assets/hand.png";
+// import ufo from "../assets/ufo.png";
 import Footer from "./Footer";
 
 import grid from "../assets/lines.png";
 import { motion } from "framer-motion";
-import { div, label } from "framer-motion/client";
+// import { div, label } from "framer-motion/client";
 import MobileNav2 from "./MobileNav";
 const Contact = () => {
   const location = useLocation();
@@ -182,26 +182,31 @@ const categories = {
       cx: 300,
       cy: 200,
       label: "Logo Design",
+      dis:"Crafting distinctive logos that embody your brand’s essence with artistic precision.",
     },
     {
       cx: 300,
       cy: 350,
       label: "Visual Identity + Illustrations",
+      dis:"Creating immersive visual languages with bespoke illustrations and dynamic design elements."
     },
     {
       cx: 300,
       cy: 550,
       label: "Brand Narrative + Content",
+      dis: "Weaving compelling stories that resonate, shaping your brand voice that captivates."
     },
     {
       cx: 300,
       cy: 750,
       label: "Social Media Package",
+      dis:"Aesthetic-driven content strategies to enhance engagement and brand presence."
     },
     {
       cx: 300,
       cy: 950,
       label: "Branding Tools Analogue",
+      dis:"Tactile branding solutions that bring your brand identity to life through print and physical mediums."
     },
     // {
     //   cx: 300,
@@ -212,6 +217,7 @@ const categories = {
       cx: 300,
       cy: 1150,
       label: "Product Based Communication Solutions ",
+      dis:"Innovative design strategies that connect your product with its audience seamlessly. We integrate branding and communication to amplify your product's engagement and market presence."
     },
     // {
     //   cx :300,
@@ -220,7 +226,7 @@ const categories = {
     // }
   ],
 };
-import blackgrid from "../assets/blackgrid.png";
+// import blackgrid from "../assets/blackgrid.png";
 import wiresm from "../assets/wiresm.png";
 import plugservicesleft from "../assets/left.png";
 import plugservicesright from "../assets/right.png";
@@ -235,6 +241,15 @@ const MainServices = () => {
   const lineRef = useRef(null);
   const stopsRef = useRef([]);
   const textRefs = useRef([]);
+
+  const [active, setActive] = useState("Experience");
+  const currentItems = categories[active.toLowerCase()] || [];
+  // useEffect(() => {
+  //   // Reset ref arrays when tab changes
+  //   stopsRef.current = [];
+  //   textRefs.current = [];
+  // }, [active]); // Add active as dependency
+  
   useEffect(() => {
     // Right plug animation
     gsap.fromTo(
@@ -270,17 +285,32 @@ const MainServices = () => {
     gsap.set(GreenLine, {
       strokeWidth: 4,
       strokeDasharray: length,
-      strokeDashoffset: length, // Start with the full length hidden
-      willChange: "strokeDashoffset", // Improve performance in Safari
+      strokeDashoffset: length,
+      // Remove willChange
     });
-
-    gsap.set(stops, { autoAlpha: 1, scale: 0, transformOrigin: "center" });
+  
+    gsap.set(stops, { 
+      autoAlpha: 1, 
+      scale: 0, 
+      transformOrigin: "center",
+      // Force hardware acceleration
+      transformStyle: 'preserve-3d' ,
+      force3D: true
+    });
+  
     gsap.set(texts, {
       color: "#676767",
-      opacity: 0,
-      willChange: "opacity, transform",
+      opacity: 1,
+      // Remove willChange and add Safari-specific fixes
+      transform: 'translate3d(0,0,0)',
+      WebkitFontSmoothing: 'subpixel-antialiased'
     });
-
+    ScrollTrigger.defaults({
+      markers: false,
+      toggleActions: "play none none reverse",
+      // Safari optimization
+      onRefresh: self => self.progress && self.animation.progress(self.progress)
+    });
     gsap.to(GreenLine, {
       strokeDashoffset: 0, // Animate to reveal the full path
       ease: "none",
@@ -303,53 +333,40 @@ const MainServices = () => {
           end: "top 50%",
           scrub: true,
           onEnter: () => {
+            // Only animate color changes, remove position animations
             gsap.to(`.label-text-${index} div`, {
               color: "#0000ff",
               duration: 0.5,
-              opacity: 1,
-              x: 0,
-              transform: "translate3d(0,0,0)", // Fix for Safari rendering issues
             });
             gsap.to(`.label-text-${index} h1`, {
               color: "#F2F2F2",
               duration: 0.5,
-              opacity: 1,
-              x: 0,
             });
             gsap.to(`.label-text-${index} p`, {
               color: "#BFBFBF",
               duration: 0.5,
-              opacity: 1,
-              x: 0,
             });
           },
           onLeaveBack: () => {
+            // Revert to gray colors
             gsap.to(`.label-text-${index} div`, {
-              color: "#242424",
+              color: "#676767",
               duration: 0.5,
-              opacity: 0, // Ensure smooth transition
-              x: -10, // Slight movement to prevent flickering
             });
             gsap.to(`.label-text-${index} h1`, {
-              color: "#242424",
+              color: "#676767",
               duration: 0.5,
-              opacity: 0,
-              x: -10,
             });
             gsap.to(`.label-text-${index} p`, {
-              color: "#242424",
+              color: "#676767",
               duration: 0.5,
-              opacity: 0,
-              x: -10,
             });
           },
         },
       });
     });
   }, []);
-
-  const [active, setActive] = useState("Experience");
-  const currentItems = categories[active.toLowerCase()] || [];
+ 
   return (
     <>
       <div className="flex  flex-col justify-start items-center   md:items-start overflow-x-visible  w-full md:justify-start h-full md:px-16 py-32 md:py-32">
@@ -446,24 +463,34 @@ const MainServices = () => {
                   r="6"
                   fill="blue"
                   data-svg-origin="308 90"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.3, delay: i * 0.1 }}
+                  // initial={{ scale: 0 }}
+                  // animate={{ scale: 1 }}
+                  // transition={{ duration: 0.3, delay: i * 0.1 }}
                 />
 
-                <foreignObject
-                  x={item.cx - 400}
-                  y={item.cy - 100}
-                  width="400"
-                  height="200"
-                  className={`foreign-label !z-[700] label-text-${i} !overflow-visible`}
-                >
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 20 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                  >
+<foreignObject
+  x={item.cx - 400}
+  y={item.cy - 100}
+  width="400"
+  height="200"
+  className={`foreign-label !z-[700] label-text-${i} !overflow-visible`}
+  style={{
+    // Safari fix for foreignObject rendering
+    transform: 'translate3d(0,0,0)',
+    WebkitTransform: 'translateZ(0)'
+  }}
+>
+<motion.div
+  initial={{ opacity: 0, x: -20 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: 20 }}
+  transition={{ duration: 0.5, delay: i * 0.1 }}
+  style={{
+    position: 'relative',
+    zIndex: 700 + i, // Ensure proper stacking
+    WebkitBackfaceVisibility: 'hidden'
+  }}
+>
                     <Label
                       number={i + 1}
                       className="text-white"

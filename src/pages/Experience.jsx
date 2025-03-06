@@ -220,7 +220,7 @@ const SecondSection = () => {
           {/* Three Image */}
           <motion.img
             src={three}
-            className="w-[50%] z-[10] -top-[3.6rem] absolute left-[25%]"
+            className="w-[50%] z-[10] min-[1470]:-top-[3.6rem] absolute left-[25%]"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
@@ -233,7 +233,7 @@ const SecondSection = () => {
           {/* Two Image */}
           <motion.img
             src={two}
-            className="w-[50%] z-[2] -top-16 absolute right-[30%] !-mr-10"
+            className="w-[50%] z-[2] min-[1470]-top-16 absolute right-[30%] !-mr-10"
             alt="Lab"
             style={{
               transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY

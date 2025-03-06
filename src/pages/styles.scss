@@ -158,8 +158,8 @@ nav {
   
   &.active {
     color: white; // Replace with your desired active color
-    font-weight: 600;
-    text-decoration: line-through;
+    font-weight: 400;
+    // text-decoration: line-through;
     font-style: italic;
     
     &::after {

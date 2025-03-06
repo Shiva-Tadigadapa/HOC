@@ -300,7 +300,7 @@ const FounderSection = () => {
               className="lg:w-1/2 -ml-10 md:block flex flex-col items-center"
             >
               <p className="text-white md:text-[26px] jost  text-xl md:leading-[37px] mb-8">
-                As Experience designers, we never remain neutral. The more
+              As experiential designers, we never remain neutral. The more
                 compelling the story, the greater the influence we hold. Haus of
                 Chaos is the intersection of a graphic design house and an
                 experimental studio, enabling us to dive into new, experimental

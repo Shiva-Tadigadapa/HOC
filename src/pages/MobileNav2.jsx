@@ -42,12 +42,13 @@ const MOBILE_NAV_ITEMS = [
 const App = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const location = useLocation()
+
   const hideNavItemsVariant = {
     opened: {
       opacity: 0,
       y: "-100%",
       transition: {
-        duration: 0.5,
+        duration: 0.2,
         ease: "easeInOut"
       }
     },
@@ -55,7 +56,7 @@ const App = () => {
       opacity: 1,
       y: "0%",
       transition: {
-        delay: 1.1,
+        delay: 0.1,
         duration: 0.5,
         ease: "easeInOut"
       }
@@ -85,7 +86,7 @@ const App = () => {
     opened: {
       opacity: 1,
       transition: {
-        delay: 1.2
+        delay: 1
       }
     },
     closed: { opacity: 0 }
@@ -94,7 +95,7 @@ const App = () => {
   const ulVariant = {
     opened: {
       transition: {
-        delayChildren: 1,
+        delayChildren: 0.5,
         staggerChildren: 0.18
       }
     },
@@ -124,6 +125,7 @@ const App = () => {
       }
     }
   }
+
 
   const fadeInStart = { opacity: 0 }
   const fadeInEnd = { opacity: 1 }

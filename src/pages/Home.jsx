@@ -312,7 +312,8 @@ const ThirdSection = () => {
           type={isIOS || isSafari ? "video/mp4" : "video/webm"}
         />
       </video>
-      <div className="absolute md:-bottom-20 jost text-center flex-col flex items-center justify-center w-full">
+      <div className="absolute md:-bottom-32 jost text-center flex-col flex items-center justify-center w-full">
+        <h1 className="  text-3xl text-[#2354CF] font-alinsa">Client Testimonial</h1>
         <h1 className="text-[#5B636D]  px-4 font-[500] md:w-[60%] text-sm md:text-[24px] text-center md:leading-[30px]">
           After years of searching for a graphic designer to create our logo and
           brand identity, we realized it wasn't just about a logo—it was about
@@ -321,6 +322,7 @@ const ThirdSection = () => {
           conceptualized the journey of how clients experience our brand but
           also responded with remarkable efficiency.
         </h1>
+
         <h2 className="text-[#2354CF] text-xs md:text-[20px] mt-5">
           Rak's Pallikkoodam, 21st century international school
         </h2>
