@@ -122,7 +122,7 @@ const Contact = () => {
         >
           {/* CONTACT Heading with Spring Animation */}
           <motion.h1
-            className="font-[1000] px-10  mt-0 md:!mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
+            className="font-[1000] px-10  mt-0 md:!mt-20 md:leading-[0px] text-7xl md:text-[17vw] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 120, damping: 10 }}
@@ -142,7 +142,7 @@ const Contact = () => {
               delay: 0.2,
             }}
           >
-            <div className="flex jost w-full md:flex-row flex-col items-center justify-between  px-10 mt-4 gap-10">
+            <div className="flex jost w-full md:flex-row flex-col items-center justify-between  px-32 mt-4 gap-10">
               <div>
                 <h1 className=" text-[#2354CF] text-lg leading-3">Email</h1>
                 <h2>explore@hausofchaos.co</h2>

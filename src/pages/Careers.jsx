@@ -207,6 +207,7 @@ const Careers = () => {
   );
 };
 
+
 export default Careers;
 
 import { useInView } from "framer-motion";
