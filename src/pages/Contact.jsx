@@ -116,48 +116,7 @@ const Contact = () => {
         <JobListings scrollToBottom={scrollToBottom} />
         <JobListings2 scrollToBottom={scrollToBottom} />
 
-        <div
-          ref={bottomPageRef}
-          className="items-center BOTTOM-PAGE   flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex md:px-10"
-        >
-          {/* CONTACT Heading with Spring Animation */}
-          <motion.h1
-            className="font-[1000] px-10  mt-0 md:!mt-20 md:leading-[0px] text-7xl md:text-[17vw] alinsa text-[#060ebb] z-[10]"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 120, damping: 10 }}
-          >
-            CONTACT
-          </motion.h1>
-
-          {/* Tagline with Spring Animation */}
-          <motion.div
-            className="jost font-[500] w-full flex items-center justify-center text-xl md:!mt-24   md:text-base md:text-left z-[10]"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 12,
-              delay: 0.2,
-            }}
-          >
-            <div className="flex jost w-full md:flex-row flex-col items-center justify-between  px-32 mt-4 gap-10">
-              <div>
-                <h1 className=" text-[#2354CF] text-lg leading-3">Email</h1>
-                <h2>explore@hausofchaos.co</h2>
-              </div>
-              {/* <div>
-                <h1 className=" text-[#2354CF] text-lg leading-3">Address</h1>
-                <h2>4th floor no 9,Seshadri Road ,Teynampet , Chennai -18 </h2>
-              </div> */}
-              <div>
-                <h1 className=" text-[#2354CF] text-lg leading-3">Phone</h1>
-                <h2>+91 9600931366</h2>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+     
         {/* <Footer /> */}
       </div>
     </>
@@ -477,7 +436,7 @@ import lin from "../assets/lin.png";
 import ins from "../assets/ins.png";
 // import fab from "../assets/fab.png";
 import bhe from "../assets/mail.png";
-import dri from "../assets/phone.png";
+// import dri from "../assets/phone.png";
 
 import arrow from "../assets/down-arrow.png";
 const images = [
@@ -486,9 +445,9 @@ const images = [
   { src: ins, className: "bottom-[24rem] !w-[40%] left-[15rem]", link: "https://www.instagram.com/hausofchaos.co/", rotate: -20 },
   { src: svg5, className: "bottom-28 !w-1/4 left-[25rem]", link: "/Contact", rotate: 8 },
   // { src: fab, className: "bottom-0 !w-[40%] left-[40rem]", link: "/facebook-page", rotate: -12 },
-  { src: bhe, className: "bottom-60 !w-[40%] left-[40rem]", link: "explore@hausofchaos.co.", rotate: 20 },
-  { src: dri, className: "bottom-0 !w-[40%] right-0", link: "/Contact", rotate: 10 },
-  { src: svg6, className: "bottom-60 !w-1/4 right-0", link: "/Contact", rotate: 10 },
+  { src: bhe, className: "bottom-20 !w-[40%] left-[45rem]", link: "explore@hausofchaos.co.", rotate: 20 },
+  // { src: dri, className: "bottom-0 !w-[40%] right-0", link: "/Contact", rotate: 10 },
+  { src: svg6, className: "bottom-60 !w-1/4 right-20", link: "/Contact", rotate: 10 },
 ];
 const images2 = [
   { src: svg4, className: "  bottom-0 left-0", link: "/Contact",rotate: 0 },
@@ -497,7 +456,7 @@ const images2 = [
   { src: svg5, className: " bottom-0 right-0 ", link: "/Contact",rotate:8 },
   // { src: fab, className: " bottom-60 right-0", link: "/facebook-page",rotate: -12 },
   { src: bhe, className: " bottom-40 left-20", link: "explore@hausofchaos.co.", rotate: 20},
-  { src: dri, className: "bottom-72 left-10", link: "/Contact" ,rotate: 10},
+  // { src: dri, className: "bottom-72 left-10", link: "/Contact" ,rotate: 10},
   { src: svg6, className: "  left-32", link: "/Contact" ,rotate: 10},
 ];
 const JobListings = ({ scrollToBottom }) => {
@@ -703,3 +662,43 @@ import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md"; // Add this imp
           className="  md:scale-100 md:w-full h-full object-cover"
         /> */
 }
+
+
+
+{/* <div
+ref={bottomPageRef}
+className="items-center BOTTOM-PAGE   flex-col md:-space-y-24 relative justify-center h-screen mt-10 flex md:px-10"
+> 
+<motion.h1
+  className="font-[1000] px-10  mt-0 md:!mt-20 md:leading-[0px] text-7xl md:text-[17vw] alinsa text-[#060ebb] z-[10]"
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ type: "spring", stiffness: 120, damping: 10 }}
+>
+  CONTACT
+</motion.h1>
+ 
+<motion.div
+  className="jost font-[500] w-full flex items-center justify-center text-xl md:!mt-24   md:text-base md:text-left z-[10]"
+  initial={{ y: 30, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{
+    type: "spring",
+    stiffness: 100,
+    damping: 12,
+    delay: 0.2,
+  }}
+>
+  <div className="flex jost w-full md:flex-row flex-col items-center justify-between  px-32 mt-4 gap-10">
+    <div>
+      <h1 className=" text-[#2354CF] text-lg leading-3">Email</h1>
+      <h2>explore@hausofchaos.co</h2>
+    </div>
+  
+    <div>
+      <h1 className=" text-[#2354CF] text-lg leading-3">Phone</h1>
+      <h2>+91 9600931366</h2>
+    </div>
+  </div>
+</motion.div>
+</div> */}

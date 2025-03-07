@@ -313,14 +313,14 @@ const ThirdSection = () => {
         />
       </video>
       <div className="absolute md:-bottom-32 jost text-center flex-col flex items-center justify-center w-full">
-        <h1 className="  text-3xl text-[#2354CF] font-alinsa">Client Testimonial</h1>
+        <h1 className="  text-3xl text-[#2354CF] tracking-widest salo">Client Testimonial</h1>
         <h1 className="text-[#5B636D]  px-4 font-[500] md:w-[60%] text-sm md:text-[24px] text-center md:leading-[30px]">
           After years of searching for a graphic designer to create our logo and
           brand identity, we realized it wasn't just about a logo—it was about
           crafting an experience that reflects what our company truly stands
           for. Ria, the creative director of Haus of Chaos, not only
           conceptualized the journey of how clients experience our brand but
-          also responded with remarkable efficiency.
+          also responded with remarkable <span className=" md:hidden block salo  tracking-wide"> efficiency.</span>  <span className=" md:block hidden"> efficiency.</span> 
         </h1>
 
         <h2 className="text-[#2354CF] text-xs md:text-[20px] mt-5">

@@ -7,6 +7,8 @@ import Home from "./Home";
 import { Link } from "react-router-dom";
 import CursorHover from "../utils/Hover";
 import MobileNav3 from "./MobileNav3";
+import arrow from "../assets/downwhite.png";
+// import { useInView } from "react-intersection-observer";
 
 
 const Landing = () => {
@@ -190,6 +192,7 @@ const Landing = () => {
             ch 10-01-2025
           </h1>
         </div> */}
+        <img className="absolute w-12 bottom-4 left-1/2 opacity-85 transform -translate-x-1/2" src={arrow}/>
       </div>
 
       {/* Section 2 */}

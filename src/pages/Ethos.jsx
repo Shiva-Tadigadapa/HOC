@@ -204,7 +204,7 @@ design, particularly <span className="salo uppercase  text-3xl text-[#060ebb]"> 
 
           {/* Adding smooth infinite rotation */}
           <motion.div
-            className="w-[80%]  mt-4 md:-mt-10 -top-4 !z-[-800] relative left-20 md:top-[19rem] overflow-hidden"
+            className="w-[80%]  mt-4 md:-mt-10 -top-4 !z-[-800] relative left-10 md:left-16 md:top-[19rem] overflow-hidden"
             animate={{ rotate: 360 }}
           >
             <video
@@ -213,7 +213,7 @@ design, particularly <span className="salo uppercase  text-3xl text-[#060ebb]"> 
               loop
               muted
               playsInline
-              className="md:w-[140%]  mb-[6px] h-[20rem] md:h-[45rem] object-cover md:rotate-[0deg] -rotate-[10deg] md:scale-x-[1] scale-x-[-1]"
+              className="md:w-[140%]  mb-[6px] h-[20rem] md:h-[45rem] object-cover md:rotate-[-10deg] -rotate-[10deg] md:scale-x-[-1] scale-x-[-1]"
             />
           </motion.div>
         </div>

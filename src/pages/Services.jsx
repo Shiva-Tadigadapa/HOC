@@ -140,7 +140,7 @@ const Contact = () => {
           </div>
         </div>
         {/* Absolutely Centered Text */}
-        <div className="  overflow-hidden  bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col  -space-y-24 relative justify-center  md:h-[180vh] mt-40 md:mt-20 rounded-t-3xl   px-4 flex md:px-10">
+        <div className="  overflow-hidden  bg-black  z-[1] mx-auto overflow-x-visible  items-center  flex-col    relative justify-center  md:h-[200vh] mt-40 md:mt-20 rounded-t-3xl   px-4 flex md:px-10">
           <MainServices />
         </div>
         <Footer />
@@ -182,48 +182,39 @@ const categories = {
       cx: 300,
       cy: 200,
       label: "Logo Design",
-      dis:"Crafting distinctive logos that embody your brand’s essence with artistic precision.",
+      dis: "Crafting distinctive logos that embody your brand’s essence with artistic precision.",
     },
     {
       cx: 300,
-      cy: 350,
+      cy: 400,
       label: "Visual Identity + Illustrations",
-      dis:"Creating immersive visual languages with bespoke illustrations and dynamic design elements."
+      dis: "Creating immersive visual languages with bespoke illustrations and dynamic design elements.",
     },
     {
       cx: 300,
-      cy: 550,
+      cy: 600,
       label: "Brand Narrative + Content",
-      dis: "Weaving compelling stories that resonate, shaping your brand voice that captivates."
+      dis: "Weaving compelling stories that resonate, shaping your brand voice that captivates.",
     },
     {
       cx: 300,
-      cy: 750,
+      cy: 800,
       label: "Social Media Package",
-      dis:"Aesthetic-driven content strategies to enhance engagement and brand presence."
+      dis: "Aesthetic-driven content strategies to enhance engagement and brand presence.",
     },
     {
       cx: 300,
-      cy: 950,
+      cy: 1000,
       label: "Branding Tools Analogue",
-      dis:"Tactile branding solutions that bring your brand identity to life through print and physical mediums."
+      dis: "Tactile branding solutions that bring your brand identity to life through print and physical mediums.",
     },
-    // {
-    //   cx: 300,
-    //   cy: 1150,
-    //   label: "Branding Tools Digital"
-    // },
+
     {
       cx: 300,
-      cy: 1150,
+      cy: 1200,
       label: "Product Based Communication Solutions ",
-      dis:"Innovative design strategies that connect your product with its audience seamlessly. We integrate branding and communication to amplify your product's engagement and market presence."
+      dis: "Innovative design strategies that connect your product with its audience seamlessly. We integrate branding and communication to amplify your product's engagement and market presence.",
     },
-    // {
-    //   cx :300,
-    //   cy:1550,
-    //   label:"Typography"
-    // }
   ],
 };
 // import blackgrid from "../assets/blackgrid.png";
@@ -249,7 +240,7 @@ const MainServices = () => {
   //   stopsRef.current = [];
   //   textRefs.current = [];
   // }, [active]); // Add active as dependency
-  
+
   useEffect(() => {
     // Right plug animation
     gsap.fromTo(
@@ -288,28 +279,29 @@ const MainServices = () => {
       strokeDashoffset: length,
       // Remove willChange
     });
-  
-    gsap.set(stops, { 
-      autoAlpha: 1, 
-      scale: 0, 
+
+    gsap.set(stops, {
+      autoAlpha: 1,
+      scale: 0,
       transformOrigin: "center",
       // Force hardware acceleration
-      transformStyle: 'preserve-3d' ,
-      force3D: true
+      transformStyle: "preserve-3d",
+      force3D: true,
     });
-  
+
     gsap.set(texts, {
       color: "#676767",
       opacity: 1,
       // Remove willChange and add Safari-specific fixes
-      transform: 'translate3d(0,0,0)',
-      WebkitFontSmoothing: 'subpixel-antialiased'
+      transform: "translate3d(0,0,0)",
+      WebkitFontSmoothing: "subpixel-antialiased",
     });
     ScrollTrigger.defaults({
       markers: false,
       toggleActions: "play none none reverse",
       // Safari optimization
-      onRefresh: self => self.progress && self.animation.progress(self.progress)
+      onRefresh: (self) =>
+        self.progress && self.animation.progress(self.progress),
     });
     gsap.to(GreenLine, {
       strokeDashoffset: 0, // Animate to reveal the full path
@@ -333,31 +325,43 @@ const MainServices = () => {
           end: "top 50%",
           scrub: true,
           onEnter: () => {
-            // Only animate color changes, remove position animations
-            gsap.to(`.label-text-${index} div`, {
-              color: "#0000ff",
-              duration: 0.5,
-            });
-            gsap.to(`.label-text-${index} h1`, {
-              color: "#F2F2F2",
-              duration: 0.5,
-            });
-            gsap.to(`.label-text-${index} p`, {
-              color: "#BFBFBF",
-              duration: 0.5,
-            });
+            // Different colors based on active tab
+            if (active.toLowerCase() === 'experience') {
+              gsap.to(`.label-text-${index} div`, {
+                color: "#F2F2F2",
+                duration: 0.5,
+              });
+              gsap.to(`.label-text-${index} h1`, {
+                color: "#F2F2F2",
+                duration: 0.5,
+              });
+              gsap.to(`.label-text-${index} p`, {
+                color: "#BFBFBF",
+                duration: 0.5,
+              });
+            } else {
+              // Design tab - all elements white
+              gsap.to([
+                `.label-text-${index} div`,
+                `.label-text-${index} h1`,
+                `.label-text-${index} p`
+              ], {
+                color: "#F2F2F2",
+                duration: 0.5,
+              });
+              gsap.to(`.label-text-${index} p`, {
+                color: "#F2F2F2",
+                duration: 0.5,
+              });
+            }
           },
           onLeaveBack: () => {
             // Revert to gray colors
-            gsap.to(`.label-text-${index} div`, {
-              color: "#676767",
-              duration: 0.5,
-            });
-            gsap.to(`.label-text-${index} h1`, {
-              color: "#676767",
-              duration: 0.5,
-            });
-            gsap.to(`.label-text-${index} p`, {
+            gsap.to([
+              `.label-text-${index} div`,
+              `.label-text-${index} h1`,
+              `.label-text-${index} p`
+            ], {
               color: "#676767",
               duration: 0.5,
             });
@@ -365,8 +369,8 @@ const MainServices = () => {
         },
       });
     });
-  }, []);
- 
+  }, [active]);
+
   return (
     <>
       <div className="flex  flex-col justify-start items-center   md:items-start overflow-x-visible  w-full md:justify-start h-full md:px-16 py-32 md:py-32">
@@ -446,7 +450,7 @@ const MainServices = () => {
             strokeWidth="4"
           />
           {/* Stops and Texts */}
-          <AnimatePresence mode="wait">
+          <AnimatePresence  >
             {currentItems.map((item, i) => (
               <motion.g
                 key={active + i}
@@ -454,7 +458,7 @@ const MainServices = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                // transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <motion.circle
                   ref={(el) => (stopsRef.current[i] = el)}
@@ -468,29 +472,29 @@ const MainServices = () => {
                   // transition={{ duration: 0.3, delay: i * 0.1 }}
                 />
 
-<foreignObject
-  x={item.cx - 400}
-  y={item.cy - 100}
-  width="400"
-  height="200"
-  className={`foreign-label !z-[700] label-text-${i} !overflow-visible`}
-  style={{
-    // Safari fix for foreignObject rendering
-    transform: 'translate3d(0,0,0)',
-    WebkitTransform: 'translateZ(0)'
-  }}
->
-<motion.div
-  initial={{ opacity: 0, x: -20 }}
-  animate={{ opacity: 1, x: 0 }}
-  exit={{ opacity: 0, x: 20 }}
-  transition={{ duration: 0.5, delay: i * 0.1 }}
-  style={{
-    position: 'relative',
-    zIndex: 700 + i, // Ensure proper stacking
-    WebkitBackfaceVisibility: 'hidden'
-  }}
->
+                <foreignObject
+                  x={item.cx - 400}
+                  y={item.cy - 100}
+                  width="400"
+                  height="200"
+                  className={`foreign-label !z-[700] label-text-${i} !overflow-visible`}
+                  style={{
+                    // Safari fix for foreignObject rendering
+                    transform: "translate3d(0,0,0)",
+                    WebkitTransform: "translateZ(0)",
+                  }}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    style={{
+                      position: "relative",
+                      zIndex: 700 + i, // Ensure proper stacking
+                      WebkitBackfaceVisibility: "hidden",
+                    }}
+                  >
                     <Label
                       number={i + 1}
                       className="text-white"
@@ -545,20 +549,69 @@ const Label = ({ number, title, description, textRef }) => {
           number === 1 ? "text-[#0000ff]" : ""
         }`}
       >
-        0{number}
+        <svg
+          width="33"
+          height="32"
+          viewBox="0 0 33 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_20_2513)">
+            <g clip-path="url(#clip1_20_2513)">
+              <path
+                d="M19.5509 28.6184L21.5812 26.5881V20.9292H27.2401L29.2704 18.8989H19.5509V28.6184Z"
+                fill="#060EBB"
+              />
+              <path
+                d="M15.4759 1.01491C15.4759 3.95236 15.4759 12.016 15.4759 14.8238C12.7113 14.8238 4.54689 14.8238 1.66703 14.8238L0.651886 15.8389L1.66703 16.8541H15.4759C15.4759 17.9196 15.4759 29.2807 15.4759 30.663L16.4911 31.6781L17.5063 30.663V16.8541H31.3151L32.3303 15.8389L31.3151 14.8238C29.8752 14.8238 18.615 14.8238 17.5063 14.8238V1.01491L16.4911 -0.000244141L15.4759 1.01491Z"
+                fill="#060EBB"
+              />
+              <path
+                d="M3.71173 18.8989L5.74203 20.9292H11.401V26.5881L13.4312 28.6184V18.8989H3.71173Z"
+                fill="#060EBB"
+              />
+              <path
+                d="M13.4312 12.7793V3.05981L11.401 5.09011V10.7491H5.74203L3.71173 12.7793H13.4312Z"
+                fill="#060EBB"
+              />
+              <path
+                d="M19.5509 12.7793H29.2704L27.2401 10.7491H21.5812V5.09011L19.5509 3.05981V12.7793Z"
+                fill="#060EBB"
+              />
+            </g>
+          </g>
+          <defs>
+            <clipPath id="clip0_20_2513">
+              <rect
+                width="32"
+                height="32"
+                fill="white"
+                transform="translate(0.330017)"
+              />
+            </clipPath>
+            <clipPath id="clip1_20_2513">
+              <rect
+                width="32"
+                height="32"
+                fill="white"
+                transform="translate(0.330017)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
       </div>
 
       <div>
         <h1
-          class={`text-3xl uppercase font-[500] mb-2 ${
+          class={`text-3xl uppercase font-[400] mb-2 ${
             number === 1 ? "text-white" : ""
           }`}
         >
           {title}
         </h1>
         <p
-          class={`text-lg w-[80%] font-[500] ${
-            number === 1 ? "text-[#BFBFBF]" : ""
+          class={`text-lg w-[80%] font-[400] ${
+            number === 1 ? "text-[#bfbfbf]" : ""
           }`}
         >
           {description}
