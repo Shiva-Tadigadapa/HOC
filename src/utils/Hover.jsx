@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion} from "framer-motion";
 import svg1 from "../assets/hover/element 4-min.png";
 import svg2 from "../assets/hover/element-1-min.png";
 // import svg3 from "../assets/hover/element2-min.png";

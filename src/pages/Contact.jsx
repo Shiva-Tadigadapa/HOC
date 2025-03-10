@@ -12,8 +12,8 @@ import logo2 from "../assets/logo2.png";
 import MobileNav from "./MobileNav";
 
 import { motion } from "framer-motion";
-import { div } from "framer-motion/client";
-import Scene from "./Model";
+// import { div } from "framer-motion/client";
+// import Scene from "./Model";
 const Contact = () => {
   const [isSection2, setIsSection2] = useState(false);
   const [isFixed, setIsFixed] = useState(true);
@@ -123,8 +123,8 @@ const Contact = () => {
   );
 };
 // import dragme1 from "../assets/svgs/Dragme.svg";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei"; // Removed incorrect useInView import
+// import { Canvas } from "@react-three/fiber";
+// import { OrbitControls, useGLTF } from "@react-three/drei"; // Removed incorrect useInView import
 // import { motion, useInView } from "framer-motion"; // Import useInView from framer-motion
 // import { useRef, useEffect, useState } from "react";
 
@@ -440,25 +440,26 @@ import bhe from "../assets/mail.png";
 
 import arrow from "../assets/down-arrow.png";
 const images = [
-  { src: svg4, className: "bottom-28 !w-1/4 left-0", link: "/Contact", rotate: 0 },
-  { src: lin, className: "bottom-24 !w-[40%] left-10", link: "https://www.linkedin.com/company/hausofchaos/", rotate: -20 },
-  { src: ins, className: "bottom-[24rem] !w-[40%] left-[15rem]", link: "https://www.instagram.com/hausofchaos.co/", rotate: -20 },
-  { src: svg5, className: "bottom-28 !w-1/4 left-[25rem]", link: "/Contact", rotate: 8 },
+  { src: svg4, className: "bottom-80 !w-1/4 left-0", link: "/Contact", rotate: 0 },
+  { src: lin, className: "bottom-10 !w-[40%] -left-10", link: "https://www.linkedin.com/company/hausofchaos/", rotate: -20 },
+  { src: ins, className: "bottom-[24rem] !w-[40%] left-[25rem]", link: "https://www.instagram.com/hausofchaos.co/", rotate: -20 },
+  { src: svg5, className: "bottom-28 !w-1/4 left-[30rem]", link: "/Contact", rotate: 8 },
   // { src: fab, className: "bottom-0 !w-[40%] left-[40rem]", link: "/facebook-page", rotate: -12 },
-  { src: bhe, className: "bottom-20 !w-[40%] left-[45rem]", link: "explore@hausofchaos.co.", rotate: 20 },
+  { src: bhe, className: "bottom-20 !w-[40%] right-[4rem]", link: "mailto:explore@hausofchaos.co", rotate: 20 },
   // { src: dri, className: "bottom-0 !w-[40%] right-0", link: "/Contact", rotate: 10 },
-  { src: svg6, className: "bottom-60 !w-1/4 right-20", link: "/Contact", rotate: 10 },
+  { src: svg6, className: "bottom-80 !w-1/4 right-40", link: "/Contact", rotate: 10 },
 ];
 const images2 = [
   { src: svg4, className: "  bottom-0 left-0", link: "/Contact",rotate: 0 },
-  { src: lin, className: " bottom-20 ", link: "https://www.linkedin.com/company/hausofchaos/" ,rotate: -20},
-  { src: ins, className: "  bottom-52 left-0", link: "https://www.instagram.com/hausofchaos.co/" ,rotate: -20},
+  { src: lin, className: " top-[55%]  right-0", link: "https://www.linkedin.com/company/hausofchaos/" ,rotate: -20},
+  { src: ins, className: "  top-[50%] left-0", link: "https://www.instagram.com/hausofchaos.co/" ,rotate: -20},
   { src: svg5, className: " bottom-0 right-0 ", link: "/Contact",rotate:8 },
   // { src: fab, className: " bottom-60 right-0", link: "/facebook-page",rotate: -12 },
-  { src: bhe, className: " bottom-40 left-20", link: "explore@hausofchaos.co.", rotate: 20},
+  { src: bhe, className: " bottom-40 left-20", link: "mailto:explore@hausofchaos.co", rotate: 20},
   // { src: dri, className: "bottom-72 left-10", link: "/Contact" ,rotate: 10},
-  { src: svg6, className: "  left-32", link: "/Contact" ,rotate: 10},
+  { src: svg6, className: " top-52 left-48", link: "/Contact" ,rotate: 10},
 ];
+
 const JobListings = ({ scrollToBottom }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -466,10 +467,12 @@ const JobListings = ({ scrollToBottom }) => {
 
   const handleClick = (link) => {
     if (!isDragging) {
-      // Use your preferred navigation method here
-      window.location.href = link;
-      // Or with React Router:
-      // navigate(link);
+      // Handle mailto links differently
+      if (link.startsWith('mailto:')) {
+        window.location.href = link;
+      } else {
+        window.location.href = link;
+      }
     }
   };
 
@@ -541,10 +544,12 @@ const JobListings2 = ({ scrollToBottom }) => {
 
   const handleClick = (link) => {
     if (!isDragging) {
-      // Use your preferred navigation method here
-      window.location.href = link;
-      // Or with React Router:
-      // navigate(link);
+      // Handle mailto links differently
+      if (link.startsWith('mailto:')) {
+        window.location.href = link;
+      } else {
+        window.location.href = link;
+      }
     }
   };
 
@@ -618,10 +623,10 @@ export default Contact;
 
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import heartkey from "../assets/heartkey.png";
-import keyvideo from "../assets/key.mp4";
+// import heartkey from "../assets/heartkey.png";
+// import keyvideo from "../assets/key.mp4";
 
-import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md"; // Add this import at the top
+// import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md"; // Add this import at the top
 
 // <div className="flex items-center gap-6">
 //           <MdEmail className="text-black md:text-[60px] text-2xl" />

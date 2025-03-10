@@ -126,9 +126,9 @@ const App = () => {
     }
   }
 
-  const fadeInStart = { opacity: 0 }
-  const fadeInEnd = { opacity: 1 }
-  const fadeInTransition = { duration: 1 }
+  // const fadeInStart = { opacity: 0 }
+  // const fadeInEnd = { opacity: 1 }
+  // const fadeInTransition = { duration: 1 }
 
   return (
     <div className="container">

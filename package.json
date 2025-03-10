@@ -11,9 +11,6 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@react-three/drei": "^10.0.3",
-    "@react-three/fiber": "^9.0.4",
-    "@splinetool/react-spline": "^4.0.0",
     "@studio-freight/react-lenis": "^0.0.47",
     "framer-motion": "^11.18.1",
     "gsap": "^3.12.7",
@@ -21,8 +18,7 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.1.3",
-    "tailwind-setup": "^2.2.0",
-    "three": "^0.174.0"
+    "tailwind-setup": "^2.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

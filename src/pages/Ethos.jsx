@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 // import tvpng from "../assets/tv.png";
 import worldsmall from "../assets/worldsmall.png";
 // import logo from "../assets/logo.png";

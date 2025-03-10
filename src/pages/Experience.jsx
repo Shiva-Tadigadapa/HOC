@@ -145,7 +145,7 @@ const Experience = () => {
 
 export default Experience;
 
-import { useInView } from "framer-motion";
+// import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const SecondSection = () => {
@@ -298,8 +298,8 @@ const SecondSection = () => {
     </div>
   );
 };
-import gridethos from "../assets/gridethos.png";
-import playground from "../assets/playground.png";
+// import gridethos from "../assets/gridethos.png";
+// import playground from "../assets/playground.png";
 import tictacX from "../assets/tictacX.png";
 import tictacO from "../assets/tictacO.png";
 

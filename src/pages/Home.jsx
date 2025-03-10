@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 // import logo from "../assets/logo2.png";
 // import logo1 from "../assets/logo.png";
 // import swrillpng from "../assets/swrill2.png";
@@ -126,120 +126,120 @@ const Home = () => {
 export default Home;
 // import  {   useState } from "react";
 // import { motion } from "framer-motion";
-import two from "../assets/two.png";
-import three from "../assets/three.png";
-import linelab from "../assets/linelab.png";
+// import two from "../assets/two.png";
+// import three from "../assets/three.png";
+// import linelab from "../assets/linelab.png";
 
-const SecondSection = () => {
-  const sectionRef = useRef(null);
-  const [scrollY, setScrollY] = useState(0);
-  const [sectionBounds, setSectionBounds] = useState({ top: 0, bottom: 0 });
+// const SecondSection = () => {
+//   const sectionRef = useRef(null);
+//   const [scrollY, setScrollY] = useState(0);
+//   const [sectionBounds, setSectionBounds] = useState({ top: 0, bottom: 0 });
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setScrollY(window.scrollY);
+//     };
 
-    window.addEventListener("scroll", handleScroll);
+//     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+//     // Cleanup event listener
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
 
-  // Update section bounds on resize or initial load
-  useEffect(() => {
-    const updateBounds = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const scrollTop = window.scrollY;
-        setSectionBounds({
-          top: rect.top + scrollTop,
-          bottom: rect.bottom + scrollTop,
-        });
-      }
-    };
+//   // Update section bounds on resize or initial load
+//   useEffect(() => {
+//     const updateBounds = () => {
+//       if (sectionRef.current) {
+//         const rect = sectionRef.current.getBoundingClientRect();
+//         const scrollTop = window.scrollY;
+//         setSectionBounds({
+//           top: rect.top + scrollTop,
+//           bottom: rect.bottom + scrollTop,
+//         });
+//       }
+//     };
 
-    updateBounds();
-    window.addEventListener("resize", updateBounds);
+//     updateBounds();
+//     window.addEventListener("resize", updateBounds);
 
-    return () => window.removeEventListener("resize", updateBounds);
-  }, []);
+//     return () => window.removeEventListener("resize", updateBounds);
+//   }, []);
 
-  // Limit movement based on scroll position
-  const moveImageOne = (scrollY) => {
-    if (scrollY < sectionBounds.top) return 0; // Before section starts
-    if (scrollY > sectionBounds.bottom)
-      return (sectionBounds.bottom - sectionBounds.top) * 0.07; // After section ends
-    return (scrollY - sectionBounds.top) * 0.14; // Inside section
-  };
+//   // Limit movement based on scroll position
+//   const moveImageOne = (scrollY) => {
+//     if (scrollY < sectionBounds.top) return 0; // Before section starts
+//     if (scrollY > sectionBounds.bottom)
+//       return (sectionBounds.bottom - sectionBounds.top) * 0.07; // After section ends
+//     return (scrollY - sectionBounds.top) * 0.14; // Inside section
+//   };
 
-  const moveImageTwo = (scrollY) => {
-    if (scrollY < sectionBounds.top) return 0; // Before section starts
-    if (scrollY > sectionBounds.bottom)
-      return (sectionBounds.bottom - sectionBounds.top) * -0.07; // After section ends
-    return (scrollY - sectionBounds.top) * -0.14; // Inside section
-  };
+//   const moveImageTwo = (scrollY) => {
+//     if (scrollY < sectionBounds.top) return 0; // Before section starts
+//     if (scrollY > sectionBounds.bottom)
+//       return (sectionBounds.bottom - sectionBounds.top) * -0.07; // After section ends
+//     return (scrollY - sectionBounds.top) * -0.14; // Inside section
+//   };
 
-  return (
-    <div ref={sectionRef} className="overflow-hidden py-40">
-      <div className="bg-black py-20 flex flex-col   gap-10">
-        <div>
-          <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center font-sans">
-            Experience Lab
-          </h1>
-          <h2 className="text-white md:text-[30px] text-xl text-center jost">
-            Spaces speak and spaces narrate
-          </h2>
-        </div>
-        <div className="relative hidden md:flex justify-center items-center gap-10 h-[300px]">
-          {/* LineLab Image */}
-          <img
-            src={linelab}
-            className="w-[40%] left-[4rem] top-1/2 -mt-[1.2px] absolute"
-            alt="Lab"
-          />
+//   return (
+//     <div ref={sectionRef} className="overflow-hidden py-40">
+//       <div className="bg-black py-20 flex flex-col   gap-10">
+//         <div>
+//           <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center font-sans">
+//             Experience Lab
+//           </h1>
+//           <h2 className="text-white md:text-[30px] text-xl text-center jost">
+//             Spaces speak and spaces narrate
+//           </h2>
+//         </div>
+//         <div className="relative hidden md:flex justify-center items-center gap-10 h-[300px]">
+//           {/* LineLab Image */}
+//           <img
+//             src={linelab}
+//             className="w-[40%] left-[4rem] top-1/2 -mt-[1.2px] absolute"
+//             alt="Lab"
+//           />
 
-          {/* Three Image */}
-          <motion.img
-            src={three}
-            className="w-[40%] z-[10] absolute left-[20%]"
-            alt="Lab"
-            style={{
-              transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
-            }}
-            transition={{ duration: 0.4 }}
-          />
+//           {/* Three Image */}
+//           <motion.img
+//             src={three}
+//             className="w-[40%] z-[10] absolute left-[20%]"
+//             alt="Lab"
+//             style={{
+//               transform: `translateX(${moveImageOne(scrollY)}px)`, // Move based on scrollY
+//             }}
+//             transition={{ duration: 0.4 }}
+//           />
 
-          <img src={noswitch} className="w-full" alt="Lab" />
+//           <img src={noswitch} className="w-full" alt="Lab" />
 
-          {/* Two Image */}
-          <motion.img
-            src={two}
-            className="w-[50%] z-[2] absolute right-[20%] !-mr-10"
-            alt="Lab"
-            style={{
-              transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
-            }}
-            transition={{ duration: 0.4 }}
-          />
+//           {/* Two Image */}
+//           <motion.img
+//             src={two}
+//             className="w-[50%] z-[2] absolute right-[20%] !-mr-10"
+//             alt="Lab"
+//             style={{
+//               transform: `translateX(${moveImageTwo(scrollY)}px)`, // Move based on scrollY
+//             }}
+//             transition={{ duration: 0.4 }}
+//           />
 
-          <img
-            src={linelab}
-            className="w-[40%] z-[1] right-[1rem] top-1/2 -mt-[5.5px] absolute"
-            alt="Lab"
-          />
-        </div>
-        <h1 className="md:px-20 px-4 md:text-2xl text-white text-center jost">
-          Born from our ethos, the Chaos Lab serves as a testing ground for the
-          diverse narrative environments we experiment with and explore. Based
-          in India, with plans for growth, we embrace a 'test-and-learn'
-          mindset. Our aim is to decode and disrupt conventional norms and
-          beliefs in experimental communication and experience design.
-        </h1>
-      </div>
-    </div>
-  );
-};
+//           <img
+//             src={linelab}
+//             className="w-[40%] z-[1] right-[1rem] top-1/2 -mt-[5.5px] absolute"
+//             alt="Lab"
+//           />
+//         </div>
+//         <h1 className="md:px-20 px-4 md:text-2xl text-white text-center jost">
+//           Born from our ethos, the Chaos Lab serves as a testing ground for the
+//           diverse narrative environments we experiment with and explore. Based
+//           in India, with plans for growth, we embrace a 'test-and-learn'
+//           mindset. Our aim is to decode and disrupt conventional norms and
+//           beliefs in experimental communication and experience design.
+//         </h1>
+//       </div>
+//     </div>
+//   );
+// };
 
 // import slider1 from "../assets/slider1.png";
 // import slider2 from "../assets/slider2.png";
@@ -312,8 +312,8 @@ const ThirdSection = () => {
           type={isIOS || isSafari ? "video/mp4" : "video/webm"}
         />
       </video>
-      <div className="absolute md:-bottom-32 jost text-center flex-col flex items-center justify-center w-full">
-        <h1 className="  text-3xl text-[#2354CF] tracking-widest salo">Client Testimonial</h1>
+      <div className="absolute md:-bottom-[10.5rem] jost text-center flex-col flex items-center justify-center w-full">
+        <h1 className="  text-4xl uppercase text-[#060ebb] tracking-widest salo">Client Testimonial</h1>
         <h1 className="text-[#5B636D]  px-4 font-[500] md:w-[60%] text-sm md:text-[24px] text-center md:leading-[30px]">
           After years of searching for a graphic designer to create our logo and
           brand identity, we realized it wasn't just about a logo—it was about
@@ -331,4 +331,4 @@ const ThirdSection = () => {
   );
 };
 
-import befooter from "../assets/FounderBanner.jpg";
+// import befooter from "../assets/FounderBanner.jpg";

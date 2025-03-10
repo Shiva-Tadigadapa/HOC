@@ -12,7 +12,7 @@ import MobileNav from "./MobileNav";
 import Footer from "./Footer";
 
 import { motion } from "framer-motion";
-import { div } from "framer-motion/client";
+// import { div } from "framer-motion/client";
 const Careers = () => {
   const location = useLocation();
   const [isSection2, setIsSection2] = useState(false);
@@ -42,12 +42,11 @@ const Careers = () => {
 
   return (
     <>
-       {/* Navbar */}
-       <div className="md:hidden  block !bg-white">
-          <MobileNav />
-        </div>
+      {/* Navbar */}
+      <div className="md:hidden  block !bg-white">
+        <MobileNav />
+      </div>
       <div className="bg-white jost relative" style={{ minHeight: "100vh" }}>
-     
         <div className="hidden md:block">
           <div
             className={`${
@@ -65,64 +64,80 @@ const Careers = () => {
                 />
               </Link>
               <div className="text-[14px] md:text-[19px] font-semibold flex gap-4 md:gap-14 items-center">
-                <Link 
-                  to={"/Services"} 
-                  className={`hover:text-black/50 ${isActiveRoute('/Services') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                <Link
+                  to={"/Services"}
+                  className={`hover:text-black/50 ${
+                    isActiveRoute("/Services")
+                      ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                      : ""
+                  }`}
                 >
                   <h1>SERVICES</h1>
                 </Link>
-                <Link 
-                  to={"/Experience"} 
-                  className={`hover:text-black/50 ${isActiveRoute('/Experience') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                <Link
+                  to={"/Experience"}
+                  className={`hover:text-black/50 ${
+                    isActiveRoute("/Experience")
+                      ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                      : ""
+                  }`}
                 >
                   <h1>EXPERIENCE LAB</h1>
                 </Link>
-                <Link 
-                  to={"/Ethos"} 
-                  className={`hover:text-black/50 ${isActiveRoute('/Ethos') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                <Link
+                  to={"/Ethos"}
+                  className={`hover:text-black/50 ${
+                    isActiveRoute("/Ethos")
+                      ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                      : ""
+                  }`}
                 >
                   <h1>ETHOS</h1>
                 </Link>
-                <Link 
-                  to={"/Careers"} 
-                  className={`hover:text-black/50 ${isActiveRoute('/Careers') ? 'text-[#060ebb] border-b-2 border-[#060ebb]' : ''}`}
+                <Link
+                  to={"/Careers"}
+                  className={`hover:text-black/50 ${
+                    isActiveRoute("/Careers")
+                      ? "text-[#060ebb] border-b-2 border-[#060ebb]"
+                      : ""
+                  }`}
                 >
                   <h1>CAREERS</h1>
                 </Link>
               </div>
               <Link to={"/Contact"}>
-            <motion.div
-              className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
-                isToggled
-                  ? "bg-black text-white"
-                  : "bg-[#F0F0F0] text-[#060ebb]"
-              }`}
-              onClick={handleToggle}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-            >
-              <motion.h1
-                className={`mr-6 md:mr-9 text-center`}
-                animate={{
-                  x: isToggled ? "35px" : "0px",
-                  color: isToggled ? "#FFFFFF" : "#060ebb",
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                CONTACT
-              </motion.h1>
-              <motion.img
-                className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
-                src={worldsmall}
-                alt="World"
-                animate={{
-                  x: isToggled ? "-50%" : "150%",
-                  rotate: isToggled ? 360 : 0,
-                }}
-                transition={{ duration: 0.8 }}
-              />
-            </motion.div>
-          </Link>
+                <motion.div
+                  className={`py-2 px-4 rounded-full relative text-[12px] md:text-[13px] font-semibold flex items-center cursor-pointer ${
+                    isToggled
+                      ? "bg-black text-white"
+                      : "bg-[#F0F0F0] text-[#060ebb]"
+                  }`}
+                  onClick={handleToggle}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <motion.h1
+                    className={`mr-6 md:mr-9 text-center`}
+                    animate={{
+                      x: isToggled ? "35px" : "0px",
+                      color: isToggled ? "#FFFFFF" : "#060ebb",
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    CONTACT
+                  </motion.h1>
+                  <motion.img
+                    className="w-[36px] md:w-[46px] h-[36px] md:h-[46px] absolute"
+                    src={worldsmall}
+                    alt="World"
+                    animate={{
+                      x: isToggled ? "-50%" : "150%",
+                      rotate: isToggled ? 360 : 0,
+                    }}
+                    transition={{ duration: 0.8 }}
+                  />
+                </motion.div>
+              </Link>
             </div>
           </div>
         </div>
@@ -131,7 +146,7 @@ const Careers = () => {
           {/* Hand Image Animation */}
           <motion.img
             src={hand}
-            className="w-[70px] md:w-[150px] md:block hidden absolute z-[1] left-10 md:left-1/4 ml-20 top-44 md:top-28"
+            className="w-[70px] md:w-[150px] md:block hidden absolute z-[1] left-10 md:left-1/4 ml-20 top-44 md:top-28 [@media(min-width:1800px)]:top-[29%] [@media(max-width:1400px)]:top-[28%]"
             alt="Hand"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -182,7 +197,7 @@ const Careers = () => {
 
           {/* CAREERS Title Animation */}
           <motion.h1
-            className="font-[1000] px-10  -mt-40 md:!mt-20 md:leading-[0px] text-7xl md:text-[260px] alinsa text-[#060ebb] z-[10]"
+            className="font-[1000] px-10 -mt-40 md:!mt-20 md:leading-[0px] text-7xl md:text-[clamp(2rem,18vw,260px)] alinsa text-[#060ebb] z-[10]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -206,7 +221,6 @@ const Careers = () => {
     </>
   );
 };
-
 
 export default Careers;
 
@@ -243,33 +257,36 @@ const JobListings = () => {
               transition={{ delay: 0.3 }}
               className="md:text-[50px] text-4xl md:leading-[50px] font-bold jost mb-6"
             >
-              <span className="text-[#060ebb] ">E-mail us</span>  if you are a creator, open to learning, nurturing, growing, and fostering the
+              <span className="text-[#060ebb] ">E-mail us</span> if you are a
+              creator, open to learning, nurturing, growing, and fostering the
               ethos of the company, "order in chaos".
             </motion.h1>
 
             <div className="flex gap-4">
-            <div className="flex justify-center items-center">
-  <button
- 
-    className="bg-white text-[#060ebb] px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-blue-600 hover:text-white"
-    onClick={(e) => {
-      e.preventDefault(); // Prevents unwanted navigation issues
-      window.open("mailto:explore@hausofchaos.co?subject=Contact%20from%20Website", "_self");
-    }}
-  >
-    E-MAIL NOW
-  </button>
-</div>
+              <div className="flex justify-center items-center">
+                <button
+                  className="bg-white text-[#060ebb] px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-blue-600 hover:text-white"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevents unwanted navigation issues
+                    window.open(
+                      "mailto:explore@hausofchaos.co?subject=Contact%20from%20Website",
+                      "_self"
+                    );
+                  }}
+                >
+                  E-MAIL NOW
+                </button>
+              </div>
 
               <a href="https://www.linkedin.com/company/hausofchaos/">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border border-white px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-white hover:text-black"
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border border-white px-6 py-3 rounded-full font-medium transition-colors duration-300 hover:bg-white hover:text-black"
                 >
-                VIEW LINKEDIN
-              </motion.button>
-                </a>
+                  VIEW LINKEDIN
+                </motion.button>
+              </a>
             </div>
           </div>
 
@@ -297,5 +314,3 @@ const JobListings = () => {
     </div>
   );
 };
-
- 
