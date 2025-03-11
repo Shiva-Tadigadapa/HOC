@@ -450,10 +450,10 @@ const images = [
   { src: svg6, className: "bottom-80 !w-1/4 right-40", link: "/Contact", rotate: 10 },
 ];
 const images2 = [
-  { src: svg4, className: "  bottom-0 left-0", link: "/Contact",rotate: 0 },
+  { src: svg4, className: "  bottom-20 left-0", link: "/Contact",rotate: 0 },
   { src: lin, className: " top-[55%]  right-0", link: "https://www.linkedin.com/company/hausofchaos/" ,rotate: -20},
   { src: ins, className: "  top-[50%] left-0", link: "https://www.instagram.com/hausofchaos.co/" ,rotate: -20},
-  { src: svg5, className: " bottom-0 right-0 ", link: "/Contact",rotate:8 },
+  { src: svg5, className: " bottom-20 right-0 ", link: "/Contact",rotate:8 },
   // { src: fab, className: " bottom-60 right-0", link: "/facebook-page",rotate: -12 },
   { src: bhe, className: " bottom-40 left-20", link: "mailto:explore@hausofchaos.co", rotate: 20},
   // { src: dri, className: "bottom-72 left-10", link: "/Contact" ,rotate: 10},
@@ -471,7 +471,7 @@ const JobListings = ({ scrollToBottom }) => {
       if (link.startsWith('mailto:')) {
         window.location.href = link;
       } else {
-        window.location.href = link;
+        window.open(link, '_blank');
       }
     }
   };
@@ -529,9 +529,9 @@ const JobListings = ({ scrollToBottom }) => {
     />
   ))}
 
-      <h1 className="absolute  cursor-pointer !bottom-2 md:bottom-10 tracking-wide text-[#0000FF]   text-center text-2xl md:text-[20px]"  onClick={scrollToBottom}>
+      {/* <h1 className="absolute  cursor-pointer !bottom-2 md:bottom-10 tracking-wide text-[#0000FF]   text-center text-2xl md:text-[20px]"  onClick={scrollToBottom}>
         <img src={arrow} alt="Arrow" className="w-10" />
-      </h1>
+      </h1> */}
       {/* <div className=" absolute">Scroll Down</div> */}
     </div>
     

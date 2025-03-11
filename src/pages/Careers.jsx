@@ -146,7 +146,7 @@ const Careers = () => {
           {/* Hand Image Animation */}
           <motion.img
             src={hand}
-            className="w-[70px] md:w-[150px] md:block hidden absolute z-[1] left-10 md:left-1/4 ml-20 top-44 md:top-28 [@media(min-width:1800px)]:top-[29%] [@media(max-width:1400px)]:top-[28%]"
+            className="w-[70px] md:w-[150px] md:block hidden absolute z-[1] left-10 md:left-1/4 ml-20 top-44 md:top-28 [@media(min-width:1800px)]:top-[29%] [@media(max-width:800px)]:top-[28%]"
             alt="Hand"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -257,7 +257,7 @@ const JobListings = () => {
               transition={{ delay: 0.3 }}
               className="md:text-[50px] text-4xl md:leading-[50px] font-bold jost mb-6"
             >
-              <span className="text-[#060ebb] ">E-mail us</span> if you are a
+              <span className="text-[#E3E1E6] ">E-mail us</span> if you are a
               creator, open to learning, nurturing, growing, and fostering the
               ethos of the company, "order in chaos".
             </motion.h1>
@@ -278,7 +278,9 @@ const JobListings = () => {
                 </button>
               </div>
 
-              <a href="https://www.linkedin.com/company/hausofchaos/">
+              <a href="https://www.linkedin.com/company/hausofchaos/" 
+              target="_blank"
+              > 
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

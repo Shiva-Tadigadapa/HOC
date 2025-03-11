@@ -192,7 +192,7 @@ const Landing = () => {
             ch 10-01-2025
           </h1>
         </div> */}
-        <img className="absolute w-12 bottom-4 left-1/2 opacity-85 transform -translate-x-1/2" src={arrow}/>
+        {/* <img className="absolute w-12 bottom-4 left-1/2 opacity-85 transform -translate-x-1/2" src={arrow}/> */}
       </div>
 
       {/* Section 2 */}

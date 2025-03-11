@@ -244,8 +244,8 @@ const CategoryAccordion = ({
         onClick={() => onCategoryToggle(category.id)}
       >
         <span className="text-white text-xl md:text-3xl font-bold">
-          <span className=" text-4xl text-[#060ebb] mr-2">
-            {" "}
+          <span className=" text-4xl text-[#E3E1E6] mr-2">
+            {" "}     
             0{category.idx}
           </span>{" "}
           {category.title}
@@ -348,7 +348,7 @@ const FAQ = () => {
     <div className="min-h-screen mt-60 bg-black">
       <div className="justify-evenly md:items-start items-center   flex flex-col md:flex-row mx-auto py-32">
         <div className="mb-12 text-center md:text-left md:sticky md:top-32 md:h-fit">
-          <h2 className="text-[#060ebb] salo text-5xl md:text-[90px] md:leading-[120px]">
+          <h2 className="text-[#E3E1E6] salo text-5xl md:text-[90px] md:leading-[120px]">
             FAQS
           </h2>
           {/* <p className="text-[#F4ECE0] jost uppercase text-xs md:text-[15px] font-bold">

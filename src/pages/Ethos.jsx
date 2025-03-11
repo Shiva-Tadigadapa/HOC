@@ -328,6 +328,19 @@ const FounderSection = () => {
                 >
                   LinkedIn
                 </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-blue-600 px-6 py-3 rounded-full font-medium"
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/hausofchaos.co/",
+                      "_blank"
+                    )
+                  }
+                >
+                  Instagram
+                </motion.button>
               </div>
             </motion.div>
 

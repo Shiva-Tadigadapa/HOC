@@ -116,7 +116,7 @@ const HausOfChaos = () => {
               </p>
               <button
                 type="submit"
-                className="px-12 py-3 w-fit border-2 border-white bg-black text-blue-600 rounded-full hover:bg-black/90 transition-colors"
+                className="px-12 py-3 w-fit border-2 border-white bg-black text-[#E3E1E6] rounded-full hover:bg-black/90 transition-colors"
               >
                 SUBMIT
               </button>
@@ -134,6 +134,8 @@ const HausOfChaos = () => {
             <a
               href="https://www.linkedin.com/company/105575916/"
               className="hover:underline"
+              target="_blank"
+
             >
               LINKEDIN
             </a>
@@ -141,6 +143,7 @@ const HausOfChaos = () => {
             <a
               href="https://www.instagram.com/hausofchaos.co/"
               className="hover:underline"
+              target="_blank"
             >
               INSTAGRAM
             </a>
@@ -164,6 +167,7 @@ const HausOfChaos = () => {
             <a
               href="https://theinternetcompany.one/"
               className="hover:underline"
+              target="_blank"
             >
               TIC GLOBAL
             </a>
