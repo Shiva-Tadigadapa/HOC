@@ -125,7 +125,11 @@ const App = () => {
       }
     }
   }
-
+  const handleNavClick = (path) => {
+    if (location.pathname === path) {
+      setMobileNavOpen(false)
+    }
+  }
   // const fadeInStart = { opacity: 0 }
   // const fadeInEnd = { opacity: 1 }
   // const fadeInTransition = { duration: 1 }
@@ -181,23 +185,26 @@ const App = () => {
             />
           </motion.div>
           <motion.ul variants={ulVariant}>
-        {MOBILE_NAV_ITEMS.map(navItem => (
-          <motion.li 
-            whileTap={{ scale: 0.95 }} 
-            key={navItem.id}
-            className={location.pathname === navItem.path ? 'active' : ''}
-          >
-            <Link to={navItem.path}>
-              <motion.div 
-                variants={liVariant}
-                className={location.pathname === navItem.path ? 'nav-link active' : 'nav-link'}
+            {MOBILE_NAV_ITEMS.map(navItem => (
+              <motion.li 
+                whileTap={{ scale: 0.95 }} 
+                key={navItem.id}
+                className={location.pathname === navItem.path ? 'active' : ''}
               >
-                {navItem.navTitle}
-              </motion.div>
-            </Link>
-          </motion.li>
-        ))}
-      </motion.ul>
+                <Link 
+                  to={navItem.path}
+                  onClick={() => handleNavClick(navItem.path)}
+                >
+                  <motion.div 
+                    variants={liVariant}
+                    className={location.pathname === navItem.path ? 'nav-link active' : 'nav-link'}
+                  >
+                    {navItem.navTitle}
+                  </motion.div>
+                </Link>
+              </motion.li>
+            ))}
+          </motion.ul>
           <motion.div variants={fadeInVariant} className="contact">
           <h5>
             +91 9600931366

@@ -146,13 +146,20 @@ const Careers = () => {
           {/* Hand Image Animation */}
           <motion.img
             src={hand}
-            className="w-[70px] md:w-[150px] md:block hidden absolute z-[1] left-10 md:left-1/4 ml-20 top-44 md:top-28 [@media(min-width:1800px)]:top-[29%] [@media(max-width:800px)]:top-[28%]"
+            className="w-[70px] md:w-[150px] hidden md:block absolute z-[1] left-10 md:left-1/4 ml-20 top-4 md:top-28 [@media(min-width:1800px)]:top-[29%] [@media(max-width:800px)]:top-[28%]  "
             alt="Hand"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 120, damping: 10 }}
           />
-
+ <motion.img
+            src={hand}
+            className="w-[30px]   md:hidden block absolute z-[1] left-10 ml-5 top-10  "
+            alt="Hand"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 120, damping: 10 }}
+          />
           {/* UFO Image Animation */}
           <motion.img
             src={ufo}
@@ -181,7 +188,13 @@ const Careers = () => {
             }}
             id="ufo"
           />
-
+   <motion.img
+            src={ufo}
+            className="w-[40px] mt-20  md:hidden block absolute z-[20]   top-0"
+            alt="UFO"
+           
+            id="ufo"
+          />
           {/* <motion.img
   src={ufo}
   className="w-[100px] md:w-[150px] absolute z-[20] top-1/2"
