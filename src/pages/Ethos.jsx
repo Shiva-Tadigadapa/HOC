@@ -287,26 +287,26 @@ const FounderSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-white -ml-10 md:mt-0 -mt-52 text-center  alinsa text-7xl mb-10 md:text-[110px] font-bold tracking-wide">
+            <h1 className="text-white md:-ml-10 md:mt-0 -mt-60 text-center  alinsa text-7xl   md:mb-10 md:text-[110px] font-bold tracking-wide">
               FOUNDER
             </h1>
           </motion.div>
 
-          <div className="flex md:w-[88%] md:p-0 p-2  -mt-32 md:-mt-6 flex-col lg:flex-row justify-between md:text-left text-center  md:items-start gap-12">
+          <div className="flex md:w-[88%] w-full md:p-0 p-2  -mt-40 md:-mt-6 flex-col  text-center   lg:flex-row justify-between md:text-left  md:items-start gap-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:w-1/2 -ml-10 md:block flex flex-col items-center"
+              className="lg:w-1/2 md:-ml-10 md:block flex flex-col items-center"
             >
-              <p className="text-white md:text-[26px] jost  text-xl md:leading-[37px] mb-8">
+              <p className="text-white   md:text-[26px] jost  text-lg md:w-full w-[90%] md:leading-[37px] mb-4 md:mb-8">
               As experiential designers, we never remain neutral. The more
                 compelling the story, the greater the influence we hold. Haus of
                 Chaos is the intersection of a graphic design house and an
                 experimental studio, enabling us to dive into new, experimental
                 forms of communication—disrupting and redefining existing norms.
               </p>
-              <div className="flex gap-4">
+              <div className="flex text-xs md:text-base   gap-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
