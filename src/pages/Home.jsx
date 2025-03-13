@@ -117,6 +117,9 @@ const Home = () => {
 
       {/* <SecondSection /> */}
       <ThirdSection />
+      <div className=" md:hidden block md:mb-0 mb-40">
+        <div className="h-10"></div>
+      </div>
       <FAQ />
       <Footer />
     </>
@@ -329,7 +332,7 @@ const ThirdSection = () => {
           conceptualized the journey of how clients experience our brand but
           also responded with efficiency.        </h1>
 
-        <h2 className="text-[#060ebb] text-xs md:text-[20px] mt-5">
+        <h2 className="text-[#060ebb] text-xs md:text-[20px] mt-2 md:mt-5">
           Rak's Pallikkoodam, 21st century international school
         </h2>
       </div>

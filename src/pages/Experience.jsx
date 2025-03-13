@@ -200,7 +200,7 @@ const SecondSection = () => {
 
   return (
     <div ref={sectionRef} className="overflow-hidden z-[300] ">
-      <div className="bg-black -mt-10 md:mt-0 py-[60px] md:py-[120px] flex flex-col   items-center gap-10">
+      <div className="bg-black mt-6 md:mt-0 py-[60px] md:py-[120px] flex flex-col   items-center gap-10">
         <div>
           <h1 className="text-[#F4ECE0] text-4xl md:text-[110px] md:leading-[97px] text-center  uppercase alinsa">
             Experience Lab

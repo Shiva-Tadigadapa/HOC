@@ -152,14 +152,14 @@ const Careers = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 120, damping: 10 }}
           />
- <motion.img
+ {/* <motion.img
             src={hand}
-            className="w-[30px]   md:hidden block absolute z-[1] left-10 ml-5 top-10  "
+            className="w-[30px]   md:hidden block absolute z-[1] left-10 ml-5 top-14  "
             alt="Hand"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 120, damping: 10 }}
-          />
+          /> */}
           {/* UFO Image Animation */}
           <motion.img
             src={ufo}
@@ -188,13 +188,13 @@ const Careers = () => {
             }}
             id="ufo"
           />
-   <motion.img
+   {/* <motion.img
             src={ufo}
             className="w-[40px] mt-20  md:hidden block absolute z-[20]   top-0"
             alt="UFO"
            
             id="ufo"
-          />
+          /> */}
           {/* <motion.img
   src={ufo}
   className="w-[100px] md:w-[150px] absolute z-[20] top-1/2"
@@ -309,7 +309,7 @@ const JobListings = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
-            className="space-y-4  md:mt-20 text-right md:w-[45%]"
+            className="space-y-4  md:mt-20 text-center md:text-right md:w-[45%]"
           >
             {positions.map((position, index) => (
               <motion.div

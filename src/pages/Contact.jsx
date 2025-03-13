@@ -142,13 +142,13 @@ const images = [
 ];
 const images2 = [
   { src: svg4, className: "  bottom-20 left-0", link: "/Contact",rotate: 0 },
-  { src: lin, className: " top-[55%]  right-0", link: "https://www.linkedin.com/company/hausofchaos/" ,rotate: -20},
-  { src: ins, className: "  top-[50%] left-0", link: "https://www.instagram.com/hausofchaos.co/" ,rotate: -20},
+  { src: lin, className: " w-[60%] top-[45%]  right-0", link: "https://www.linkedin.com/company/hausofchaos/" ,rotate: -20},
+  { src: ins, className: " w-[60%]  top-[40%] left-0", link: "https://www.instagram.com/hausofchaos.co/" ,rotate: -20},
   { src: svg5, className: " bottom-20 right-0 ", link: "/Contact",rotate:8 },
   // { src: fab, className: " bottom-60 right-0", link: "/facebook-page",rotate: -12 },
-  { src: bhe, className: " bottom-40 left-20", link: "mailto:explore@hausofchaos.co", rotate: 20},
+  { src: bhe, className: "w-[60%]  bottom-40 left-20", link: "mailto:explore@hausofchaos.co", rotate: 20},
   // { src: dri, className: "bottom-72 left-10", link: "/Contact" ,rotate: 10},
-  { src: svg6, className: " top-52 left-48", link: "/Contact" ,rotate: 10},
+  { src: svg6, className: " top-40 left-48", link: "/Contact" ,rotate: 10},
 ];
 
 const JobListings = ({ scrollToBottom }) => {

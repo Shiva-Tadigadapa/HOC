@@ -299,7 +299,7 @@ const FounderSection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="lg:w-1/2 md:-ml-10 md:block flex flex-col items-center"
             >
-              <p className="text-white   md:text-[26px] jost  text-lg md:w-full w-[90%] md:leading-[37px] mb-4 md:mb-8">
+              <p className="text-white   md:-ml-5  md:text-[26px] jost  text-lg md:w-full   px-4 md:leading-[37px] mb-4 md:mb-8">
               As experiential designers, we never remain neutral. The more
                 compelling the story, the greater the influence we hold. Haus of
                 Chaos is the intersection of a graphic design house and an
