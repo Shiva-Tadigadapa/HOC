@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { motion} from "framer-motion";
-import svg1 from "../assets/hover/element 4-min.png";
-import svg2 from "../assets/hover/element-1-min.png";
+// import svg1 from "../assets/hover/element 4-min.png";
+// import svg2 from "../assets/hover/element-1-min.png";
 // import svg3 from "../assets/hover/element2-min.png";
-import svg4 from "../assets/hover/element3-min.png";
-import svg5 from "../assets/hover/element5-min.png";
-import svg6 from "../assets/hover/element6-min.png";
+// import svg4 from "../assets/hover/element3-min.png";
+// import svg5 from "../assets/hover/element5-min.png";
+// import svg6 from "../assets/hover/element6-min.png";
 
 const CursorHover = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [images, setImages] = useState([]);
-  const imagePaths = [svg1, svg2, svg4, svg5, svg6];
+  const imagePaths = ["https://ik.imagekit.io/7da6fpjdo/hover/element%204-min.png?updatedAt=1741945054748", "https://ik.imagekit.io/7da6fpjdo/hover/element-1-min.png?updatedAt=1741945053236", "https://ik.imagekit.io/7da6fpjdo/hover/element3-min.png?updatedAt=1741945054680", "https://ik.imagekit.io/7da6fpjdo/hover/element5-min.png?updatedAt=1741945058062", "https://ik.imagekit.io/7da6fpjdo/hover/element6-min.png?updatedAt=1741945054684"];
 
   // Throttle control
   const [lastImageTime, setLastImageTime] = useState(0);

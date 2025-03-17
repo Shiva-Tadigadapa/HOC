@@ -217,6 +217,8 @@ const categories = {
     },
   ],
 };
+
+import svgser from "../assets/svgser.png";
 // import blackgrid from "../assets/blackgrid.png";
 import wiresm from "../assets/wiresm.png";
 import plugservicesleft from "../assets/left.png";
@@ -525,56 +527,7 @@ const MainServices = () => {
               className="flex flex-col gap-4 px-4"
             >
               <div className="flex gap-4 items-start text-left">
-              <svg
-          width="33"
-          height="32"
-          viewBox="0 0 33 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clip-path="url(#clip0_20_2512)">
-            <g clip-path="url(#clip1_20_2512)">
-              <path
-                d="M19.5509 28.6184L21.5812 26.5881V20.9292H27.2401L29.2704 18.8989H19.5509V28.6184Z"
-                fill="#E3E1E6"
-              />
-              <path
-                d="M15.4759 1.01491C15.4759 3.95236 15.4759 12.016 15.4759 14.8238C12.7113 14.8238 4.54689 14.8238 1.66703 14.8238L0.651886 15.8389L1.66703 16.8541H15.4759C15.4759 17.9196 15.4759 29.2807 15.4759 30.663L16.4911 31.6781L17.5063 30.663V16.8541H31.3151L32.3303 15.8389L31.3151 14.8238C29.8752 14.8238 18.615 14.8238 17.5063 14.8238V1.01491L16.4911 -0.000244141L15.4759 1.01491Z"
-                fill="#E3E1E6"
-              />
-              <path
-                d="M3.71173 18.8989L5.74203 20.9292H11.401V26.5881L13.4312 28.6184V18.8989H3.71173Z"
-                fill="#E3E1E6"
-              />
-              <path
-                d="M13.4312 12.7793V3.05981L11.401 5.09011V10.7491H5.74203L3.71173 12.7793H13.4312Z"
-                fill="#E3E1E6"
-              />
-              <path
-                d="M19.5509 12.7793H29.2704L27.2401 10.7491H21.5812V5.09011L19.5509 3.05981V12.7793Z"
-                fill="#E3E1E6"
-              />
-            </g>
-          </g>
-          <defs>
-            <clipPath id="clip0_20_2512">
-              <rect
-                width="32"
-                height="32"
-                fill="white"
-                transform="translate(0.330017)"
-              />
-            </clipPath>
-            <clipPath id="clip1_20_2512">
-              <rect
-                width="32"
-                height="32"
-                fill="white"
-                transform="translate(0.330017)"
-              />
-            </clipPath>
-          </defs>
-        </svg>
+                <img src={svgser} alt="" className="w-6 h-6" />
                 <div>
                   <h2 className="text-white text-2xl font-medium mb-2">
                     {item.label}

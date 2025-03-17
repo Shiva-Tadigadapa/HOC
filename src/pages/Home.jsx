@@ -330,7 +330,7 @@ const ThirdSection = () => {
           crafting an experience that reflects what our company truly stands
           for. Ria, the creative director of Haus of Chaos, not only
           conceptualized the journey of how clients experience our brand but
-          also responded with efficiency.        </h1>
+          also   with efficiency.        </h1>
 
         <h2 className="text-[#060ebb] text-xs md:text-[20px] mt-2 md:mt-5">
           Rak's Pallikkoodam, 21st century international school

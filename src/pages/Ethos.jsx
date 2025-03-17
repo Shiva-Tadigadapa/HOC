@@ -191,7 +191,7 @@ const Ethos = () => {
                 Transmedia Approaches.
               </span>
             </h2>
-            <h2 className="jost text-2xl  md:hidden block text-left">
+            <h2 className="jost text-2xl -mt-40 md:mt-0  md:hidden block text-left">
            <span className="salo uppercase  text-3xl text-[#060ebb]">  Haus Of Chaos </span> is a process-oriented design firm
 that prioritizes innovative forms of communication.
 Embracing the concept of  <span className="salo uppercase  text-3xl text-[#060ebb]">Organized Chaos </span>
@@ -308,7 +308,7 @@ const FounderSection = () => {
               </p>
               <div className="flex text-xs md:text-base   gap-4">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05 }}  
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-blue-600 px-6 py-3 rounded-full font-medium"
                   onClick={handleEmailClick}
@@ -318,7 +318,7 @@ const FounderSection = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-6 py-3 rounded-full font-medium"
+                  className="border-2 bg-white text-blue-600 px-6 py-3 rounded-full font-medium"
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/company/hausofchaos/",

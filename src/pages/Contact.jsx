@@ -119,34 +119,35 @@ const Contact = () => {
   );
 };
 
-import svg4 from "../assets/hover/element3-min.png";
+// import svg4 from "../assets/hover/element3-min.png";
 import svg5 from "../assets/hover/element5-min.png";
 import svg6 from "../assets/hover/element6-min.png";
+// https://ik.imagekit.io/7da6fpjdo/hover/element5-min.png?updatedAt=1741945058062
 
-import lin from "../assets/lin.png";
-import ins from "../assets/ins.png";
-// import fab from "../assets/fab.png";
-import bhe from "../assets/mail.png";
+// import lin from "../assets/lin.png";
+// import ins from "../assets/ins.png";
+// // import fab from "../assets/fab.png";
+// import bhe from "../assets/mail.png";
 // import dri from "../assets/phone.png";
 
 import arrow from "../assets/down-arrow.png";
 const images = [
-  { src: svg4, className: "bottom-80 !w-1/4 left-0", link: "/Contact", rotate: 0 },
-  { src: lin, className: "bottom-10 !w-[40%] -left-10", link: "https://www.linkedin.com/company/hausofchaos/", rotate: -20 },
-  { src: ins, className: "bottom-[24rem] !w-[40%] left-[25rem]", link: "https://www.instagram.com/hausofchaos.co/", rotate: -20 },
+  { src: "https://ik.imagekit.io/7da6fpjdo/hover/element3-min.png?updatedAt=1741945054680", className: "bottom-80 !w-1/4 left-0", link: "/Contact", rotate: 0 },
+  { src: "https://ik.imagekit.io/7da6fpjdo/hover/lin.png?updatedAt=1741945606730", className: "bottom-10 !w-[40%] -left-10", link: "https://www.linkedin.com/company/hausofchaos/", rotate: -20 },
+  { src: "https://ik.imagekit.io/7da6fpjdo/hover/ins.png?updatedAt=1741945667558", className: "bottom-[24rem] !w-[40%] left-[25rem]", link: "https://www.instagram.com/hausofchaos.co/", rotate: -20 },
   { src: svg5, className: "bottom-28 !w-1/4 left-[30rem]", link: "/Contact", rotate: 8 },
   // { src: fab, className: "bottom-0 !w-[40%] left-[40rem]", link: "/facebook-page", rotate: -12 },
-  { src: bhe, className: "bottom-20 !w-[40%] right-[4rem]", link: "mailto:explore@hausofchaos.co", rotate: 20 },
+  { src: "https://ik.imagekit.io/7da6fpjdo/hover/mail.png?updatedAt=1741945621637", className: "bottom-20 !w-[40%] right-[4rem]", link: "mailto:explore@hausofchaos.co", rotate: 20 },
   // { src: dri, className: "bottom-0 !w-[40%] right-0", link: "/Contact", rotate: 10 },
   { src: svg6, className: "bottom-80 !w-1/4 right-40", link: "/Contact", rotate: 10 },
 ];
 const images2 = [
-  { src: svg4, className: "  bottom-20 left-0", link: "/Contact",rotate: 0 },
-  { src: lin, className: " w-[60%] top-[45%]  right-0", link: "https://www.linkedin.com/company/hausofchaos/" ,rotate: -20},
-  { src: ins, className: " w-[60%]  top-[40%] left-0", link: "https://www.instagram.com/hausofchaos.co/" ,rotate: -20},
+  { src: "https://ik.imagekit.io/7da6fpjdo/hover/element3-min.png?updatedAt=1741945054680", className: "  bottom-20 left-0", link: "/Contact",rotate: 0 },
+  { src: "https://ik.imagekit.io/7da6fpjdo/hover/lin.png?updatedAt=1741945606730", className: " w-[60%] top-[45%]  right-0", link: "https://www.linkedin.com/company/hausofchaos/" ,rotate: -20},
+  { src: "https://ik.imagekit.io/7da6fpjdo/hover/ins.png?updatedAt=1741945667558", className: " w-[60%]  top-[40%] left-0", link: "https://www.instagram.com/hausofchaos.co/" ,rotate: -20},
   { src: svg5, className: " bottom-20 right-0 ", link: "/Contact",rotate:8 },
   // { src: fab, className: " bottom-60 right-0", link: "/facebook-page",rotate: -12 },
-  { src: bhe, className: "w-[60%]  bottom-40 left-20", link: "mailto:explore@hausofchaos.co", rotate: 20},
+  { src: "https://ik.imagekit.io/7da6fpjdo/hover/mail.png?updatedAt=1741945621637", className: "w-[60%]  bottom-40 left-20", link: "mailto:explore@hausofchaos.co", rotate: 20},
   // { src: dri, className: "bottom-72 left-10", link: "/Contact" ,rotate: 10},
   { src: svg6, className: " top-40 left-48", link: "/Contact" ,rotate: 10},
 ];
