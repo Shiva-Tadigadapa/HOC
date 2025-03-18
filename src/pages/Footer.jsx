@@ -33,16 +33,16 @@ const HausOfChaos = () => {
 
     emailjs
       .send(
-        "service_wlj3cut", // Your EmailJS service ID
-        "template_6e6i8qf", // Your EmailJS template ID
+        "service_ovftt7v", // Your EmailJS service ID
+        "template_0r29jul", // Your EmailJS template ID
         {
           from_name: formData.name, // User's Name
           user_email: formData.email, // User's Email
-          to_name: "Author Name", // Author's Name (Optional)
-          to_email: "author@example.com", // Replace with the author's email
+          to_name: "ria yukta", // Author's Name (Optional)
+          to_email: "explore@hausofchaos.co", // Replace with the author's email
           message: "Hello, I would like to connect with you and learn more.", // Static message
         },
-        "ZpapHrtsf3dC50o_5" // Your EmailJS Public Key
+        "-nw3YwvbkpZVhBsF8" // Your EmailJS Public Key
       )
       .then(() => {
         alert("Email sent successfully!");
